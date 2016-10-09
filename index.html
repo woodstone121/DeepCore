@@ -20,7 +20,7 @@
     <header>
       <div class="inner">
         <img src="https://partner.digitalglobe.com/sites/all/themes/dg_extranet/images/community_logo.png"/>
-        <h2>DeepLearning SDK for Geospatial Data</h2>
+        <h2>Deep Learning SDK for Geospatial Data</h2>
       </div>
     </header>
 
@@ -29,26 +29,23 @@
         <section id="main-content">
           <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to DeepCore</h3>
-
-<p>DeepCore is a machine learning abstraction framework and utility toolkit, written in C++ by DigitalGlobe.  It allows a user to download, perform object detection, and manipulate geospatial vector files. DeepCore is intended to be a machine learning framework agnostic toolkit, allowing for a simple, clean, consistent programmatic interface.  As new machine learning techniques and frameworks emerge, they can easily be integrated into DeepCore. This allows developers using DeepCore to easily extend their applications with the latest technology, without having to worry about the complexities of each framework or technique.</p>
-
-<p>DeepCore's machine learning features can also be accelerated by the use of Nvidia Graphics Processing Units (GPUs) using CUDA technology. By enabling GPU mode, the process of object detection becomes very quick, allowing for faster and more efficient processing of large areas. The use of GPUs to accelerate machine learning and object detection processes is highly recommended.</p>
-
-<p>DeepCore is split into libraries that are grouped by function.  The core libraries are:
+          <p>DeepCore is a machine learning abstraction framework and utility toolkit, written in C++ version 11 by <a href="http://www.digitalglobe.com">DigitalGlobe</a>.  It allows a user to download, perform object detection, and manipulate geospatial vector files. DeepCore is intended to be a machine learning framework agnostic toolkit, allowing for a simple, clean, consistent programmatic interface.  As new machine learning techniques and frameworks emerge, they can easily be integrated into DeepCore. This allows developers using DeepCore to easily extend their applications with the latest technology, without having to worry about the complexities of each framework or technique.</p>
+          <p>DeepCore's machine learning features can also be accelerated by the use of Nvidia Graphics Processing Units (GPUs) using <a>CUDA</a> technology. By enabling <a>GPU</a> mode, the process of object detection becomes very quick, allowing for faster and more efficient processing of large geographic areas. The use of GPUs to accelerate machine learning and object detection processes is highly recommended.</p>
+          <p>DeepCore is split into libraries that are grouped by function.  The core libraries are:
   <ul>
-    <li>Utility -  contains toolkit type functions that are very general and don’t fit into any of the other categories.  This includes logging via Google glog, zip file reading and writing, basic math, and other basic functions.</li>
-    <li>Network - contains functions and classes for communication across networks, including http and json-rpc requests</li>
-    <li>Vector - contains functions and classes for writing vector features out to disk or network sources.  Supported formats are:
+    <li><strong>Utility</strong> -  contains toolkit type functions that are very general and don’t fit into any of the other categories.  This includes logging via Google glog, zip file reading and writing, basic math, and other basic functions.</li>
+    <li><strong>Network</strong> - contains functions and classes for communication across networks, including HTTP and <a href="http://json-rpc.org/">JSON-RPC</a> requests</li>
+    <li><strong>Vector </strong>- contains functions and classes for writing vector features out to disk or network sources.  Supported formats are:
       <ul>
-        <li>Shapefile</li>
-        <li>KML</li>
-        <li>PostGRES/PostGIS</li>
-        <li>Elasticsearch</li>
-        <li>GeoJSON</li>
+        <li><a href="https://en.wikipedia.org/wiki/Shapefile">Shapefile</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/PostGIS">PostGRES/PostGIS</a></li>
+        <li><a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a></li>
+        <li><a href="http://geojson.org/">GeoJSON</a></li>
       </ul>
     </li>
-    <li>Imagery - contains functions and classes for reading imagery from a variety of sources.  Using GDAL and OpenCV, most image formats can be read in for processing.</li>
-    <li>Classification - contains the functions and classes necessary to do classification and object detection with a supported model.  Currently, only Caffe models are supported, but additional frameworks such as Microsoft’s CNTK are coming online soon.</li>
+    <li><strong>Imagery</strong> - contains functions and classes for reading imagery from a variety of sources.  Using <a href="http://www.gdal.org">GDAL</a> and <a href="http://opencv.org">OpenCV</a>, most image formats can be read in for processing.</li>
+    <li><strong>Classification</strong> - contains the functions and classes necessary to do classification and object detection with a supported model.  Currently, only Caffe models are supported, but additional frameworks such as Microsoft’s <a href="https://github.com/Microsoft/CNTK">CNTK</a> and <a href="https://www.tensorflow.org/">Google Tensorflow</a> are coming online soon.</li>
   </ul>
 </p>
 
@@ -56,40 +53,37 @@
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Application - gbdxm</h3>
-
-<p>The GBDXM packaging tool is a DeepCore based executable that enables the user to package a machine learning model for use with other DeepCore based tools.  It takes in a supported model format as an input, and packages the model files into a single easy-to-use, easy-to-share container.  The DeepCore framework can then use that model package to perform machine learning and object detection tasks.  Currently, only Caffe models are supported, but other model formats are forthcoming as additional machine learning frameworks are incorporated into DeepCore.  The GBDXM application can be downloaded via <a href="https://www.dropbox.com/s/3tfquj3y5cu4zua/gbdxm?dl=0">link</a> or by using the button on the right.</p>
-
+<p>The <a href="https://github.com/DigitalGlobe/gbdxm">GBDXM packaging tool</a> is a DeepCore based executable that enables the user to package a machine learning model for use with other DeepCore based tools.  It takes in a supported model format as an input, and packages the model files into a single easy-to-use, easy-to-share container.  The DeepCore framework can then use that model package to perform machine learning and object detection tasks.  Currently, only Caffe models are supported, but other model formats are forthcoming as additional machine learning frameworks are incorporated into DeepCore.  The GBDXM application can be downloaded via <a href="https://www.dropbox.com/s/3tfquj3y5cu4zua/gbdxm?dl=0">link</a>.</p>
 <h3>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample Application - OpenSpaceNet</h3>
+<p><a href="https://github.com/DigitalGlobe/OpenSpaceNet">OpenSpaceNet</a> is a DeepCore-based sample application that uses DigitalGlobe satellite imagery as an input source for the object detection.  Using DigitalGlobe image services, such as the <a href="https://developer.digitalglobe.com/maps-api/">DigitalGlobe Maps API</a> or the <a href="https://services.digitalglobe.com">My DigitalGlobe</a> imagery service, the user can access current satellite imagery for use in machine learning.  OpenSpaceNet allows the user to select an area for detection, specify a model to use during detection, and get the results back in a geospatial format suitable for use in a GIS application or service. The OpenSpaceNet application can be downloaded via <a href="https://www.dropbox.com/s/colvrm1us22bzhs/OpenSkyNet?dl=0"> link </a> or by clicking the button on the right.</p>
 
-<p>OpenSpaceNet is a DeepCore based sample application that uses DigitalGlobe satellite imagery as an input source for the object detection.  Using DigitalGlobe image services, such as the <a href="https://developer.digitalglobe.com/maps-api/">DigitalGlobe Maps API</a> or the <a href="https://services.digitalglobe.com">My DigitalGlobe</a> imagery service, the user can access current satellite imagery for use in machine learning.  OpenSpaceNet allows the user to select an area for detection, specify a model to use during detection, and get the results back in a geospatial format suitable for use in a GIS application or service. The OpenSpaceNet application can be downloaded via <a href="https://www.dropbox.com/s/colvrm1us22bzhs/OpenSkyNet?dl=0"> link </a> or by clicking the button on the right.</p>
+<h3>How-to and getting started</h3>
+	Coming soon!
 
+<h3>Releases</h3>
+	Coming soon!
 
-<h3>
-
-<h3>Releases - Coming Soon!</h3>
-
-
-    <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<h3>Support or Contact</h3>
 
 <p>Having issues with DeepCore?  Email us at <a href="mailto:deepcore@digitalglobe.com"> DeepCore </a> or visit our issues page to log a bug or get some help.  Also, check out the DeepCore documentation <a href="website/documentation/index.html"> here.</a></p>
         </section>
 
         <aside id="sidebar">
-          <a href="https://www.dropbox.com/s/3tfquj3y5cu4zua/gbdxm?dl=0" class="button">
-            <small>Download</small>
-            gbdxm
-          </a>
-          <a href="https://www.dropbox.com/s/colvrm1us22bzhs/OpenSkyNet?dl=0" class="button">
-            <small>Download</small>
-            OpenSpaceNet
-          </a>
-          <a href="website/documentation/index.html" class="button">Documentation</a>
-          <a href="https://github.com/DigitalGlobe/DeepCore/issues" class="button">Issues</a>
+        	<h3>GBDXM</h3>
+          		<a href="https://www.dropbox.com/s/3tfquj3y5cu4zua/gbdxm?dl=0" class="button">Download</a>
+            <h3>OpenSpaceNet</h3>
+          		<a href="https://www.dropbox.com/s/colvrm1us22bzhs/OpenSkyNet?dl=0" class="button">Download</a>
+            <h3>Documentation</h3>
+          		<a href="website/documentation/index.html" class="button">View</a>
+            <h3>Issues</h3>
+          		<a href="https://github.com/DigitalGlobe/DeepCore/issues" class="button">View</a>
+		 	<h3>LIcense</h3>
+          		<a href="https://github.com/DigitalGlobe/DeepCore/blob/master/LICENSE" class="button">View</a>
 
-          <p class="repo-owner"><a href="https://github.com/DigitalGlobe/DeepCore">DeepCore</a> is maintained by <a href="https://github.com/DigitalGlobe">DigitalGlobe</a>.</p>
-
-          <p><a href='http://52.1.7.235/job/DeepCore'><img src='http://52.1.7.235/buildStatus/icon?job=DeepCore'> <strong>Linux</strong> </a></p>
+          	<p><a href='http://52.1.7.235/job/DeepCore'><img src='http://52.1.7.235/buildStatus/icon?job=DeepCore'> <strong>Linux</strong> </a></p>
+          
+            <p class="repo-owner"><a href="https://github.com/DigitalGlobe/DeepCore">DeepCore</a> is maintained by <a href="https://github.com/DigitalGlobe">DigitalGlobe</a>.</p>
         </aside>
       </div>
 
