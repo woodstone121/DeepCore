@@ -518,9 +518,7 @@ aside#sidebar p.repo-owner a {
 
 a.button {
   width: 134px;
-  height: 58px;
-  padding-top: 22px;
-  padding-left: 68px;
+  padding-left: 20px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 23px;
   line-height: 1.2;
@@ -530,22 +528,20 @@ a.button small {
   display: block;
   font-size: 11px;
 }
-header a.button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: transparent url(../images/github-button.png) 0 0 no-repeat;
-}
+
 aside a.button {
-  display: block;
-  width: 150px;
-  padding-left: 64px;
+  display: inline-block;
   margin-bottom: 20px;
+  padding-left: 68px;
   font-size: 16px;
   background-color: #0d3b5e;
   border-radius: 8px;
+  position: relative;
 }
 
+aside a.button img {
+  horiz-align: center;
+}
 code, pre {
   margin-bottom: 30px;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
@@ -748,7 +744,7 @@ footer {
   margin-top: 40px;
   font-size: 13px;
   color: #aaa;
-  background: transparent url('../images/hr.png') 0 0 no-repeat;
+/*  background: transparent url('../images/hr.png') 0 0 no-repeat; */
 }
 
 footer a {
