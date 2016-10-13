@@ -1,303 +1,578 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="generator" content="pandoc" />
-  <title></title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-  </style>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../website/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../website/stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../website/stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title></title>
+    <style type="text/css">code {
+        white-space: pre;
+    }</style>
+    <style type="text/css">
+        div.sourceCode {
+            overflow-x: auto;
+        }
+
+        table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+            margin: 0;
+            padding: 0;
+            vertical-align: baseline;
+            border: none;
+        }
+
+        table.sourceCode {
+            width: 100%;
+            line-height: 100%;
+        }
+
+        td.lineNumbers {
+            text-align: right;
+            padding-right: 4px;
+            padding-left: 4px;
+            color: #aaaaaa;
+            border-right: 1px solid #aaaaaa;
+        }
+
+        td.sourceCode {
+            padding-left: 5px;
+        }
+
+        code > span.kw {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        /* Keyword */
+        code > span.dt {
+            color: #902000;
+        }
+
+        /* DataType */
+        code > span.dv {
+            color: #40a070;
+        }
+
+        /* DecVal */
+        code > span.bn {
+            color: #40a070;
+        }
+
+        /* BaseN */
+        code > span.fl {
+            color: #40a070;
+        }
+
+        /* Float */
+        code > span.ch {
+            color: #4070a0;
+        }
+
+        /* Char */
+        code > span.st {
+            color: #4070a0;
+        }
+
+        /* String */
+        code > span.co {
+            color: #60a0b0;
+            font-style: italic;
+        }
+
+        /* Comment */
+        code > span.ot {
+            color: #007020;
+        }
+
+        /* Other */
+        code > span.al {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Alert */
+        code > span.fu {
+            color: #06287e;
+        }
+
+        /* Function */
+        code > span.er {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Error */
+        code > span.wa {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Warning */
+        code > span.cn {
+            color: #880000;
+        }
+
+        /* Constant */
+        code > span.sc {
+            color: #4070a0;
+        }
+
+        /* SpecialChar */
+        code > span.vs {
+            color: #4070a0;
+        }
+
+        /* VerbatimString */
+        code > span.ss {
+            color: #bb6688;
+        }
+
+        /* SpecialString */
+        code > span.im {
+        }
+
+        /* Import */
+        code > span.va {
+            color: #19177c;
+        }
+
+        /* Variable */
+        code > span.cf {
+            color: #007020;
+            font-weight: bold;
+        }
+
+        /* ControlFlow */
+        code > span.op {
+            color: #666666;
+        }
+
+        /* Operator */
+        code > span.bu {
+        }
+
+        /* BuiltIn */
+        code > span.ex {
+        }
+
+        /* Extension */
+        code > span.pp {
+            color: #bc7a00;
+        }
+
+        /* Preprocessor */
+        code > span.at {
+            color: #7d9029;
+        }
+
+        /* Attribute */
+        code > span.do {
+            color: #ba2121;
+            font-style: italic;
+        }
+
+        /* Documentation */
+        code > span.an {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Annotation */
+        code > span.cv {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* CommentVar */
+        code > span.in {
+            color: #60a0b0;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Information */
+    </style>
 </head>
 <body>
-<h1 id="openspacenet-user-reference-guide">OpenSpaceNet User Reference Guide</h1>
-<p><em>OpenSpaceNet</em> application to perform object or terrain detection against orthorectified imagery using the DeepCore libraries. This application includes and is based on CUDA 7.5 and requires NVIDIA driver version 352 or higher to run using the GPU.</p>
-<h2 id="table-of-contents">Table Of Contents</h2>
-<ul>
-<li><a href="#actions">OpenSpaceNet Actions</a></li>
-<li><a href="#detect">detect</a></li>
-<li><a href="#landcover">landcover</a></li>
-<li><a href="#input">Image Input</a></li>
-<li><a href="#service">Web Service Input</a></li>
-<li><a href="#image">Local Image Input</a></li>
-<li><a href="#output">Output Options</a></li>
-<li><a href="#processing">Processing Options</a></li>
-<li><a href="#logging">Logging Options</a></li>
-<li><a href="#config">Using Configuration Files</a></li>
-</ul>
-<p><a name="actions" /> ## OpenSpaceNet Actions <em>OpenSpaceNet</em> can be called in 3 different ways:</p>
-<pre><code>OpenSpaceNet help [topic]
+<header>
+    <div class="inner">
+        <img src="https://partner.digitalglobe.com/sites/all/themes/dg_extranet/images/community_logo.png"/>
+        <h2>OpenSpaceNet User Reference Guide</h2>
+    </div>
+</header>
+<div id="content-wrapper">
+    <div class="inner clearfix">
+        <section id="main-content">
+
+            <p><em>OpenSpaceNet</em> application to perform object or terrain detection against orthorectified imagery
+                using the DeepCore libraries. This application includes and is based on CUDA 7.5 and requires NVIDIA
+                driver version 352 or higher to run using the GPU.</p>
+            <h2 id="table-of-contents">Table Of Contents</h2>
+            <ul>
+                <li><a href="#actions">OpenSpaceNet Actions</a></li>
+                <li><a href="#detect">detect</a></li>
+                <li><a href="#landcover">landcover</a></li>
+                <li><a href="#input">Image Input</a></li>
+                <li><a href="#service">Web Service Input</a></li>
+                <li><a href="#image">Local Image Input</a></li>
+                <li><a href="#output">Output Options</a></li>
+                <li><a href="#processing">Processing Options</a></li>
+                <li><a href="#logging">Logging Options</a></li>
+                <li><a href="#config">Using Configuration Files</a></li>
+            </ul>
+            <p><a name="actions"/> ## OpenSpaceNet Actions <em>OpenSpaceNet</em> can be called in 3 different ways:</p>
+            <pre><code>OpenSpaceNet help [topic]
 OpenSpaceNet detect &lt;addtional options&gt;
 OpenSpaceNet landcover &lt;addtional options&gt;</code></pre>
-<h3 id="help">help</h3>
-<p>The <code>help</code> mode shows the <em>OpenSpaceNet</em> usage. The amount of information can be reduced by specifying the action for which to show the help.</p>
-<p>The following are the ways you can call help:</p>
-<pre><code>OpenSpaceNet help
+            <h3 id="help">help</h3>
+            <p>The <code>help</code> mode shows the <em>OpenSpaceNet</em> usage. The amount of information can be
+                reduced by specifying the action for which to show the help.</p>
+            <p>The following are the ways you can call help:</p>
+            <pre><code>OpenSpaceNet help
 OpenSpaceNet help landcover
 OpenSpaceNet help detect
 OpenSpaceNet &lt;other arguments&gt; --help</code></pre>
-<p><a name="detect" /> ### detect The <code>detect</code> mode performs feature detection. The arguments to configure feature detection are:</p>
-<h4 id="command-line-arguments-for-the-detect-action">Command Line arguments for the <code>detect</code> Action</h4>
-<h5 id="confidence">--confidence</h5>
-<p>This option sets the minimum percent score for results to be included in the output. This should be a value between 0 and 100. The default value for this argument is 95%.</p>
-<p>i.e. <code>--confidence 99</code> sets the confidence to 99%.</p>
-<h5 id="step-size">--step-size</h5>
-<p>This option sets the sliding window step size. Default value is <em>log<sub>2</sub></em> of the model's window size. Step size can be specified in either one or two dimensions. If only one dimension is specified, the step size will be the same in both directions.</p>
-<p>i.e. <code>--step-size 30</code> will result in the sliding window step size being 30 in the <em>x</em> direction and 30 in the <em>y</em> direction.</p>
-<h5 id="pyramid">--pyramid</h5>
-<p>This option will enable using pyramids in feature detection. This means that the image will be repeatedly resampled down by a factor of 2 with sliding window detection run on each reduced image. This option will result in much longer run time and is not recommended. Most <em>OpenSpaceNet</em> models are designed to work at a certain resolution and do not require pyramidding.</p>
-<h5 id="nms">--nms</h5>
-<p>This option will cause <em>OpenSpaceNet</em> to perform non-maximum suppression on the output. This that adjacent detection boxes will be removed for each feature detected and only one detecton box per object will be output. This option results in much better quality output. You can optionally specify the overlap threshold percentage for non-maximum suppression calculation. The default overlap is 30%.</p>
-<p>i.e. <code>--nms</code> will result in non-maximum suppression with 30% overlap, while <code>--nms 20</code> will result in non-maximum suppression with 20% overlap.</p>
-<h5 id="include-labels---exclude-labels">--include-labels / --exclude-labels</h5>
-<p>This option will cause <em>OpenSpaceNet</em> to retain or remove labels in the output. It is invalid to include both an inclusion and an exclusion list at the same time.</p>
-<p>When specified in an environmental variable or configuration file, the input string will be tokenized. Quotes are required to keep inputs together.</p>
-<p>Arguments specified here are additive between the environment, configuration files, and command line.</p>
-<p><a name="landcover" /> ### landcover</p>
-<p>The landcover action is used to perform CNN-based landcover classification. This mode differs from the <code>detect</code> mode as follows:</p>
-<ul>
-<li>If the image source is a web service, the requested bounding box will be expanded to include whole server tiles.</li>
-<li><code>--step-size</code> argument is ignored. The step size is set to the model's window size or to the <code>--window-size</code> argument's value.</li>
-<li><code>--nms</code> argument is ignored.</li>
-<li><code>--confidence</code> argument is ignored, confidence is set to 0%.</li>
-<li><code>--pyramid</code> argument is ignored.</li>
-</ul>
-<p><a name="input" /> ## Image Input</p>
-<p><em>OpenSpaceNet</em> is able use either a geo-registered local image, or a MapBox or WMTS web server as its input. Depending on the input source, different command line arguments apply. To select which source to use, one of two options must be present:</p>
-<ul>
-<li><code>--service &lt;service name&gt;</code> To load imagery from a web service.</li>
-<li><code>--image &lt;path&gt;</code> To load a local image file.</li>
-</ul>
-<p><a name="service" /> ### Web Service Input</p>
-<p>Depending on which service you use, different arguments apply. This is a summary:</p>
-<table>
-<thead>
-<tr class="header">
-<th>service</th>
-<th>token</th>
-<th>credentials</th>
-<th>mapId</th>
-<th>zoom</th>
-<th>bbox</th>
-<th>num-downloads</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>dgcs</td>
-<td>Required</td>
-<td>Required</td>
-<td></td>
-<td>Optional</td>
-<td>Required</td>
-<td>Optional</td>
-</tr>
-<tr class="even">
-<td>evwhs</td>
-<td>Required</td>
-<td>Required</td>
-<td></td>
-<td>Optional</td>
-<td>Required</td>
-<td>Optional</td>
-</tr>
-<tr class="odd">
-<td>maps-api</td>
-<td>Required</td>
-<td></td>
-<td>Optional</td>
-<td>Optional</td>
-<td>Required</td>
-<td>Optional</td>
-</tr>
-</tbody>
-</table>
-<h4 id="command-line-options-for-web-services">Command Line Options for Web Services</h4>
-<h5 id="service">--service</h5>
-<p>This argument is required for a web service input. If this argument is specified, the <code>--image</code> argument cannot be present. The following services are available:</p>
-<ul>
-<li><p>'dgcs' is the DigitalGlobe Cloud Service WMTS data source. This service requires both '--token' and '--credentials' to be set. The service's Web URL is http://services.digitalglobe.com/.</p></li>
-<li><p>'evwhs' is the DigitalGlobe's Enhanced View Web Hosting Service WMTS data source. This service requires both '--token' and '--credentials' to be set. The service's web URL is http://evwhs.digitalglobe.com/.</p></li>
-<li><p>'maps-api' is the DigitalGlobes MapsAPI service hosted by MapBox. This service only requires the <code>--token</code> to be set. In addition, the user can specify the <code>--mapId</code> argument to set the image source map ID. The service's web URL is http://mapsapi.digitalglobe.com/.</p></li>
-</ul>
-<h5 id="bbox">--bbox</h5>
-<p>The bounding box argument is required for all web service input sources. The coordinates are specified in the WGS84 Lat/Lon coordinate system. The order of coordinates is west longitude, south latitude, east longitude, and north latitude. Note that for the landcover action the bounding box may be expanded so that the tiles downloaded from the service will be processed completely.</p>
-<p>i.e. <code>--bbox 125.541 38.866 125.562 38.881</code> specifies a bounding box for the Atlanta Hartsfield-Jackson Airport area.</p>
-<h5 id="token">--token</h5>
-<p>This argument specifies the API token for the desired web service. This is required for all three supported services.</p>
-<h5 id="credentials">--credentials</h5>
-<p>This argument specifies the user name and password for the WMTS services, that is <code>dgcs</code> and <code>evwhs</code>. The format is <code>--credentials username:password</code>. If only the user name is specified like <code>--credentials username</code>, the user fill be prompted for the password before <em>OpenSpaceNet</em> will proceed. In addition, credentials can be specified by setting the <code>OSN_CREDENTIALS</code> environment variable.</p>
-<h5 id="mapid">--mapId</h5>
-<p>This argument is only valid for the MapsAPI, or <code>maps-api</code> service. The DigitalGlobe map IDs are listed on this web page: http://mapsapidocs.digitalglobe.com/docs/imagery-and-basemaps.</p>
-<h5 id="zoom">--zoom</h5>
-<p>This argument specifies the zoom level for the web service. For MapsAPI the zoom level is 0 to 22, while both DGCS and EVWHS zoom levels range from 0 to 20. The default zoom level is 18.</p>
-<h5 id="num-downloads">--num-downloads</h5>
-<p>This argument specifies the number of image tiles that will be downloaded simultaneously. Increasing the value of this argument can dramatically speed up downloads, but it can cause the service to crash or deny you access. The default value is 10.</p>
-<p><a name="image" /> ### Local Image Input</p>
-<p>Local image input means that <em>OpenSpaceNet</em> will load a single image a local drive or a network drive accessible through the file system.</p>
-<h3 id="command-line-options-for-local-image-input">Command Line Options for Local Image Input</h3>
-<h5 id="image">--image</h5>
-<p>This argument is required for local image input.</p>
-<p>i.e. <code>--image /home/user/Pictures/my_image.tif</code></p>
-<h5 id="bbox-1">--bbox</h5>
-<p>The bounding box argument is optional for local image input. If the specified bounding box is not fully within the input image an intersection of the image bounding box and the specified bounding box will be used. If the specified bounding box does not intersect the image, an error will be displayed.</p>
-<h3 id="files-on-s3-a-variant-of-local-files">Files on S3 (a variant of local files)</h3>
-<p>Since <em>OpenSpaceNet</em> uses GDAL to load local imagery, VSI sources are supported out of the box. Of particular interest is imagery stored on S-3.</p>
-<p>i.e.</p>
-<pre><code>AWS_ACCESS_KEY_ID=[AWS_ACCESS_KEY_ID] AWS_SECRET_ACCESS_KEY=[AWS_SECRET_ACCESS_KEY] \
+            <p><a name="detect"/> ### detect The <code>detect</code> mode performs feature detection. The arguments to
+                configure feature detection are:</p>
+            <h4 id="command-line-arguments-for-the-detect-action">Command Line arguments for the <code>detect</code>
+                Action</h4>
+            <h5 id="confidence">--confidence</h5>
+            <p>This option sets the minimum percent score for results to be included in the output. This should be a
+                value between 0 and 100. The default value for this argument is 95%.</p>
+            <p>i.e. <code>--confidence 99</code> sets the confidence to 99%.</p>
+            <h5 id="step-size">--step-size</h5>
+            <p>This option sets the sliding window step size. Default value is <em>log<sub>2</sub></em> of the model's
+                window size. Step size can be specified in either one or two dimensions. If only one dimension is
+                specified, the step size will be the same in both directions.</p>
+            <p>i.e. <code>--step-size 30</code> will result in the sliding window step size being 30 in the <em>x</em>
+                direction and 30 in the <em>y</em> direction.</p>
+            <h5 id="pyramid">--pyramid</h5>
+            <p>This option will enable using pyramids in feature detection. This means that the image will be repeatedly
+                resampled down by a factor of 2 with sliding window detection run on each reduced image. This option
+                will result in much longer run time and is not recommended. Most <em>OpenSpaceNet</em> models are
+                designed to work at a certain resolution and do not require pyramidding.</p>
+            <h5 id="nms">--nms</h5>
+            <p>This option will cause <em>OpenSpaceNet</em> to perform non-maximum suppression on the output. This that
+                adjacent detection boxes will be removed for each feature detected and only one detecton box per object
+                will be output. This option results in much better quality output. You can optionally specify the
+                overlap threshold percentage for non-maximum suppression calculation. The default overlap is 30%.</p>
+            <p>i.e. <code>--nms</code> will result in non-maximum suppression with 30% overlap, while <code>--nms
+                20</code> will result in non-maximum suppression with 20% overlap.</p>
+            <h5 id="include-labels---exclude-labels">--include-labels / --exclude-labels</h5>
+            <p>This option will cause <em>OpenSpaceNet</em> to retain or remove labels in the output. It is invalid to
+                include both an inclusion and an exclusion list at the same time.</p>
+            <p>When specified in an environmental variable or configuration file, the input string will be tokenized.
+                Quotes are required to keep inputs together.</p>
+            <p>Arguments specified here are additive between the environment, configuration files, and command line.</p>
+            <p><a name="landcover"/> ### landcover</p>
+            <p>The landcover action is used to perform CNN-based landcover classification. This mode differs from the
+                <code>detect</code> mode as follows:</p>
+            <ul>
+                <li>If the image source is a web service, the requested bounding box will be expanded to include whole
+                    server tiles.
+                </li>
+                <li><code>--step-size</code> argument is ignored. The step size is set to the model's window size or to
+                    the <code>--window-size</code> argument's value.
+                </li>
+                <li><code>--nms</code> argument is ignored.</li>
+                <li><code>--confidence</code> argument is ignored, confidence is set to 0%.</li>
+                <li><code>--pyramid</code> argument is ignored.</li>
+            </ul>
+            <p><a name="input"/> ## Image Input</p>
+            <p><em>OpenSpaceNet</em> is able use either a geo-registered local image, or a MapBox or WMTS web server as
+                its input. Depending on the input source, different command line arguments apply. To select which source
+                to use, one of two options must be present:</p>
+            <ul>
+                <li><code>--service &lt;service name&gt;</code> To load imagery from a web service.</li>
+                <li><code>--image &lt;path&gt;</code> To load a local image file.</li>
+            </ul>
+            <p><a name="service"/> ### Web Service Input</p>
+            <p>Depending on which service you use, different arguments apply. This is a summary:</p>
+            <table>
+                <thead>
+                <tr class="header">
+                    <th>service</th>
+                    <th>token</th>
+                    <th>credentials</th>
+                    <th>mapId</th>
+                    <th>zoom</th>
+                    <th>bbox</th>
+                    <th>num-downloads</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="odd">
+                    <td>dgcs</td>
+                    <td>Required</td>
+                    <td>Required</td>
+                    <td></td>
+                    <td>Optional</td>
+                    <td>Required</td>
+                    <td>Optional</td>
+                </tr>
+                <tr class="even">
+                    <td>evwhs</td>
+                    <td>Required</td>
+                    <td>Required</td>
+                    <td></td>
+                    <td>Optional</td>
+                    <td>Required</td>
+                    <td>Optional</td>
+                </tr>
+                <tr class="odd">
+                    <td>maps-api</td>
+                    <td>Required</td>
+                    <td></td>
+                    <td>Optional</td>
+                    <td>Optional</td>
+                    <td>Required</td>
+                    <td>Optional</td>
+                </tr>
+                </tbody>
+            </table>
+            <h4 id="command-line-options-for-web-services">Command Line Options for Web Services</h4>
+            <h5 id="service">--service</h5>
+            <p>This argument is required for a web service input. If this argument is specified, the
+                <code>--image</code> argument cannot be present. The following services are available:</p>
+            <ul>
+                <li><p>'dgcs' is the DigitalGlobe Cloud Service WMTS data source. This service requires both '--token'
+                    and '--credentials' to be set. The service's Web URL is http://services.digitalglobe.com/.</p></li>
+                <li><p>'evwhs' is the DigitalGlobe's Enhanced View Web Hosting Service WMTS data source. This service
+                    requires both '--token' and '--credentials' to be set. The service's web URL is
+                    http://evwhs.digitalglobe.com/.</p></li>
+                <li><p>'maps-api' is the DigitalGlobes MapsAPI service hosted by MapBox. This service only requires the
+                    <code>--token</code> to be set. In addition, the user can specify the <code>--mapId</code> argument
+                    to set the image source map ID. The service's web URL is http://mapsapi.digitalglobe.com/.</p></li>
+            </ul>
+            <h5 id="bbox">--bbox</h5>
+            <p>The bounding box argument is required for all web service input sources. The coordinates are specified in
+                the WGS84 Lat/Lon coordinate system. The order of coordinates is west longitude, south latitude, east
+                longitude, and north latitude. Note that for the landcover action the bounding box may be expanded so
+                that the tiles downloaded from the service will be processed completely.</p>
+            <p>i.e. <code>--bbox 125.541 38.866 125.562 38.881</code> specifies a bounding box for the Atlanta
+                Hartsfield-Jackson Airport area.</p>
+            <h5 id="token">--token</h5>
+            <p>This argument specifies the API token for the desired web service. This is required for all three
+                supported services.</p>
+            <h5 id="credentials">--credentials</h5>
+            <p>This argument specifies the user name and password for the WMTS services, that is <code>dgcs</code> and
+                <code>evwhs</code>. The format is <code>--credentials username:password</code>. If only the user name is
+                specified like <code>--credentials username</code>, the user fill be prompted for the password before
+                <em>OpenSpaceNet</em> will proceed. In addition, credentials can be specified by setting the <code>OSN_CREDENTIALS</code>
+                environment variable.</p>
+            <h5 id="mapid">--mapId</h5>
+            <p>This argument is only valid for the MapsAPI, or <code>maps-api</code> service. The DigitalGlobe map IDs
+                are listed on this web page: http://mapsapidocs.digitalglobe.com/docs/imagery-and-basemaps.</p>
+            <h5 id="zoom">--zoom</h5>
+            <p>This argument specifies the zoom level for the web service. For MapsAPI the zoom level is 0 to 22, while
+                both DGCS and EVWHS zoom levels range from 0 to 20. The default zoom level is 18.</p>
+            <h5 id="num-downloads">--num-downloads</h5>
+            <p>This argument specifies the number of image tiles that will be downloaded simultaneously. Increasing the
+                value of this argument can dramatically speed up downloads, but it can cause the service to crash or
+                deny you access. The default value is 10.</p>
+            <p><a name="image"/> ### Local Image Input</p>
+            <p>Local image input means that <em>OpenSpaceNet</em> will load a single image a local drive or a network
+                drive accessible through the file system.</p>
+            <h3 id="command-line-options-for-local-image-input">Command Line Options for Local Image Input</h3>
+            <h5 id="image">--image</h5>
+            <p>This argument is required for local image input.</p>
+            <p>i.e. <code>--image /home/user/Pictures/my_image.tif</code></p>
+            <h5 id="bbox-1">--bbox</h5>
+            <p>The bounding box argument is optional for local image input. If the specified bounding box is not fully
+                within the input image an intersection of the image bounding box and the specified bounding box will be
+                used. If the specified bounding box does not intersect the image, an error will be displayed.</p>
+            <h3 id="files-on-s3-a-variant-of-local-files">Files on S3 (a variant of local files)</h3>
+            <p>Since <em>OpenSpaceNet</em> uses GDAL to load local imagery, VSI sources are supported out of the box. Of
+                particular interest is imagery stored on S-3.</p>
+            <p>i.e.</p>
+            <pre><code>AWS_ACCESS_KEY_ID=[AWS_ACCESS_KEY_ID] AWS_SECRET_ACCESS_KEY=[AWS_SECRET_ACCESS_KEY] \
    ./OpenSpaceNet --image /vsis3/bucket/path/to/image.tif --model /path/to/model.gbdxm \
    --output foo.shp --confidence 99 --step-size 30</code></pre>
-<h4 id="vsi-s3-parameters">VSI S3 Parameters</h4>
-<ul>
-<li><code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_ACCESS_KEY_ID</code> (Required) define the access credentials</li>
-<li><code>AWS_SESSION_TOKEN</code> (Required for temporary credentials)</li>
-<li><code>AWS_REGION</code> (defaults to 'us-east-1')</li>
-<li><code>AWS_S3_ENDPOINT</code> (defaults to 's3.amazonaws.com')</li>
-</ul>
-<h4 id="additional-http-parameters">Additional HTTP Parameters</h4>
-<ul>
-<li><code>GDAL_HTTP_PROXY</code>, <code>GDAL_HTTP_PROXYUSERPWD</code>, <code>GDAL_PROXY_AUTH</code> configuration options can be used to define a proxy server.</li>
-</ul>
-<p><a name="output" /> ## Output Options</p>
-<p>The output options specify what kind of output vector featuer set will be created and where it will be placed.</p>
-<h5 id="format">--format</h5>
-<p>This option specifies the output vector format. The default format is 'shp'. The following formats are supported:</p>
-<ul>
-<li><code>shp</code> for ESRI Shapefile output. Note that the <code>--output-layer</code> option is ignored for this format.</li>
-<li><code>elasticsearch</code> writes the output features to an Elastic Search database.</li>
-<li><code>geojson</code> outputs a GeoJSON file.</li>
-<li><code>kml</code> outputs a Google's Keyhole Markup Language format.</li>
-<li><code>postgis</code> writes the output to a Postgres SQL database with PostGIS extensions.</li>
-</ul>
-<h5 id="output">--output</h5>
-<p>This option specifies the output path or connection settings on non-file-based output formats.</p>
-<h5 id="output-layer">--output-layer</h5>
-<p>This option specifies the output layer name, if the output format supports it. This options is ignored for <code>shp</code> output.</p>
-<h5 id="type">--type</h5>
-<p>This option specifies the output geometry type. The supported types are:</p>
-<ul>
-<li><code>polygon</code> draws a polygon bounding box each detected feature.</li>
-<li><code>point</code> draws a point in the middle of each detection bounding box.</li>
-</ul>
-<h5 id="producer-info">--producer-info</h5>
-<p>This option add additional attributes to each vector feature, the attributes are:</p>
-<ul>
-<li><code>username</code> is the login user name on the machine that ran that <em>OpenSpaceNet</em> job.</li>
-<li><code>app</code> is the name of the application, this is set to &quot;OpenSpaceNet&quot;.</li>
-<li><code>version</code> is the application version, which is the <em>OpenSpaceNet</em> version.</li>
-</ul>
-<p><a name="processing" /> ## Processing Options</p>
-<p>Processing options contain the classifier configuration options that are common for both landcover and feature detection modes.</p>
-<h5 id="cpu">--cpu</h5>
-<p>Specifying this option causes <em>OpenSpaceNet</em> to use the fall-back CPU mode. This can be used on machines that don't have the supported GPU, but it is dramitically slower, so it's not recommended. You really need a GPU to do CNN feature detection efficiently.</p>
-<h5 id="max-utilization">--max-utilization</h5>
-<p>This option specifies how much GPU memory <em>OpenSpaceNet</em> will use at most. The default value is 95%, which seems to yield best performance. As utilization approaches 100%, it slows down drastically, so 95% is the recommended maximum. The valid values are between 5% and 100%. If a value lower than 5% is specified, <em>OpenSpaceNet</em> will still use about 5% of the GPU's capacity.</p>
-<h5 id="model">--model</h5>
-<p>This option specifies the path to a package GBDXM model file to use in classification or feature detection.</p>
-<h5 id="window-size">--window-size</h5>
-<p>This option override's the model's default window size. You can specify either one or two arguments. If only one argument is specified, the window will be square. This option is generally not recommended. It causes <em>OpenSpaceNet</em> to pass a smaller window to the classifier, filling the edges with random noise. Override window size must be equal or smaller than the model's window size.</p>
-<p><a name="logging" /> ## Logging Options</p>
-<h5 id="log">--log</h5>
-<p>This option specifies a log file that <em>OpenSpaceNet</em> writes to. Optionally a log level can be specified. Permitted log level values are <code>trace</code>, <code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code>, and <code>fatal</code>. The default log level is <code>info</code>.</p>
-<p>When specified in an environmental variable or configuration file, the input string will be tokenized. Quotes are required to keep inputs together.</p>
-<p>Only one log file may only be specified.</p>
-<p>i.e. <code>--log log.txt</code> will create a log file with the log level of <code>info</code> <code>--log debug log.txt</code> will create a log file with the log level of <code>debug</code></p>
-<h5 id="quiet">--quiet</h5>
-<p>Normally <code>_OpenSpaceNet_</code> will output its status to the console, even if a log file is specified. If this is not desired, console output can be suppressed by specifying this option.</p>
-<p><a name="config" /> ## Using Configuration Files</p>
-<p>When using <em>OpenSpaceNet</em>, some or all command line arguments can be put in configuration file(s) and passed through the <code>--config</code> command line option. Multiple files each containing a different option can be used as well.</p>
-<h3 id="configuration-file-syntax">Configuration File Syntax</h3>
-<p>Configuration files are text files with each command line option specified in the following format:</p>
-<pre><code>name1=value1
+            <h4 id="vsi-s3-parameters">VSI S3 Parameters</h4>
+            <ul>
+                <li><code>AWS_SECRET_ACCESS_KEY</code>, <code>AWS_ACCESS_KEY_ID</code> (Required) define the access
+                    credentials
+                </li>
+                <li><code>AWS_SESSION_TOKEN</code> (Required for temporary credentials)</li>
+                <li><code>AWS_REGION</code> (defaults to 'us-east-1')</li>
+                <li><code>AWS_S3_ENDPOINT</code> (defaults to 's3.amazonaws.com')</li>
+            </ul>
+            <h4 id="additional-http-parameters">Additional HTTP Parameters</h4>
+            <ul>
+                <li><code>GDAL_HTTP_PROXY</code>, <code>GDAL_HTTP_PROXYUSERPWD</code>, <code>GDAL_PROXY_AUTH</code>
+                    configuration options can be used to define a proxy server.
+                </li>
+            </ul>
+            <p><a name="output"/> ## Output Options</p>
+            <p>The output options specify what kind of output vector featuer set will be created and where it will be
+                placed.</p>
+            <h5 id="format">--format</h5>
+            <p>This option specifies the output vector format. The default format is 'shp'. The following formats are
+                supported:</p>
+            <ul>
+                <li><code>shp</code> for ESRI Shapefile output. Note that the <code>--output-layer</code> option is
+                    ignored for this format.
+                </li>
+                <li><code>elasticsearch</code> writes the output features to an Elastic Search database.</li>
+                <li><code>geojson</code> outputs a GeoJSON file.</li>
+                <li><code>kml</code> outputs a Google's Keyhole Markup Language format.</li>
+                <li><code>postgis</code> writes the output to a Postgres SQL database with PostGIS extensions.</li>
+            </ul>
+            <h5 id="output">--output</h5>
+            <p>This option specifies the output path or connection settings on non-file-based output formats.</p>
+            <h5 id="output-layer">--output-layer</h5>
+            <p>This option specifies the output layer name, if the output format supports it. This options is ignored
+                for <code>shp</code> output.</p>
+            <h5 id="type">--type</h5>
+            <p>This option specifies the output geometry type. The supported types are:</p>
+            <ul>
+                <li><code>polygon</code> draws a polygon bounding box each detected feature.</li>
+                <li><code>point</code> draws a point in the middle of each detection bounding box.</li>
+            </ul>
+            <h5 id="producer-info">--producer-info</h5>
+            <p>This option add additional attributes to each vector feature, the attributes are:</p>
+            <ul>
+                <li><code>username</code> is the login user name on the machine that ran that <em>OpenSpaceNet</em> job.
+                </li>
+                <li><code>app</code> is the name of the application, this is set to &quot;OpenSpaceNet&quot;.</li>
+                <li><code>version</code> is the application version, which is the <em>OpenSpaceNet</em> version.</li>
+            </ul>
+            <p><a name="processing"/> ## Processing Options</p>
+            <p>Processing options contain the classifier configuration options that are common for both landcover and
+                feature detection modes.</p>
+            <h5 id="cpu">--cpu</h5>
+            <p>Specifying this option causes <em>OpenSpaceNet</em> to use the fall-back CPU mode. This can be used on
+                machines that don't have the supported GPU, but it is dramitically slower, so it's not recommended. You
+                really need a GPU to do CNN feature detection efficiently.</p>
+            <h5 id="max-utilization">--max-utilization</h5>
+            <p>This option specifies how much GPU memory <em>OpenSpaceNet</em> will use at most. The default value is
+                95%, which seems to yield best performance. As utilization approaches 100%, it slows down drastically,
+                so 95% is the recommended maximum. The valid values are between 5% and 100%. If a value lower than 5% is
+                specified, <em>OpenSpaceNet</em> will still use about 5% of the GPU's capacity.</p>
+            <h5 id="model">--model</h5>
+            <p>This option specifies the path to a package GBDXM model file to use in classification or feature
+                detection.</p>
+            <h5 id="window-size">--window-size</h5>
+            <p>This option override's the model's default window size. You can specify either one or two arguments. If
+                only one argument is specified, the window will be square. This option is generally not recommended. It
+                causes <em>OpenSpaceNet</em> to pass a smaller window to the classifier, filling the edges with random
+                noise. Override window size must be equal or smaller than the model's window size.</p>
+            <p><a name="logging"/> ## Logging Options</p>
+            <h5 id="log">--log</h5>
+            <p>This option specifies a log file that <em>OpenSpaceNet</em> writes to. Optionally a log level can be
+                specified. Permitted log level values are <code>trace</code>, <code>debug</code>, <code>info</code>,
+                <code>warning</code>, <code>error</code>, and <code>fatal</code>. The default log level is
+                <code>info</code>.</p>
+            <p>When specified in an environmental variable or configuration file, the input string will be tokenized.
+                Quotes are required to keep inputs together.</p>
+            <p>Only one log file may only be specified.</p>
+            <p>i.e. <code>--log log.txt</code> will create a log file with the log level of <code>info</code> <code>--log
+                debug log.txt</code> will create a log file with the log level of <code>debug</code></p>
+            <h5 id="quiet">--quiet</h5>
+            <p>Normally <code>_OpenSpaceNet_</code> will output its status to the console, even if a log file is
+                specified. If this is not desired, console output can be suppressed by specifying this option.</p>
+            <p><a name="config"/> ## Using Configuration Files</p>
+            <p>When using <em>OpenSpaceNet</em>, some or all command line arguments can be put in configuration file(s)
+                and passed through the <code>--config</code> command line option. Multiple files each containing a
+                different option can be used as well.</p>
+            <h3 id="configuration-file-syntax">Configuration File Syntax</h3>
+            <p>Configuration files are text files with each command line option specified in the following format:</p>
+            <pre><code>name1=value1
 name2=value2</code></pre>
-<p>Option names are the same as the regular command line options without the preceding dashes. The action argument can be specified in a configuration file by using the following syntax:</p>
-<pre><code>action=&lt;action&gt;</code></pre>
-<p>The <code>--nms</code> argument is different when using a configuration file in that the overlap percentage is not optional, this means that this statement is the same as just specifying <code>--nms</code> on the command line:</p>
-<pre><code>nms=30</code></pre>
-<p>If you try to specify <del><code>nms</code></del> or <del><code>nms=</code></del> an error will be displayed.</p>
-<p>If a configuration file contains an option that is also specified through a command line parameter, the command line parameter takes precedence. If multiple configuration files contain the same option, the option in the file specified last will be used.</p>
-<p>When specified in an environmental variable or configuration file, the input string will be tokenized. Quotes are required to keep inputs together.</p>
-<p>Configuration files may be included in the command line, environment, and other configuration files (and multiple times within each). The arguments have precedence immediately below the method which brought in the file.</p>
-<h3 id="example-using-a-configuration-file-for-all-options">Example Using a Configuration File for All Options</h3>
-<p>In this example, we will use the following file:</p>
-<p><strong>dgcs_detect_atl.cfg</strong></p>
-<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="dt">action</span><span class="ot">=</span><span class="st">detect</span>
+            <p>Option names are the same as the regular command line options without the preceding dashes. The action
+                argument can be specified in a configuration file by using the following syntax:</p>
+            <pre><code>action=&lt;action&gt;</code></pre>
+            <p>The <code>--nms</code> argument is different when using a configuration file in that the overlap
+                percentage is not optional, this means that this statement is the same as just specifying
+                <code>--nms</code> on the command line:</p>
+            <pre><code>nms=30</code></pre>
+            <p>If you try to specify
+                <del><code>nms</code></del>
+                or
+                <del><code>nms=</code></del>
+                an error will be displayed.
+            </p>
+            <p>If a configuration file contains an option that is also specified through a command line parameter, the
+                command line parameter takes precedence. If multiple configuration files contain the same option, the
+                option in the file specified last will be used.</p>
+            <p>When specified in an environmental variable or configuration file, the input string will be tokenized.
+                Quotes are required to keep inputs together.</p>
+            <p>Configuration files may be included in the command line, environment, and other configuration files (and
+                multiple times within each). The arguments have precedence immediately below the method which brought in
+                the file.</p>
+            <h3 id="example-using-a-configuration-file-for-all-options">Example Using a Configuration File for All
+                Options</h3>
+            <p>In this example, we will use the following file:</p>
+            <p><strong>dgcs_detect_atl.cfg</strong></p>
+            <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span
+                    class="dt">action</span><span class="ot">=</span><span class="st">detect</span>
 <span class="dt">service</span><span class="ot">=</span><span class="st">dgcs</span>
 <span class="dt">token</span><span class="ot">=</span><span class="st">abcd-efgh-ijkl-mnop-qrst-uvxyz</span>
 <span class="dt">credentials</span><span class="ot">=</span><span class="st">username:password</span>
-<span class="dt">bbox</span><span class="ot">=</span><span class="st">-</span><span class="fl">84.44579</span><span class="st"> </span><span class="fl">33.63404</span><span class="st"> -</span><span class="fl">84.40601</span><span class="st"> </span><span class="fl">33.64853</span>
+<span class="dt">bbox</span><span class="ot">=</span><span class="st">-</span><span class="fl">84.44579</span><span
+                        class="st"> </span><span class="fl">33.63404</span><span class="st"> -</span><span class="fl">84.40601</span><span
+                        class="st"> </span><span class="fl">33.64853</span>
 <span class="dt">model</span><span class="ot">=</span><span class="st">airliner.gbdxm</span>
 <span class="dt">output</span><span class="ot">=</span><span class="st">atl_detected.shp</span>
 <span class="dt">confidence</span><span class="ot">=</span><span class="dv">99</span>
 <span class="dt">step-size</span><span class="ot">=</span><span class="dv">15</span>
 <span class="dt">num-downloads</span><span class="ot">=</span><span class="dv">200</span>
-<span class="dt">nms</span><span class="ot">=</span><span class="dv">30</span></code></pre></div>
-<p>Running <em>OpenSpaceNet</em> with this file</p>
-<pre><code>./OpenSpaceNet --config dgcs_detect_atl.cfg</code></pre>
-<p>is the same as running <em>OpenSpaceNet</em> with these options:</p>
-<pre><code>./OpenSpaceNet detect --service dgcs --token=abcd-efgh-ijkl-mnop-qrst-uvxyz --credentials username:password --bbox=-84.44579 33.63404 -84.40601 33.64853 --model airliner.gbdxm --output atl_detected.shp --confidence=99 --step-size=15 --num-downloads=200 --nms</code></pre>
-<h3 id="example-using-multiple-configuration-files">Example Using Multiple Configuration Files</h3>
-<p>As a use case for using multiple files, we'll use the fact that because <em>OpenSpaceNet</em> can use different input sources for its input, it can be cumbersome to enter that particular service's token and credentials every time. We can create a configuration file with that service's credentials and use it with another configuration file that configures detection parameters.</p>
-<p>Let's use this file for configuring our DGCS credentials:</p>
-<p><strong>dgcs.cfg</strong></p>
-<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="dt">service</span><span class="ot">=</span><span class="st">dgcs</span>
+<span class="dt">nms</span><span class="ot">=</span><span class="dv">30</span></code></pre>
+            </div>
+            <p>Running <em>OpenSpaceNet</em> with this file</p>
+            <pre><code>./OpenSpaceNet --config dgcs_detect_atl.cfg</code></pre>
+            <p>is the same as running <em>OpenSpaceNet</em> with these options:</p>
+            <pre><code>./OpenSpaceNet detect --service dgcs --token=abcd-efgh-ijkl-mnop-qrst-uvxyz --credentials username:password --bbox=-84.44579 33.63404 -84.40601 33.64853 --model airliner.gbdxm --output atl_detected.shp --confidence=99 --step-size=15 --num-downloads=200 --nms</code></pre>
+            <h3 id="example-using-multiple-configuration-files">Example Using Multiple Configuration Files</h3>
+            <p>As a use case for using multiple files, we'll use the fact that because <em>OpenSpaceNet</em> can use
+                different input sources for its input, it can be cumbersome to enter that particular service's token and
+                credentials every time. We can create a configuration file with that service's credentials and use it
+                with another configuration file that configures detection parameters.</p>
+            <p>Let's use this file for configuring our DGCS credentials:</p>
+            <p><strong>dgcs.cfg</strong></p>
+            <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span
+                    class="dt">service</span><span class="ot">=</span><span class="st">dgcs</span>
 <span class="dt">token</span><span class="ot">=</span><span class="st">abcd-efgh-ijkl-mnop-qrst-uvxyz</span>
 <span class="dt">credentials</span><span class="ot">=</span><span class="st">username:password</span>
-<span class="dt">num-downloads</span><span class="ot">=</span><span class="dv">200</span></code></pre></div>
-<p>and this file for detection options:</p>
-<p><strong>detect_atl.cfg</strong></p>
-<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="dt">action</span><span class="ot">=</span><span class="st">detect</span>
+<span class="dt">num-downloads</span><span class="ot">=</span><span class="dv">200</span></code></pre>
+            </div>
+            <p>and this file for detection options:</p>
+            <p><strong>detect_atl.cfg</strong></p>
+            <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span
+                    class="dt">action</span><span class="ot">=</span><span class="st">detect</span>
 <span class="dt">service</span><span class="ot">=</span><span class="st">dgcs</span>
 <span class="dt">token</span><span class="ot">=</span><span class="st">abcd-efgh-ijkl-mnop-qrst-uvxyz</span>
 <span class="dt">credentials</span><span class="ot">=</span><span class="st">username:password</span>
-<span class="dt">bbox</span><span class="ot">=</span><span class="st">-</span><span class="fl">84.44579</span><span class="st"> </span><span class="fl">33.63404</span><span class="st"> -</span><span class="fl">84.40601</span><span class="st"> </span><span class="fl">33.64853</span>
+<span class="dt">bbox</span><span class="ot">=</span><span class="st">-</span><span class="fl">84.44579</span><span
+                        class="st"> </span><span class="fl">33.63404</span><span class="st"> -</span><span class="fl">84.40601</span><span
+                        class="st"> </span><span class="fl">33.64853</span>
 <span class="dt">model</span><span class="ot">=</span><span class="st">airliner.gbdxm</span>
 <span class="dt">output</span><span class="ot">=</span><span class="st">atl_detected.shp</span>
 <span class="dt">confidence</span><span class="ot">=</span><span class="dv">99</span>
 <span class="dt">step-size</span><span class="ot">=</span><span class="dv">15</span>
-<span class="dt">nms</span><span class="ot">=</span><span class="dv">30</span></code></pre></div>
-<p>We can now combine the two files and get the same result as our previous example, but with the flexibility of reusing our credentials file for other jobs:</p>
-<pre><code>./OpenSpaceNet --config dgcs.cfg detect_atl.cfg</code></pre>
-<h3 id="example-using-a-configuration-file-combined-with-command-line-options">Example Using a Configuration File Combined with Command Line Options</h3>
-<p>Alternatively, we can use the configuration file from previous example to run a landcover job agains the same DGCS account:</p>
-<pre><code>./OpenSpaceNet landcover --config dgcs.cfg --bbox -84.44579 33.63404 -84.40601 33.64853 --model=landcover.gbdxm --output atl_detected.shp</code></pre>
-<p><a name="usage" /> ## Complete Usage Statement</p>
-<pre><code>Usage:
+<span class="dt">nms</span><span class="ot">=</span><span class="dv">30</span></code></pre>
+            </div>
+            <p>We can now combine the two files and get the same result as our previous example, but with the
+                flexibility of reusing our credentials file for other jobs:</p>
+            <pre><code>./OpenSpaceNet --config dgcs.cfg detect_atl.cfg</code></pre>
+            <h3 id="example-using-a-configuration-file-combined-with-command-line-options">Example Using a Configuration
+                File Combined with Command Line Options</h3>
+            <p>Alternatively, we can use the configuration file from previous example to run a landcover job agains the
+                same DGCS account:</p>
+            <pre><code>./OpenSpaceNet landcover --config dgcs.cfg --bbox -84.44579 33.63404 -84.40601 33.64853 --model=landcover.gbdxm --output atl_detected.shp</code></pre>
+            <p><a name="usage"/> ## Complete Usage Statement</p>
+            <pre><code>Usage:
   OpenSpaceNet &lt;action&gt; &lt;input options&gt; &lt;output options&gt; &lt;processing options&gt;
   OpenSpaceNet &lt;configuration file&gt;
 
@@ -402,5 +677,8 @@ Logging Options:
 General Options:
   --config PATH                         Use options from a configuration file.
   --help                                Show this help message</code></pre>
+        </section>
+    </div>
+</div>
 </body>
 </html>
