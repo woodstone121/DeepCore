@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="change-log">Change Log</h1>
+<h2 id="unreleased"><a href="https://github.com/DigitalGlobe/deepcore-dev/tree/HEAD">Unreleased</a></h2>
+<p><strong>Implemented enhancements:</strong></p>
+<ul>
+<li>TEST <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/315">#315</a></li>
+<li>Fix support for pyramid layers larger than the original image <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/301">#301</a></li>
+<li>DetectNet Image Pixel Landcover Classification <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/292">#292</a></li>
+<li>Create category filtering function <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/287">#287</a></li>
+<li>Log from Curl Debug Function <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/260">#260</a></li>
+<li>Benchmark Changing Caffe Batch Size Dynamically <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/247">#247</a></li>
+<li>Add option to exclude categgory from output <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/245">#245</a></li>
+<li>Validate OSN, DeepCore, and SCRWL against DIGITS <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/243">#243</a></li>
+<li>Embed GDAL_DATA only if it hasn't changed since the last compile <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/226">#226</a></li>
+<li>Embed GDAL_DATA in the executable. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/208">#208</a></li>
+<li>Conditionally build CNTK <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/204">#204</a></li>
+<li>Add ability to parse and report the WMTS error response. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/203">#203</a></li>
+<li>Add ability to retry downloads for MapBox tiles <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/194">#194</a></li>
+<li>Add ability for HttpDownloader to return the failure response body <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/192">#192</a></li>
+<li>Research adding ability to download tiles and do feature detection concurrently <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/180">#180</a></li>
+<li>Window size is not working properly on local images <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/179">#179</a></li>
+<li>Incorporate ability to display the callstack into dg::deepcore::Error <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/178">#178</a></li>
+<li>Add CNTK Training <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/175">#175</a></li>
+<li>Add the CNTK inference code to DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/174">#174</a></li>
+<li>Add the CNTK format to GBDXM <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/173">#173</a></li>
+<li>Train a CNTK model locally <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/172">#172</a></li>
+<li>Build CNTK statically on linux and add to the DeepCoreDependencies project <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/171">#171</a></li>
+<li>Abstract DG Web Service end points <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/170">#170</a></li>
+<li>Default to current directory for gbdxm unpack <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/165">#165</a></li>
+<li>Decouple GBDXM tool versioning from DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/164">#164</a></li>
+<li>GBDXM feedback for missing parameters <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/162">#162</a></li>
+<li>Add --plaintext argument to gbdxm file importer <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/160">#160</a></li>
+<li>OSN tool to create entire folder chain for output <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/158">#158</a></li>
+<li>Add ability to include ad-hoc fields in the vector output classes. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/150">#150</a></li>
+<li>Add cancelling mechanism to Progress/SimpleProgress <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/149">#149</a></li>
+<li>Enable setting batch size directly <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/146">#146</a></li>
+<li>Implement a WMTS Tile Downloader. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/138">#138</a></li>
+<li>Document code that is being flagged in the CI build <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/130">#130</a></li>
+<li>Upgrade CppCheck on the CI machine to the latest version <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/128">#128</a></li>
+<li>Batch Classification <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/120">#120</a></li>
+<li>Add a hook for progress reporting to Model <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/117">#117</a></li>
+<li>Implement a WMTS tile downloader and stitcher <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/116">#116</a></li>
+<li>Setup CI infrastructure for DeepCore in Windows <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/112">#112</a></li>
+<li>Create Windows installer for DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/111">#111</a></li>
+<li>Build supporting libraries for Windows (proj.4, glog, gtest, gflags, pgsql, hdf5, ffmpeg, leveldb, lmdb, blas, protobuf, simple web server) <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/109">#109</a></li>
+<li>Build Windows library for Caffe <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/108">#108</a></li>
+<li>Build Windows image manipulation libraries (GDAL and OpenCV) <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/107">#107</a></li>
+<li>Build Windows libraries for compression formats we support in DeepCore (minizip, libz, lzma, snappy) <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/106">#106</a></li>
+<li>Add support in Windows for Curl and OpenSSL for web communication <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/105">#105</a></li>
+<li>Create a Visual Studio project for building the DeepCore dependencies where possible <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/104">#104</a></li>
+<li>Improve Doxygen Configuration and Documentation <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/101">#101</a></li>
+<li>Allow flexibility in specifying VectorFeatureSet feature property schema <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/100">#100</a></li>
+<li>Determine batch size based on available GPU memory <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/96">#96</a></li>
+<li>Add in-memory GeoJson as an backing format for VectorFeatureSet <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/91">#91</a></li>
+<li>Support non-square window size for sliding window detection <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/88">#88</a></li>
+<li>Fix installed header path so that development locations and installed locations are the same, relatively pathed <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/81">#81</a></li>
+<li>Add versioning to gbdxm tool and have Jenkins update the build number <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/77">#77</a></li>
+<li>Use MNIST dataset for unit test models <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/73">#73</a></li>
+<li>Add Doxygen to build to compile API documentation <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/65">#65</a></li>
+<li>Allow model packager to take in a config file in addition to providing paramters <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/60">#60</a></li>
+<li>Change model packager to discover number of bands and window size <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/59">#59</a></li>
+<li>Model Metadata change <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/45">#45</a></li>
+<li>Build and test YOLO / darknet <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/33">#33</a></li>
+<li>Centos/Amazon AMI Support <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/32">#32</a></li>
+<li>Add S3 SDK support to DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/31">#31</a></li>
+<li>Create Deep Learning model database <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/27">#27</a></li>
+<li>Import 1 degree vector grid in to Postgreql <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/26">#26</a></li>
+<li>Import GeoCover data in to Postgresql <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/25">#25</a></li>
+<li>Add support for DG Web maps API as a tile source. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/22">#22</a></li>
+<li>Encrypt application models <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/18">#18</a></li>
+<li>Reduce overlapping hits to a single non maxima bounding box for detection. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/16">#16</a></li>
+<li>Batch processing image classification in C++ on GPU <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/15">#15</a></li>
+<li>Generate synthetic data from 3D models <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/14">#14</a></li>
+<li>Abstract Classification <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/12">#12</a></li>
+<li>FFMPEG Support <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/11">#11</a></li>
+<li>ES 2.0 in GDAL <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/10">#10</a></li>
+<li>Logging <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/9">#9</a></li>
+<li>Add JSON-RPC Server <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/8">#8</a></li>
+<li>Read Local Images <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/7">#7</a></li>
+<li>Packaging <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/6">#6</a></li>
+<li>Static Linking <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/5">#5</a></li>
+<li>Split Apps out of DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/4">#4</a></li>
+<li>Add CURLOPT_DEBUGFUNCTION which can be turned on globally <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/261">#261</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Added functions to convert log levels from/to string. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/141">#141</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Feature/geojson <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/92">#92</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+</ul>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Fix support for pyramid layers larger than the original image <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/301">#301</a></li>
+<li>Gdal Image <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/277">#277</a></li>
+<li>Image with bbox output not shifted <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/274">#274</a></li>
+<li>Model date displayed is incorrect <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/271">#271</a></li>
+<li>&quot;OpenCV Error: Assertion&quot; failed with large step size <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/248">#248</a></li>
+<li>Window size is not working properly on local images <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/179">#179</a></li>
+<li>GBDXM feedback for missing parameters <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/162">#162</a></li>
+<li>BUG: Polygons created using utility function are not closed <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/155">#155</a></li>
+<li>Document code that is being flagged in the CI build <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/130">#130</a></li>
+<li>Upgrade CppCheck on the CI machine to the latest version <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/128">#128</a></li>
+<li>Allow flexibility in specifying VectorFeatureSet feature property schema <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/100">#100</a></li>
+<li>Support non-square window size for sliding window detection <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/88">#88</a></li>
+<li>Allow gbdxm to be run in a directory other than the one that contains the files <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/83">#83</a></li>
+<li>Change gbdxm to allow multiple ways to present the input shape. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/78">#78</a></li>
+<li>Bad error message in gbdxm. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/75">#75</a></li>
+<li>CUDNN causes issues in Caffe trying to run CPU only <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/63">#63</a></li>
+<li>Add license info to source files. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/56">#56</a></li>
+<li>Cuda driver error <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/37">#37</a></li>
+<li>test issue <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/19">#19</a></li>
+<li>Sliding window issue <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/3">#3</a></li>
+<li>core dumped error in /OpenSkyNet <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/2">#2</a></li>
+<li>Bugfix: bbox not always used in GDALImage <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/275">#275</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Fix various compiler warnings with tmpname and unsigned ints <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/98">#98</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>DeepCore Dependencies <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/266">#266</a></li>
+<li>Push GDAL initialization to lazy load as much as possible <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/206">#206</a></li>
+<li>Map Service Errors <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/202">#202</a></li>
+<li>Add ability to parse and report the MapBox error response. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/193">#193</a></li>
+<li>Object Detection with CNN <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/124">#124</a></li>
+<li>SAR Image Simulation <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/123">#123</a></li>
+<li>Classification with sample SAR data <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/122">#122</a></li>
+<li>SAR CNN Literature Review <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/118">#118</a></li>
+<li>Add support for image formats in Windows (TIFF, PNG, JP2, JPG) <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/115">#115</a></li>
+<li>Manage Curation DB <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/94">#94</a></li>
+<li>Curation Web UI <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/93">#93</a></li>
+<li>Investigate Model Training <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/70">#70</a></li>
+<li>Generate synthetic clouds for producing sample &quot;cloudy&quot; or &quot;washed&quot; tiles <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/57">#57</a></li>
+<li>Future Work - Convert CNN to fully connected network. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/55">#55</a></li>
+<li>Future Work - Modify Digits UI for workflow and model training. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/54">#54</a></li>
+<li>Future Work - Modify LMBD to ingest/store multi-band training samples. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/53">#53</a></li>
+<li>Future Work - Multi-task Network (CNN &amp; RNN) <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/52">#52</a></li>
+<li>Future Work - Classification of DG multi-spectral imagery using CNN. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/51">#51</a></li>
+<li>Create CI infrastructure for DeepCore. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/50">#50</a></li>
+<li>Getting more done in GitHub with ZenHub <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/24">#24</a></li>
+<li>Train Models <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/20">#20</a></li>
+<li>Compile Licenses for dependencies and decide on license for DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/17">#17</a></li>
+<li>Unable to build from HEAD <a href="https://github.com/DigitalGlobe/DeepCore-Dev/issues/1">#1</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Improvements to callstack display <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/314">#314</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Remove gbdxm tool from DeepCore into it's own repo <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/313">#313</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Changes to make dynamic builds possible <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/312">#312</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed image slicer when pyramid levels are larger than the image. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/302">#302</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Remove duplicate open bracket. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/297">#297</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fix icon for Winodws build. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/296">#296</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Add status badge for Windows <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/295">#295</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fixed coordinate calculation <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/294">#294</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Missing braces in cmakelist <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/293">#293</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Correct error formatting of CPL error in SpatialReference <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/291">#291</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Add boost program options function to output a name with a default value <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/289">#289</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Add a category filter <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/288">#288</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Feature/cmake consolidation <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/286">#286</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Change to allow reading of environment variables for GDAL file locations <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/285">#285</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Added almostEq overloads for OpenCV structures. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/284">#284</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed stepSize &gt; windowSize logic. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/283">#283</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed a corner case of stepSize &gt; windowSize. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/282">#282</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Add round to pixel conversion so that it is bidirectionally stable <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/278">#278</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Add bbox to gdalimage's conversion to ll <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/276">#276</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Fixed timeCreated not being set correctly in model metadata. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/272">#272</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added ability to retry HTTP requests. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/270">#270</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Check if GPU is enabled before performing batch size benchmarking. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/269">#269</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Adjust the batch size dynamically. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/268">#268</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Explicitly call close() in the destructor <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/267">#267</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>revert since the deprecation hasn't happened in the headers that are … <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/251">#251</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fix stupid error where Forward requires an argument and none was supp… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/250">#250</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Convert ForwardPrefilled() calls to Forward() calls to prevent annoyi… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/249">#249</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fixed a case when windowSize &gt; imageSize. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/244">#244</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Implement collecting callstack information. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/242">#242</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Automatically create the output directory <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/241">#241</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Changed the doxygen brief to &quot;Deep Machine Learning in a can&quot; <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/240">#240</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Changed the network fail test to go to `http://httpbin.org/status/404… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/239">#239</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Add code to update Caffe models where necessary. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/236">#236</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fix included headers for the old math files <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/235">#235</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fix bug with files named math screwing up resolution of system math h… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/234">#234</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Implemented getting WMTS and DGCS/EVWHS error response. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/233">#233</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Remove automatic logging for exceptions. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/231">#231</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Implemented reading of the MapBox error response message. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/230">#230</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed Doxygen warnings. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/229">#229</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Allow superproject <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/228">#228</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Added ability to examine HTTP error response. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/227">#227</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added log stream &lt;&lt; operators for ColorMode and OpenCV structures. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/225">#225</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added program_options value definitions for OpenCV structures <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/223">#223</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Feature/add embed command <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/222">#222</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Feature/lazy embed <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/221">#221</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>MultiProgressDisplay fixes. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/220">#220</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Initialize test image output <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/219">#219</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Fixed the location for #endif for DOXYGEN_EXCLUDE <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/218">#218</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Enabled STL support in Doxygen to have it correctly find the matching… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/217">#217</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Revert static initializers in data <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/216">#216</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Suppress unneeded Doxygen output <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/214">#214</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Changed the missing feedback parameters to display as CLI options <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/212">#212</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Added FeatureSet::supportedFormats <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/211">#211</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Feature/embedded gdal data <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/210">#210</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Embed GDAL_DATA <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/209">#209</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Added addCoutSink. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/207">#207</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added DgcsClient and EvwhsClient. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/198">#198</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Implemented NMS <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/196">#196</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed the operations order in SlidingWindowDetector::classify <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/195">#195</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Implemented override window size. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/191">#191</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Decoupled GBDXM tool versioning from DeepCore <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/190">#190</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Temporary fix for MapBox's TileJson returning wrong enpoints. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/188">#188</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Masking function for hiding user input of password <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/186">#186</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Remove additional header include for deleted file. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/184">#184</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Implemented an asynchronous local and web geo-image framework <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/183">#183</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Doxygen Improvements DC#101 <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/182">#182</a> (<a href="https://github.com/KevinMcGee">KevinMcGee</a>)</li>
+<li>Change the mechanism to override flags in Glog connector <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/181">#181</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Fixed coordinate order. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/169">#169</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Re-added support for short command line arguments <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/168">#168</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Disallow short options for now to work around the negative number issue. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/167">#167</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed invalid password setting logic. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/166">#166</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Versioning <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/163">#163</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Added a hidden plaintext option to GBDXM <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/161">#161</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Update logging so that it isn't multithreaded, but use thread-local <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/159">#159</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Issue #155: Close polygons created using function in utility namespace. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/156">#156</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Refactored the vector library. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/154">#154</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added a missing check before reporting final progress. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/152">#152</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added progress reporting to GdalImage <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/151">#151</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added ability to desplay progress in Detector. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/148">#148</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added ability to set the batch size directly. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/147">#147</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed an accidentallky reversed condition. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/145">#145</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added ability to specify maximum GPU/CPU utilization for Model. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/144">#144</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Scripts <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/142">#142</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Bump the minimum cmake required since 2.8 isn't sufficient for the in… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/135">#135</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Clarified a comment. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/134">#134</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Removed dead code <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/133">#133</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Docs <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/132">#132</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Add initial documentation for some methods identified as not document… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/131">#131</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Remove server based tests in file_vector_test and enable classificati… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/129">#129</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Suppressed inadvertent log message creation at DG_ERROR_INIT <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/127">#127</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Smarter way to check if scale is 2 <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/126">#126</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Use Gaussian downsampling if scale is 2.0 <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/125">#125</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed a case where max results &gt; number of labels or max results &lt; 0. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/114">#114</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Implemented GdalImage <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/103">#103</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Add logging framework <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/102">#102</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Re-implemented sliding window and refactored CaffeBatchClassifier. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/99">#99</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Set the Caffe mode before setting the model <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/97">#97</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Added MNIST model and test data to classification_test <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/90">#90</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Include consistency <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/89">#89</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Fixed public header distribution. fixes #81 <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/87">#87</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Add utility package to imagery to throw exceptions <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/86">#86</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>When inputs are non-square, use a window that is the min of the dimen… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/85">#85</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>fixes #83 not being able to add files not in the current directory. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/84">#84</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Caffe model dimensions <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/80">#80</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added versioning. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/79">#79</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Fixed error message for the --date-time argument. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/76">#76</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Ryan/jsonrpc <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/74">#74</a> (<a href="https://github.com/rddesmond">rddesmond</a>)</li>
+<li>Read Caffe metadata from the model when creating GBDXM files. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/68">#68</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added ability to specify a metadata file as gbdxm tool input. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/67">#67</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Created a top-level Model/Classifer/Detector framework + Caffe implementation <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/66">#66</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added license text to each header and source file to comply with Gith… <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/58">#58</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Fix test after the merge and input data change <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/49">#49</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Master to Ben final merge <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/48">#48</a> (<a href="https://github.com/geovations">geovations</a>)</li>
+<li>Created GBDXM tool + model metadata refactoring. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/46">#46</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Renamed the CaffeClassifier include guards <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/44">#44</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Renamed &quot;Classifier&quot; to &quot;CaffeClassifier&quot;. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/43">#43</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added a library to package/unpackage models using the gbdx file format. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/36">#36</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Implemented a C++ wrapper for minizip. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/35">#35</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added missing #include &lt;cstring&gt; as it's required by the __FILENAME__ macro <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/30">#30</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+<li>Added class Error with helper macros to create/throw errors. <a href="https://github.com/DigitalGlobe/DeepCore-Dev/pull/29">#29</a> (<a href="https://github.com/avitebskiy">avitebskiy</a>)</li>
+</ul>
+<p>* <em>This Change Log was automatically generated by <a href="https://github.com/skywinder/Github-Changelog-Generator">github_changelog_generator</a></em></p>
+</body>
+</html>
