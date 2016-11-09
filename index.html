@@ -101,28 +101,28 @@
                 the user can access current satellite imagery for use in machine learning. OpenSpaceNet allows the user
                 to select an area for detection, specify a model to use during detection, and get the results back in a
                 geospatial format suitable for use in a GIS application or service. The OpenSpaceNet application can be
-                downloaded via <a href="https://www.dropbox.com/s/colvrm1us22bzhs/OpenSkyNet?dl=0"> link </a> or by
-                clicking the button on the right.</p>
+                downloaded via <a href="https://www.dropbox.com/s/colvrm1us22bzhs/OpenSkyNet?dl=0"> Linux Download </a>,
+                <a href="https://s3.amazonaws.com/deepcore/current/OpenSpaceNet.exe"> Windows download</a> or by
+                clicking the buttons on the right.</p>
 
             <h3>How-to and getting started</h3>
             <div>
                 To get started using DeepCore, download and uncompress the dependency package into the /opt directory.
                 Then download and uncompress the DeepCore tarball. This will place the libraries and headers on your
-                local
-                machine.
+                local machine.
                 To create tools and applications that use DeepCore, just make sure to include the headers directory and
-                add
-                the lib directory to your linker path or if using <a href="http://cmake.org"> CMake</a>, just add the
-                share
-                directory to your CMAKE_MODULE_PATH and use
+                add the lib directory to your linker path or if using <a href="http://cmake.org"> CMake</a>, just add
+                the
+                share directory to your CMAKE_MODULE_PATH and use
                 <pre>
-                <code>
+                    <code>
 find_package(DeepCore REQUIRED)
 if (DeepCore_FOUND)
     include_directories(${DEEPCORE_INCLUDE_DIRS})
     target_link_libraries(OpenSpaceNet ${DEEPCORE_LIBRARIES})
     list(APPEND CMAKE_MODULE_PATH ${DEEPCORE_CMAKE_DIR})
-endif()</code>
+endif()
+                </code>
             </pre>
             </div>
             <h3>Releases</h3>
@@ -132,6 +132,7 @@ endif()</code>
             <p>For the release notes, click <a href="docs/CHANGELOG.html"> HERE</a>.</p>
 
             <h4>DeepCore 0.1.x</h4>
+            <h5>Windows Packages coming soon!</h5>
             <h5>Linux 64bit</h5>
 
             <p><strong>Dependencies</strong></p>
@@ -142,21 +143,22 @@ endif()</code>
                 <li><a href="https://s3.amazonaws.com/deepcore/dependencies/Linux/CUDA7.5/DeepCore.tar.gz">CUDA 7.5
                     linked
                     dependencies</a></li>
-                <li><a href="https://s3.amazonaws.com/deepcore/dependencies/Linux/CUDA8/DeepCore_CUDA8.tar.gz">CUDA 8
-                    linked
-                    dependencies</a></li>
+                <!--                <li><a href="https://s3.amazonaws.com/deepcore/dependencies/Linux/CUDA8/DeepCore_CUDA8.tar.gz">CUDA 8
+                                    linked
+                                    dependencies</a></li> -->
             </ul>
 
-            <p>For more information on setting up your DeepCore environment, see our <a href="building.html">Building page</a>.</p>
-            
+            <p>For more information on setting up your DeepCore environment, see our <a href="building.html">Building
+                page</a>.</p>
+
             <p><strong>DeepCore distributions</strong></p>
             The DeepCore binaries and headers come as a tarball that can be extracted to your local drive. They are also
             segmented by CUDA version dependencies.
             <ul>
                 <li><a href="https://s3.amazonaws.com/deepcore/DeepCore/current/DeepCore-0.1.195-Linux-CUDA7.5.tar.gz">DeepCore
                     (CUDA 7.5)</a></li>
-                <li><a href="https://s3.amazonaws.com/deepcore/DeepCore/current/DeepCore-0.1.195-Linux-CUDA8.tar.gz">DeepCore
-                    (CUDA 8.0)</a></li>
+                <!--               <li><a href="https://s3.amazonaws.com/deepcore/DeepCore/current/DeepCore-0.1.195-Linux-CUDA8.tar.gz">DeepCore
+                                   (CUDA 8.0)</a></li> -->
             </ul>
             <h3>Support or Contact</h3>
 
