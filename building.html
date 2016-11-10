@@ -19,7 +19,7 @@
 <body>
 <header>
     <div class="inner">
-        <img src="https://partner.digitalglobe.com/sites/all/themes/dg_extranet/images/community_logo.png"/>
+        <img src="website/images/screen-medium-ltblue-treatment.png"/>
         <h2>Deep Learning SDK for Geospatial Data</h2>
     </div>
 </header>
@@ -39,7 +39,8 @@
                 <li>Boost
                     <ul>
                         <li>Boost needs to be installed prior to using DeepCore.</li>
-                        <li>See <a href="http://boost.org/users/downloads">boost.org</a> to download a copy of Boost.
+                        <li>See <a href="http://www.boost.org/users/download/">boost.org</a> to download a copy of
+                            Boost.
                         </li>
                         <li>DeepCore requires Boost version 1.59.0 or higher. Issues have been noted using Boost 1.62.0,
                             so that version should be avoided for now.
@@ -56,7 +57,8 @@
                             download page</a>.
                         </li>
                         <li>CUDA 7.5 is the currently supported version for DeepCore applications, but CUDA 8.0 support
-                            is currently under development.
+                            is currently under development. If you're using the gcc that comes by default with Ubuntu
+                            16.04, you'll need to upgrade to CUDA 8, as that version is not supported by CUDA 7.5.
                         </li>
                     </ul>
                 </li>
@@ -88,22 +90,24 @@
 
             <p>Assuming an Ubuntu system, the following code snippets will install the necessary dependencies to build
                 DeepCore applications.</p>
-
-            <code>
-                sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-                sudo apt-get update
-                sudo apt-get install libcurl4-openssl-dev libjsoncpp-dev libpugixml-dev libgdal-dev libhdf5-serial-dev
-                libgflags-dev libgoogle-glog-dev libprotobuf-dev protobuf-compiler libsnappy-dev liblmdb-dev
-                libleveldb-dev libopenblas-dev
-            </code>
+            <pre>
+                <code>
+sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+sudo apt-get update
+sudo apt-get install libcurl4-openssl-dev libjsoncpp-dev libpugixml-dev libgdal-dev libhdf5-serial-dev
+libgflags-dev libgoogle-glog-dev libprotobuf-dev protobuf-compiler libsnappy-dev liblmdb-dev
+libleveldb-dev libopenblas-dev
+                </code>
+            </pre>
             <br/>
             <p>For Python support in OpenCV and Caffe, use the following snippet to install Python development
                 libraries.</p>
 
-            <code>
-                sudo apt-get install libpython-dev libpython3-dev python-numpy python3-numpy python-skimage
-                python3-skimage
-            </code>
+            <pre>
+                <code>
+sudo apt-get install libpython-dev libpython3-dev python-numpy python3-numpy python-skimage python3-skimage
+                </code>
+            </pre>
             <br/>
 
             <p>Once these dependencies are in place, we can start building the libraries that aren't available from
@@ -112,27 +116,29 @@
             <p>DeepCore uses a custom build of minizip. It can be downloaded from <a
                     href="https://s3.amazonaws.com/deepcore/dependencies/source/minizip.tar.gz">DeepCore Sources</a> and
                 can be built with the following snippet:</p>
-            <code>
-                tar xvf minizip.tar.gz
-                cd minizip
-                mkdir build
-                cd build
-                cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
-                make
-                sudo make install
-            </code>
-
+            <pre>
+                <code>
+tar xvf minizip.tar.gz
+cd minizip
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+make
+sudo make install
+                </code>
+            </pre>
             <br/>
             <h6>Simple Web Server</h6>
             <p>Simple Web Server is a header-only web server. It can be downloaded from <a
                     href="https://s3.amazonaws.com/deepcore/dependencies/source/sws-1.4.2.tar.gz">DeepCore Sources</a>.
                 To install, use the following snippet:</p>
-            <code>
-                tar xvf sws-1.4.2.tar.gz
-                cd simple-web-server-1.4.2
-                sudo cp *.hpp /usr/local/include
-            </code>
-
+            <pre>
+                <code>
+tar xvf sws-1.4.2.tar.gz
+cd simple-web-server-1.4.2
+sudo cp *.hpp /usr/local/include/simple-web-server
+                </code>
+            </pre>
             <br/>
             <h6>OpenCV</h6>
             <p>DeepCore relies on OpenCV for some functions. OpenCV source packages can be downloaded from <a
@@ -140,29 +146,32 @@
                     href="https://github.com/opencv/opencv">OpenCV's Github site.</a> OpenCV uses CMake as it's build
                 configuration system, so the following code would allow for easy build:
             </p>
-            <code>
-                git clone https://github.com/opencv/opencv
-                cd opencv
-                mkdir build
-                cd build
-                cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
-                make
-                sudo make install
-            </code>
-
+            <pre>
+                <code>
+git clone https://github.com/opencv/opencv
+cd opencv
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+make
+sudo make install
+                </code>
+            </pre>
             <br>
             <h6>Caffe</h6>
             <p>DeepCore relies on Caffe for object detection functions. Caffe can be downloaded from <a
                     href="https://github.com/bvlc/caffe">Caffe's Github site</a>.</p>
-            <code>
-                git clone https://github.com/bvlc/caffe
-                cd caffe
-                mkdir build
-                cd build
-                cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
-                make
-                sudo make install
-            </code>
+            <pre>
+                <code>
+git clone https://github.com/bvlc/caffe
+cd caffe
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+make
+sudo make install
+                </code>
+            </pre>
             <br>
             <h5>DeepCore</h5>
             <p>Once these dependencies are built and installed, DeepCore can be downloaded from <a
