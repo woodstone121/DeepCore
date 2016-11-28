@@ -1,0 +1,8 @@
+<map id="dg::deepcore::PortT&lt; I, O &gt;" name="dg::deepcore::PortT&lt; I, O &gt;">
+<area shape="rect" id="node2" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; PortT\&lt; I, O \&gt;, Port \&gt;" alt="" coords="20,408,176,449"/>
+<area shape="rect" id="node3" href="$classdg_1_1deepcore_1_1_port.html" title="Base class for Node&#39;s ports. " alt="" coords="33,333,163,360"/>
+<area shape="rect" id="node4" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Port, NamedObject \&gt;" alt="" coords="19,244,177,285"/>
+<area shape="rect" id="node5" href="$classdg_1_1deepcore_1_1_named_object.html" title="A base class for objects that have a name. " alt="" coords="5,169,191,196"/>
+<area shape="rect" id="node6" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; NamedObject \&gt;" alt="" coords="23,80,173,121"/>
+<area shape="rect" id="node7" href="$classdg_1_1deepcore_1_1_object.html" title="The base class for all the processing pipeline objects. " alt="" coords="27,5,169,32"/>
+</map>

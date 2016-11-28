@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structdg_1_1deepcore_1_1vector_1_1_field_definition.html" title="Represents a definition of a vector attribute field. " alt="" coords="5,5,147,47"/>
+<area shape="rect" id="node1" href="$classdg_1_1deepcore_1_1_singleton.html" title="dg::deepcore::Singleton\l\&lt; GdalDataFinderInit \&gt;" alt="" coords="5,5,164,47"/>
+<area shape="rect" id="node2" href="$classdg_1_1deepcore_1_1imagery_1_1_gdal_data_finder_init.html" title="dg::deepcore::imagery\l::GdalDataFinderInit" alt="" coords="212,5,363,47"/>
 </map>

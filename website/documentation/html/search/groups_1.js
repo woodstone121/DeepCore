@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['imagery', ['Imagery', ['../group___imagery_module.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['classification',['Classification',['../group___classification_module.html',1,'']]]
+];

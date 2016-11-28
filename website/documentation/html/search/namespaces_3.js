@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['json', ['Json', ['../namespace_json.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['json',['Json',['../namespace_json.html',1,'']]]
+];

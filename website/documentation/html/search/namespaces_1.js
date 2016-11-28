@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['cv', ['cv', ['../namespacecv.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['cv',['cv',['../namespacecv.html',1,'']]]
+];

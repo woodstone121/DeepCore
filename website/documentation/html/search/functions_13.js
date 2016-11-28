@@ -1,5 +1,8 @@
-var searchData =
-    [
-        ['verboselogging', ['verboseLogging', ['../group___network_module.html#ga2470c65fd9d6dd62854a9c9e7df877c6', 1, 'dg::deepcore::network::HttpDownloader']]],
-        ['version', ['version', ['../group___classification_module.html#ga496e4c5294b5438ff17456c9e9ab2c05', 1, 'dg::deepcore::classification::ModelMetadata::version()'], ['../group___network_module.html#ga57b18a1db26df83b5d1769b6101ee67f', 1, 'dg::deepcore::network::JsonRpc::version()']]]
-    ];
+var searchData=
+[
+  ['value',['Value',['../classdg_1_1deepcore_1_1_value.html#aa4f1ef5b6a16fa851cd06253f6ffef2c',1,'dg::deepcore::Value::Value()'],['../classdg_1_1deepcore_1_1_value.html#a0b51f9de83381ad128e55cd0277889da',1,'dg::deepcore::Value::Value(const boost::any &amp;rhs)'],['../classdg_1_1deepcore_1_1_value.html#a4855cfa713994528863f4eb85ada7c85',1,'dg::deepcore::Value::Value(boost::any &amp;&amp;rhs)'],['../classdg_1_1deepcore_1_1_value.html#a733f4876448cb2442efb1f1154fea11c',1,'dg::deepcore::Value::Value(const char *rhs)'],['../classdg_1_1deepcore_1_1_value.html#a43a4547c1f33ea4377062762ee2b9faa',1,'dg::deepcore::Value::Value(const wchar_t *rhs)'],['../classdg_1_1deepcore_1_1_value.html#a38ecf3a844ad520cf63f7a78947d168c',1,'dg::deepcore::Value::Value(T &amp;&amp;rhs)'],['../classdg_1_1deepcore_1_1_value.html#aa058e2e6f7455ee084dd07aeeb6e909b',1,'dg::deepcore::Value::Value(const Type &amp;type, T &amp;&amp;rhs)'],['../classdg_1_1deepcore_1_1_attribute.html#ab48381d380971f353f59b091b711c96c',1,'dg::deepcore::Attribute::value()'],['../classdg_1_1deepcore_1_1_property.html#aeaa6e131afc1efd01f0a7b313e832d75',1,'dg::deepcore::Property::value()']]],
+  ['valuetype',['valueType',['../classdg_1_1deepcore_1_1_attribute.html#a89c2ec9ce2e0dab7ece99571ddc5509d',1,'dg::deepcore::Attribute::valueType()'],['../structdg_1_1deepcore_1_1_attribute_t.html#a01feaa6ee7327284f7e618152f733ff1',1,'dg::deepcore::AttributeT::valueType()'],['../classdg_1_1deepcore_1_1_property.html#aa424d7706d3f07ab625b3a8abbfcfc7a',1,'dg::deepcore::Property::valueType()'],['../structdg_1_1deepcore_1_1_property_t.html#a58e459741375097dc9551206b8f7ca32',1,'dg::deepcore::PropertyT::valueType()']]],
+  ['verboselogging',['verboseLogging',['../group___network_module.html#ga2470c65fd9d6dd62854a9c9e7df877c6',1,'dg::deepcore::network::HttpDownloader']]],
+  ['verboseloggingenabled',['verboseLoggingEnabled',['../namespacedg_1_1deepcore_1_1network.html#a31b61d83b19cb48734e04c7e43f6b470',1,'dg::deepcore::network']]],
+  ['version',['version',['../group___classification_module.html#ga496e4c5294b5438ff17456c9e9ab2c05',1,'dg::deepcore::classification::ModelMetadata::version()'],['../group___network_module.html#ga57b18a1db26df83b5d1769b6101ee67f',1,'dg::deepcore::network::JsonRpc::version()']]]
+];
