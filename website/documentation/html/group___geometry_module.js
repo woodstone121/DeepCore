@@ -1,0 +1,97 @@
+var group___geometry_module =
+[
+    [ "Processing", "group___geometry_process.html", "group___geometry_process" ],
+    [ "Geometry", "structdg_1_1deepcore_1_1geometry_1_1_geometry.html", [
+      [ "from", "group___geometry_module.html#ga6113cd54eece79c59ef04c86847a5f33", null ],
+      [ "from", "group___geometry_module.html#gae52dfa89bd864797db772a72c7eac37b", null ],
+      [ "fromWkt", "group___geometry_module.html#ga09f1518844b80c4135bfb7f47a227464", null ],
+      [ "operator!=", "group___geometry_module.html#gaf79f2d28ef2c5eae4f3893f82a2dee15", null ],
+      [ "operator==", "group___geometry_module.html#gaf5b2bf20a71a57cc068e1e3ee78053f8", null ],
+      [ "toGeos", "group___geometry_module.html#ga9442b08cc58475d6f2f7060cc9cd8a7f", null ],
+      [ "toOgr", "group___geometry_module.html#ga4ed7d864786c327184cd103ea068ced2", null ],
+      [ "toWkt", "group___geometry_module.html#gacfdc0f5010d3cf254f9ab5705a5741d9", null ],
+      [ "type", "group___geometry_module.html#gacdfc02ad835493ef40a398bdf24e30a1", null ]
+    ] ],
+    [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html", [
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#a5b551aabee61fe3e6a95f3872563daaf", null ],
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#a58b6aa0cae0d42f832fd47d5ae27e00e", null ],
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#abb525758b8d1f0b5d29dde5c3cbe8973", null ],
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#a58057e93b7b6cc50a0611f11aac17fa9", null ],
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#ae37fb6e59aa30e09f524ca7c2c09134e", null ],
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#abdc373186177459d4c0cd0e19411e2a0", null ],
+      [ "LinearRing", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#ad969f5a3b2e132dbd9fe97a8fe1a53e3", null ],
+      [ "clone", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#ab52ae6ef637539dce69ce9d77e8f3e3b", null ],
+      [ "operator==", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#ac6befbcbbd1c138fc620ee99e95fa1b1", null ],
+      [ "toGeos", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#a887b8c2280ad03fdc7b363f5a59eb299", null ],
+      [ "toOgr", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#ad6ed925db7ad6b2cc77345d2d2fc704e", null ],
+      [ "type", "structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#a946e97571ef192be48014d71c9531e37", null ]
+    ] ],
+    [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html", [
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a7989154aa4b25bcc8126bc08cabe4911", null ],
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a677cef918057627be8192ebf71ba29a9", null ],
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a576b32ff0b0a21accfad2707f8a5cf7f", null ],
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#ad4ed9be7b4a2fcf4bc292eedb93f8288", null ],
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a8202ea0aaa5412dac44b5c7f4c63af0b", null ],
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a0313be896800a300ddd04f7590cc2a67", null ],
+      [ "LineString", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#af40bfc4b07df9fb35d9b0fc2fd37078c", null ],
+      [ "clone", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a99e55ce0ceec4e7c0a2244901ef84b11", null ],
+      [ "operator==", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#ae84bb6007046ef5568255965bbdf78c7", null ],
+      [ "toGeos", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#adecb72091949f58f473c0becaee189d6", null ],
+      [ "toOgr", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a71fe2d5dfc2381d1e0af80021938a36e", null ],
+      [ "type", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a918485a027776c69d8f1eab724438930", null ],
+      [ "points", "structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a7f030a2603076ad9d9ddc0d752c30ff5", null ]
+    ] ],
+    [ "Point", "structdg_1_1deepcore_1_1geometry_1_1_point.html", [
+      [ "Point", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a31cceed03dd6966b9a1a6bf77a4d2901", null ],
+      [ "Point", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a57e68e0500faaf31d596e2bed4734b88", null ],
+      [ "Point", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a8ac1663d11019a17aa709506ac4203cb", null ],
+      [ "Point", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a0dc458b4cab66a05764382be05d486bb", null ],
+      [ "Point", "structdg_1_1deepcore_1_1geometry_1_1_point.html#adb464c08675174939fbba8871e9c4dbd", null ],
+      [ "clone", "structdg_1_1deepcore_1_1geometry_1_1_point.html#af62a4f1c9180391ef4b569b5abec2205", null ],
+      [ "operator cv::Point2d", "structdg_1_1deepcore_1_1geometry_1_1_point.html#adc8db52ca991b4f97dd809bed29560e9", null ],
+      [ "operator==", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a424bf6bbb183127a9163b67865bb68ec", null ],
+      [ "toCv", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a24436c6329a8e973a3e7321afc7f3116", null ],
+      [ "toGeos", "structdg_1_1deepcore_1_1geometry_1_1_point.html#ab3a091753081d18b7da8583bdb721aa7", null ],
+      [ "toOgr", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a036525feadf70f3b89f516aa18e42e0b", null ],
+      [ "type", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a7c01b33833b807cecda3610038f60a9d", null ],
+      [ "x", "structdg_1_1deepcore_1_1geometry_1_1_point.html#aa279ff5fe5e1aa8c6f0a461a21791569", null ],
+      [ "y", "structdg_1_1deepcore_1_1geometry_1_1_point.html#a34ee2d8d66009ad7128a7ef4dd97d190", null ]
+    ] ],
+    [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html", [
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a47d0c9265675f286528aa75671d98a37", null ],
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#af782bd379f30eeb0ffd99e844d54f582", null ],
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a3c59621e26a3053263bca8055ea27acb", null ],
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a789962512be1f61895748e6a919957cf", null ],
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#ae1a74c1b9850239b5a153aba4e268260", null ],
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a419027a80d29cb78e32144057713649c", null ],
+      [ "Polygon", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a4e1a22fbd7f6f07d9a9ef26fbde52224", null ],
+      [ "clone", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a4b6ab74c5cbc5dd52f9b4d416120d98c", null ],
+      [ "operator==", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a35ad2f74176358c7d92a20f1621579ba", null ],
+      [ "toGeos", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#aba570d5f40f470167e0c552d30c8ea69", null ],
+      [ "toOgr", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a70583e034761cb90daf62f5653212773", null ],
+      [ "type", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a776763aad39a6eb2bbac168dd003437e", null ],
+      [ "exteriorRing", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a18bfbac81881cfd49eea638f21166c58", null ],
+      [ "interiorRings", "structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a5590b4e7dc15b15ddd69ecea41914b9a", null ]
+    ] ],
+    [ "GeometryType", "group___geometry_module.html#gad9a3ec0b998629dbcf8274512700964a", [
+      [ "UNKNOWN", "group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aa696b031073e74bf2cb98e5ef201d4aa3", null ],
+      [ "POINT", "group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aaaebdbcb765394d25d6a604589a890f82", null ],
+      [ "LINE_STRING", "group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aa977976d86a257c70300ee614fbe1cf01", null ],
+      [ "POLYGON", "group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aaecdc92bf56d960b73b02ee40125758bc", null ],
+      [ "LINEAR_RING", "group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aa1cec9da476564f13965ace5118062719", null ]
+    ] ],
+    [ "WkbVariant", "group___geometry_module.html#gadf5f1b06bc7a4ba83b704f3e65881d2a", [
+      [ "WKB_VARIANT_OLD_OGC", "group___geometry_module.html#ggadf5f1b06bc7a4ba83b704f3e65881d2aae3f737e6dff286ac873e5570cb43d013", null ],
+      [ "WKB_VARIANT_ISO", "group___geometry_module.html#ggadf5f1b06bc7a4ba83b704f3e65881d2aa503083b741697ea33d04b4a4a86e5c33", null ],
+      [ "WKB_VARIANT_POST_GIS1", "group___geometry_module.html#ggadf5f1b06bc7a4ba83b704f3e65881d2aa46514523c95e537a25886b8c124caffb", null ]
+    ] ],
+    [ "from", "group___geometry_module.html#ga6113cd54eece79c59ef04c86847a5f33", null ],
+    [ "from", "group___geometry_module.html#gae52dfa89bd864797db772a72c7eac37b", null ],
+    [ "fromWkt", "group___geometry_module.html#ga09f1518844b80c4135bfb7f47a227464", null ],
+    [ "operator!=", "group___geometry_module.html#gaf79f2d28ef2c5eae4f3893f82a2dee15", null ],
+    [ "operator==", "group___geometry_module.html#gaf5b2bf20a71a57cc068e1e3ee78053f8", null ],
+    [ "toGeos", "group___geometry_module.html#ga9442b08cc58475d6f2f7060cc9cd8a7f", null ],
+    [ "toOgr", "group___geometry_module.html#ga4ed7d864786c327184cd103ea068ced2", null ],
+    [ "toWkt", "group___geometry_module.html#gacfdc0f5010d3cf254f9ab5705a5741d9", null ],
+    [ "type", "group___geometry_module.html#gacdfc02ad835493ef40a398bdf24e30a1", null ]
+];

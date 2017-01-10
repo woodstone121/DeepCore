@@ -1,0 +1,298 @@
+\hypertarget{group___geometry_module}{}\section{Geometry}
+\label{group___geometry_module}\index{Geometry@{Geometry}}
+
+
+\subsection{Detailed Description}
+Contains geometric representation functionality. 
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___geometry_process}{Processing}
+\begin{DoxyCompactList}\small\item\em Geometry-\/related processing pipeline components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{dg\+::deepcore\+::geometry\+::\+Geometry}
+\begin{DoxyCompactList}\small\item\em Base struct for geometric representations. \end{DoxyCompactList}\item 
+struct \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}
+\begin{DoxyCompactList}\small\item\em Derived struct for a Linear Ring, which is a Line String with co-\/located first and last points. \end{DoxyCompactList}\item 
+struct \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string}{dg\+::deepcore\+::geometry\+::\+Line\+String}
+\begin{DoxyCompactList}\small\item\em Derived struct for a Line String. \end{DoxyCompactList}\item 
+struct \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{dg\+::deepcore\+::geometry\+::\+Point}
+\begin{DoxyCompactList}\small\item\em Derived struct for a two-\/dimensional \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{Point}. \end{DoxyCompactList}\item 
+struct \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon}{dg\+::deepcore\+::geometry\+::\+Polygon}
+\begin{DoxyCompactList}\small\item\em Derived struct for a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon}{Polygon}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual O\+G\+R\+Geometry $\ast$ \hyperlink{group___geometry_module_ga4ed7d864786c327184cd103ea068ced2}{dg\+::deepcore\+::geometry\+::\+Geometry\+::to\+Ogr} () const =0
+\begin{DoxyCompactList}\small\item\em Return a raw O\+G\+R\+Geometry pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+virtual geos\+::geom\+::\+Geometry $\ast$ \hyperlink{group___geometry_module_ga9442b08cc58475d6f2f7060cc9cd8a7f}{dg\+::deepcore\+::geometry\+::\+Geometry\+::to\+Geos} (const geos\+::geom\+::\+Geometry\+Factory \&factory) const =0
+\begin{DoxyCompactList}\small\item\em Return a raw G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{group___geometry_module_gacfdc0f5010d3cf254f9ab5705a5741d9}{dg\+::deepcore\+::geometry\+::\+Geometry\+::to\+Wkt} (Wkb\+Variant e\+Wkb\+Variant=Wkb\+Variant\+::\+W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC) const 
+\begin{DoxyCompactList}\small\item\em Return the W\+KT representation of this geometry as a string. \end{DoxyCompactList}\item 
+virtual Geometry\+Type \hyperlink{group___geometry_module_gacdfc02ad835493ef40a398bdf24e30a1}{dg\+::deepcore\+::geometry\+::\+Geometry\+::type} () const =0
+\begin{DoxyCompactList}\small\item\em Return the Geometry\+Type of this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{group___geometry_module_gaf5b2bf20a71a57cc068e1e3ee78053f8}{dg\+::deepcore\+::geometry\+::\+Geometry\+::operator==} (const Geometry \&other) const =0
+\begin{DoxyCompactList}\small\item\em Return whether this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} is approximately equal to another. \end{DoxyCompactList}\item 
+bool \hyperlink{group___geometry_module_gaf79f2d28ef2c5eae4f3893f82a2dee15}{dg\+::deepcore\+::geometry\+::\+Geometry\+::operator!=} (const Geometry \&other)
+\begin{DoxyCompactList}\small\item\em Return whether this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} is approximately equal to another. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ Geometry $>$ \hyperlink{group___geometry_module_ga6113cd54eece79c59ef04c86847a5f33}{dg\+::deepcore\+::geometry\+::\+Geometry\+::from} (const O\+G\+R\+Geometry \&ogr\+Geometry)
+\begin{DoxyCompactList}\small\item\em Return a unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from a given O\+G\+R\+Geometry. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ Geometry $>$ \hyperlink{group___geometry_module_gae52dfa89bd864797db772a72c7eac37b}{dg\+::deepcore\+::geometry\+::\+Geometry\+::from} (const geos\+::geom\+::\+Geometry \&geos\+Geometry)
+\begin{DoxyCompactList}\small\item\em Return a unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from a given G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ Geometry $>$ \hyperlink{group___geometry_module_ga09f1518844b80c4135bfb7f47a227464}{dg\+::deepcore\+::geometry\+::\+Geometry\+::from\+Wkt} (const std\+::string \&wkt)
+\begin{DoxyCompactList}\small\item\em Return a unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from a given W\+KT string;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Geometry@{Geometry}!Geometry\+Type@{Geometry\+Type}}
+\index{Geometry\+Type@{Geometry\+Type}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{Geometry\+Type}{GeometryType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dg\+::deepcore\+::geometry\+::\+Geometry\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{group___geometry_module_gad9a3ec0b998629dbcf8274512700964a}{}\label{group___geometry_module_gad9a3ec0b998629dbcf8274512700964a}
+
+
+Represents a geometry type, aligning to O\+G\+Rwkb\+Geometry\+Type. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}!Geometry@{Geometry}}\index{Geometry@{Geometry}!U\+N\+K\+N\+O\+WN@{U\+N\+K\+N\+O\+WN}}\item[{\em 
+U\+N\+K\+N\+O\+WN\hypertarget{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aa696b031073e74bf2cb98e5ef201d4aa3}{}\label{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aa696b031073e74bf2cb98e5ef201d4aa3}
+}]Unknown geometry type. \index{P\+O\+I\+NT@{P\+O\+I\+NT}!Geometry@{Geometry}}\index{Geometry@{Geometry}!P\+O\+I\+NT@{P\+O\+I\+NT}}\item[{\em 
+P\+O\+I\+NT\hypertarget{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aaaebdbcb765394d25d6a604589a890f82}{}\label{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aaaebdbcb765394d25d6a604589a890f82}
+}]\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{Point}. \index{L\+I\+N\+E\+\_\+\+S\+T\+R\+I\+NG@{L\+I\+N\+E\+\_\+\+S\+T\+R\+I\+NG}!Geometry@{Geometry}}\index{Geometry@{Geometry}!L\+I\+N\+E\+\_\+\+S\+T\+R\+I\+NG@{L\+I\+N\+E\+\_\+\+S\+T\+R\+I\+NG}}\item[{\em 
+L\+I\+N\+E\+\_\+\+S\+T\+R\+I\+NG\hypertarget{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aa977976d86a257c70300ee614fbe1cf01}{}\label{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aa977976d86a257c70300ee614fbe1cf01}
+}]\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string}{Line\+String}. \index{P\+O\+L\+Y\+G\+ON@{P\+O\+L\+Y\+G\+ON}!Geometry@{Geometry}}\index{Geometry@{Geometry}!P\+O\+L\+Y\+G\+ON@{P\+O\+L\+Y\+G\+ON}}\item[{\em 
+P\+O\+L\+Y\+G\+ON\hypertarget{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aaecdc92bf56d960b73b02ee40125758bc}{}\label{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aaecdc92bf56d960b73b02ee40125758bc}
+}]\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon}{Polygon}. \index{L\+I\+N\+E\+A\+R\+\_\+\+R\+I\+NG@{L\+I\+N\+E\+A\+R\+\_\+\+R\+I\+NG}!Geometry@{Geometry}}\index{Geometry@{Geometry}!L\+I\+N\+E\+A\+R\+\_\+\+R\+I\+NG@{L\+I\+N\+E\+A\+R\+\_\+\+R\+I\+NG}}\item[{\em 
+L\+I\+N\+E\+A\+R\+\_\+\+R\+I\+NG\hypertarget{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aa1cec9da476564f13965ace5118062719}{}\label{group___geometry_module_ggad9a3ec0b998629dbcf8274512700964aa1cec9da476564f13965ace5118062719}
+}]\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring}. \end{description}
+\end{Desc}
+\index{Geometry@{Geometry}!Wkb\+Variant@{Wkb\+Variant}}
+\index{Wkb\+Variant@{Wkb\+Variant}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{Wkb\+Variant}{WkbVariant}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dg\+::deepcore\+::geometry\+::\+Wkb\+Variant}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{group___geometry_module_gadf5f1b06bc7a4ba83b704f3e65881d2a}{}\label{group___geometry_module_gadf5f1b06bc7a4ba83b704f3e65881d2a}
+
+
+Represents a well known binary(wkb) variant aligning to O\+G\+Rwkb\+Variant used for well-\/known text(wkt) output. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC@{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC}!Geometry@{Geometry}}\index{Geometry@{Geometry}!W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC@{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC}}\item[{\em 
+W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC\hypertarget{group___geometry_module_ggadf5f1b06bc7a4ba83b704f3e65881d2aae3f737e6dff286ac873e5570cb43d013}{}\label{group___geometry_module_ggadf5f1b06bc7a4ba83b704f3e65881d2aae3f737e6dff286ac873e5570cb43d013}
+}]Old-\/style 99-\/402 extended dimension (Z) W\+KB types. \index{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+I\+SO@{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+I\+SO}!Geometry@{Geometry}}\index{Geometry@{Geometry}!W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+I\+SO@{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+I\+SO}}\item[{\em 
+W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+I\+SO\hypertarget{group___geometry_module_ggadf5f1b06bc7a4ba83b704f3e65881d2aa503083b741697ea33d04b4a4a86e5c33}{}\label{group___geometry_module_ggadf5f1b06bc7a4ba83b704f3e65881d2aa503083b741697ea33d04b4a4a86e5c33}
+}]S\+F\+S\+QL 1.\+2 and I\+SO S\+Q\+L/\+MM Part 3 extended dimension (Z\&M) W\+KB types. \index{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+P\+O\+S\+T\+\_\+\+G\+I\+S1@{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+P\+O\+S\+T\+\_\+\+G\+I\+S1}!Geometry@{Geometry}}\index{Geometry@{Geometry}!W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+P\+O\+S\+T\+\_\+\+G\+I\+S1@{W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+P\+O\+S\+T\+\_\+\+G\+I\+S1}}\item[{\em 
+W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+P\+O\+S\+T\+\_\+\+G\+I\+S1\hypertarget{group___geometry_module_ggadf5f1b06bc7a4ba83b704f3e65881d2aa46514523c95e537a25886b8c124caffb}{}\label{group___geometry_module_ggadf5f1b06bc7a4ba83b704f3e65881d2aa46514523c95e537a25886b8c124caffb}
+}]Post\+G\+IS 1.\+X has different codes for Curve\+Polygon, Multi\+Curve and Multi\+Surface. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{Geometry@{Geometry}!from@{from}}
+\index{from@{from}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{from(const O\+G\+R\+Geometry \&ogr\+Geometry)}{from(const OGRGeometry &ogrGeometry)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ Geometry $>$ dg\+::deepcore\+::geometry\+::\+Geometry\+::from (
+\begin{DoxyParamCaption}
+\item[{const O\+G\+R\+Geometry \&}]{ogr\+Geometry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___geometry_module_ga6113cd54eece79c59ef04c86847a5f33}{}\label{group___geometry_module_ga6113cd54eece79c59ef04c86847a5f33}
+
+
+Return a unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from a given O\+G\+R\+Geometry. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ogr\+Geometry} & The O\+G\+R\+Geometry to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if geometry type is unsupported by Deepcore. \\
+\hline
+\end{DoxyExceptions}
+\index{Geometry@{Geometry}!from@{from}}
+\index{from@{from}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{from(const geos\+::geom\+::\+Geometry \&geos\+Geometry)}{from(const geos::geom::Geometry &geosGeometry)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ Geometry $>$ dg\+::deepcore\+::geometry\+::\+Geometry\+::from (
+\begin{DoxyParamCaption}
+\item[{const geos\+::geom\+::\+Geometry \&}]{geos\+Geometry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___geometry_module_gae52dfa89bd864797db772a72c7eac37b}{}\label{group___geometry_module_gae52dfa89bd864797db772a72c7eac37b}
+
+
+Return a unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from a given G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em geos\+Geometry} & The G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if geometry type is unsupported by Deepcore. \\
+\hline
+\end{DoxyExceptions}
+\index{Geometry@{Geometry}!from\+Wkt@{from\+Wkt}}
+\index{from\+Wkt@{from\+Wkt}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{from\+Wkt(const std\+::string \&wkt)}{fromWkt(const std::string &wkt)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ Geometry $>$ dg\+::deepcore\+::geometry\+::\+Geometry\+::from\+Wkt (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{wkt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___geometry_module_ga09f1518844b80c4135bfb7f47a227464}{}\label{group___geometry_module_ga09f1518844b80c4135bfb7f47a227464}
+
+
+Return a unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from a given W\+KT string;. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em wkt} & The W\+KT string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The unique \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer, owned by the caller. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\ttfamily L\+I\+N\+E\+A\+R\+R\+I\+NG} will not parse directly and cause an error. 
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if gdal cannot parse the wkt string \\
+\hline
+\end{DoxyExceptions}
+\index{Geometry@{Geometry}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{operator"!=(const Geometry \&other)}{operator!=(const Geometry &other)}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Geometry\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geometry} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{group___geometry_module_gaf79f2d28ef2c5eae4f3893f82a2dee15}{}\label{group___geometry_module_gaf79f2d28ef2c5eae4f3893f82a2dee15}
+
+
+Return whether this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} is approximately equal to another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & the \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} to compare to this geometry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if geometry types are not equivalent, false if geometry types are equivalent, contains the same number of underlying points, and all underlying points are approximately equivalent 
+\end{DoxyReturn}
+\index{Geometry@{Geometry}!operator==@{operator==}}
+\index{operator==@{operator==}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{operator==(const Geometry \&other) const =0}{operator==(const Geometry &other) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dg\+::deepcore\+::geometry\+::\+Geometry\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geometry} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{group___geometry_module_gaf5b2bf20a71a57cc068e1e3ee78053f8}{}\label{group___geometry_module_gaf5b2bf20a71a57cc068e1e3ee78053f8}
+
+
+Return whether this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} is approximately equal to another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & the \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} to compare to this geometry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if geometry types are not equivalent, true if geometry types are equivalent, contains the same number of underlying points, and all underlying points are approximately equivalent 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon_a35ad2f74176358c7d92a20f1621579ba}{dg\+::deepcore\+::geometry\+::\+Polygon}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point_a424bf6bbb183127a9163b67865bb68ec}{dg\+::deepcore\+::geometry\+::\+Point}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string_ae84bb6007046ef5568255965bbdf78c7}{dg\+::deepcore\+::geometry\+::\+Line\+String}, and \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ac6befbcbbd1c138fc620ee99e95fa1b1}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}.
+
+\index{Geometry@{Geometry}!to\+Geos@{to\+Geos}}
+\index{to\+Geos@{to\+Geos}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{to\+Geos(const geos\+::geom\+::\+Geometry\+Factory \&factory) const =0}{toGeos(const geos::geom::GeometryFactory &factory) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual geos\+::geom\+::\+Geometry$\ast$ dg\+::deepcore\+::geometry\+::\+Geometry\+::to\+Geos (
+\begin{DoxyParamCaption}
+\item[{const geos\+::geom\+::\+Geometry\+Factory \&}]{factory}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{group___geometry_module_ga9442b08cc58475d6f2f7060cc9cd8a7f}{}\label{group___geometry_module_ga9442b08cc58475d6f2f7060cc9cd8a7f}
+
+
+Return a raw G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em factory} & The Geos Geometry\+Factory used to create the geos \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. This factory must be used to destroy the geometry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The raw G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer, owned by the caller. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon_aba570d5f40f470167e0c552d30c8ea69}{dg\+::deepcore\+::geometry\+::\+Polygon}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string_adecb72091949f58f473c0becaee189d6}{dg\+::deepcore\+::geometry\+::\+Line\+String}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point_ab3a091753081d18b7da8583bdb721aa7}{dg\+::deepcore\+::geometry\+::\+Point}, and \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a887b8c2280ad03fdc7b363f5a59eb299}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}.
+
+\index{Geometry@{Geometry}!to\+Ogr@{to\+Ogr}}
+\index{to\+Ogr@{to\+Ogr}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{to\+Ogr() const =0}{toOgr() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual O\+G\+R\+Geometry$\ast$ dg\+::deepcore\+::geometry\+::\+Geometry\+::to\+Ogr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{group___geometry_module_ga4ed7d864786c327184cd103ea068ced2}{}\label{group___geometry_module_ga4ed7d864786c327184cd103ea068ced2}
+
+
+Return a raw O\+G\+R\+Geometry pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+\begin{DoxyReturn}{Returns}
+The raw O\+G\+R\+Geometry pointer, owned by the caller. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if G\+D\+AL fails to create an empty geometry. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon_a70583e034761cb90daf62f5653212773}{dg\+::deepcore\+::geometry\+::\+Polygon}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string_a71fe2d5dfc2381d1e0af80021938a36e}{dg\+::deepcore\+::geometry\+::\+Line\+String}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point_a036525feadf70f3b89f516aa18e42e0b}{dg\+::deepcore\+::geometry\+::\+Point}, and \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad6ed925db7ad6b2cc77345d2d2fc704e}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}.
+
+\index{Geometry@{Geometry}!to\+Wkt@{to\+Wkt}}
+\index{to\+Wkt@{to\+Wkt}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{to\+Wkt(\+Wkb\+Variant e\+Wkb\+Variant=\+Wkb\+Variant\+::\+W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+G\+C) const }{toWkt(WkbVariant eWkbVariant=WkbVariant::WKB_VARIANT_OLD_OGC) const }}]{\setlength{\rightskip}{0pt plus 5cm}string dg\+::deepcore\+::geometry\+::\+Geometry\+::to\+Wkt (
+\begin{DoxyParamCaption}
+\item[{{\bf Wkb\+Variant}}]{e\+Wkb\+Variant = {\ttfamily {\bf Wkb\+Variant\+::\+W\+K\+B\+\_\+\+V\+A\+R\+I\+A\+N\+T\+\_\+\+O\+L\+D\+\_\+\+O\+GC}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{group___geometry_module_gacfdc0f5010d3cf254f9ab5705a5741d9}{}\label{group___geometry_module_gacfdc0f5010d3cf254f9ab5705a5741d9}
+
+
+Return the W\+KT representation of this geometry as a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e\+Wkb\+Variant} & The Wkb variant specification as described by G\+D\+A\+L/\+O\+GR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The W\+KT representation of this geometry. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if G\+D\+AL fails to convert geometry to W\+KT. \\
+\hline
+\end{DoxyExceptions}
+\index{Geometry@{Geometry}!type@{type}}
+\index{type@{type}!Geometry@{Geometry}}
+\subsubsection[{\texorpdfstring{type() const =0}{type() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Geometry\+Type dg\+::deepcore\+::geometry\+::\+Geometry\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{group___geometry_module_gacdfc02ad835493ef40a398bdf24e30a1}{}\label{group___geometry_module_gacdfc02ad835493ef40a398bdf24e30a1}
+
+
+Return the Geometry\+Type of this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+\begin{DoxyReturn}{Returns}
+The Geometry\+Type of this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon_a776763aad39a6eb2bbac168dd003437e}{dg\+::deepcore\+::geometry\+::\+Polygon}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point_a7c01b33833b807cecda3610038f60a9d}{dg\+::deepcore\+::geometry\+::\+Point}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string_a918485a027776c69d8f1eab724438930}{dg\+::deepcore\+::geometry\+::\+Line\+String}, and \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a946e97571ef192be48014d71c9531e37}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}.
+

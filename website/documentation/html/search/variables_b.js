@@ -12,6 +12,6 @@ var searchData=
   ['metadata_5fversion',['METADATA_VERSION',['../namespacedg_1_1deepcore_1_1classification_1_1gbdxm.html#ab948a3612d9b3c1147ed4fcc38279167',1,'dg::deepcore::classification::gbdxm']]],
   ['min_5fwidth',['MIN_WIDTH',['../namespacedg_1_1deepcore.html#a5280e55f2875dddfa4400c900d1cef04',1,'dg::deepcore']]],
   ['minzoom',['minzoom',['../structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#a77756c09c221095697741311a6a6ee50',1,'dg::deepcore::imagery::TileJson']]],
-  ['mode',['mode',['../structdg_1_1deepcore_1_1imagery_1_1_image_download_request.html#ada07837e04cd62ff704e540460173497',1,'dg::deepcore::imagery::ImageDownloadRequest::mode()'],['../structdg_1_1deepcore_1_1imagery_1_1_tile_downloader.html#a33b7cac77d8a1690d08eda79fba5aae6',1,'dg::deepcore::imagery::TileDownloader::mode()']]],
+  ['mode',['mode',['../structdg_1_1deepcore_1_1imagery_1_1_map_service_image_config.html#a889a9ec30f6e9aa31a2a02058b2e5598',1,'dg::deepcore::imagery::MapServiceImageConfig']]],
   ['model_5fmetadata_5fitem_5fnames',['MODEL_METADATA_ITEM_NAMES',['../group___classification_module.html#ga66d66cfd2c51d9d01f001fc6d55afcaf',1,'dg::deepcore::classification::CaffeModelPackage']]]
 ];

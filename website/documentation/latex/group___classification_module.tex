@@ -2,8 +2,8 @@
 \label{group___classification_module}\index{Classification@{Classification}}
 
 
-Contains classification and detection logic with use of Caffe model detection and prediction information.  
-
+\subsection{Detailed Description}
+Contains classification and feature detection functionality. 
 
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
@@ -322,11 +322,6 @@ cv\+::\+Rect \hyperlink{group___classification_module_ga200902328358f2246a5e62d3
 \begin{DoxyCompactList}\small\item\em A window that is the active region for this set of Predictions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Contains classification and detection logic with use of Caffe model detection and prediction information. 
-
-
-
 \subsection{Typedef Documentation}
 \index{Classification@{Classification}!Labels@{Labels}}
 \index{Labels@{Labels}!Classification@{Classification}}
@@ -418,6 +413,309 @@ Exclude\hypertarget{group___classification_module_gga6915e250f3155525f9d14c0aed8
 
 
 \subsection{Function Documentation}
+\index{Classification@{Classification}!Caffe\+Batch\+Classifier@{Caffe\+Batch\+Classifier}}
+\index{Caffe\+Batch\+Classifier@{Caffe\+Batch\+Classifier}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Caffe\+Batch\+Classifier(const Model\+Package \&model, bool use\+Gpu, float max\+Utilization=0.\+95)}{CaffeBatchClassifier(const ModelPackage &model, bool useGpu, float maxUtilization=0.95)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Caffe\+Batch\+Classifier\+::\+Caffe\+Batch\+Classifier (
+\begin{DoxyParamCaption}
+\item[{const {\bf Model\+Package} \&}]{model, }
+\item[{bool}]{use\+Gpu, }
+\item[{float}]{max\+Utilization = {\ttfamily 0.95}}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga8501a61fcaf492b0fe8b43b4e9440085}{}\label{group___classification_module_ga8501a61fcaf492b0fe8b43b4e9440085}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_caffe_batch_classifier}{Caffe\+Batch\+Classifier}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em model} & The \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package}{Model\+Package} that contains a Caffe model for this classifier/feature detector. \\
+\hline
+\mbox{\tt in}  & {\em use\+Gpu} & Whether this feature detector should use the G\+PU for processing. \\
+\hline
+\mbox{\tt in}  & {\em max\+Utilization} & How to determine the maximum batch size. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
+\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(std\+::istream \&is)}{GbdxModelReader(std::istream &is)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{is}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_gaf76d6b5a7aedc2124731adf9e3858853}{}\label{group___classification_module_gaf76d6b5a7aedc2124731adf9e3858853}
+
+
+Constructs a gbdxm model reader from an input stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em is} & The input stream to read the model from. \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_reader}{Gbdx\+Model\+Reader} does not take ownership of this object, so lifetime must be longer than the reader\textquotesingle{}s lifetime. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
+\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(const std\+::vector$<$ uint8\+\_\+t $>$ \&buf)}{GbdxModelReader(const std::vector< uint8_t > &buf)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buf}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga3253da2225ab14f864894af9ddea77db}{}\label{group___classification_module_ga3253da2225ab14f864894af9ddea77db}
+
+
+Constructs a gbdxm model reader from a vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buf} & The input vector to read the model from. \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_reader}{Gbdx\+Model\+Reader} does not take ownership of this object, so lifetime must be longer than the reader\textquotesingle{}s lifetime. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
+\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(const uint8\+\_\+t $\ast$buf, size\+\_\+t size)}{GbdxModelReader(const uint8_t *buf, size_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t $\ast$}]{buf, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga5f5b18f2c2c2349d68cf670d8f7ea3ec}{}\label{group___classification_module_ga5f5b18f2c2c2349d68cf670d8f7ea3ec}
+
+
+Constructs a gbdxm model reader from a memory buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buf} & The input buffer to read the model from. \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_reader}{Gbdx\+Model\+Reader} does not take ownership of this object, so lifetime must be longer than the reader\textquotesingle{}s lifetime. \\
+\hline
+\mbox{\tt in}  & {\em size} & Size of the buffer \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
+\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(const std\+::string \&file\+Name)}{GbdxModelReader(const std::string &fileName)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga1a936c6873d8a865411691d42d37ca28}{}\label{group___classification_module_ga1a936c6873d8a865411691d42d37ca28}
+
+
+Constructs a gbdxm model reader from a file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\+Name} & The input file path to read the model from. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}}
+\index{Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Gbdx\+Model\+Writer(std\+::ostream \&os, const Model\+Package \&model, bool encrypt=true)}{GbdxModelWriter(std::ostream &os, const ModelPackage &model, bool encrypt=true)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Writer\+::\+Gbdx\+Model\+Writer (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf Model\+Package} \&}]{model, }
+\item[{bool}]{encrypt = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga783393c4251282622db262338581da20}{}\label{group___classification_module_ga783393c4251282622db262338581da20}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_writer}{Gbdx\+Model\+Writer} to write to the given output stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em os} & The output stream to write to. The stream lifetime must be greater than the writer\textquotesingle{}s lifetime. \\
+\hline
+\mbox{\tt in}  & {\em model} & The model to serialize. The model object\textquotesingle{}s lifetime must be greater than the writer\textquotesingle{}s lifetime. \\
+\hline
+\mbox{\tt in}  & {\em encrypt} & Whether to encrypt the model. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}}
+\index{Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Gbdx\+Model\+Writer(const std\+::string \&file\+Name, const Model\+Package \&model, bool encrypt=true)}{GbdxModelWriter(const std::string &fileName, const ModelPackage &model, bool encrypt=true)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Writer\+::\+Gbdx\+Model\+Writer (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name, }
+\item[{const {\bf Model\+Package} \&}]{model, }
+\item[{bool}]{encrypt = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga6806ebdaff05b3ff528a9c0fff8fe494}{}\label{group___classification_module_ga6806ebdaff05b3ff528a9c0fff8fe494}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_writer}{Gbdx\+Model\+Writer} to write to a file on disk. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\+Name} & Path to the output file. Must be in a writable location. \\
+\hline
+\mbox{\tt in}  & {\em model} & The model to serialize. The model object\textquotesingle{}s lifetime must be greater than the writer\textquotesingle{}s lifetime. \\
+\hline
+\mbox{\tt in}  & {\em encrypt} & Whether to encrypt the model. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Model@{Model}}
+\index{Model@{Model}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Model(const Model\+Package \&model, bool use\+Gpu, float max\+Utilization)}{Model(const ModelPackage &model, bool useGpu, float maxUtilization)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Model\+::\+Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf Model\+Package} \&}]{model, }
+\item[{bool}]{use\+Gpu, }
+\item[{float}]{max\+Utilization}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{group___classification_module_gac3f95551de3a41eb2bbda756cda5fc07}{}\label{group___classification_module_gac3f95551de3a41eb2bbda756cda5fc07}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model}{Model}, sets \hyperlink{group___classification_module_ga33bdb8fac324a49d0e70175a1440cdd1}{Model\+::metadata()} and \hyperlink{group___classification_module_gaea38e3353458ab22d099d54411d6f868}{Model\+::use\+Gpu()}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em model} & The model package from which to construct the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model}{Model}. This constructor only copies the metadata from the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package}{Model\+Package}. \\
+\hline
+\mbox{\tt in}  & {\em use\+Gpu} & Whether the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model}{Model} will use G\+PU for processing. \\
+\hline
+\mbox{\tt in}  & {\em max\+Utilization} & The maximum G\+PU utilization. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Model\+Metadata@{Model\+Metadata}}
+\index{Model\+Metadata@{Model\+Metadata}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Model\+Metadata()}{ModelMetadata()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Model\+Metadata\+::\+Model\+Metadata (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga839013c5b7cbf03571fd141fbb0620b4}{}\label{group___classification_module_ga839013c5b7cbf03571fd141fbb0620b4}
+
+
+Default constructor. 
+
+\index{Classification@{Classification}!Model\+MetadataT@{Model\+MetadataT}}
+\index{Model\+MetadataT@{Model\+MetadataT}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Model\+Metadata\+T(const T \&rhs)}{ModelMetadataT(const T &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+MetadataT}$<$ T $>$\+::Model\+MetadataT (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga52e88b4c63c2a8db9b06ce5b470be1c4}{}\label{group___classification_module_ga52e88b4c63c2a8db9b06ce5b470be1c4}
+
+
+Copy Constructor for \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata_t}{Model\+MetadataT}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & A \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata_t}{Model\+MetadataT} to be copied. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Model\+MetadataT@{Model\+MetadataT}}
+\index{Model\+MetadataT@{Model\+MetadataT}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Model\+Metadata\+T(\+T \&\&rhs)}{ModelMetadataT(T &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+MetadataT}$<$ T $>$\+::Model\+MetadataT (
+\begin{DoxyParamCaption}
+\item[{T \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga76d79f72f6223539cf9d8b9549cc8a2d}{}\label{group___classification_module_ga76d79f72f6223539cf9d8b9549cc8a2d}
+
+
+Move constructor for \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata_t}{Model\+MetadataT}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & A T to be moved. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Model\+PackageT@{Model\+PackageT}}
+\index{Model\+PackageT@{Model\+PackageT}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Model\+Package\+T(const T \&rhs)}{ModelPackageT(const T &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+PackageT}$<$ T $>$\+::Model\+PackageT (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga7ea483bc134d550711472d177240637f}{}\label{group___classification_module_ga7ea483bc134d550711472d177240637f}
+
+
+Copy constructor for the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT}. 
+
+\index{Classification@{Classification}!Model\+PackageT@{Model\+PackageT}}
+\index{Model\+PackageT@{Model\+PackageT}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Model\+Package\+T(\+T \&\&rhs)}{ModelPackageT(T &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+PackageT}$<$ T $>$\+::Model\+PackageT (
+\begin{DoxyParamCaption}
+\item[{T \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_gae62b39fccdfbce7d738a502ea34a6b4d}{}\label{group___classification_module_gae62b39fccdfbce7d738a502ea34a6b4d}
+
+
+Move constructor for the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT}. 
+
+\index{Classification@{Classification}!Prediction@{Prediction}}
+\index{Prediction@{Prediction}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Prediction()}{Prediction()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Prediction\+::\+Prediction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_gab393a5d0a2ff4d9ba72801a7d450a140}{}\label{group___classification_module_gab393a5d0a2ff4d9ba72801a7d450a140}
+
+
+Default Constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. 
+
+\index{Classification@{Classification}!Prediction@{Prediction}}
+\index{Prediction@{Prediction}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Prediction(const std\+::string \&label, float confidence=0.\+0)}{Prediction(const std::string &label, float confidence=0.0)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Prediction\+::\+Prediction (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{label, }
+\item[{float}]{confidence = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga4656207fb44b596eaf90bb5613f6f9aa}{}\label{group___classification_module_ga4656207fb44b596eaf90bb5613f6f9aa}
+
+
+Constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em label} & A string value for the class in the model for this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. \\
+\hline
+\mbox{\tt in}  & {\em confidence} & A double value that is the minimum threshold value for this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. Defaults to 0. \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Window\+Prediction@{Window\+Prediction}}
+\index{Window\+Prediction@{Window\+Prediction}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Window\+Prediction()}{WindowPrediction()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Window\+Prediction\+::\+Window\+Prediction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga6337a86649fa61f2b4e122a35aa06bf6}{}\label{group___classification_module_ga6337a86649fa61f2b4e122a35aa06bf6}
+
+
+Default constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction}. 
+
+\index{Classification@{Classification}!Window\+Prediction@{Window\+Prediction}}
+\index{Window\+Prediction@{Window\+Prediction}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Window\+Prediction(const std\+::vector$<$ Prediction $>$ \&predictions, const cv\+::\+Rect \&window)}{WindowPrediction(const std::vector< Prediction > &predictions, const cv::Rect &window)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Window\+Prediction\+::\+Window\+Prediction (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Prediction} $>$ \&}]{predictions, }
+\item[{const cv\+::\+Rect \&}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_gaa68db23c3bebd48d26ac60872a7f4f9c}{}\label{group___classification_module_gaa68db23c3bebd48d26ac60872a7f4f9c}
+
+
+A parameterized constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em predictions} & A vector of Predictions associated with this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} \\
+\hline
+\mbox{\tt in}  & {\em window} & The window for all predictions in this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} \\
+\hline
+\end{DoxyParams}
+\index{Classification@{Classification}!Window\+Prediction@{Window\+Prediction}}
+\index{Window\+Prediction@{Window\+Prediction}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{Window\+Prediction(std\+::vector$<$ Prediction $>$ \&\&predictions, cv\+::\+Rect \&\&window)}{WindowPrediction(std::vector< Prediction > &&predictions, cv::Rect &&window)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Window\+Prediction\+::\+Window\+Prediction (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Prediction} $>$ \&\&}]{predictions, }
+\item[{cv\+::\+Rect \&\&}]{window}
+\end{DoxyParamCaption}
+)}\hypertarget{group___classification_module_ga22fb55b25a1827cd37a05b7ac72edc2c}{}\label{group___classification_module_ga22fb55b25a1827cd37a05b7ac72edc2c}
+
+
+A move constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction}. 
+
+\index{Classification@{Classification}!````~Model@{$\sim$\+Model}}
+\index{````~Model@{$\sim$\+Model}!Classification@{Classification}}
+\subsubsection[{\texorpdfstring{$\sim$\+Model()}{~Model()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Model\+::$\sim$\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{group___classification_module_ga744d3e71e7c92fb7a8fa52e27095575f}{}\label{group___classification_module_ga744d3e71e7c92fb7a8fa52e27095575f}
+
+
+Virtual destructor for base class. 
+
 \index{Classification@{Classification}!add\+File@{add\+File}}
 \index{add\+File@{add\+File}!Classification@{Classification}}
 \subsubsection[{\texorpdfstring{add\+File(const std\+::string \&item\+Name, const std\+::string \&file\+Name)}{addFile(const std::string &itemName, const std::string &fileName)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Writer\+::add\+File (
@@ -544,28 +842,6 @@ Gets the bounding box (lat/lon).
 \begin{DoxyReturn}{Returns}
 A reference to the bounding box. 
 \end{DoxyReturn}
-\index{Classification@{Classification}!Caffe\+Batch\+Classifier@{Caffe\+Batch\+Classifier}}
-\index{Caffe\+Batch\+Classifier@{Caffe\+Batch\+Classifier}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Caffe\+Batch\+Classifier(const Model\+Package \&model, bool use\+Gpu, float max\+Utilization=0.\+95)}{CaffeBatchClassifier(const ModelPackage &model, bool useGpu, float maxUtilization=0.95)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Caffe\+Batch\+Classifier\+::\+Caffe\+Batch\+Classifier (
-\begin{DoxyParamCaption}
-\item[{const {\bf Model\+Package} \&}]{model, }
-\item[{bool}]{use\+Gpu, }
-\item[{float}]{max\+Utilization = {\ttfamily 0.95}}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga8501a61fcaf492b0fe8b43b4e9440085}{}\label{group___classification_module_ga8501a61fcaf492b0fe8b43b4e9440085}
-
-
-Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_caffe_batch_classifier}{Caffe\+Batch\+Classifier}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em model} & The \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package}{Model\+Package} that contains a Caffe model for this classifier/feature detector. \\
-\hline
-\mbox{\tt in}  & {\em use\+Gpu} & Whether this feature detector should use the G\+PU for processing. \\
-\hline
-\mbox{\tt in}  & {\em max\+Utilization} & How to determine the maximum batch size. \\
-\hline
-\end{DoxyParams}
 \index{Classification@{Classification}!can\+Classify@{can\+Classify}}
 \index{can\+Classify@{can\+Classify}!Classification@{Classification}}
 \subsubsection[{\texorpdfstring{can\+Classify() const noexcept}{canClassify() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::classification\+::\+Model\+::can\+Classify (
@@ -738,7 +1014,7 @@ Implemented in \hyperlink{group___classification_module_ga4f92b6936e50c4e47ca4ce
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{group___classification_module_ga4f92b6936e50c4e47ca4ceaaac0466f5}{}\label{group___classification_module_ga4f92b6936e50c4e47ca4ceaaac0466f5}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{group___classification_module_ga4f92b6936e50c4e47ca4ceaaac0466f5}{}\label{group___classification_module_ga4f92b6936e50c4e47ca4ceaaac0466f5}
 
 
 Method to copy the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata}{Model\+Metadata}. 
@@ -795,7 +1071,7 @@ Create a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata}{Mo
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em type} & Type of \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata}{Model\+Metadata} to create. \\
+\mbox{\tt in}  & {\em type} & \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata}{Model\+Metadata} to create. \\
 \hline
 \end{DoxyParams}
 \index{Classification@{Classification}!create@{create}}
@@ -1148,117 +1424,6 @@ Convert J\+S\+ON to Model\+Metada, not requiring all metadata to be there, but l
 \begin{DoxyReturn}{Returns}
 The model metadata. Caller takes ownership of the pointer. 
 \end{DoxyReturn}
-\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
-\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(std\+::istream \&is)}{GbdxModelReader(std::istream &is)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
-\begin{DoxyParamCaption}
-\item[{std\+::istream \&}]{is}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_gaf76d6b5a7aedc2124731adf9e3858853}{}\label{group___classification_module_gaf76d6b5a7aedc2124731adf9e3858853}
-
-
-Constructs a gbdxm model reader from an input stream. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in,out}  & {\em is} & The input stream to read the model from. \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_reader}{Gbdx\+Model\+Reader} does not take ownership of this object, so lifetime must be longer than the reader\textquotesingle{}s lifetime. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
-\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(const std\+::vector$<$ uint8\+\_\+t $>$ \&buf)}{GbdxModelReader(const std::vector< uint8_t > &buf)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
-\begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{buf}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga3253da2225ab14f864894af9ddea77db}{}\label{group___classification_module_ga3253da2225ab14f864894af9ddea77db}
-
-
-Constructs a gbdxm model reader from a vector. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em buf} & The input vector to read the model from. \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_reader}{Gbdx\+Model\+Reader} does not take ownership of this object, so lifetime must be longer than the reader\textquotesingle{}s lifetime. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
-\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(const uint8\+\_\+t $\ast$buf, size\+\_\+t size)}{GbdxModelReader(const uint8_t *buf, size_t size)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
-\begin{DoxyParamCaption}
-\item[{const uint8\+\_\+t $\ast$}]{buf, }
-\item[{size\+\_\+t}]{size}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga5f5b18f2c2c2349d68cf670d8f7ea3ec}{}\label{group___classification_module_ga5f5b18f2c2c2349d68cf670d8f7ea3ec}
-
-
-Constructs a gbdxm model reader from a memory buffer. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em buf} & The input buffer to read the model from. \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_reader}{Gbdx\+Model\+Reader} does not take ownership of this object, so lifetime must be longer than the reader\textquotesingle{}s lifetime. \\
-\hline
-\mbox{\tt in}  & {\em size} & Size of the buffer \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}}
-\index{Gbdx\+Model\+Reader@{Gbdx\+Model\+Reader}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Gbdx\+Model\+Reader(const std\+::string \&file\+Name)}{GbdxModelReader(const std::string &fileName)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Reader\+::\+Gbdx\+Model\+Reader (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{file\+Name}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga1a936c6873d8a865411691d42d37ca28}{}\label{group___classification_module_ga1a936c6873d8a865411691d42d37ca28}
-
-
-Constructs a gbdxm model reader from a file. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file\+Name} & The input file path to read the model from. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}}
-\index{Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Gbdx\+Model\+Writer(std\+::ostream \&os, const Model\+Package \&model, bool encrypt=true)}{GbdxModelWriter(std::ostream &os, const ModelPackage &model, bool encrypt=true)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Writer\+::\+Gbdx\+Model\+Writer (
-\begin{DoxyParamCaption}
-\item[{std\+::ostream \&}]{os, }
-\item[{const {\bf Model\+Package} \&}]{model, }
-\item[{bool}]{encrypt = {\ttfamily true}}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga783393c4251282622db262338581da20}{}\label{group___classification_module_ga783393c4251282622db262338581da20}
-
-
-Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_writer}{Gbdx\+Model\+Writer} to write to the given output stream. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in,out}  & {\em os} & The output stream to write to. The stream lifetime must be greater than the writer\textquotesingle{}s lifetime. \\
-\hline
-\mbox{\tt in}  & {\em model} & The model to serialize. The model object\textquotesingle{}s lifetime must be greater than the writer\textquotesingle{}s lifetime. \\
-\hline
-\mbox{\tt in}  & {\em encrypt} & Whether to encrypt the model. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}}
-\index{Gbdx\+Model\+Writer@{Gbdx\+Model\+Writer}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Gbdx\+Model\+Writer(const std\+::string \&file\+Name, const Model\+Package \&model, bool encrypt=true)}{GbdxModelWriter(const std::string &fileName, const ModelPackage &model, bool encrypt=true)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Gbdx\+Model\+Writer\+::\+Gbdx\+Model\+Writer (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{file\+Name, }
-\item[{const {\bf Model\+Package} \&}]{model, }
-\item[{bool}]{encrypt = {\ttfamily true}}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga6806ebdaff05b3ff528a9c0fff8fe494}{}\label{group___classification_module_ga6806ebdaff05b3ff528a9c0fff8fe494}
-
-
-Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_gbdx_model_writer}{Gbdx\+Model\+Writer} to write to a file on disk. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file\+Name} & Path to the output file. Must be in a writable location. \\
-\hline
-\mbox{\tt in}  & {\em model} & The model to serialize. The model object\textquotesingle{}s lifetime must be greater than the writer\textquotesingle{}s lifetime. \\
-\hline
-\mbox{\tt in}  & {\em encrypt} & Whether to encrypt the model. \\
-\hline
-\end{DoxyParams}
 \index{Classification@{Classification}!have\+Item@{have\+Item}}
 \index{have\+Item@{have\+Item}!Classification@{Classification}}
 \subsubsection[{\texorpdfstring{have\+Item(const std\+::string \&item\+Name) const }{haveItem(const std::string &itemName) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::classification\+::\+Model\+Package\+::have\+Item (
@@ -1354,7 +1519,7 @@ Implemented in \hyperlink{group___classification_module_ga70d0c57bcb0d88c44be41e
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{group___classification_module_ga70d0c57bcb0d88c44be41e2591e42518}{}\label{group___classification_module_ga70d0c57bcb0d88c44be41e2591e42518}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{group___classification_module_ga70d0c57bcb0d88c44be41e2591e42518}{}\label{group___classification_module_ga70d0c57bcb0d88c44be41e2591e42518}
 
 
 A method that returns all of the item names inside the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT}. 
@@ -1524,7 +1689,7 @@ Implemented in \hyperlink{group___classification_module_gae205ffc25753f735f7e0d0
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{group___classification_module_gae205ffc25753f735f7e0d0fa64cd4162}{}\label{group___classification_module_gae205ffc25753f735f7e0d0fa64cd4162}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{group___classification_module_gae205ffc25753f735f7e0d0fa64cd4162}{}\label{group___classification_module_gae205ffc25753f735f7e0d0fa64cd4162}
 
 
 A method that returns all of the names for the items in the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT} metadata. 
@@ -1561,39 +1726,6 @@ Gets the model data.
 \begin{DoxyReturn}{Returns}
 A reference to the model data. 
 \end{DoxyReturn}
-\index{Classification@{Classification}!Model@{Model}}
-\index{Model@{Model}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Model(const Model\+Package \&model, bool use\+Gpu, float max\+Utilization)}{Model(const ModelPackage &model, bool useGpu, float maxUtilization)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Model\+::\+Model (
-\begin{DoxyParamCaption}
-\item[{const {\bf Model\+Package} \&}]{model, }
-\item[{bool}]{use\+Gpu, }
-\item[{float}]{max\+Utilization}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{group___classification_module_gac3f95551de3a41eb2bbda756cda5fc07}{}\label{group___classification_module_gac3f95551de3a41eb2bbda756cda5fc07}
-
-
-Constructs a \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model}{Model}, sets \hyperlink{group___classification_module_ga33bdb8fac324a49d0e70175a1440cdd1}{Model\+::metadata()} and \hyperlink{group___classification_module_gaea38e3353458ab22d099d54411d6f868}{Model\+::use\+Gpu()}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em model} & The model package from which to construct the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model}{Model}. This constructor only copies the metadata from the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package}{Model\+Package}. \\
-\hline
-\mbox{\tt in}  & {\em use\+Gpu} & Whether the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model}{Model} will use G\+PU for processing. \\
-\hline
-\mbox{\tt in}  & {\em max\+Utilization} & The maximum G\+PU utilization. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Model\+Metadata@{Model\+Metadata}}
-\index{Model\+Metadata@{Model\+Metadata}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Model\+Metadata()}{ModelMetadata()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Model\+Metadata\+::\+Model\+Metadata (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{group___classification_module_ga839013c5b7cbf03571fd141fbb0620b4}{}\label{group___classification_module_ga839013c5b7cbf03571fd141fbb0620b4}
-
-
-Default constructor. 
-
 \index{Classification@{Classification}!model\+Metadata\+Item\+Names@{model\+Metadata\+Item\+Names}}
 \index{model\+Metadata\+Item\+Names@{model\+Metadata\+Item\+Names}!Classification@{Classification}}
 \subsubsection[{\texorpdfstring{model\+Metadata\+Item\+Names() const noexcept=0}{modelMetadataItemNames() const noexcept=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\+::vector$<$std\+::string$>$\& dg\+::deepcore\+::classification\+::\+Model\+Package\+::model\+Metadata\+Item\+Names (
@@ -1618,7 +1750,7 @@ Implemented in \hyperlink{group___classification_module_ga6a84bb23e9720db751a63c
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{group___classification_module_ga6a84bb23e9720db751a63cc071ec15ab}{}\label{group___classification_module_ga6a84bb23e9720db751a63cc071ec15ab}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{group___classification_module_ga6a84bb23e9720db751a63cc071ec15ab}{}\label{group___classification_module_ga6a84bb23e9720db751a63cc071ec15ab}
 
 
 A method that returns all of the item names for the model metadata inside the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT}. 
@@ -1626,60 +1758,6 @@ A method that returns all of the item names for the model metadata inside the \h
 
 
 Implements \hyperlink{group___classification_module_ga634f0af2484a3c6de2e8c3a2ff6cea1d}{dg\+::deepcore\+::classification\+::\+Model\+Package}.
-
-\index{Classification@{Classification}!Model\+MetadataT@{Model\+MetadataT}}
-\index{Model\+MetadataT@{Model\+MetadataT}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Model\+Metadata\+T(const T \&rhs)}{ModelMetadataT(const T &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+MetadataT}$<$ T $>$\+::Model\+MetadataT (
-\begin{DoxyParamCaption}
-\item[{const T \&}]{rhs}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_ga52e88b4c63c2a8db9b06ce5b470be1c4}{}\label{group___classification_module_ga52e88b4c63c2a8db9b06ce5b470be1c4}
-
-
-Copy Constructor for \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata_t}{Model\+MetadataT}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em rhs} & A \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata_t}{Model\+MetadataT} to be copied. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Model\+MetadataT@{Model\+MetadataT}}
-\index{Model\+MetadataT@{Model\+MetadataT}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Model\+Metadata\+T(\+T \&\&rhs)}{ModelMetadataT(T &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+MetadataT}$<$ T $>$\+::Model\+MetadataT (
-\begin{DoxyParamCaption}
-\item[{T \&\&}]{rhs}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_ga76d79f72f6223539cf9d8b9549cc8a2d}{}\label{group___classification_module_ga76d79f72f6223539cf9d8b9549cc8a2d}
-
-
-Move constructor for \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_metadata_t}{Model\+MetadataT}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em rhs} & A T to be moved. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Model\+PackageT@{Model\+PackageT}}
-\index{Model\+PackageT@{Model\+PackageT}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Model\+Package\+T(const T \&rhs)}{ModelPackageT(const T &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+PackageT}$<$ T $>$\+::Model\+PackageT (
-\begin{DoxyParamCaption}
-\item[{const T \&}]{rhs}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_ga7ea483bc134d550711472d177240637f}{}\label{group___classification_module_ga7ea483bc134d550711472d177240637f}
-
-
-Copy constructor for the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT}. 
-
-\index{Classification@{Classification}!Model\+PackageT@{Model\+PackageT}}
-\index{Model\+PackageT@{Model\+PackageT}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Model\+Package\+T(\+T \&\&rhs)}{ModelPackageT(T &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf dg\+::deepcore\+::classification\+::\+Model\+PackageT}$<$ T $>$\+::Model\+PackageT (
-\begin{DoxyParamCaption}
-\item[{T \&\&}]{rhs}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_gae62b39fccdfbce7d738a502ea34a6b4d}{}\label{group___classification_module_gae62b39fccdfbce7d738a502ea34a6b4d}
-
-
-Move constructor for the \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package_t}{Model\+PackageT}. 
 
 \index{Classification@{Classification}!name@{name}}
 \index{name@{name}!Classification@{Classification}}
@@ -1801,36 +1879,6 @@ The move operator. Can be overridden if additional state needs to be copied.
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em rhs} & The \hyperlink{classdg_1_1deepcore_1_1classification_1_1_model_package}{Model\+Package} to move the object state from. \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Prediction@{Prediction}}
-\index{Prediction@{Prediction}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Prediction()}{Prediction()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Prediction\+::\+Prediction (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_gab393a5d0a2ff4d9ba72801a7d450a140}{}\label{group___classification_module_gab393a5d0a2ff4d9ba72801a7d450a140}
-
-
-Default Constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. 
-
-\index{Classification@{Classification}!Prediction@{Prediction}}
-\index{Prediction@{Prediction}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Prediction(const std\+::string \&label, float confidence=0.\+0)}{Prediction(const std::string &label, float confidence=0.0)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Prediction\+::\+Prediction (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{label, }
-\item[{float}]{confidence = {\ttfamily 0.0}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_ga4656207fb44b596eaf90bb5613f6f9aa}{}\label{group___classification_module_ga4656207fb44b596eaf90bb5613f6f9aa}
-
-
-Constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em label} & A string value for the class in the model for this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. \\
-\hline
-\mbox{\tt in}  & {\em confidence} & A double value that is the minimum threshold value for this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_prediction}{Prediction}. Defaults to 0. \\
 \hline
 \end{DoxyParams}
 \index{Classification@{Classification}!read\+Metadata\+From\+Item@{read\+Metadata\+From\+Item}}
@@ -2378,48 +2426,6 @@ Gets the model version.
 \begin{DoxyReturn}{Returns}
 The model version. 
 \end{DoxyReturn}
-\index{Classification@{Classification}!Window\+Prediction@{Window\+Prediction}}
-\index{Window\+Prediction@{Window\+Prediction}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Window\+Prediction()}{WindowPrediction()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Window\+Prediction\+::\+Window\+Prediction (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_ga6337a86649fa61f2b4e122a35aa06bf6}{}\label{group___classification_module_ga6337a86649fa61f2b4e122a35aa06bf6}
-
-
-Default constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction}. 
-
-\index{Classification@{Classification}!Window\+Prediction@{Window\+Prediction}}
-\index{Window\+Prediction@{Window\+Prediction}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Window\+Prediction(const std\+::vector$<$ Prediction $>$ \&predictions, const cv\+::\+Rect \&window)}{WindowPrediction(const std::vector< Prediction > &predictions, const cv::Rect &window)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Window\+Prediction\+::\+Window\+Prediction (
-\begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ {\bf Prediction} $>$ \&}]{predictions, }
-\item[{const cv\+::\+Rect \&}]{window}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_gaa68db23c3bebd48d26ac60872a7f4f9c}{}\label{group___classification_module_gaa68db23c3bebd48d26ac60872a7f4f9c}
-
-
-A parameterized constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em predictions} & A vector of Predictions associated with this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} \\
-\hline
-\mbox{\tt in}  & {\em window} & The window for all predictions in this \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} \\
-\hline
-\end{DoxyParams}
-\index{Classification@{Classification}!Window\+Prediction@{Window\+Prediction}}
-\index{Window\+Prediction@{Window\+Prediction}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{Window\+Prediction(std\+::vector$<$ Prediction $>$ \&\&predictions, cv\+::\+Rect \&\&window)}{WindowPrediction(std::vector< Prediction > &&predictions, cv::Rect &&window)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Window\+Prediction\+::\+Window\+Prediction (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ {\bf Prediction} $>$ \&\&}]{predictions, }
-\item[{cv\+::\+Rect \&\&}]{window}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group___classification_module_ga22fb55b25a1827cd37a05b7ac72edc2c}{}\label{group___classification_module_ga22fb55b25a1827cd37a05b7ac72edc2c}
-
-
-A move constructor for \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction}. 
-
 \index{Classification@{Classification}!window\+Size@{window\+Size}}
 \index{window\+Size@{window\+Size}!Classification@{Classification}}
 \subsubsection[{\texorpdfstring{window\+Size() const noexcept=0}{windowSize() const noexcept=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual cv\+::\+Size dg\+::deepcore\+::classification\+::\+Sliding\+Window\+Detector\+::window\+Size (
@@ -2498,17 +2504,6 @@ Writes out the model contained in the \hyperlink{classdg_1_1deepcore_1_1classifi
 \mbox{\tt in}  & {\em content\+Map} & Mapping between item names and file names inside the archive. Keys of this map must correspond to \hyperlink{group___classification_module_gaa23ae021f838b2836c02dcc626bc1c8e}{Model\+Package\+::item\+Names()}. \\
 \hline
 \end{DoxyParams}
-\index{Classification@{Classification}!````~Model@{$\sim$\+Model}}
-\index{````~Model@{$\sim$\+Model}!Classification@{Classification}}
-\subsubsection[{\texorpdfstring{$\sim$\+Model()}{~Model()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::classification\+::\+Model\+::$\sim$\+Model (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{group___classification_module_ga744d3e71e7c92fb7a8fa52e27095575f}{}\label{group___classification_module_ga744d3e71e7c92fb7a8fa52e27095575f}
-
-
-Virtual destructor for base class. 
-
 
 
 \subsection{Variable Documentation}

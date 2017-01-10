@@ -29,7 +29,7 @@
             <tr style="height: 56px;">
                 <td id="projectlogo"><img alt="Logo" src="community_logo.png"/></td>
                 <td id="projectalign">
-                    <div id="projectname">DeepCore
+                    <div id="projectname"><a href="https://digitalglobe.github.io/DeepCore/">DeepCore</a>
                     </div>
                     <div id="projectbrief">Deep Learning SDK for Geospatial Data</div>
                 </td>
@@ -109,15 +109,15 @@ $(document).ready(function(){initNavTree('classdg_1_1deepcore_1_1imagery_1_1_gda
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">dg::deepcore::imagery::GdalImage Class Reference<div class="ingroups"><a class="el" href="group___imagery_module.html">Imagery</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Represents a geo-registered image read using GDAL.  
- <a href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a geo-registered image read using GDAL. </p>
+</div>
 <p><code>#include &lt;<a class="el" href="_gdal_image_8h_source.html">imagery/GdalImage.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for dg::deepcore::imagery::GdalImage:</div>
@@ -126,234 +126,159 @@ $(document).ready(function(){initNavTree('classdg_1_1deepcore_1_1imagery_1_1_gda
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classdg_1_1deepcore_1_1imagery_1_1_gdal_image__coll__graph.png" border="0" usemap="#dg_1_1deepcore_1_1imagery_1_1_gdal_image_coll__map" alt="Collaboration graph"/></div>
 <map name="dg_1_1deepcore_1_1imagery_1_1_gdal_image_coll__map" id="dg_1_1deepcore_1_1imagery_1_1_gdal_image_coll__map">
-<area shape="rect" id="node2" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html" title="An abstract base class for geo&#45;registered images. " alt="" coords="5,112,156,153"/>
-<area shape="rect" id="node3" href="classdg_1_1deepcore_1_1imagery_1_1_spatial_reference.html" title="Represents a geographic or projected coordinate system. " alt="" coords="5,7,156,48"/>
+<area shape="rect" id="node2" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html" title="An abstract base class for geo&#45;registered images. " alt="" coords="15,80,166,121"/>
+<area shape="rect" id="node3" href="classdg_1_1deepcore_1_1_async_error.html" title="Base class for asynchronous processes that need to report an error from another thread. " alt="" coords="5,5,176,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ga2c05530c01c9cc6bf0d0f332b74cecc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga2c05530c01c9cc6bf0d0f332b74cecc3">GdalImage</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:ga2c05530c01c9cc6bf0d0f332b74cecc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html" title="Represents a geo-registered image read using GDAL. ">GdalImage</a> class and opens the image.  <a href="group___imagery_module.html#ga2c05530c01c9cc6bf0d0f332b74cecc3">More...</a><br /></td></tr>
-<tr class="separator:ga2c05530c01c9cc6bf0d0f332b74cecc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3fdf6d72f690606ee00a6f1db93889"><td class="memItemLeft" align="right" valign="top">cv::Size&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#abb3fdf6d72f690606ee00a6f1db93889">size</a> () const override</td></tr>
-<tr class="memdesc:abb3fdf6d72f690606ee00a6f1db93889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image's pixel size.  <a href="#abb3fdf6d72f690606ee00a6f1db93889">More...</a><br /></td></tr>
-<tr class="separator:abb3fdf6d72f690606ee00a6f1db93889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a9fdea0bf1473c6c54a116a3b3fcd58"><td class="memItemLeft" align="right" valign="top">cv::Point2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a5a9fdea0bf1473c6c54a116a3b3fcd58">origin</a> () const override</td></tr>
-<tr class="memdesc:a5a9fdea0bf1473c6c54a116a3b3fcd58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the origin in the image's native coordinate system. The origin is the north-west corner.  <a href="#a5a9fdea0bf1473c6c54a116a3b3fcd58">More...</a><br /></td></tr>
-<tr class="separator:a5a9fdea0bf1473c6c54a116a3b3fcd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a703aceb4c6ab2e7b1948e0df6b44d965"><td class="memItemLeft" align="right" valign="top">cv::Size2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a703aceb4c6ab2e7b1948e0df6b44d965">pixelSize</a> () const override</td></tr>
-<tr class="memdesc:a703aceb4c6ab2e7b1948e0df6b44d965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pixel size in the image's native coordinate system.  <a href="#a703aceb4c6ab2e7b1948e0df6b44d965">More...</a><br /></td></tr>
-<tr class="separator:a703aceb4c6ab2e7b1948e0df6b44d965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f14e75cccbffc7f43081f4dc171b53"><td class="memItemLeft" align="right" valign="top">cv::Size&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#ab9f14e75cccbffc7f43081f4dc171b53">blockSize</a> () const override</td></tr>
-<tr class="memdesc:ab9f14e75cccbffc7f43081f4dc171b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image block size.  <a href="#ab9f14e75cccbffc7f43081f4dc171b53">More...</a><br /></td></tr>
-<tr class="separator:ab9f14e75cccbffc7f43081f4dc171b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f9039f7445e931359b351045676051"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a12f9039f7445e931359b351045676051">numBands</a> () const override</td></tr>
-<tr class="memdesc:a12f9039f7445e931359b351045676051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of raster bands in the image.  <a href="#a12f9039f7445e931359b351045676051">More...</a><br /></td></tr>
-<tr class="separator:a12f9039f7445e931359b351045676051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2703af86b94a85181d5dc8c98dc7bc1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a2703af86b94a85181d5dc8c98dc7bc1a">pixelType</a> () const override</td></tr>
-<tr class="memdesc:a2703af86b94a85181d5dc8c98dc7bc1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image pixel type as a cv::Mat type i.e. CV_8U, CV_8S, CV_32F, etc.  <a href="#a2703af86b94a85181d5dc8c98dc7bc1a">More...</a><br /></td></tr>
-<tr class="separator:a2703af86b94a85181d5dc8c98dc7bc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2b4bcd00b506caa4a1d4a08b296e35c"><td class="memItemLeft" align="right" valign="top">cv::Point2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gac2b4bcd00b506caa4a1d4a08b296e35c">origOrigin</a> ()</td></tr>
-<tr class="memdesc:gac2b4bcd00b506caa4a1d4a08b296e35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the origin of the underlying image without considering the current bounding box.  <a href="group___imagery_module.html#gac2b4bcd00b506caa4a1d4a08b296e35c">More...</a><br /></td></tr>
-<tr class="separator:gac2b4bcd00b506caa4a1d4a08b296e35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7e8ae8a7ad9fc775b39d358e1cd21647"><td class="memItemLeft" align="right" valign="top">cv::Size&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga7e8ae8a7ad9fc775b39d358e1cd21647">origSize</a> ()</td></tr>
-<tr class="memdesc:ga7e8ae8a7ad9fc775b39d358e1cd21647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the underlying image without considering the current bounding box.  <a href="group___imagery_module.html#ga7e8ae8a7ad9fc775b39d358e1cd21647">More...</a><br /></td></tr>
-<tr class="separator:ga7e8ae8a7ad9fc775b39d358e1cd21647"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0fb4c1ea48ddb710e97310baddb9f63d"><td class="memItemLeft" align="right" valign="top">const cv::Rect &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga0fb4c1ea48ddb710e97310baddb9f63d">bbox</a> () const noexcept</td></tr>
-<tr class="memdesc:ga0fb4c1ea48ddb710e97310baddb9f63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box that restricts readImage and readImageAsync.  <a href="group___imagery_module.html#ga0fb4c1ea48ddb710e97310baddb9f63d">More...</a><br /></td></tr>
-<tr class="separator:ga0fb4c1ea48ddb710e97310baddb9f63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9391ed841c25ec1391bbb577aa2b81d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga9391ed841c25ec1391bbb577aa2b81d6">setBbox</a> (const cv::Rect &amp;<a class="el" href="group___imagery_module.html#ga0fb4c1ea48ddb710e97310baddb9f63d">bbox</a>)</td></tr>
-<tr class="memdesc:ga9391ed841c25ec1391bbb577aa2b81d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding box that restricts readImage and readImageAsync.  <a href="group___imagery_module.html#ga9391ed841c25ec1391bbb577aa2b81d6">More...</a><br /></td></tr>
-<tr class="separator:ga9391ed841c25ec1391bbb577aa2b81d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dfbdd1a7a6260f38e67bbe10eb1007c"><td class="memItemLeft" align="right" valign="top">cv::Point2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a0dfbdd1a7a6260f38e67bbe10eb1007c">pixelToProj</a> (cv::Point pixel) const override</td></tr>
-<tr class="memdesc:a0dfbdd1a7a6260f38e67bbe10eb1007c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a pixel coordinate to the image's coordinate system.  <a href="#a0dfbdd1a7a6260f38e67bbe10eb1007c">More...</a><br /></td></tr>
-<tr class="separator:a0dfbdd1a7a6260f38e67bbe10eb1007c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a824ec987881152e8ca9d95b0952e75c7"><td class="memItemLeft" align="right" valign="top">cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a824ec987881152e8ca9d95b0952e75c7">projToPixel</a> (cv::Point2d proj) const override</td></tr>
-<tr class="memdesc:a824ec987881152e8ca9d95b0952e75c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a coordinate in the image's coordinate system to a pixel coordiante.  <a href="#a824ec987881152e8ca9d95b0952e75c7">More...</a><br /></td></tr>
-<tr class="separator:a824ec987881152e8ca9d95b0952e75c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f2dbe1f567c126aa8406ee86f9990d7"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a2f2dbe1f567c126aa8406ee86f9990d7">readImage</a> (<a class="el" href="group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2">SimpleProgress</a> progressFunc=nullptr) const override</td></tr>
-<tr class="memdesc:a2f2dbe1f567c126aa8406ee86f9990d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the image into a cv::Mat.  <a href="#a2f2dbe1f567c126aa8406ee86f9990d7">More...</a><br /></td></tr>
-<tr class="separator:a2f2dbe1f567c126aa8406ee86f9990d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ae4e4f34682f1a9e753dd1534218988"><td class="memItemLeft" align="right" valign="top">std::future&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a5ae4e4f34682f1a9e753dd1534218988">readImageAsync</a> (<a class="el" href="group___imagery_module.html#ga2238c2ef34502f68956ddef1f477ad95">BlockReadFunc</a> readFunc, <a class="el" href="group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2">SimpleProgress</a> progressFunc=nullptr) const override</td></tr>
-<tr class="memdesc:a5ae4e4f34682f1a9e753dd1534218988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reades the image asynchronously.  <a href="#a5ae4e4f34682f1a9e753dd1534218988">More...</a><br /></td></tr>
-<tr class="separator:a5ae4e4f34682f1a9e753dd1534218988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c05530c01c9cc6bf0d0f332b74cecc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a2c05530c01c9cc6bf0d0f332b74cecc3">GdalImage</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a2c05530c01c9cc6bf0d0f332b74cecc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html" title="Represents a geo-registered image read using GDAL. ">GdalImage</a> class and opens the image.  <a href="#a2c05530c01c9cc6bf0d0f332b74cecc3">More...</a><br /></td></tr>
+<tr class="separator:a2c05530c01c9cc6bf0d0f332b74cecc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c89021966b51596c163a786b3a314c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#a6c89021966b51596c163a786b3a314c4">readBlocks</a> (const std::vector&lt; cv::Point &gt; &amp;blocks) override</td></tr>
+<tr class="memdesc:a6c89021966b51596c163a786b3a314c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues blocks to be read. The blocks are then passed back using <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a2eb4fdc320aee10e8afd337138e2e7e1" title="Gets the block read function. ">readFunc()</a>.  <a href="#a6c89021966b51596c163a786b3a314c4">More...</a><br /></td></tr>
+<tr class="separator:a6c89021966b51596c163a786b3a314c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html">dg::deepcore::imagery::GeoImage</a></td></tr>
-<tr class="memitem:aa5426043b9d179eebee34651a2c4fba2 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#aa5426043b9d179eebee34651a2c4fba2">GeoImage</a> ()=default</td></tr>
-<tr class="separator:aa5426043b9d179eebee34651a2c4fba2 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga68f769446764180ec082de155fd2a7af inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga68f769446764180ec082de155fd2a7af">GeoImage</a> (const <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_spatial_reference.html">SpatialReference</a> &amp;sr)</td></tr>
-<tr class="memdesc:ga68f769446764180ec082de155fd2a7af inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html" title="An abstract base class for geo-registered images. ">GeoImage</a>.  <a href="group___imagery_module.html#ga68f769446764180ec082de155fd2a7af">More...</a><br /></td></tr>
-<tr class="separator:ga68f769446764180ec082de155fd2a7af inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab093ef27cf8008d6ce61679a374f9fe8 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gab093ef27cf8008d6ce61679a374f9fe8">GeoImage</a> (<a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_spatial_reference.html">SpatialReference</a> &amp;&amp;sr)</td></tr>
-<tr class="memdesc:gab093ef27cf8008d6ce61679a374f9fe8 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html" title="An abstract base class for geo-registered images. ">GeoImage</a>.  <a href="group___imagery_module.html#gab093ef27cf8008d6ce61679a374f9fe8">More...</a><br /></td></tr>
-<tr class="separator:gab093ef27cf8008d6ce61679a374f9fe8 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a6179a2654ef54bf2605ad9e8dbd55a inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_spatial_reference.html">SpatialReference</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga5a6179a2654ef54bf2605ad9e8dbd55a">spatialReference</a> ()</td></tr>
-<tr class="memdesc:ga5a6179a2654ef54bf2605ad9e8dbd55a inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image's spatial reference system.  <a href="group___imagery_module.html#ga5a6179a2654ef54bf2605ad9e8dbd55a">More...</a><br /></td></tr>
-<tr class="separator:ga5a6179a2654ef54bf2605ad9e8dbd55a inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaee0adba3fd2460a68400cc7f0df8881b inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Point2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gaee0adba3fd2460a68400cc7f0df8881b">pixelToLL</a> (const cv::Point &amp;pixelCoord) const </td></tr>
-<tr class="memdesc:gaee0adba3fd2460a68400cc7f0df8881b inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an image pixel coordinate to the WGS84 lat/lon coordinate.  <a href="group___imagery_module.html#gaee0adba3fd2460a68400cc7f0df8881b">More...</a><br /></td></tr>
-<tr class="separator:gaee0adba3fd2460a68400cc7f0df8881b inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f8b895c73c1088b06d62035f6fab687 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga4f8b895c73c1088b06d62035f6fab687">llToPixel</a> (const cv::Point2d &amp;llCoord) const </td></tr>
-<tr class="memdesc:ga4f8b895c73c1088b06d62035f6fab687 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a WGS84 lat/lon coordinate to the image pixel coordinate.  <a href="group___imagery_module.html#ga4f8b895c73c1088b06d62035f6fab687">More...</a><br /></td></tr>
-<tr class="separator:ga4f8b895c73c1088b06d62035f6fab687 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac979ae795537b25cca57b032e7b81264 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#ac979ae795537b25cca57b032e7b81264">GeoImage</a> ()</td></tr>
+<tr class="memdesc:ac979ae795537b25cca57b032e7b81264 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default constructor.  <a href="#ac979ae795537b25cca57b032e7b81264">More...</a><br /></td></tr>
+<tr class="separator:ac979ae795537b25cca57b032e7b81264 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19a94ac81d6f9c7bab7cacff63650198 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a19a94ac81d6f9c7bab7cacff63650198">~GeoImage</a> ()</td></tr>
+<tr class="separator:a19a94ac81d6f9c7bab7cacff63650198 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6953ff30d8f1791b3bcf886ad5fa0023 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html">geometry::SpatialReference</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga6953ff30d8f1791b3bcf886ad5fa0023">spatialReference</a> () const noexcept</td></tr>
+<tr class="memdesc:ga6953ff30d8f1791b3bcf886ad5fa0023 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image's spatial reference system.  <a href="group___imagery_module.html#ga6953ff30d8f1791b3bcf886ad5fa0023">More...</a><br /></td></tr>
+<tr class="separator:ga6953ff30d8f1791b3bcf886ad5fa0023 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8791e3e5c7fcbdcdbf485898047a4664 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_transformation.html">geometry::Transformation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a8791e3e5c7fcbdcdbf485898047a4664">pixelToProj</a> () const noexcept</td></tr>
+<tr class="memdesc:a8791e3e5c7fcbdcdbf485898047a4664 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pixel to projection transformation.  <a href="#a8791e3e5c7fcbdcdbf485898047a4664">More...</a><br /></td></tr>
+<tr class="separator:a8791e3e5c7fcbdcdbf485898047a4664 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c5610e7c7709c34712d1787c0009463 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Point2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#ga7c5610e7c7709c34712d1787c0009463">origin</a> () const </td></tr>
+<tr class="memdesc:ga7c5610e7c7709c34712d1787c0009463 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the origin in the image's native coordinate system. The origin is the north-west corner.  <a href="group___imagery_module.html#ga7c5610e7c7709c34712d1787c0009463">More...</a><br /></td></tr>
+<tr class="separator:ga7c5610e7c7709c34712d1787c0009463 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad29b678ab57f8baf38e0d2060483c853 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Size2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gad29b678ab57f8baf38e0d2060483c853">pixelSize</a> () const </td></tr>
+<tr class="memdesc:gad29b678ab57f8baf38e0d2060483c853 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pixel size in the image's native coordinate system.  <a href="group___imagery_module.html#gad29b678ab57f8baf38e0d2060483c853">More...</a><br /></td></tr>
+<tr class="separator:gad29b678ab57f8baf38e0d2060483c853 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2b00ab6845886d12ff94208c6346f4 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Size&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a1a2b00ab6845886d12ff94208c6346f4">numBlocks</a> () const </td></tr>
+<tr class="memdesc:a1a2b00ab6845886d12ff94208c6346f4 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image size in blocks.  <a href="#a1a2b00ab6845886d12ff94208c6346f4">More...</a><br /></td></tr>
+<tr class="separator:a1a2b00ab6845886d12ff94208c6346f4 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165175d4aa1815f4bcce682d2865cc4c inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a165175d4aa1815f4bcce682d2865cc4c">pixelInBlock</a> (const cv::Point &amp;coord) const </td></tr>
+<tr class="memdesc:a165175d4aa1815f4bcce682d2865cc4c inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the block index of a given pixel.  <a href="#a165175d4aa1815f4bcce682d2865cc4c">More...</a><br /></td></tr>
+<tr class="separator:a165175d4aa1815f4bcce682d2865cc4c inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72081ed6e1a4e51c904a191f2a2ff61 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#ad72081ed6e1a4e51c904a191f2a2ff61">blockOrigin</a> (const cv::Point &amp;block) const </td></tr>
+<tr class="memdesc:ad72081ed6e1a4e51c904a191f2a2ff61 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pixel coordinate of the origin (top-left) of a block.  <a href="#ad72081ed6e1a4e51c904a191f2a2ff61">More...</a><br /></td></tr>
+<tr class="separator:ad72081ed6e1a4e51c904a191f2a2ff61 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab023b52d32e825962b6474416b390870 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">cv::Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#ab023b52d32e825962b6474416b390870">blocksInAoi</a> (const cv::Rect &amp;aoi) const </td></tr>
+<tr class="memdesc:ab023b52d32e825962b6474416b390870 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the block extent of the requested AOI.  <a href="#ab023b52d32e825962b6474416b390870">More...</a><br /></td></tr>
+<tr class="separator:ab023b52d32e825962b6474416b390870 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb4fdc320aee10e8afd337138e2e7e1 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group___imagery_module.html#ga2238c2ef34502f68956ddef1f477ad95">BlockReadFunc</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a2eb4fdc320aee10e8afd337138e2e7e1">readFunc</a> () const noexcept</td></tr>
+<tr class="memdesc:a2eb4fdc320aee10e8afd337138e2e7e1 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the block read function.  <a href="#a2eb4fdc320aee10e8afd337138e2e7e1">More...</a><br /></td></tr>
+<tr class="separator:a2eb4fdc320aee10e8afd337138e2e7e1 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af836dcf21d949fd76993485242317d8f inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#af836dcf21d949fd76993485242317d8f">setReadFunc</a> (const <a class="el" href="group___imagery_module.html#ga2238c2ef34502f68956ddef1f477ad95">BlockReadFunc</a> &amp;func) noexcept</td></tr>
+<tr class="memdesc:af836dcf21d949fd76993485242317d8f inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the block read function.  <a href="#af836dcf21d949fd76993485242317d8f">More...</a><br /></td></tr>
+<tr class="separator:af836dcf21d949fd76993485242317d8f inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6d433d58e379503c5556353caaff27d inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">const cv::Size &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gae6d433d58e379503c5556353caaff27d">size</a> () const </td></tr>
+<tr class="memdesc:gae6d433d58e379503c5556353caaff27d inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image pixel size.  <a href="group___imagery_module.html#gae6d433d58e379503c5556353caaff27d">More...</a><br /></td></tr>
+<tr class="separator:gae6d433d58e379503c5556353caaff27d inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac789478fe5998234df8f2f5ae85a6b85 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">const cv::Size &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gac789478fe5998234df8f2f5ae85a6b85">blockSize</a> () const </td></tr>
+<tr class="memdesc:gac789478fe5998234df8f2f5ae85a6b85 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image block size.  <a href="group___imagery_module.html#gac789478fe5998234df8f2f5ae85a6b85">More...</a><br /></td></tr>
+<tr class="separator:gac789478fe5998234df8f2f5ae85a6b85 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabbb556d9f5048249ae32197aeb90466c inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gabbb556d9f5048249ae32197aeb90466c">numBands</a> () const </td></tr>
+<tr class="memdesc:gabbb556d9f5048249ae32197aeb90466c inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of raster bands in the image.  <a href="group___imagery_module.html#gabbb556d9f5048249ae32197aeb90466c">More...</a><br /></td></tr>
+<tr class="separator:gabbb556d9f5048249ae32197aeb90466c inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5164921d6c4514a57e2aa7243e6c572 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type.html#a5f0c62edf4601cbd15e52b381697069d">PixelType::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___imagery_module.html#gaf5164921d6c4514a57e2aa7243e6c572">pixelType</a> () const </td></tr>
+<tr class="memdesc:gaf5164921d6c4514a57e2aa7243e6c572 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image pixel type.  <a href="group___imagery_module.html#gaf5164921d6c4514a57e2aa7243e6c572">More...</a><br /></td></tr>
+<tr class="separator:gaf5164921d6c4514a57e2aa7243e6c572 inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145e48260cc4ea93ee5ce272e74ef07e inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a145e48260cc4ea93ee5ce272e74ef07e">readBlocksInAoi</a> (cv::Rect aoi={})</td></tr>
+<tr class="memdesc:a145e48260cc4ea93ee5ce272e74ef07e inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read blocks from the given AOI.  <a href="#a145e48260cc4ea93ee5ce272e74ef07e">More...</a><br /></td></tr>
+<tr class="separator:a145e48260cc4ea93ee5ce272e74ef07e inherit pub_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classdg_1_1deepcore_1_1_async_error"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdg_1_1deepcore_1_1_async_error')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1_async_error.html">dg::deepcore::AsyncError</a></td></tr>
+<tr class="memitem:a354a3ed3bdb3b9084602fc2ce2028478 inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">std::exception_ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a354a3ed3bdb3b9084602fc2ce2028478">error</a> () const </td></tr>
+<tr class="memdesc:a354a3ed3bdb3b9084602fc2ce2028478 inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the error, if one was set by a worker thread.  <a href="#a354a3ed3bdb3b9084602fc2ce2028478">More...</a><br /></td></tr>
+<tr class="separator:a354a3ed3bdb3b9084602fc2ce2028478 inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a111596085600b017485d15078760eb inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a4a111596085600b017485d15078760eb">rethrowIfError</a> () const </td></tr>
+<tr class="memdesc:a4a111596085600b017485d15078760eb inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">If an error was set, rethrow the exception.  <a href="#a4a111596085600b017485d15078760eb">More...</a><br /></td></tr>
+<tr class="separator:a4a111596085600b017485d15078760eb inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71c047173cec3f535d24f67599d9a18 inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#aa71c047173cec3f535d24f67599d9a18">setOnError</a> (<a class="el" href="group___utility_module.html#ga21a199c126b87ba8bfe8ad7952dbaf3b">OnErrorFunc</a> func)</td></tr>
+<tr class="memdesc:aa71c047173cec3f535d24f67599d9a18 inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the on error callback.  <a href="#aa71c047173cec3f535d24f67599d9a18">More...</a><br /></td></tr>
+<tr class="separator:aa71c047173cec3f535d24f67599d9a18 inherit pub_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae91dd1db57e6511bee5a6af01242f202"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html#ae91dd1db57e6511bee5a6af01242f202">readImage</a> (const std::string &amp;path, const cv::Rect &amp;aoi={}, <a class="el" href="group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2">SimpleProgress</a> progress=nullptr)</td></tr>
+<tr class="memdesc:ae91dd1db57e6511bee5a6af01242f202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the whole image or an image subset.  <a href="#ae91dd1db57e6511bee5a6af01242f202">More...</a><br /></td></tr>
+<tr class="separator:ae91dd1db57e6511bee5a6af01242f202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html">dg::deepcore::imagery::GeoImage</a></td></tr>
+<tr class="memitem:a69395b8c1f7982df256d62dd4996a3cf inherit pub_static_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">static cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a69395b8c1f7982df256d62dd4996a3cf">readImage</a> (<a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html">GeoImage</a> &amp;geoImage, cv::Rect aoi, <a class="el" href="group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2">SimpleProgress</a> progress)</td></tr>
+<tr class="memdesc:a69395b8c1f7982df256d62dd4996a3cf inherit pub_static_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the whole image or an image subset.  <a href="#a69395b8c1f7982df256d62dd4996a3cf">More...</a><br /></td></tr>
+<tr class="separator:a69395b8c1f7982df256d62dd4996a3cf inherit pub_static_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classdg_1_1deepcore_1_1imagery_1_1_geo_image')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html">dg::deepcore::imagery::GeoImage</a></td></tr>
-<tr class="memitem:ae349f896afc816932b94bbafd135a7ea inherit pro_attribs_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_spatial_reference.html">SpatialReference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#ae349f896afc816932b94bbafd135a7ea">sr_</a></td></tr>
-<tr class="separator:ae349f896afc816932b94bbafd135a7ea inherit pro_attribs_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html">dg::deepcore::imagery::GeoImage</a></td></tr>
+<tr class="memitem:a9a0e4b9d11a71dabb9d36c16e1c7d902 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a9a0e4b9d11a71dabb9d36c16e1c7d902">setSize</a> (const cv::Size &amp;s)</td></tr>
+<tr class="memdesc:a9a0e4b9d11a71dabb9d36c16e1c7d902 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the image pixel size.  <a href="#a9a0e4b9d11a71dabb9d36c16e1c7d902">More...</a><br /></td></tr>
+<tr class="separator:a9a0e4b9d11a71dabb9d36c16e1c7d902 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022e93363ae17ca78b9e9c448c043ff3 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a022e93363ae17ca78b9e9c448c043ff3">setBlockSize</a> (const cv::Size s)</td></tr>
+<tr class="memdesc:a022e93363ae17ca78b9e9c448c043ff3 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the image block size.  <a href="#a022e93363ae17ca78b9e9c448c043ff3">More...</a><br /></td></tr>
+<tr class="separator:a022e93363ae17ca78b9e9c448c043ff3 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10a85193f3bb2a6f7099eb8ad77a229 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#ae10a85193f3bb2a6f7099eb8ad77a229">setNumBands</a> (int <a class="el" href="group___imagery_module.html#gabbb556d9f5048249ae32197aeb90466c">numBands</a>)</td></tr>
+<tr class="memdesc:ae10a85193f3bb2a6f7099eb8ad77a229 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of raster bands in the image.  <a href="#ae10a85193f3bb2a6f7099eb8ad77a229">More...</a><br /></td></tr>
+<tr class="separator:ae10a85193f3bb2a6f7099eb8ad77a229 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee62bb70b471181b9be812ef64c2f9f inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a7ee62bb70b471181b9be812ef64c2f9f">setPixelType</a> (<a class="el" href="namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type.html#a5f0c62edf4601cbd15e52b381697069d">PixelType::Type</a> <a class="el" href="group___imagery_module.html#gaf5164921d6c4514a57e2aa7243e6c572">pixelType</a>)</td></tr>
+<tr class="memdesc:a7ee62bb70b471181b9be812ef64c2f9f inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the image pixel type as a cv::Mat type i.e. CV_8U, CV_8S, CV_32F, etc.  <a href="#a7ee62bb70b471181b9be812ef64c2f9f">More...</a><br /></td></tr>
+<tr class="separator:a7ee62bb70b471181b9be812ef64c2f9f inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cef7a7da7b41098ba73c280c578f183 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a4cef7a7da7b41098ba73c280c578f183">setSpatialReference</a> (const <a class="el" href="classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html">geometry::SpatialReference</a> &amp;sr)</td></tr>
+<tr class="memdesc:a4cef7a7da7b41098ba73c280c578f183 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the image spatial reference.  <a href="#a4cef7a7da7b41098ba73c280c578f183">More...</a><br /></td></tr>
+<tr class="separator:a4cef7a7da7b41098ba73c280c578f183 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612ee678ba16576b9e07cf0d56420aab inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a612ee678ba16576b9e07cf0d56420aab">setSpatialReference</a> (<a class="el" href="classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html">geometry::SpatialReference</a> &amp;&amp;sr)</td></tr>
+<tr class="memdesc:a612ee678ba16576b9e07cf0d56420aab inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the image spatial reference.  <a href="#a612ee678ba16576b9e07cf0d56420aab">More...</a><br /></td></tr>
+<tr class="separator:a612ee678ba16576b9e07cf0d56420aab inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e68492536faf720471a70a2c824a467 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a3e68492536faf720471a70a2c824a467">setTransformation</a> (const <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_transformation.html">geometry::Transformation</a> &amp;transform)</td></tr>
+<tr class="memdesc:a3e68492536faf720471a70a2c824a467 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pixel to projection and projection to pixel transformations.  <a href="#a3e68492536faf720471a70a2c824a467">More...</a><br /></td></tr>
+<tr class="separator:a3e68492536faf720471a70a2c824a467 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ca266a41daeb9f52823995ad6fc692 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a96ca266a41daeb9f52823995ad6fc692">setTransformation</a> (<a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_transformation.html">geometry::Transformation</a> *transform)</td></tr>
+<tr class="memdesc:a96ca266a41daeb9f52823995ad6fc692 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pixel to projection and projection to pixel transformations.  <a href="#a96ca266a41daeb9f52823995ad6fc692">More...</a><br /></td></tr>
+<tr class="separator:a96ca266a41daeb9f52823995ad6fc692 inherit pro_methods_classdg_1_1deepcore_1_1imagery_1_1_geo_image"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classdg_1_1deepcore_1_1_async_error"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classdg_1_1deepcore_1_1_async_error')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1_async_error.html">dg::deepcore::AsyncError</a></td></tr>
+<tr class="memitem:a110fc34acc63e4eaa95fab542fa2d622 inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a110fc34acc63e4eaa95fab542fa2d622">callOnError</a> () const </td></tr>
+<tr class="memdesc:a110fc34acc63e4eaa95fab542fa2d622 inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the on error callback.  <a href="#a110fc34acc63e4eaa95fab542fa2d622">More...</a><br /></td></tr>
+<tr class="separator:a110fc34acc63e4eaa95fab542fa2d622 inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc565e1f74ae9d7cea234dde3154a5b inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a8cc565e1f74ae9d7cea234dde3154a5b">setAndCallOnError</a> ()</td></tr>
+<tr class="memdesc:a8cc565e1f74ae9d7cea234dde3154a5b inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the currently called exception as error and calls the on error callback.  <a href="#a8cc565e1f74ae9d7cea234dde3154a5b">More...</a><br /></td></tr>
+<tr class="separator:a8cc565e1f74ae9d7cea234dde3154a5b inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02732133e16f3e573f1b6eb971d95bdc inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a02732133e16f3e573f1b6eb971d95bdc">setError</a> (const std::exception_ptr &amp;<a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a354a3ed3bdb3b9084602fc2ce2028478">error</a>)</td></tr>
+<tr class="memdesc:a02732133e16f3e573f1b6eb971d95bdc inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the error set by a worker thread.  <a href="#a02732133e16f3e573f1b6eb971d95bdc">More...</a><br /></td></tr>
+<tr class="separator:a02732133e16f3e573f1b6eb971d95bdc inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe76c579587f5c6a2255257b9a624c4b inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_async_error.html#afe76c579587f5c6a2255257b9a624c4b">setError</a> ()</td></tr>
+<tr class="memdesc:afe76c579587f5c6a2255257b9a624c4b inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the currently caught exception as the error.  <a href="#afe76c579587f5c6a2255257b9a624c4b">More...</a><br /></td></tr>
+<tr class="separator:afe76c579587f5c6a2255257b9a624c4b inherit pro_methods_classdg_1_1deepcore_1_1_async_error"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a geo-registered image read using GDAL. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab9f14e75cccbffc7f43081f4dc171b53"></a>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a2c05530c01c9cc6bf0d0f332b74cecc3"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Size dg::deepcore::imagery::GdalImage::blockSize </td>
+          <td class="memname">dg::deepcore::imagery::GdalImage::GdalImage </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Gets the image block size. </p>
-<dl class="section return"><dt>Returns</dt><dd>The image block size. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga02738a1beaa1dd55f6d06593fe9a4c6f">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a12f9039f7445e931359b351045676051"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int dg::deepcore::imagery::GdalImage::numBands </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the number of raster bands in the image. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of raster bands. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga27b0bde15551e580dc658947d7d29f61">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5a9fdea0bf1473c6c54a116a3b3fcd58"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Point2d dg::deepcore::imagery::GdalImage::origin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the origin in the image's native coordinate system. The origin is the north-west corner. </p>
-<dl class="section return"><dt>Returns</dt><dd>The origin. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga6dff2792da9db73d8d80e5841edce606">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a703aceb4c6ab2e7b1948e0df6b44d965"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Size2d dg::deepcore::imagery::GdalImage::pixelSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the pixel size in the image's native coordinate system. </p>
-<dl class="section return"><dt>Returns</dt><dd>The pixel size. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga11359d5f53eff7d8ac2e661f31eb4f1a">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0dfbdd1a7a6260f38e67bbe10eb1007c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Point2d dg::deepcore::imagery::GdalImage::pixelToProj </td>
-          <td>(</td>
-          <td class="paramtype">cv::Point&#160;</td>
-          <td class="paramname"><em>pixelCoord</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert a pixel coordinate to the image's coordinate system. </p>
+<p>Constructs the <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html" title="Represents a geo-registered image read using GDAL. ">GdalImage</a> class and opens the image. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pixelCoord</td><td>A pixel coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>Path to the image to open. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A coordinate in image's coordinate system. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga6ef753bbb1d8a5dfa56a72de21af4f08">dg::deepcore::imagery::GeoImage</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2703af86b94a85181d5dc8c98dc7bc1a"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6c89021966b51596c163a786b3a314c4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -361,10 +286,11 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int dg::deepcore::imagery::GdalImage::pixelType </td>
+          <td class="memname">void dg::deepcore::imagery::GdalImage::readBlocks </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::vector&lt; cv::Point &gt; &amp;&#160;</td>
+          <td class="paramname"><em>blocks</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -374,49 +300,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the image pixel type as a cv::Mat type i.e. CV_8U, CV_8S, CV_32F, etc. </p>
-<dl class="section return"><dt>Returns</dt><dd>The image pixel type. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga3cb616a1de3ee19bebfdf14957d90d7c">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a824ec987881152e8ca9d95b0952e75c7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Point dg::deepcore::imagery::GdalImage::projToPixel </td>
-          <td>(</td>
-          <td class="paramtype">cv::Point2d&#160;</td>
-          <td class="paramname"><em>projCoord</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Convert a coordinate in the image's coordinate system to a pixel coordiante. </p>
+<p>Queues blocks to be read. The blocks are then passed back using <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#a2eb4fdc320aee10e8afd337138e2e7e1" title="Gets the block read function. ">readFunc()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">projCoord</td><td>A coordinate in the image's coordinate system. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">blocks</td><td>The block to read. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pixel coordinate. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Read function must be set using <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#af836dcf21d949fd76993485242317d8f" title="Sets the block read function. ">setReadFunc()</a> prior to calling this method.</dd></dl>
+<p>This function can either queue blocks for reading or read them synchronously, whatever is more efficient for the implementation. </p>
 
-<p>Implements <a class="el" href="group___imagery_module.html#ga4935502553685c597c803da24f706b99">dg::deepcore::imagery::GeoImage</a>.</p>
+<p>Implements <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_image.html#ab9967ec5b39d1a0247366ff2d32bc883">dg::deepcore::imagery::GeoImage</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2f2dbe1f567c126aa8406ee86f9990d7"></a>
+<a class="anchor" id="ae91dd1db57e6511bee5a6af01242f202"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -426,102 +324,44 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">cv::Mat dg::deepcore::imagery::GdalImage::readImage </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2">SimpleProgress</a>&#160;</td>
-          <td class="paramname"><em>progressFunc</em> = <code>nullptr</code></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
         </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reads the image into a cv::Mat. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">progressFunc</td><td>The progress reporting callback. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The cv::Mat containing the pixel data. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga58e7e5d070e788600714a331c5bdaf02">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5ae4e4f34682f1a9e753dd1534218988"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
         <tr>
-          <td class="memname">future&lt; bool &gt; dg::deepcore::imagery::GdalImage::readImageAsync </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group___imagery_module.html#ga2238c2ef34502f68956ddef1f477ad95">BlockReadFunc</a>&#160;</td>
-          <td class="paramname"><em>readFunc</em>, </td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Rect &amp;&#160;</td>
+          <td class="paramname"><em>aoi</em> = <code>{}</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2">SimpleProgress</a>&#160;</td>
-          <td class="paramname"><em>progressFunc</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>progress</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reades the image asynchronously. </p>
+<p>Reads the whole image or an image subset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">readFunc</td><td>Function that is called for every block read. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">progressFunc</td><td>The progress reporting callback. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>Path to the file to read from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aoi</td><td>The optional AOI. If <code>aoi.size() == 0</code>, then the full image extent will be returned. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">progress</td><td>The optional progress reporting function. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The future that will be true if the download compeleted, false if cancelled. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#ga546feafefa76af28c13edab7a92e1cee">dg::deepcore::imagery::GeoImage</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abb3fdf6d72f690606ee00a6f1db93889"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cv::Size dg::deepcore::imagery::GdalImage::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the image's pixel size. </p>
-<dl class="section return"><dt>Returns</dt><dd>The image's pixel size. </dd></dl>
-
-<p>Implements <a class="el" href="group___imagery_module.html#gaac80b110347bd25c8fbdefef229d89c6">dg::deepcore::imagery::GeoImage</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The image or image subset. </dd></dl>
 
 </div>
 </div>
@@ -533,24 +373,12 @@ Additional Inherited Members</h2></td></tr>
         <ul>
             <li class="navelem"><a class="el" href="namespacedg.html">dg</a></li><li class="navelem"><a class="el" href="namespacedg_1_1deepcore.html">deepcore</a></li><li class="navelem"><a class="el" href="namespacedg_1_1deepcore_1_1imagery.html">imagery</a></li><li class="navelem"><a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_gdal_image.html">GdalImage</a></li>
             <li class="footer">
-                <a href="https://www.digitalglobe.com/">&copy; 2016 DigitalGlobe, Inc.</a>
+                <a href="https://www.digitalglobe.com/">2017 DigitalGlobe, Inc.</a>
+            </li>
+            <li class="footer">
+                <a href="mailto:deepcore@digitalglobe.com">Contact DeepCore</a>
             </li>
         </ul>
     </div>
 </body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </html>

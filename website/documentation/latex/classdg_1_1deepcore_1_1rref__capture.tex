@@ -1,0 +1,60 @@
+\hypertarget{classdg_1_1deepcore_1_1rref__capture}{}\section{dg\+:\+:deepcore\+:\+:rref\+\_\+capture$<$ T $>$ Class Template Reference}
+\label{classdg_1_1deepcore_1_1rref__capture}\index{dg\+::deepcore\+::rref\+\_\+capture$<$ T $>$@{dg\+::deepcore\+::rref\+\_\+capture$<$ T $>$}}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\\*
+class dg\+::deepcore\+::rref\+\_\+capture$<$ T $>$}
+
+Wraps rvalue references to allow using them to be used in a {\ttfamily const} context. 
+
+This enables using {\ttfamily std\+::unique\+\_\+ptr} in {\ttfamily std\+::initializer\+\_\+list} 
+
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }UniquePtrVec \{
+  std::vector<std::unique\_ptr<int>> data;
+
+  UniquePtrVec(UniquePtrVec&& v) : data(\hyperlink{namespacestd}{std}::move(v.data)) \{\}
+  UniquePtrVec(std::initializer\_list<\hyperlink{classdg_1_1deepcore_1_1rref__capture_aab978ba67e7eaebe6be0929354cbcf75}{rref\_capture}<std::unique\_ptr<int>>> l) : data(l.begin(), l
+      .end()) \{\}
+  UniquePtrVec& operator=(\textcolor{keyword}{const} UniquePtrVec&) = \textcolor{keyword}{delete};
+  \textcolor{keywordtype}{int} operator[] (\textcolor{keywordtype}{size\_t} index)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} *data[index]; \}
+\};
+
+\textcolor{comment}{// .................................................}
+
+std::unique\_ptr<int> a(\textcolor{keyword}{new} \textcolor{keywordtype}{int}(3)), b(\textcolor{keyword}{new} \textcolor{keywordtype}{int}(1)), c(\textcolor{keyword}{new} \textcolor{keywordtype}{int}(4));
+UniquePtrVec v \{ std::move(a), std::move(b), std::move(c) \};
+\end{DoxyCode}
+ 
+
+{\ttfamily \#include $<$utility/\+Type\+Traits.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdg_1_1deepcore_1_1rref__capture_aab978ba67e7eaebe6be0929354cbcf75}{rref\+\_\+capture} (T \&\&x)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1rref__capture_a2303956d75f80a8eed8b0eeb7d7d8fc7}{operator T \&\&} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::rref\+\_\+capture@{dg\+::deepcore\+::rref\+\_\+capture}!rref\+\_\+capture@{rref\+\_\+capture}}
+\index{rref\+\_\+capture@{rref\+\_\+capture}!dg\+::deepcore\+::rref\+\_\+capture@{dg\+::deepcore\+::rref\+\_\+capture}}
+\subsubsection[{\texorpdfstring{rref\+\_\+capture(\+T \&\&x)}{rref_capture(T &&x)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dg\+::deepcore\+::rref\+\_\+capture}$<$ T $>$\+::{\bf rref\+\_\+capture} (
+\begin{DoxyParamCaption}
+\item[{T \&\&}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1rref__capture_aab978ba67e7eaebe6be0929354cbcf75}{}\label{classdg_1_1deepcore_1_1rref__capture_aab978ba67e7eaebe6be0929354cbcf75}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::rref\+\_\+capture@{dg\+::deepcore\+::rref\+\_\+capture}!operator T \&\&@{operator T \&\&}}
+\index{operator T \&\&@{operator T \&\&}!dg\+::deepcore\+::rref\+\_\+capture@{dg\+::deepcore\+::rref\+\_\+capture}}
+\subsubsection[{\texorpdfstring{operator T \&\&() const }{operator T &&() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dg\+::deepcore\+::rref\+\_\+capture}$<$ T $>$\+::operator T \&\& (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1rref__capture_a2303956d75f80a8eed8b0eeb7d7d8fc7}{}\label{classdg_1_1deepcore_1_1rref__capture_a2303956d75f80a8eed8b0eeb7d7d8fc7}

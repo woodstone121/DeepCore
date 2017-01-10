@@ -2,22 +2,64 @@
 \label{group___network_module}\index{Network@{Network}}
 
 
-Contains network functionality specifically handling J\+S\+O\+N-\/\+R\+PC communication.  
+\subsection{Detailed Description}
+Contains network functionality specifically handling J\+S\+O\+N-\/\+R\+PC communication. 
+
+Handle the processing of a J\+S\+O\+N-\/\+R\+PC request-\/response with Simple-\/\+Web-\/\+Server http.
+
+Handle the processing of a J\+S\+O\+N-\/\+R\+PC request-\/response.
+
+Create a hook for use with Simple-\/\+Web-\/\+Server.
+
+\begin{DoxyReturn}{Returns}
+A function pointer which accepts a request and generates a response
+\end{DoxyReturn}
+Assuming that Mil\+Net\+Server is a concrete implementation for this class, a simple J\+S\+O\+N-\/\+R\+PC service can be started with\+:
 
 
+\begin{DoxyPre}
+HttpServer server(8080, 4);
+MilNetServer rpcServer;
+server.resource["^/string$"]["GET"] = rpcServer.makeHttpHook();
+server.start();
+\end{DoxyPre}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rpc\+Request} & The request to process \\
+\hline
+\mbox{\tt out}  & {\em rpc\+Response} & The response to return if the result of this function is true \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the response should be sent to the server
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em response} & The http request to process \\
+\hline
+\mbox{\tt out}  & {\em request} & The http response to return\\
+\hline
+\end{DoxyParams}
+This method may be directly passed to a Simple-\/\+Web-\/\+Server Http\+Server to manage J\+S\+O\+N-\/\+R\+PC requests \subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedg_1_1deepcore_1_1network}{dg\+::deepcore\+::network}
+\begin{DoxyCompactList}\small\item\em Contains networking functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structdg_1_1deepcore_1_1network_1_1_apache_tomcat_error}{dg\+::deepcore\+::network\+::\+Apache\+Tomcat\+Error}
 \begin{DoxyCompactList}\small\item\em Represents an H\+T\+ML Apache Tomcat error report. \end{DoxyCompactList}\item 
-class \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{dg\+::deepcore\+::network\+::\+Http\+Error}
-\begin{DoxyCompactList}\small\item\em Represents an H\+T\+TP error response. \end{DoxyCompactList}\item 
-class \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_cleanup}{dg\+::deepcore\+::network\+::\+Http\+Cleanup}
-\begin{DoxyCompactList}\small\item\em Safely manages the global curl initialization and cleanup. Should be used instead of curlpp\+::\+Cleaner or curl\+\_\+global\+\_\+init. \end{DoxyCompactList}\item 
 struct \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_request}{dg\+::deepcore\+::network\+::\+Download\+Request}
 \begin{DoxyCompactList}\small\item\em Represents an asynchronous download request. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_downloader}{dg\+::deepcore\+::network\+::\+Http\+Downloader}
 \begin{DoxyCompactList}\small\item\em Downloads from H\+T\+T\+P/\+H\+T\+T\+PS endpoints. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{dg\+::deepcore\+::network\+::\+Http\+Error}
+\begin{DoxyCompactList}\small\item\em Represents an H\+T\+TP error response. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_cleanup}{dg\+::deepcore\+::network\+::\+Http\+Cleanup}
+\begin{DoxyCompactList}\small\item\em Safely manages the global curl initialization and cleanup. Should be used instead of curlpp\+::\+Cleaner or curl\+\_\+global\+\_\+init. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc}{dg\+::deepcore\+::network\+::\+Json\+Rpc}
 \begin{DoxyCompactList}\small\item\em An abstract class for J\+S\+O\+N-\/\+R\+PC communication. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc_error}{dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error}
@@ -33,17 +75,17 @@ class \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc_server}{dg\+::deepc
 \item 
 \#define \hyperlink{group___network_module_gaa6c6ffb478681996c90ec197922be05f}{D\+G\+\_\+\+H\+T\+T\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(url,  code,  response)~throw \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{dg\+::deepcore\+::network\+::\+Http\+Error}(\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, url, code, response)
 \begin{DoxyCompactList}\small\item\em Throws an Http\+Error for the current position in code. \end{DoxyCompactList}\item 
-\#define \hyperlink{group___network_module_ga5d3ae0eeb5ece752717325264ad99eb6}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}(error\+Type,  format,  args...)~\hyperlink{group___network_module_ga2fdfe2154c20e91cb5f0205ced658714}{dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::from\+Format}(\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, error\+Type, format, \#\#args)
+\#define \hyperlink{group___network_module_gaedbbda4a9f7172a69859c7cce370f8a9}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}(error\+Type,  format, ...)~\hyperlink{group___network_module_ga2fdfe2154c20e91cb5f0205ced658714}{dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::from\+Format}(\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, error\+Type, format, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
 \begin{DoxyCompactList}\small\item\em Initializes an Error for the current position in code, allows for sprintf-\/style message formatting. \end{DoxyCompactList}\item 
-\#define \hyperlink{group___network_module_gadd35b045ee5354e068ed791830ed16cb}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(error\+Type,  message,  args...)~throw \hyperlink{group___network_module_ga5d3ae0eeb5ece752717325264ad99eb6}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}(error\+Type, message, \#\#args)
+\#define \hyperlink{group___network_module_ga4fd4a19ca3579b636b43aaefc2877229}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(error\+Type,  message, ...)~throw \hyperlink{group___network_module_gaedbbda4a9f7172a69859c7cce370f8a9}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}(error\+Type, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
 \begin{DoxyCompactList}\small\item\em Throws an Error for the current position in code, allows for sprintf-\/style message formatting. \end{DoxyCompactList}\item 
-\#define \hyperlink{group___network_module_ga1025d0a05a0a01a8c72126b4b3a208bf}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+C\+H\+E\+CK}(condition,  error\+Type,  message,  args...)~if(!(condition)) \{ \hyperlink{group___network_module_gadd35b045ee5354e068ed791830ed16cb}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(error\+Type, message, \#\#args); \}
+\#define \hyperlink{group___network_module_ga7d14a793969bb086eb3df0a4e2296db0}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+C\+H\+E\+CK}(condition,  error\+Type,  message, ...)~if(!(condition)) \{ \hyperlink{group___network_module_ga4fd4a19ca3579b636b43aaefc2877229}{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(error\+Type, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}
 \begin{DoxyCompactList}\small\item\em Checks the condition and throws an Error if the condition is false. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 using \hyperlink{group___network_module_ga4d618c88e9b1e6e961f70621dc9aab41}{dg\+::deepcore\+::network\+::\+Download\+Callback} = std\+::function$<$ bool(std\+::istream \&stream)$>$
-\begin{DoxyCompactList}\small\item\em Callback for a finished download. \end{DoxyCompactList}\item 
+\item 
 using \hyperlink{group___network_module_ga6a460317d5e2b04bbaa2bb5389ca2ce3}{dg\+::deepcore\+::network\+::\+Download\+Requests} = std\+::vector$<$ Download\+Request $>$
 \begin{DoxyCompactList}\small\item\em An std\+::vector of \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_request}{Download\+Request} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -69,28 +111,6 @@ static std\+::shared\+\_\+ptr$<$ Http\+Cleanup $>$ \hyperlink{group___network_mo
 \begin{DoxyCompactList}\small\item\em Initialize curl for the lifetime of the returned shared pointer. \end{DoxyCompactList}\item 
 \hyperlink{group___network_module_gac517b1ec291e0fdcef96e8e7af54eb1d}{dg\+::deepcore\+::network\+::\+Http\+Cleanup\+::$\sim$\+Http\+Cleanup} ()
 \begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
-\hyperlink{group___network_module_gaee68926e47a7a8e18926b25a274a6741}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::\+Http\+Downloader} (const Download\+Requests \&requests)
-\begin{DoxyCompactList}\small\item\em Contruct an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_downloader}{Http\+Downloader}. \end{DoxyCompactList}\item 
-\hyperlink{group___network_module_gaf623ef672fad2678ff7a1f1dd8361d95}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::\+Http\+Downloader} (Download\+Requests \&\&requests)
-\begin{DoxyCompactList}\small\item\em Contruct an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_downloader}{Http\+Downloader}. \end{DoxyCompactList}\item 
-static std\+::vector$<$ uint8\+\_\+t $>$ \hyperlink{group___network_module_ga8f1ba1b79c2af5d051f6e8591cd0ea89}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download} (const std\+::string \&url, const std\+::string \&credentials=\char`\"{}\char`\"{}, const std\+::vector$<$ std\+::string $>$ \&headers=\{\})
-\begin{DoxyCompactList}\small\item\em Download from a single U\+RL. \end{DoxyCompactList}\item 
-static std\+::string \hyperlink{group___network_module_ga06013d9acaf746065be05b6571f2462a}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download\+String} (const std\+::string \&url, const std\+::string \&credentials=\char`\"{}\char`\"{}, const std\+::vector$<$ std\+::string $>$ \&headers=\{\})
-\begin{DoxyCompactList}\small\item\em Download from a single U\+RL and return the result as a string. \end{DoxyCompactList}\item 
-static std\+::vector$<$ std\+::vector$<$ uint8\+\_\+t $>$ $>$ \hyperlink{group___network_module_ga07d51f62025e158feeca83cbc40d8564}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download} (const std\+::vector$<$ std\+::string $>$ \&urls, const std\+::string \&credentials=\char`\"{}\char`\"{}, Simple\+Progress progress=nullptr, int max\+Connections=10, const std\+::vector$<$ std\+::string $>$ \&headers=\{\})
-\begin{DoxyCompactList}\small\item\em Download from multiple U\+R\+Ls. \end{DoxyCompactList}\item 
-static bool \hyperlink{group___network_module_gab82b59cab6622abae4998f5fde08e688}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::check\+Connectivity} (const std\+::string \&url) noexcept
-\begin{DoxyCompactList}\small\item\em Check connectivity to a U\+RL. \end{DoxyCompactList}\item 
-Download\+Requests \& \hyperlink{group___network_module_ga93ed91ce22dd499848d0f42e683d64d5}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::requests} () noexcept
-\begin{DoxyCompactList}\small\item\em Gets the requests that will be processed by \hyperlink{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}{Http\+Downloader\+::download\+Async}. \end{DoxyCompactList}\item 
-const Download\+Requests \& \hyperlink{group___network_module_ga3c0af4cc2f8ea2880e48173183fdb758}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::requests} () const noexcept
-\begin{DoxyCompactList}\small\item\em Gets the requests that will be processed by \hyperlink{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}{Http\+Downloader\+::download\+Async}. \end{DoxyCompactList}\item 
-void \hyperlink{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download\+Async} (Simple\+Progress progress=nullptr, int max\+Connections=10) const 
-\begin{DoxyCompactList}\small\item\em Downloads the requests asynchronously. \end{DoxyCompactList}\item 
-static void \hyperlink{group___network_module_ga4aa457ededfdc5fcb0db52f7215909cb}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::set\+Verbose\+Logging} (bool verbose\+Logging)
-\begin{DoxyCompactList}\small\item\em Enables verbose logging of C\+U\+RL connections. \end{DoxyCompactList}\item 
-static bool \hyperlink{group___network_module_ga2470c65fd9d6dd62854a9c9e7df877c6}{dg\+::deepcore\+::network\+::\+Http\+Downloader\+::verbose\+Logging} ()
-\begin{DoxyCompactList}\small\item\em Is verbose logging of C\+U\+RL connections enabled? \end{DoxyCompactList}\item 
 \hyperlink{group___network_module_ga14eeb0f4441dfb8f75d82c0cd940c0ec}{dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error} ()
 \begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
 \hyperlink{group___network_module_ga03929fda967c6a3609d28953ac0fad55}{dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error} (const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, const std\+::vector$<$ uint8\+\_\+t $>$ \&response)
@@ -161,48 +181,6 @@ void \hyperlink{group___network_module_ga70614bdc02d6aeca557c21644305a72a}{dg\+:
 \begin{DoxyCompactList}\small\item\em Set a result object for this response. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Contains network functionality specifically handling J\+S\+O\+N-\/\+R\+PC communication. 
-
-Handle the processing of a J\+S\+O\+N-\/\+R\+PC request-\/response with Simple-\/\+Web-\/\+Server http.
-
-Handle the processing of a J\+S\+O\+N-\/\+R\+PC request-\/response.
-
-Create a hook for use with Simple-\/\+Web-\/\+Server.
-
-\begin{DoxyReturn}{Returns}
-A function pointer which accepts a request and generates a response
-\end{DoxyReturn}
-Assuming that Mil\+Net\+Server is a concrete implementation for this class, a simple J\+S\+O\+N-\/\+R\+PC service can be started with\+:
-
-
-\begin{DoxyPre}
-HttpServer server(8080, 4);
-MilNetServer rpcServer;
-server.resource["^/string$"]["GET"] = rpcServer.makeHttpHook();
-server.start();
-\end{DoxyPre}
-
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em rpc\+Request} & The request to process \\
-\hline
-\mbox{\tt out}  & {\em rpc\+Response} & The response to return if the result of this function is true \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if the response should be sent to the server
-\end{DoxyReturn}
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em response} & The http request to process \\
-\hline
-\mbox{\tt out}  & {\em request} & The http response to return\\
-\hline
-\end{DoxyParams}
-This method may be directly passed to a Simple-\/\+Web-\/\+Server Http\+Server to manage J\+S\+O\+N-\/\+R\+PC requests 
-
 \subsection{Macro Definition Documentation}
 \index{Network@{Network}!D\+G\+\_\+\+H\+T\+T\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW@{D\+G\+\_\+\+H\+T\+T\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}}
 \index{D\+G\+\_\+\+H\+T\+T\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW@{D\+G\+\_\+\+H\+T\+T\+P\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}!Network@{Network}}
@@ -233,9 +211,9 @@ Throws an Http\+Error for the current position in code.
 \item[{}]{condition, }
 \item[{}]{error\+Type, }
 \item[{}]{message, }
-\item[{}]{args...}
+\item[{}]{...}
 \end{DoxyParamCaption}
-)~if(!(condition)) \{ {\bf D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(error\+Type, message, \#\#args); \}}\hypertarget{group___network_module_ga1025d0a05a0a01a8c72126b4b3a208bf}{}\label{group___network_module_ga1025d0a05a0a01a8c72126b4b3a208bf}
+)~if(!(condition)) \{ {\bf D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+H\+R\+OW}(error\+Type, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+); \}}\hypertarget{group___network_module_ga7d14a793969bb086eb3df0a4e2296db0}{}\label{group___network_module_ga7d14a793969bb086eb3df0a4e2296db0}
 
 
 Checks the condition and throws an Error if the condition is false. 
@@ -248,8 +226,6 @@ Checks the condition and throws an Error if the condition is false.
 \hline
 \mbox{\tt in}  & {\em message} & The sprintf-\/style format for the error message if condition is false. \\
 \hline
-\mbox{\tt in}  & {\em args} & Arguments for format specification. \\
-\hline
 \end{DoxyParams}
 \index{Network@{Network}!D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT@{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}}
 \index{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT@{D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}!Network@{Network}}
@@ -257,9 +233,9 @@ Checks the condition and throws an Error if the condition is false.
 \begin{DoxyParamCaption}
 \item[{}]{error\+Type, }
 \item[{}]{format, }
-\item[{}]{args...}
+\item[{}]{...}
 \end{DoxyParamCaption}
-)~{\bf dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::from\+Format}(\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, error\+Type, format, \#\#args)}\hypertarget{group___network_module_ga5d3ae0eeb5ece752717325264ad99eb6}{}\label{group___network_module_ga5d3ae0eeb5ece752717325264ad99eb6}
+)~{\bf dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::from\+Format}(\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, error\+Type, format, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{group___network_module_gaedbbda4a9f7172a69859c7cce370f8a9}{}\label{group___network_module_gaedbbda4a9f7172a69859c7cce370f8a9}
 
 
 Initializes an Error for the current position in code, allows for sprintf-\/style message formatting. 
@@ -272,8 +248,6 @@ Initializes an Error for the current position in code, allows for sprintf-\/styl
 \hline
 \mbox{\tt in}  & {\em ...} & Arguments for format specification. \\
 \hline
-\mbox{\tt in}  & {\em args} & Arguments for format specification. \\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A new instance of the Error class initialized with the message and the current file, line, and function. 
@@ -284,9 +258,9 @@ A new instance of the Error class initialized with the message and the current f
 \begin{DoxyParamCaption}
 \item[{}]{error\+Type, }
 \item[{}]{message, }
-\item[{}]{args...}
+\item[{}]{...}
 \end{DoxyParamCaption}
-)~throw {\bf D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}(error\+Type, message, \#\#args)}\hypertarget{group___network_module_gadd35b045ee5354e068ed791830ed16cb}{}\label{group___network_module_gadd35b045ee5354e068ed791830ed16cb}
+)~throw {\bf D\+G\+\_\+\+J\+S\+O\+N\+R\+P\+C\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+IT}(error\+Type, message, \#\#\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\hypertarget{group___network_module_ga4fd4a19ca3579b636b43aaefc2877229}{}\label{group___network_module_ga4fd4a19ca3579b636b43aaefc2877229}
 
 
 Throws an Error for the current position in code, allows for sprintf-\/style message formatting. 
@@ -299,8 +273,6 @@ Throws an Error for the current position in code, allows for sprintf-\/style mes
 \hline
 \mbox{\tt in}  & {\em ...} & Arguments for format specification. \\
 \hline
-\mbox{\tt in}  & {\em args} & Arguments for format specification. \\
-\hline
 \end{DoxyParams}
 
 
@@ -308,10 +280,6 @@ Throws an Error for the current position in code, allows for sprintf-\/style mes
 \index{Network@{Network}!Download\+Callback@{Download\+Callback}}
 \index{Download\+Callback@{Download\+Callback}!Network@{Network}}
 \subsubsection[{\texorpdfstring{Download\+Callback}{DownloadCallback}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dg\+::deepcore\+::network\+::\+Download\+Callback}}\hypertarget{group___network_module_ga4d618c88e9b1e6e961f70621dc9aab41}{}\label{group___network_module_ga4d618c88e9b1e6e961f70621dc9aab41}
-
-
-Callback for a finished download. 
-
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in,out}  & {\em stream} & An input stream containing the downloaded data. \\
@@ -327,6 +295,210 @@ An std\+::vector of \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_requ
 
 
 \subsection{Function Documentation}
+\index{Network@{Network}!Http\+Error@{Http\+Error}}
+\index{Http\+Error@{Http\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Http\+Error()}{HttpError()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_ga14eeb0f4441dfb8f75d82c0cd940c0ec}{}\label{group___network_module_ga14eeb0f4441dfb8f75d82c0cd940c0ec}
+
+
+The default constructor. 
+
+\index{Network@{Network}!Http\+Error@{Http\+Error}}
+\index{Http\+Error@{Http\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Http\+Error(const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, const std\+::vector$<$ uint8\+\_\+t $>$ \&response)}{HttpError(const char *file, const unsigned int line, const char *function, const std::string &url, int code, const std::vector< uint8_t > &response)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{const unsigned int}]{line, }
+\item[{const char $\ast$}]{function, }
+\item[{const std\+::string \&}]{url, }
+\item[{int}]{code, }
+\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{response}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_ga03929fda967c6a3609d28953ac0fad55}{}\label{group___network_module_ga03929fda967c6a3609d28953ac0fad55}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{Http\+Error}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
+\hline
+\mbox{\tt in}  & {\em line} & Source line number for the error. \\
+\hline
+\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
+\hline
+\mbox{\tt in}  & {\em url} & The request U\+RL. \\
+\hline
+\mbox{\tt in}  & {\em code} & The H\+T\+TP result code. \\
+\hline
+\mbox{\tt in}  & {\em response} & The response body. \\
+\hline
+\end{DoxyParams}
+\index{Network@{Network}!Http\+Error@{Http\+Error}}
+\index{Http\+Error@{Http\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Http\+Error(const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, std\+::vector$<$ uint8\+\_\+t $>$ \&\&response)}{HttpError(const char *file, const unsigned int line, const char *function, const std::string &url, int code, std::vector< uint8_t > &&response)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{const unsigned int}]{line, }
+\item[{const char $\ast$}]{function, }
+\item[{const std\+::string \&}]{url, }
+\item[{int}]{code, }
+\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&\&}]{response}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_gaacf30b407e830bcfc3a15b14c6bcda3f}{}\label{group___network_module_gaacf30b407e830bcfc3a15b14c6bcda3f}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{Http\+Error}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
+\hline
+\mbox{\tt in}  & {\em line} & Source line number for the error. \\
+\hline
+\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
+\hline
+\mbox{\tt in}  & {\em url} & The request U\+RL. \\
+\hline
+\mbox{\tt in}  & {\em code} & The H\+T\+TP result code. \\
+\hline
+\mbox{\tt in,out}  & {\em response} & The response body. \\
+\hline
+\end{DoxyParams}
+\index{Network@{Network}!Http\+Error@{Http\+Error}}
+\index{Http\+Error@{Http\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Http\+Error(const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, std\+::istream \&response)}{HttpError(const char *file, const unsigned int line, const char *function, const std::string &url, int code, std::istream &response)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file, }
+\item[{const unsigned int}]{line, }
+\item[{const char $\ast$}]{function, }
+\item[{const std\+::string \&}]{url, }
+\item[{int}]{code, }
+\item[{std\+::istream \&}]{response}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_ga45854282cc688af939cbe7d7242661a3}{}\label{group___network_module_ga45854282cc688af939cbe7d7242661a3}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{Http\+Error}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
+\hline
+\mbox{\tt in}  & {\em line} & Source line number for the error. \\
+\hline
+\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
+\hline
+\mbox{\tt in}  & {\em url} & The request U\+RL. \\
+\hline
+\mbox{\tt in}  & {\em code} & The H\+T\+TP result code. \\
+\hline
+\mbox{\tt in,out}  & {\em response} & The response body. \\
+\hline
+\end{DoxyParams}
+\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
+\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Json\+Rpc\+Error()}{JsonRpcError()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_ga6177a0628073de16562fdbaf8ef12f33}{}\label{group___network_module_ga6177a0628073de16562fdbaf8ef12f33}
+
+
+The default constructor. 
+
+\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
+\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Json\+Rpc\+Error(const std\+::string \&file, const unsigned int line, const std\+::string \&function, const Json\+Rpc\+Error\+Type type, const std\+::string \&message)}{JsonRpcError(const std::string &file, const unsigned int line, const std::string &function, const JsonRpcErrorType type, const std::string &message)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file, }
+\item[{const unsigned int}]{line, }
+\item[{const std\+::string \&}]{function, }
+\item[{const {\bf Json\+Rpc\+Error\+Type}}]{type, }
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_ga041044a45186dbc1faa970ec45ecba81}{}\label{group___network_module_ga041044a45186dbc1faa970ec45ecba81}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
+\hline
+\mbox{\tt in}  & {\em line} & Source line number for the error. \\
+\hline
+\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
+\hline
+\mbox{\tt in}  & {\em type} & A preset code-\/short message pair from the J\+S\+O\+N-\/\+R\+PC standard. \\
+\hline
+\mbox{\tt in}  & {\em message} & The error message. \\
+\hline
+\end{DoxyParams}
+\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
+\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Json\+Rpc\+Error(const std\+::string \&file, const unsigned int line, const std\+::string \&function, const int code, const std\+::string \&short\+Message, const std\+::string \&message)}{JsonRpcError(const std::string &file, const unsigned int line, const std::string &function, const int code, const std::string &shortMessage, const std::string &message)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file, }
+\item[{const unsigned int}]{line, }
+\item[{const std\+::string \&}]{function, }
+\item[{const int}]{code, }
+\item[{const std\+::string \&}]{short\+Message, }
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_gad7b1e6630b2774ffa45cbcc88b9a1b3f}{}\label{group___network_module_gad7b1e6630b2774ffa45cbcc88b9a1b3f}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
+\hline
+\mbox{\tt in}  & {\em line} & Source line number for the error. \\
+\hline
+\mbox{\tt in}  & {\em function} & Function name in which the error occurred. \\
+\hline
+\mbox{\tt in}  & {\em code} & The code for the J\+S\+O\+N-\/\+R\+PC error. \\
+\hline
+\mbox{\tt in}  & {\em short\+Message} & The short message for the J\+S\+O\+N-\/\+R\+PC error. \\
+\hline
+\mbox{\tt in}  & {\em message} & The error message. \\
+\hline
+\end{DoxyParams}
+\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
+\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
+\subsubsection[{\texorpdfstring{Json\+Rpc\+Error(const Error \&error, const Json\+Rpc\+Error\+Type type)}{JsonRpcError(const Error &error, const JsonRpcErrorType type)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
+\begin{DoxyParamCaption}
+\item[{const {\bf Error} \&}]{error, }
+\item[{const {\bf Json\+Rpc\+Error\+Type}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_ga15642140f0fe7b5bc798cdd884954040}{}\label{group___network_module_ga15642140f0fe7b5bc798cdd884954040}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc_error}{Json\+Rpc\+Error} based on an error. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em error} & The error from which to copy the file, line, function, and message. \\
+\hline
+\mbox{\tt in}  & {\em type} & A preset code-\/short message pair from the J\+S\+O\+N-\/\+R\+PC standard. \\
+\hline
+\end{DoxyParams}
+\index{Network@{Network}!````~Http\+Cleanup@{$\sim$\+Http\+Cleanup}}
+\index{````~Http\+Cleanup@{$\sim$\+Http\+Cleanup}!Network@{Network}}
+\subsubsection[{\texorpdfstring{$\sim$\+Http\+Cleanup()}{~HttpCleanup()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Cleanup\+::$\sim$\+Http\+Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{group___network_module_gac517b1ec291e0fdcef96e8e7af54eb1d}{}\label{group___network_module_gac517b1ec291e0fdcef96e8e7af54eb1d}
+
+
+The destructor. 
+
 \index{Network@{Network}!build\+Url@{build\+Url}}
 \index{build\+Url@{build\+Url}!Network@{Network}}
 \subsubsection[{\texorpdfstring{build\+Url(const string \&base\+Url, const map$<$ string, string $>$ \&args)}{buildUrl(const string &baseUrl, const map< string, string > &args)}}]{\setlength{\rightskip}{0pt plus 5cm}string dg\+::deepcore\+::network\+::build\+Url (
@@ -348,25 +520,6 @@ Combines a base U\+RL and query string.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The combined U\+RL. 
-\end{DoxyReturn}
-\index{Network@{Network}!check\+Connectivity@{check\+Connectivity}}
-\index{check\+Connectivity@{check\+Connectivity}!Network@{Network}}
-\subsubsection[{\texorpdfstring{check\+Connectivity(const std\+::string \&url) noexcept}{checkConnectivity(const std::string &url) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::network\+::\+Http\+Downloader\+::check\+Connectivity (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{url}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}\hypertarget{group___network_module_gab82b59cab6622abae4998f5fde08e688}{}\label{group___network_module_gab82b59cab6622abae4998f5fde08e688}
-
-
-Check connectivity to a U\+RL. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em url} & The U\+RL to check. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-True if connection was successful, false otherwise. 
 \end{DoxyReturn}
 \index{Network@{Network}!clear\+Id@{clear\+Id}}
 \index{clear\+Id@{clear\+Id}!Network@{Network}}
@@ -428,107 +581,7 @@ A marshalled Json\+::\+Value object with error data (or J\+S\+O\+N\+::\+Value\+:
 \end{DoxyReturn}
 In general, this is a Primitive or Structured value that contains additional information about the error. It may be omitted.
 
-If this is created from an exception, this is populated with an object that contains the line, function, file, and message from the exception. \index{Network@{Network}!download@{download}}
-\index{download@{download}!Network@{Network}}
-\subsubsection[{\texorpdfstring{download(const std\+::string \&url, const std\+::string \&credentials="""", const std\+::vector$<$ std\+::string $>$ \&headers=\lcurly{}\rcurly{})}{download(const std::string &url, const std::string &credentials="", const std::vector< std::string > &headers=\{\})}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ uint8\+\_\+t $>$ dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{url, }
-\item[{const std\+::string \&}]{credentials = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\+::vector$<$ std\+::string $>$ \&}]{headers = {\ttfamily \{\}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___network_module_ga8f1ba1b79c2af5d051f6e8591cd0ea89}{}\label{group___network_module_ga8f1ba1b79c2af5d051f6e8591cd0ea89}
-
-
-Download from a single U\+RL. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em url} & The U\+RL to download from. \\
-\hline
-\mbox{\tt in}  & {\em credentials} & Credentials to use. (optional) \\
-\hline
-\mbox{\tt in}  & {\em headers} & Additional H\+T\+TP headers. (optional) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Vector containing the downloaded data. 
-\end{DoxyReturn}
-\index{Network@{Network}!download@{download}}
-\index{download@{download}!Network@{Network}}
-\subsubsection[{\texorpdfstring{download(const std\+::vector$<$ std\+::string $>$ \&urls, const std\+::string \&credentials="""", Simple\+Progress progress=nullptr, int max\+Connections=10, const std\+::vector$<$ std\+::string $>$ \&headers=\lcurly{}\rcurly{})}{download(const std::vector< std::string > &urls, const std::string &credentials="", SimpleProgress progress=nullptr, int maxConnections=10, const std::vector< std::string > &headers=\{\})}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ uint8\+\_\+t $>$ $>$ dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download (
-\begin{DoxyParamCaption}
-\item[{const std\+::vector$<$ std\+::string $>$ \&}]{urls, }
-\item[{const std\+::string \&}]{credentials = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{{\bf Simple\+Progress}}]{progress = {\ttfamily nullptr}, }
-\item[{int}]{max\+Connections = {\ttfamily 10}, }
-\item[{const std\+::vector$<$ std\+::string $>$ \&}]{headers = {\ttfamily \{\}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___network_module_ga07d51f62025e158feeca83cbc40d8564}{}\label{group___network_module_ga07d51f62025e158feeca83cbc40d8564}
-
-
-Download from multiple U\+R\+Ls. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em urls} & U\+R\+Ls to download from. \\
-\hline
-\mbox{\tt in}  & {\em credentials} & Credentials to use, same for all U\+R\+Ls. (optional) \\
-\hline
-\mbox{\tt in}  & {\em progress} & Progress reporting callback. (optional) \\
-\hline
-\mbox{\tt in}  & {\em max\+Connections} & Maximum simultaneous connections to use. \\
-\hline
-\mbox{\tt in}  & {\em headers} & Additional headers to include int the H\+T\+TP request. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A vector of vectors containing the downloaded data. 
-\end{DoxyReturn}
-\index{Network@{Network}!download\+Async@{download\+Async}}
-\index{download\+Async@{download\+Async}!Network@{Network}}
-\subsubsection[{\texorpdfstring{download\+Async(\+Simple\+Progress progress=nullptr, int max\+Connections=10) const }{downloadAsync(SimpleProgress progress=nullptr, int maxConnections=10) const }}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download\+Async (
-\begin{DoxyParamCaption}
-\item[{{\bf Simple\+Progress}}]{progress = {\ttfamily nullptr}, }
-\item[{int}]{max\+Connections = {\ttfamily 10}}
-\end{DoxyParamCaption}
-) const}\hypertarget{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}{}\label{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}
-
-
-Downloads the requests asynchronously. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em progress} & A progress reporting callback (optional) \\
-\hline
-\mbox{\tt in}  & {\em max\+Connections} & Maximum simultaneous connections to use. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!download\+String@{download\+String}}
-\index{download\+String@{download\+String}!Network@{Network}}
-\subsubsection[{\texorpdfstring{download\+String(const std\+::string \&url, const std\+::string \&credentials="""", const std\+::vector$<$ std\+::string $>$ \&headers=\lcurly{}\rcurly{})}{downloadString(const std::string &url, const std::string &credentials="", const std::vector< std::string > &headers=\{\})}}]{\setlength{\rightskip}{0pt plus 5cm}string dg\+::deepcore\+::network\+::\+Http\+Downloader\+::download\+String (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{url, }
-\item[{const std\+::string \&}]{credentials = {\ttfamily \char`\"{}\char`\"{}}, }
-\item[{const std\+::vector$<$ std\+::string $>$ \&}]{headers = {\ttfamily \{\}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___network_module_ga06013d9acaf746065be05b6571f2462a}{}\label{group___network_module_ga06013d9acaf746065be05b6571f2462a}
-
-
-Download from a single U\+RL and return the result as a string. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em url} & The U\+RL to download from. \\
-\hline
-\mbox{\tt in}  & {\em credentials} & Credentials to use. (optional) \\
-\hline
-\mbox{\tt in}  & {\em headers} & Additional H\+T\+TP headers. (optional) \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-String containing the downloaded data. 
-\end{DoxyReturn}
-\index{Network@{Network}!error@{error}}
+If this is created from an exception, this is populated with an object that contains the line, function, file, and message from the exception. \index{Network@{Network}!error@{error}}
 \index{error@{error}!Network@{Network}}
 \subsubsection[{\texorpdfstring{error() const noexcept}{error() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const Json\+Rpc\+Error \& dg\+::deepcore\+::network\+::\+Json\+Rpc\+Response\+::error (
 \begin{DoxyParamCaption}
@@ -641,7 +694,7 @@ Implemented in \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc_response_a
 \begin{DoxyParamCaption}
 \item[{const std\+::string \&}]{root}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}\hypertarget{group___network_module_ga72539fce4a3396cb0e2adcb65fe911d8}{}\label{group___network_module_ga72539fce4a3396cb0e2adcb65fe911d8}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{group___network_module_ga72539fce4a3396cb0e2adcb65fe911d8}{}\label{group___network_module_ga72539fce4a3396cb0e2adcb65fe911d8}
 
 
 Unmarshal this object from a J\+S\+ON string. 
@@ -711,142 +764,6 @@ True if this response contains an result object
 \begin{DoxySeeAlso}{See also}
 \hyperlink{group___network_module_ga70614bdc02d6aeca557c21644305a72a}{Json\+Rpc\+Response\+::set\+Result()} 
 \end{DoxySeeAlso}
-\index{Network@{Network}!Http\+Downloader@{Http\+Downloader}}
-\index{Http\+Downloader@{Http\+Downloader}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Http\+Downloader(const Download\+Requests \&requests)}{HttpDownloader(const DownloadRequests &requests)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Downloader\+::\+Http\+Downloader (
-\begin{DoxyParamCaption}
-\item[{const {\bf Download\+Requests} \&}]{requests}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_gaee68926e47a7a8e18926b25a274a6741}{}\label{group___network_module_gaee68926e47a7a8e18926b25a274a6741}
-
-
-Contruct an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_downloader}{Http\+Downloader}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em requests} & Requests to process. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!Http\+Downloader@{Http\+Downloader}}
-\index{Http\+Downloader@{Http\+Downloader}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Http\+Downloader(\+Download\+Requests \&\&requests)}{HttpDownloader(DownloadRequests &&requests)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Downloader\+::\+Http\+Downloader (
-\begin{DoxyParamCaption}
-\item[{{\bf Download\+Requests} \&\&}]{requests}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_gaf623ef672fad2678ff7a1f1dd8361d95}{}\label{group___network_module_gaf623ef672fad2678ff7a1f1dd8361d95}
-
-
-Contruct an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_downloader}{Http\+Downloader}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in,out}  & {\em requests} & Requests to process. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!Http\+Error@{Http\+Error}}
-\index{Http\+Error@{Http\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Http\+Error()}{HttpError()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_ga14eeb0f4441dfb8f75d82c0cd940c0ec}{}\label{group___network_module_ga14eeb0f4441dfb8f75d82c0cd940c0ec}
-
-
-The default constructor. 
-
-\index{Network@{Network}!Http\+Error@{Http\+Error}}
-\index{Http\+Error@{Http\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Http\+Error(const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, const std\+::vector$<$ uint8\+\_\+t $>$ \&response)}{HttpError(const char *file, const unsigned int line, const char *function, const std::string &url, int code, const std::vector< uint8_t > &response)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
-\begin{DoxyParamCaption}
-\item[{const char $\ast$}]{file, }
-\item[{const unsigned int}]{line, }
-\item[{const char $\ast$}]{function, }
-\item[{const std\+::string \&}]{url, }
-\item[{int}]{code, }
-\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{response}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_ga03929fda967c6a3609d28953ac0fad55}{}\label{group___network_module_ga03929fda967c6a3609d28953ac0fad55}
-
-
-Constructs an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{Http\+Error}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
-\hline
-\mbox{\tt in}  & {\em line} & Source line number for the error. \\
-\hline
-\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
-\hline
-\mbox{\tt in}  & {\em url} & The request U\+RL. \\
-\hline
-\mbox{\tt in}  & {\em code} & The H\+T\+TP result code. \\
-\hline
-\mbox{\tt in}  & {\em response} & The response body. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!Http\+Error@{Http\+Error}}
-\index{Http\+Error@{Http\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Http\+Error(const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, std\+::vector$<$ uint8\+\_\+t $>$ \&\&response)}{HttpError(const char *file, const unsigned int line, const char *function, const std::string &url, int code, std::vector< uint8_t > &&response)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
-\begin{DoxyParamCaption}
-\item[{const char $\ast$}]{file, }
-\item[{const unsigned int}]{line, }
-\item[{const char $\ast$}]{function, }
-\item[{const std\+::string \&}]{url, }
-\item[{int}]{code, }
-\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&\&}]{response}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_gaacf30b407e830bcfc3a15b14c6bcda3f}{}\label{group___network_module_gaacf30b407e830bcfc3a15b14c6bcda3f}
-
-
-Constructs an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{Http\+Error}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
-\hline
-\mbox{\tt in}  & {\em line} & Source line number for the error. \\
-\hline
-\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
-\hline
-\mbox{\tt in}  & {\em url} & The request U\+RL. \\
-\hline
-\mbox{\tt in}  & {\em code} & The H\+T\+TP result code. \\
-\hline
-\mbox{\tt in,out}  & {\em response} & The response body. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!Http\+Error@{Http\+Error}}
-\index{Http\+Error@{Http\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Http\+Error(const char $\ast$file, const unsigned int line, const char $\ast$function, const std\+::string \&url, int code, std\+::istream \&response)}{HttpError(const char *file, const unsigned int line, const char *function, const std::string &url, int code, std::istream &response)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Error\+::\+Http\+Error (
-\begin{DoxyParamCaption}
-\item[{const char $\ast$}]{file, }
-\item[{const unsigned int}]{line, }
-\item[{const char $\ast$}]{function, }
-\item[{const std\+::string \&}]{url, }
-\item[{int}]{code, }
-\item[{std\+::istream \&}]{response}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_ga45854282cc688af939cbe7d7242661a3}{}\label{group___network_module_ga45854282cc688af939cbe7d7242661a3}
-
-
-Constructs an \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_error}{Http\+Error}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
-\hline
-\mbox{\tt in}  & {\em line} & Source line number for the error. \\
-\hline
-\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
-\hline
-\mbox{\tt in}  & {\em url} & The request U\+RL. \\
-\hline
-\mbox{\tt in}  & {\em code} & The H\+T\+TP result code. \\
-\hline
-\mbox{\tt in,out}  & {\em response} & The response body. \\
-\hline
-\end{DoxyParams}
 \index{Network@{Network}!id@{id}}
 \index{id@{id}!Network@{Network}}
 \subsubsection[{\texorpdfstring{id() const noexcept}{id() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const Json\+::\+Value \& dg\+::deepcore\+::network\+::\+Json\+Rpc\+::id (
@@ -864,95 +781,6 @@ An identifier as a J\+S\+O\+N\+::\+Value object
 \begin{DoxySeeAlso}{See also}
 \hyperlink{group___network_module_gaf71b65c7bb55adbf936c38ffd1cd8289}{Json\+Rpc\+::set\+Id()} 
 \end{DoxySeeAlso}
-\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
-\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Json\+Rpc\+Error()}{JsonRpcError()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_ga6177a0628073de16562fdbaf8ef12f33}{}\label{group___network_module_ga6177a0628073de16562fdbaf8ef12f33}
-
-
-The default constructor. 
-
-\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
-\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Json\+Rpc\+Error(const std\+::string \&file, const unsigned int line, const std\+::string \&function, const Json\+Rpc\+Error\+Type type, const std\+::string \&message)}{JsonRpcError(const std::string &file, const unsigned int line, const std::string &function, const JsonRpcErrorType type, const std::string &message)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{file, }
-\item[{const unsigned int}]{line, }
-\item[{const std\+::string \&}]{function, }
-\item[{const {\bf Json\+Rpc\+Error\+Type}}]{type, }
-\item[{const std\+::string \&}]{message}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_ga041044a45186dbc1faa970ec45ecba81}{}\label{group___network_module_ga041044a45186dbc1faa970ec45ecba81}
-
-
-Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
-\hline
-\mbox{\tt in}  & {\em line} & Source line number for the error. \\
-\hline
-\mbox{\tt in}  & {\em function} & Function name in which the error occured. \\
-\hline
-\mbox{\tt in}  & {\em type} & A preset code-\/short message pair from the J\+S\+O\+N-\/\+R\+PC standard. \\
-\hline
-\mbox{\tt in}  & {\em message} & The error message. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
-\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Json\+Rpc\+Error(const std\+::string \&file, const unsigned int line, const std\+::string \&function, const int code, const std\+::string \&short\+Message, const std\+::string \&message)}{JsonRpcError(const std::string &file, const unsigned int line, const std::string &function, const int code, const std::string &shortMessage, const std::string &message)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
-\begin{DoxyParamCaption}
-\item[{const std\+::string \&}]{file, }
-\item[{const unsigned int}]{line, }
-\item[{const std\+::string \&}]{function, }
-\item[{const int}]{code, }
-\item[{const std\+::string \&}]{short\+Message, }
-\item[{const std\+::string \&}]{message}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_gad7b1e6630b2774ffa45cbcc88b9a1b3f}{}\label{group___network_module_gad7b1e6630b2774ffa45cbcc88b9a1b3f}
-
-
-Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error}. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em file} & Name of source file in which the error occurred. \\
-\hline
-\mbox{\tt in}  & {\em line} & Source line number for the error. \\
-\hline
-\mbox{\tt in}  & {\em function} & Function name in which the error occurred. \\
-\hline
-\mbox{\tt in}  & {\em code} & The code for the J\+S\+O\+N-\/\+R\+PC error. \\
-\hline
-\mbox{\tt in}  & {\em short\+Message} & The short message for the J\+S\+O\+N-\/\+R\+PC error. \\
-\hline
-\mbox{\tt in}  & {\em message} & The error message. \\
-\hline
-\end{DoxyParams}
-\index{Network@{Network}!Json\+Rpc\+Error@{Json\+Rpc\+Error}}
-\index{Json\+Rpc\+Error@{Json\+Rpc\+Error}!Network@{Network}}
-\subsubsection[{\texorpdfstring{Json\+Rpc\+Error(const Error \&error, const Json\+Rpc\+Error\+Type type)}{JsonRpcError(const Error &error, const JsonRpcErrorType type)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Json\+Rpc\+Error\+::\+Json\+Rpc\+Error (
-\begin{DoxyParamCaption}
-\item[{const {\bf Error} \&}]{error, }
-\item[{const {\bf Json\+Rpc\+Error\+Type}}]{type}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_ga15642140f0fe7b5bc798cdd884954040}{}\label{group___network_module_ga15642140f0fe7b5bc798cdd884954040}
-
-
-Constructs a \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc_error}{Json\+Rpc\+Error} based on an error. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em error} & The error from which to copy the file, line, function, and message. \\
-\hline
-\mbox{\tt in}  & {\em type} & A preset code-\/short message pair from the J\+S\+O\+N-\/\+R\+PC standard. \\
-\hline
-\end{DoxyParams}
 \index{Network@{Network}!method@{method}}
 \index{method@{method}!Network@{Network}}
 \subsubsection[{\texorpdfstring{method() const noexcept}{method() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dg\+::deepcore\+::network\+::\+Json\+Rpc\+Request\+::method (
@@ -987,34 +815,6 @@ The parameters for this request, or J\+S\+O\+N\+::\+Value\+::\+Null if none are 
 \begin{DoxySeeAlso}{See also}
 \hyperlink{group___network_module_ga2b7b7580f1d8d287c7ef4cf54a381e1e}{Json\+Rpc\+Request\+::set\+Params()} 
 \end{DoxySeeAlso}
-\index{Network@{Network}!requests@{requests}}
-\index{requests@{requests}!Network@{Network}}
-\subsubsection[{\texorpdfstring{requests() noexcept}{requests() noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}Download\+Requests \& dg\+::deepcore\+::network\+::\+Http\+Downloader\+::requests (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{group___network_module_ga93ed91ce22dd499848d0f42e683d64d5}{}\label{group___network_module_ga93ed91ce22dd499848d0f42e683d64d5}
-
-
-Gets the requests that will be processed by \hyperlink{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}{Http\+Downloader\+::download\+Async}. 
-
-\begin{DoxyReturn}{Returns}
-A reference to the requests. 
-\end{DoxyReturn}
-\index{Network@{Network}!requests@{requests}}
-\index{requests@{requests}!Network@{Network}}
-\subsubsection[{\texorpdfstring{requests() const noexcept}{requests() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const Download\+Requests \& dg\+::deepcore\+::network\+::\+Http\+Downloader\+::requests (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{group___network_module_ga3c0af4cc2f8ea2880e48173183fdb758}{}\label{group___network_module_ga3c0af4cc2f8ea2880e48173183fdb758}
-
-
-Gets the requests that will be processed by \hyperlink{group___network_module_ga5a3dc48bb7c2c0e14ce394c515742b47}{Http\+Downloader\+::download\+Async}. 
-
-\begin{DoxyReturn}{Returns}
-A const reference to the requests. 
-\end{DoxyReturn}
 \index{Network@{Network}!response@{response}}
 \index{response@{response}!Network@{Network}}
 \subsubsection[{\texorpdfstring{response() const noexcept}{response() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ uint8\+\_\+t $>$ \& dg\+::deepcore\+::network\+::\+Http\+Error\+::response (
@@ -1149,26 +949,7 @@ Set a result object for this response.
 \end{DoxyParams}
 This member is R\+E\+Q\+U\+I\+R\+ED on error.
 
-This member M\+U\+ST N\+OT exist if there was no error triggered during invocation. \index{Network@{Network}!set\+Verbose\+Logging@{set\+Verbose\+Logging}}
-\index{set\+Verbose\+Logging@{set\+Verbose\+Logging}!Network@{Network}}
-\subsubsection[{\texorpdfstring{set\+Verbose\+Logging(bool verbose\+Logging)}{setVerboseLogging(bool verboseLogging)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::network\+::\+Http\+Downloader\+::set\+Verbose\+Logging (
-\begin{DoxyParamCaption}
-\item[{bool}]{verbose\+Logging}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___network_module_ga4aa457ededfdc5fcb0db52f7215909cb}{}\label{group___network_module_ga4aa457ededfdc5fcb0db52f7215909cb}
-
-
-Enables verbose logging of C\+U\+RL connections. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em verbose\+Logging} & Should verboseo logging be turned on? \\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{group___network_module_ga2470c65fd9d6dd62854a9c9e7df877c6}{verbose\+Logging}
-\end{DoxySeeAlso}
-Default is off. \index{Network@{Network}!set\+Version@{set\+Version}}
+This member M\+U\+ST N\+OT exist if there was no error triggered during invocation. \index{Network@{Network}!set\+Version@{set\+Version}}
 \index{set\+Version@{set\+Version}!Network@{Network}}
 \subsubsection[{\texorpdfstring{set\+Version(const std\+::string \&version) noexcept}{setVersion(const std::string &version) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::network\+::\+Json\+Rpc\+::set\+Version (
 \begin{DoxyParamCaption}
@@ -1311,23 +1092,7 @@ Encodes a string to be used as a U\+RL query component. Equivalent to the Java\+
 \begin{DoxyReturn}{Returns}
 The encoded string 
 \end{DoxyReturn}
-\index{Network@{Network}!verbose\+Logging@{verbose\+Logging}}
-\index{verbose\+Logging@{verbose\+Logging}!Network@{Network}}
-\subsubsection[{\texorpdfstring{verbose\+Logging()}{verboseLogging()}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::network\+::\+Http\+Downloader\+::verbose\+Logging (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{group___network_module_ga2470c65fd9d6dd62854a9c9e7df877c6}{}\label{group___network_module_ga2470c65fd9d6dd62854a9c9e7df877c6}
-
-
-Is verbose logging of C\+U\+RL connections enabled? 
-
-\begin{DoxyReturn}{Returns}
-true if verbose logging be turned on.
-\end{DoxyReturn}
-Verbose logging for C\+U\+RL connection info and headers is sent to the logger with level T\+R\+A\+CE and channel \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_downloader}{Http\+Downloader}. It includes the pointer for the connection handle.
-
-Note that verbose logging does not setup a sink for the logs, just the source. A sink is still required to view the messages. \index{Network@{Network}!version@{version}}
+\index{Network@{Network}!version@{version}}
 \index{version@{version}!Network@{Network}}
 \subsubsection[{\texorpdfstring{version() const noexcept}{version() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dg\+::deepcore\+::network\+::\+Json\+Rpc\+::version (
 \begin{DoxyParamCaption}
@@ -1344,14 +1109,3 @@ the version string of this object
 \begin{DoxySeeAlso}{See also}
 \hyperlink{group___network_module_ga7bfca4f17a0916e6f1313b04496b9e0d}{Json\+Rpc\+::set\+Version()} 
 \end{DoxySeeAlso}
-\index{Network@{Network}!````~Http\+Cleanup@{$\sim$\+Http\+Cleanup}}
-\index{````~Http\+Cleanup@{$\sim$\+Http\+Cleanup}!Network@{Network}}
-\subsubsection[{\texorpdfstring{$\sim$\+Http\+Cleanup()}{~HttpCleanup()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Http\+Cleanup\+::$\sim$\+Http\+Cleanup (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{group___network_module_gac517b1ec291e0fdcef96e8e7af54eb1d}{}\label{group___network_module_gac517b1ec291e0fdcef96e8e7af54eb1d}
-
-
-The destructor. 
-

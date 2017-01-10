@@ -2,6 +2,10 @@
 \label{structdg_1_1deepcore_1_1network_1_1_download_data}\index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
 
 
+{\ttfamily \#include $<$network/\+Http\+Downloader.\+h$>$}
+
+
+
 Collaboration diagram for dg\+:\+:deepcore\+:\+:network\+:\+:Download\+Data\+:
 \nopagebreak
 \begin{figure}[H]
@@ -24,15 +28,15 @@ void \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a7540a749fcfe1
 \item 
 \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_request}{Download\+Request} \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_ab36b68fba57c223b1b284af93ceaa26d}{request}
 \item 
-shared\+\_\+ptr$<$ stringstream $>$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_acef37a81041f0566a49a0a2c7477445e}{stream}
+std\+::shared\+\_\+ptr$<$ std\+::stringstream $>$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a61ed861cdbff07ed7c03f456b6ab5053}{stream}
 \item 
-shared\+\_\+ptr$<$ C\+U\+R\+LM $>$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_acec058eaeedcbbfabd5ae752b5ce1e63}{cm}
+std\+::shared\+\_\+ptr$<$ void $>$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a2f774e2d228b95d0266b2ed9b1e90ca8}{cm}
 \item 
-shared\+\_\+ptr$<$ C\+U\+RL $>$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a08bcb3ee4ba475c263c3746f9a95480c}{handle}
+std\+::shared\+\_\+ptr$<$ void $>$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_ad55881c642922d3eb9bed488ab8fb74d}{handle}
 \item 
-size\+\_\+t \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_aed864806ae1da5738cd266b39a1e3668}{num\+Retries} = 0
+int \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a51ed66109d08088cda78aaee9c4f676b}{num\+Retries} = 0
 \item 
-size\+\_\+t \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_add02feb92c22b90770806710e79aeb9d}{retry\+Timeout} = 0
+int \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a0a96bb4e087ff085407a3a19ff5716d7}{retry\+Timeout} = 0
 \item 
 std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_data_a5f44138ca752665f9991b267c0cc5939}{retry\+Time}
 \end{DoxyCompactItemize}
@@ -45,7 +49,7 @@ std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{s
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_ac04e654bffde01b5b0701d617bbae59c}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_ac04e654bffde01b5b0701d617bbae59c}
+)}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_ac04e654bffde01b5b0701d617bbae59c}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_ac04e654bffde01b5b0701d617bbae59c}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!````~Download\+Data@{$\sim$\+Download\+Data}}
 \index{````~Download\+Data@{$\sim$\+Download\+Data}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
 \subsubsection[{\texorpdfstring{$\sim$\+Download\+Data()}{~DownloadData()}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::network\+::\+Download\+Data\+::$\sim$\+Download\+Data (
@@ -68,13 +72,13 @@ std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{s
 \subsection{Member Data Documentation}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!cm@{cm}}
 \index{cm@{cm}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
-\subsubsection[{\texorpdfstring{cm}{cm}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<$C\+U\+R\+LM$>$ dg\+::deepcore\+::network\+::\+Download\+Data\+::cm}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_acec058eaeedcbbfabd5ae752b5ce1e63}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_acec058eaeedcbbfabd5ae752b5ce1e63}
+\subsubsection[{\texorpdfstring{cm}{cm}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$void$>$ dg\+::deepcore\+::network\+::\+Download\+Data\+::cm}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_a2f774e2d228b95d0266b2ed9b1e90ca8}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_a2f774e2d228b95d0266b2ed9b1e90ca8}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!handle@{handle}}
 \index{handle@{handle}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
-\subsubsection[{\texorpdfstring{handle}{handle}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<$C\+U\+RL$>$ dg\+::deepcore\+::network\+::\+Download\+Data\+::handle}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_a08bcb3ee4ba475c263c3746f9a95480c}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_a08bcb3ee4ba475c263c3746f9a95480c}
+\subsubsection[{\texorpdfstring{handle}{handle}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$void$>$ dg\+::deepcore\+::network\+::\+Download\+Data\+::handle}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_ad55881c642922d3eb9bed488ab8fb74d}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_ad55881c642922d3eb9bed488ab8fb74d}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!num\+Retries@{num\+Retries}}
 \index{num\+Retries@{num\+Retries}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
-\subsubsection[{\texorpdfstring{num\+Retries}{numRetries}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t dg\+::deepcore\+::network\+::\+Download\+Data\+::num\+Retries = 0}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_aed864806ae1da5738cd266b39a1e3668}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_aed864806ae1da5738cd266b39a1e3668}
+\subsubsection[{\texorpdfstring{num\+Retries}{numRetries}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::network\+::\+Download\+Data\+::num\+Retries = 0}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_a51ed66109d08088cda78aaee9c4f676b}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_a51ed66109d08088cda78aaee9c4f676b}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!request@{request}}
 \index{request@{request}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
 \subsubsection[{\texorpdfstring{request}{request}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Download\+Request} dg\+::deepcore\+::network\+::\+Download\+Data\+::request}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_ab36b68fba57c223b1b284af93ceaa26d}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_ab36b68fba57c223b1b284af93ceaa26d}
@@ -83,7 +87,7 @@ std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \hyperlink{s
 \subsubsection[{\texorpdfstring{retry\+Time}{retryTime}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point dg\+::deepcore\+::network\+::\+Download\+Data\+::retry\+Time}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_a5f44138ca752665f9991b267c0cc5939}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_a5f44138ca752665f9991b267c0cc5939}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!retry\+Timeout@{retry\+Timeout}}
 \index{retry\+Timeout@{retry\+Timeout}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
-\subsubsection[{\texorpdfstring{retry\+Timeout}{retryTimeout}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t dg\+::deepcore\+::network\+::\+Download\+Data\+::retry\+Timeout = 0}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_add02feb92c22b90770806710e79aeb9d}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_add02feb92c22b90770806710e79aeb9d}
+\subsubsection[{\texorpdfstring{retry\+Timeout}{retryTimeout}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::network\+::\+Download\+Data\+::retry\+Timeout = 0}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_a0a96bb4e087ff085407a3a19ff5716d7}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_a0a96bb4e087ff085407a3a19ff5716d7}
 \index{dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}!stream@{stream}}
 \index{stream@{stream}!dg\+::deepcore\+::network\+::\+Download\+Data@{dg\+::deepcore\+::network\+::\+Download\+Data}}
-\subsubsection[{\texorpdfstring{stream}{stream}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<$stringstream$>$ dg\+::deepcore\+::network\+::\+Download\+Data\+::stream}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_acef37a81041f0566a49a0a2c7477445e}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_acef37a81041f0566a49a0a2c7477445e}
+\subsubsection[{\texorpdfstring{stream}{stream}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$std\+::stringstream$>$ dg\+::deepcore\+::network\+::\+Download\+Data\+::stream}\hypertarget{structdg_1_1deepcore_1_1network_1_1_download_data_a61ed861cdbff07ed7c03f456b6ab5053}{}\label{structdg_1_1deepcore_1_1network_1_1_download_data_a61ed861cdbff07ed7c03f456b6ab5053}

@@ -1,6 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title="STL class. " alt="" coords="5,46,109,73"/>
-<area shape="rect" id="node2" href="$classdg_1_1deepcore_1_1_error.html" title="Represents a DeepCore error. " alt="" coords="157,46,291,73"/>
-<area shape="rect" id="node3" href="$classdg_1_1deepcore_1_1network_1_1_http_error.html" title="Represents an HTTP error response. " alt="" coords="339,5,489,47"/>
-<area shape="rect" id="node4" href="$classdg_1_1deepcore_1_1network_1_1_json_rpc_error.html" title="JSON&#45;RPC error codes, messages and data. " alt="" coords="339,71,489,112"/>
+<area shape="rect" id="node1" href="$structdg_1_1deepcore_1_1_cloneable_value_base.html" title="dg::deepcore::CloneableValue\lBase\&lt; Geometry \&gt;" alt="" coords="5,71,201,112"/>
+<area shape="rect" id="node2" href="$structdg_1_1deepcore_1_1geometry_1_1_geometry.html" title="Base struct for geometric representations. " alt="" coords="249,71,408,112"/>
+<area shape="rect" id="node3" href="$structdg_1_1deepcore_1_1geometry_1_1_line_string.html" title="Derived struct for a Line String. " alt="" coords="456,5,615,47"/>
+<area shape="rect" id="node5" href="$structdg_1_1deepcore_1_1geometry_1_1_point.html" title="Derived struct for a two&#45;dimensional Point. " alt="" coords="456,71,615,112"/>
+<area shape="rect" id="node6" href="$structdg_1_1deepcore_1_1geometry_1_1_polygon.html" title="Derived struct for a Polygon. " alt="" coords="456,136,615,177"/>
+<area shape="rect" id="node4" href="$structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html" title="Derived struct for a Linear Ring, which is a Line String with co&#45;located first and last points..." alt="" coords="663,5,821,47"/>
 </map>

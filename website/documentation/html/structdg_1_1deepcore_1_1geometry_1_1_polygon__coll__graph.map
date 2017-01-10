@@ -1,0 +1,6 @@
+<map id="dg::deepcore::geometry::Polygon" name="dg::deepcore::geometry::Polygon">
+<area shape="rect" id="node2" href="$structdg_1_1deepcore_1_1geometry_1_1_geometry.html" title="Base struct for geometric representations. " alt="" coords="24,96,183,137"/>
+<area shape="rect" id="node5" href="$structdg_1_1deepcore_1_1geometry_1_1_line_string.html" title="Derived struct for a Line String. " alt="" coords="125,187,284,228"/>
+<area shape="rect" id="node3" href="$structdg_1_1deepcore_1_1_cloneable_value_base.html" title="dg::deepcore::CloneableValue\lBase\&lt; Geometry \&gt;" alt="" coords="5,5,201,47"/>
+<area shape="rect" id="node4" href="$structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html" title="Derived struct for a Linear Ring, which is a Line String with co&#45;located first and last points..." alt="" coords="125,277,284,319"/>
+</map>

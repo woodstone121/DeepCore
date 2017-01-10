@@ -1,0 +1,215 @@
+\hypertarget{classdg_1_1deepcore_1_1_conversion}{}\section{dg\+:\+:deepcore\+:\+:Conversion Class Reference}
+\label{classdg_1_1deepcore_1_1_conversion}\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+
+
+\subsection{Detailed Description}
+Handles conversions between different \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types. 
+
+{\ttfamily \#include $<$process/\+Conversion.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:Conversion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classdg_1_1deepcore_1_1_conversion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdg_1_1deepcore_1_1_value}{Value} \hyperlink{classdg_1_1deepcore_1_1_conversion_ac832e8fb2f28829c47066c0fd0021394}{convert} (const \hyperlink{classdg_1_1deepcore_1_1_value}{Value} \&value, const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&type) const 
+\begin{DoxyCompactList}\small\item\em Converts a \hyperlink{classdg_1_1deepcore_1_1_value}{Value} to a different \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_conversion_a65e1c7f5a3e0da5f7f2089c62e3d4ec9}{can\+Convert} (const \hyperlink{classdg_1_1deepcore_1_1_value}{Value} \&value, const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&type) const 
+\begin{DoxyCompactList}\small\item\em Gets whether conversion of \hyperlink{classdg_1_1deepcore_1_1_value}{Value} to the requested \hyperlink{classdg_1_1deepcore_1_1_type}{Type} is possible. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_conversion_a0d7831bed4cf2b2dcfde144e712a2512}{can\+Convert} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&from, const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&to) const 
+\begin{DoxyCompactList}\small\item\em Gets whether conversion from one \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to another is possible. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_conversion_a5b98ba47581be6d2cf8b23a87fb4d23c}{can\+Convert} (std\+::type\+\_\+index from, std\+::type\+\_\+index to) const 
+\begin{DoxyCompactList}\small\item\em Gets whether conversion from one \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to another is possible. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1_conversion_a636c8b26f4e93070c1473be5318e6ccf}{add\+Conversion} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&from, const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&to, \hyperlink{group___process_type_ga213a2a633d6658f67842bd2958c82c78}{Value\+Convert\+Func} func)
+\begin{DoxyCompactList}\small\item\em Adds a conversion to registry. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1_conversion_ad8f548b6ddf848f7e9a79ba164312882}{add\+Conversion} (std\+::type\+\_\+index from, std\+::type\+\_\+index to, \hyperlink{group___process_type_ga213a2a633d6658f67842bd2958c82c78}{Value\+Convert\+Func} func)
+\begin{DoxyCompactList}\small\item\em Adds a conversion to registry. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class From , class To $>$ }\\void \hyperlink{classdg_1_1deepcore_1_1_conversion_adc788586419bb0aec5886b713920a52c}{add\+Static\+Cast} ()
+\begin{DoxyCompactList}\small\item\em Register a conversion between two \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types by casting the underlying value using static\+\_\+cast. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class From , class To $>$ }\\void \hyperlink{classdg_1_1deepcore_1_1_conversion_a50852fd3a7d7f6ed685b2b280936e129}{add\+Constructor\+Convert} ()
+\begin{DoxyCompactList}\small\item\em Register a conversion between two \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types by using a conversion constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!add\+Constructor\+Convert@{add\+Constructor\+Convert}}
+\index{add\+Constructor\+Convert@{add\+Constructor\+Convert}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{add\+Constructor\+Convert()}{addConstructorConvert()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class From , class To $>$ void dg\+::deepcore\+::\+Conversion\+::add\+Constructor\+Convert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_conversion_a50852fd3a7d7f6ed685b2b280936e129}{}\label{classdg_1_1deepcore_1_1_conversion_a50852fd3a7d7f6ed685b2b280936e129}
+
+
+Register a conversion between two \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types by using a conversion constructor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em From} & The type to convert from. \\
+\hline
+{\em To} & The type to convert to. \\
+\hline
+\end{DoxyTemplParams}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!add\+Conversion@{add\+Conversion}}
+\index{add\+Conversion@{add\+Conversion}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{add\+Conversion(const Type \&from, const Type \&to, Value\+Convert\+Func func)}{addConversion(const Type &from, const Type &to, ValueConvertFunc func)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::\+Conversion\+::add\+Conversion (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{from, }
+\item[{const {\bf Type} \&}]{to, }
+\item[{{\bf Value\+Convert\+Func}}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_conversion_a636c8b26f4e93070c1473be5318e6ccf}{}\label{classdg_1_1deepcore_1_1_conversion_a636c8b26f4e93070c1473be5318e6ccf}
+
+
+Adds a conversion to registry. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to convert from. \\
+\hline
+\mbox{\tt in}  & {\em to} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to convert to. \\
+\hline
+\mbox{\tt in}  & {\em func} & The function that will perform the conversion. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!add\+Conversion@{add\+Conversion}}
+\index{add\+Conversion@{add\+Conversion}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{add\+Conversion(std\+::type\+\_\+index from, std\+::type\+\_\+index to, Value\+Convert\+Func func)}{addConversion(std::type_index from, std::type_index to, ValueConvertFunc func)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::\+Conversion\+::add\+Conversion (
+\begin{DoxyParamCaption}
+\item[{std\+::type\+\_\+index}]{from, }
+\item[{std\+::type\+\_\+index}]{to, }
+\item[{{\bf Value\+Convert\+Func}}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_conversion_ad8f548b6ddf848f7e9a79ba164312882}{}\label{classdg_1_1deepcore_1_1_conversion_ad8f548b6ddf848f7e9a79ba164312882}
+
+
+Adds a conversion to registry. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from} & The {\ttfamily std\+::type\+\_\+info} to convert from. \\
+\hline
+\mbox{\tt in}  & {\em to} & The {\ttfamily std\+::type\+\_\+info} to convert to. \\
+\hline
+\mbox{\tt in}  & {\em func} & The function that will perform the conversion. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!add\+Static\+Cast@{add\+Static\+Cast}}
+\index{add\+Static\+Cast@{add\+Static\+Cast}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{add\+Static\+Cast()}{addStaticCast()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class From , class To $>$ void dg\+::deepcore\+::\+Conversion\+::add\+Static\+Cast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_conversion_adc788586419bb0aec5886b713920a52c}{}\label{classdg_1_1deepcore_1_1_conversion_adc788586419bb0aec5886b713920a52c}
+
+
+Register a conversion between two \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types by casting the underlying value using static\+\_\+cast. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em From} & The type to convert from. \\
+\hline
+{\em To} & The type to convert to. \\
+\hline
+\end{DoxyTemplParams}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!can\+Convert@{can\+Convert}}
+\index{can\+Convert@{can\+Convert}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{can\+Convert(const Value \&value, const Type \&type) const }{canConvert(const Value &value, const Type &type) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Conversion\+::can\+Convert (
+\begin{DoxyParamCaption}
+\item[{const {\bf Value} \&}]{value, }
+\item[{const {\bf Type} \&}]{type}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_conversion_a65e1c7f5a3e0da5f7f2089c62e3d4ec9}{}\label{classdg_1_1deepcore_1_1_conversion_a65e1c7f5a3e0da5f7f2089c62e3d4ec9}
+
+
+Gets whether conversion of \hyperlink{classdg_1_1deepcore_1_1_value}{Value} to the requested \hyperlink{classdg_1_1deepcore_1_1_type}{Type} is possible. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The \hyperlink{classdg_1_1deepcore_1_1_value}{Value} to check. \\
+\hline
+\mbox{\tt in}  & {\em type} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to check the conversion to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the \hyperlink{classdg_1_1deepcore_1_1_value}{Value} can be converted to the requested \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!can\+Convert@{can\+Convert}}
+\index{can\+Convert@{can\+Convert}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{can\+Convert(const Type \&from, const Type \&to) const }{canConvert(const Type &from, const Type &to) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Conversion\+::can\+Convert (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{from, }
+\item[{const {\bf Type} \&}]{to}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_conversion_a0d7831bed4cf2b2dcfde144e712a2512}{}\label{classdg_1_1deepcore_1_1_conversion_a0d7831bed4cf2b2dcfde144e712a2512}
+
+
+Gets whether conversion from one \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to another is possible. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to convert from. \\
+\hline
+\mbox{\tt in}  & {\em to} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to convter to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether there\textquotesingle{}s a registered conversion between {\ttfamily from} and {\ttfamily to}. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!can\+Convert@{can\+Convert}}
+\index{can\+Convert@{can\+Convert}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{can\+Convert(std\+::type\+\_\+index from, std\+::type\+\_\+index to) const }{canConvert(std::type_index from, std::type_index to) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Conversion\+::can\+Convert (
+\begin{DoxyParamCaption}
+\item[{std\+::type\+\_\+index}]{from, }
+\item[{std\+::type\+\_\+index}]{to}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_conversion_a5b98ba47581be6d2cf8b23a87fb4d23c}{}\label{classdg_1_1deepcore_1_1_conversion_a5b98ba47581be6d2cf8b23a87fb4d23c}
+
+
+Gets whether conversion from one \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to another is possible. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from} & The {\ttfamily std\+::type\+\_\+info} to convert from. \\
+\hline
+\mbox{\tt in}  & {\em to} & The {\ttfamily std\+::type\+\_\+info} to convter to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether there\textquotesingle{}s a registered conversion between {\ttfamily from} and {\ttfamily to}. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}!convert@{convert}}
+\index{convert@{convert}!dg\+::deepcore\+::\+Conversion@{dg\+::deepcore\+::\+Conversion}}
+\subsubsection[{\texorpdfstring{convert(const Value \&value, const Type \&type) const }{convert(const Value &value, const Type &type) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} dg\+::deepcore\+::\+Conversion\+::convert (
+\begin{DoxyParamCaption}
+\item[{const {\bf Value} \&}]{value, }
+\item[{const {\bf Type} \&}]{type}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_conversion_ac832e8fb2f28829c47066c0fd0021394}{}\label{classdg_1_1deepcore_1_1_conversion_ac832e8fb2f28829c47066c0fd0021394}
+
+
+Converts a \hyperlink{classdg_1_1deepcore_1_1_value}{Value} to a different \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em This} & method will throw an \hyperlink{classdg_1_1deepcore_1_1_error}{Error} if there\textquotesingle{}s not registered conversion available. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The \hyperlink{classdg_1_1deepcore_1_1_value}{Value} to convert. \\
+\hline
+\mbox{\tt in}  & {\em type} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to convert to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A converted \hyperlink{classdg_1_1deepcore_1_1_value}{Value}. 
+\end{DoxyReturn}

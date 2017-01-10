@@ -1,0 +1,203 @@
+\hypertarget{classdg_1_1deepcore_1_1_object_t}{}\section{dg\+:\+:deepcore\+:\+:ObjectT$<$ T, BaseT $>$ Class Template Reference}
+\label{classdg_1_1deepcore_1_1_object_t}\index{dg\+::deepcore\+::\+Object\+T$<$ T, Base\+T $>$@{dg\+::deepcore\+::\+Object\+T$<$ T, Base\+T $>$}}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T, class BaseT = Object$>$\\*
+class dg\+::deepcore\+::\+Object\+T$<$ T, Base\+T $>$}
+
+Template class used to inherit from \hyperlink{classdg_1_1deepcore_1_1_object}{Object} and classes that inherit from it. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Name of the child class. \\
+\hline
+{\em BaseT} & Name of the base class.\\
+\hline
+\end{DoxyTemplParams}
+Classes inheriting from \hyperlink{classdg_1_1deepcore_1_1_object}{Object}, should use \hyperlink{classdg_1_1deepcore_1_1_object_t}{ObjectT} instead.
+
+Class initialization should be done in the overridden \hyperlink{classdg_1_1deepcore_1_1_object_a0982aef61087daaf910acfe8b6dcac99}{Object\+::init()} method, not the constructor. Constructors are still allowed, but they will not be able to use the \hyperlink{classdg_1_1deepcore_1_1_object_t_ab2513323757cee301fb419901535f7b1}{ptr()} and \hyperlink{classdg_1_1deepcore_1_1_object_t_aef2b72b73c1d2ab53aebd00742fedfa2}{wptr()} to get the shared pointer to the class\textquotesingle{}es instance.
+
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{comment}{// Class inherits from Object}
+\textcolor{keyword}{class }A : \textcolor{keyword}{public} ObjectT<A>
+\{
+    A();
+    A(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* one, \textcolor{keywordtype}{int} two, \textcolor{keywordtype}{double} three);
+
+    \textcolor{comment}{// ................................}
+
+\textcolor{keyword}{protected}:
+    \textcolor{keywordtype}{void} \hyperlink{group___utility_module_gaedfd950d41ec88d7eff2a7a9929e45e8}{init}()\textcolor{keyword}{ override}
+\textcolor{keyword}{    }\{
+        \textcolor{comment}{// most of the class initialization goes here instead of the constructor.}
+    \}
+\}
+
+\textcolor{comment}{// You should always register your Object descendants with the Type system}
+\textcolor{keyword}{namespace }types \{ \textcolor{keyword}{const} TypeT<char> A(\textcolor{stringliteral}{"A"}); \}
+
+\textcolor{comment}{// Class inherits from an Object ancestor}
+\textcolor{keyword}{class }B : \textcolor{keyword}{public} ObjectT<B, A>
+\{
+    \textcolor{comment}{// ...............................}
+\}
+
+\textcolor{comment}{// No need to specify base class when registering with the type system.}
+\textcolor{keyword}{namespace }type \{ \textcolor{keyword}{const} TypeT<B> B(\textcolor{stringliteral}{"B"}); \}
+\end{DoxyCode}
+
+
+Instances of the inheriting classes should never be created using the ~\newline
+ new operator. You must always use the \hyperlink{classdg_1_1deepcore_1_1_object_t_af1c55ff313922010d054060c22adbf91}{create()} factory method.
+
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{comment}{// a's type is std::shared\_ptr<A>, or A::Ptr for short.}
+\textcolor{keyword}{auto} a = A::create();
+\end{DoxyCode}
+
+
+Classes inheriting from \hyperlink{classdg_1_1deepcore_1_1_object}{Object} that are expected to be created and that are not just abstract base classes must be default-\/constructible. However, it is possible to have parametrized constructors for convenience. Classes must allow initializing of their state without using parametrized constructors.
+
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{comment}{// Will use an A::A(const char* one, int two, double three) constructor.}
+\textcolor{keyword}{auto} a = A::create(\textcolor{stringliteral}{"one"}, 2, 3.0);
+\end{DoxyCode}
+ 
+
+{\ttfamily \#include $<$process/\+Object.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}{Ptr} = std\+::shared\+\_\+ptr$<$ T $>$
+\item 
+using \hyperlink{classdg_1_1deepcore_1_1_object_t_a7cf2958227ec5d42c71a74562af4e3b8}{W\+Ptr} = std\+::weak\+\_\+ptr$<$ T $>$
+\item 
+using \hyperlink{classdg_1_1deepcore_1_1_object_t_a91edf1cc372d9a68025bed01f08d3a38}{C\+Ptr} = std\+::shared\+\_\+ptr$<$ const T $>$
+\item 
+using \hyperlink{classdg_1_1deepcore_1_1_object_t_a03f850606335b509cb5bcb296ac18b62}{C\+W\+Ptr} = std\+::weak\+\_\+ptr$<$ const T $>$
+\item 
+using \hyperlink{classdg_1_1deepcore_1_1_object_t_af62877471d4b1dc37f23b457fe406814}{base\+\_\+type} = BaseT
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}{Ptr} \hyperlink{classdg_1_1deepcore_1_1_object_t_ab2513323757cee301fb419901535f7b1}{ptr} ()
+\begin{DoxyCompactList}\small\item\em Gets an std\+::shared\+\_\+ptr$<$\+T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}{T\+:\+:Ptr} for short. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_object_t_a7cf2958227ec5d42c71a74562af4e3b8}{W\+Ptr} \hyperlink{classdg_1_1deepcore_1_1_object_t_aef2b72b73c1d2ab53aebd00742fedfa2}{wptr} ()
+\begin{DoxyCompactList}\small\item\em Gets an std\+::weak\+\_\+ptr$<$\+T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_a7cf2958227ec5d42c71a74562af4e3b8}{T\+:\+:W\+Ptr} for short. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_object_t_a91edf1cc372d9a68025bed01f08d3a38}{C\+Ptr} \hyperlink{classdg_1_1deepcore_1_1_object_t_a95a616000ba2f001681cb3e5211705da}{ptr} () const 
+\begin{DoxyCompactList}\small\item\em Gets an std\+::shared\+\_\+ptr$<$const T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_a91edf1cc372d9a68025bed01f08d3a38}{T\+:\+:C\+Ptr} for short. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_object_t_a03f850606335b509cb5bcb296ac18b62}{C\+W\+Ptr} \hyperlink{classdg_1_1deepcore_1_1_object_t_a8ca1649bb42a134bec66e541a1a373e9}{wptr} () const 
+\begin{DoxyCompactList}\small\item\em Gets an std\+::weak\+\_\+ptr$<$const T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_a03f850606335b509cb5bcb296ac18b62}{T\+:\+:C\+W\+Ptr} for short. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class... Args$>$ }\\static \hyperlink{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}{Ptr} \hyperlink{classdg_1_1deepcore_1_1_object_t_af1c55ff313922010d054060c22adbf91}{create} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Creates and initializes an instance of this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!base\+\_\+type@{base\+\_\+type}}
+\index{base\+\_\+type@{base\+\_\+type}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{base\+\_\+type}{base_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, class BaseT = Object$>$ using {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::{\bf base\+\_\+type} =  BaseT}\hypertarget{classdg_1_1deepcore_1_1_object_t_af62877471d4b1dc37f23b457fe406814}{}\label{classdg_1_1deepcore_1_1_object_t_af62877471d4b1dc37f23b457fe406814}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!C\+Ptr@{C\+Ptr}}
+\index{C\+Ptr@{C\+Ptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{C\+Ptr}{CPtr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, class BaseT = Object$>$ using {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::{\bf C\+Ptr} =  std\+::shared\+\_\+ptr$<$const T$>$}\hypertarget{classdg_1_1deepcore_1_1_object_t_a91edf1cc372d9a68025bed01f08d3a38}{}\label{classdg_1_1deepcore_1_1_object_t_a91edf1cc372d9a68025bed01f08d3a38}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!C\+W\+Ptr@{C\+W\+Ptr}}
+\index{C\+W\+Ptr@{C\+W\+Ptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{C\+W\+Ptr}{CWPtr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, class BaseT = Object$>$ using {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::{\bf C\+W\+Ptr} =  std\+::weak\+\_\+ptr$<$const T$>$}\hypertarget{classdg_1_1deepcore_1_1_object_t_a03f850606335b509cb5bcb296ac18b62}{}\label{classdg_1_1deepcore_1_1_object_t_a03f850606335b509cb5bcb296ac18b62}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{Ptr}{Ptr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, class BaseT = Object$>$ using {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::{\bf Ptr} =  std\+::shared\+\_\+ptr$<$T$>$}\hypertarget{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}{}\label{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!W\+Ptr@{W\+Ptr}}
+\index{W\+Ptr@{W\+Ptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{W\+Ptr}{WPtr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T, class BaseT = Object$>$ using {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::{\bf W\+Ptr} =  std\+::weak\+\_\+ptr$<$T$>$}\hypertarget{classdg_1_1deepcore_1_1_object_t_a7cf2958227ec5d42c71a74562af4e3b8}{}\label{classdg_1_1deepcore_1_1_object_t_a7cf2958227ec5d42c71a74562af4e3b8}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!create@{create}}
+\index{create@{create}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{create(\+Args \&\&...\+args)}{create(Args &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class BaseT $>$ template$<$class... Args$>$ {\bf ObjectT}$<$ T, BaseT $>$\+::{\bf Ptr} {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::create (
+\begin{DoxyParamCaption}
+\item[{Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classdg_1_1deepcore_1_1_object_t_af1c55ff313922010d054060c22adbf91}{}\label{classdg_1_1deepcore_1_1_object_t_af1c55ff313922010d054060c22adbf91}
+
+
+Creates and initializes an instance of this class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Constructor argument types. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Constructor arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an std\+::shared\+\_\+ptr of a new instance of this class. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!ptr@{ptr}}
+\index{ptr@{ptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{ptr()}{ptr()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class BaseT $>$ {\bf ObjectT}$<$ T, BaseT $>$\+::{\bf Ptr} {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_object_t_ab2513323757cee301fb419901535f7b1}{}\label{classdg_1_1deepcore_1_1_object_t_ab2513323757cee301fb419901535f7b1}
+
+
+Gets an std\+::shared\+\_\+ptr$<$\+T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_ab54805874b0d6881bc1d1a2ced7d49bf}{T\+:\+:Ptr} for short. 
+
+\begin{DoxyReturn}{Returns}
+An std\+::shared\+\_\+ptr$<$\+T$>$ of this object. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!ptr@{ptr}}
+\index{ptr@{ptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{ptr() const }{ptr() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class BaseT $>$ {\bf ObjectT}$<$ T, BaseT $>$\+::{\bf C\+Ptr} {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_object_t_a95a616000ba2f001681cb3e5211705da}{}\label{classdg_1_1deepcore_1_1_object_t_a95a616000ba2f001681cb3e5211705da}
+
+
+Gets an std\+::shared\+\_\+ptr$<$const T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_a91edf1cc372d9a68025bed01f08d3a38}{T\+:\+:C\+Ptr} for short. 
+
+\begin{DoxyReturn}{Returns}
+An std\+::shared\+\_\+ptr$<$const T$>$ of this object. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!wptr@{wptr}}
+\index{wptr@{wptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{wptr()}{wptr()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class BaseT $>$ {\bf ObjectT}$<$ T, BaseT $>$\+::{\bf W\+Ptr} {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::wptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_object_t_aef2b72b73c1d2ab53aebd00742fedfa2}{}\label{classdg_1_1deepcore_1_1_object_t_aef2b72b73c1d2ab53aebd00742fedfa2}
+
+
+Gets an std\+::weak\+\_\+ptr$<$\+T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_a7cf2958227ec5d42c71a74562af4e3b8}{T\+:\+:W\+Ptr} for short. 
+
+\begin{DoxyReturn}{Returns}
+An std\+::weak\+\_\+ptr$<$\+T$>$ of this object. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}!wptr@{wptr}}
+\index{wptr@{wptr}!dg\+::deepcore\+::\+ObjectT@{dg\+::deepcore\+::\+ObjectT}}
+\subsubsection[{\texorpdfstring{wptr() const }{wptr() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class BaseT $>$ {\bf ObjectT}$<$ T, BaseT $>$\+::{\bf C\+W\+Ptr} {\bf dg\+::deepcore\+::\+ObjectT}$<$ T, BaseT $>$\+::wptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_object_t_a8ca1649bb42a134bec66e541a1a373e9}{}\label{classdg_1_1deepcore_1_1_object_t_a8ca1649bb42a134bec66e541a1a373e9}
+
+
+Gets an std\+::weak\+\_\+ptr$<$const T$>$ of this object or \hyperlink{classdg_1_1deepcore_1_1_object_t_a03f850606335b509cb5bcb296ac18b62}{T\+:\+:C\+W\+Ptr} for short. 
+
+\begin{DoxyReturn}{Returns}
+An std\+::weak\+\_\+ptr$<$const T$>$ of this object. 
+\end{DoxyReturn}

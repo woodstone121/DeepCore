@@ -1,0 +1,301 @@
+\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{}\section{dg\+:\+:deepcore\+:\+:geometry\+:\+:Linear\+Ring Struct Reference}
+\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+
+
+\subsection{Detailed Description}
+Derived struct for a Linear Ring, which is a Line String with co-\/located first and last points. 
+
+{\ttfamily \#include $<$geometry/\+Linear\+Ring.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:geometry\+:\+:Linear\+Ring\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{structdg_1_1deepcore_1_1geometry_1_1_linear_ring__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a5b551aabee61fe3e6a95f3872563daaf}{Linear\+Ring} ()=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a58b6aa0cae0d42f832fd47d5ae27e00e}{Linear\+Ring} (const std\+::vector$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{Point} $>$ \&in\+Points, bool auto\+Close=false)
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} from a vector of \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{dg\+::deepcore\+::geometry\+::\+Point}. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_abb525758b8d1f0b5d29dde5c3cbe8973}{Linear\+Ring} (std\+::vector$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{Point} $>$ \&\&in\+Points, bool auto\+Close=false)
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} by moving a vector of \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{dg\+::deepcore\+::geometry\+::\+Point}. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a58057e93b7b6cc50a0611f11aac17fa9}{Linear\+Ring} (const std\+::vector$<$ cv\+::\+Point2d $>$ \&in\+Points, bool auto\+Close=false)
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} from a vector of cv\+::\+Point2d. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ae37fb6e59aa30e09f524ca7c2c09134e}{Linear\+Ring} (const cv\+::\+Rect2d \&other)
+\begin{DoxyCompactList}\small\item\em Convert a cv\+::\+Rect2d into a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}, from top left, clockwise. Note a 5th point is added to the rectangle in order to close the ring. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_abdc373186177459d4c0cd0e19411e2a0}{Linear\+Ring} (const O\+G\+R\+Linear\+Ring \&other, bool auto\+Close=false)
+\begin{DoxyCompactList}\small\item\em Convert an O\+G\+R\+Linear\+Ring into a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad969f5a3b2e132dbd9fe97a8fe1a53e3}{Linear\+Ring} (const geos\+::geom\+::\+Line\+String \&other, bool auto\+Close=false)
+\begin{DoxyCompactList}\small\item\em Convert a G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string}{Line\+String} into a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ab52ae6ef637539dce69ce9d77e8f3e3b}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+O\+G\+R\+Geometry $\ast$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad6ed925db7ad6b2cc77345d2d2fc704e}{to\+Ogr} () const override
+\begin{DoxyCompactList}\small\item\em Return a raw O\+G\+R\+Geometry pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+geos\+::geom\+::\+Geometry $\ast$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a887b8c2280ad03fdc7b363f5a59eb299}{to\+Geos} (const geos\+::geom\+::\+Geometry\+Factory \&factory) const override
+\begin{DoxyCompactList}\small\item\em Return a raw G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+\hyperlink{group___geometry_module_gad9a3ec0b998629dbcf8274512700964a}{Geometry\+Type} \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a946e97571ef192be48014d71c9531e37}{type} () const override
+\begin{DoxyCompactList}\small\item\em Return the Geometry\+Type of this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ac6befbcbbd1c138fc620ee99e95fa1b1}{operator==} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} \&other) const override
+\begin{DoxyCompactList}\small\item\em Return whether this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} is approximately equal to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring()=default}{LinearRing()=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a5b551aabee61fe3e6a95f3872563daaf}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a5b551aabee61fe3e6a95f3872563daaf}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring(const std\+::vector$<$ Point $>$ \&in\+Points, bool auto\+Close=false)}{LinearRing(const std::vector< Point > &inPoints, bool autoClose=false)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Point} $>$ \&}]{in\+Points, }
+\item[{bool}]{auto\+Close = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a58b6aa0cae0d42f832fd47d5ae27e00e}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a58b6aa0cae0d42f832fd47d5ae27e00e}
+
+
+Create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} from a vector of \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{dg\+::deepcore\+::geometry\+::\+Point}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Points} & The vector to create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} from. \\
+\hline
+\mbox{\tt in}  & {\em auto\+Close} & Whether or not to force this ring closed by adding first point to the end of the ring, default = false \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if the vector of points is not closed(e.\+g. first and last points co-\/located) and auto\+Close = false \\
+\hline
+\end{DoxyExceptions}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring(std\+::vector$<$ Point $>$ \&\&in\+Points, bool auto\+Close=false)}{LinearRing(std::vector< Point > &&inPoints, bool autoClose=false)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Point} $>$ \&\&}]{in\+Points, }
+\item[{bool}]{auto\+Close = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_abb525758b8d1f0b5d29dde5c3cbe8973}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_abb525758b8d1f0b5d29dde5c3cbe8973}
+
+
+Create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} by moving a vector of \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point}{dg\+::deepcore\+::geometry\+::\+Point}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Points} & The vector to create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} from. \\
+\hline
+\mbox{\tt in}  & {\em auto\+Close} & Whether or not to force this ring closed by adding first point to the end of the ring, default = false \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if the vector of points is not closed(e.\+g. first and last points co-\/located) and auto\+Close = false \\
+\hline
+\end{DoxyExceptions}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring(const std\+::vector$<$ cv\+::\+Point2d $>$ \&in\+Points, bool auto\+Close=false)}{LinearRing(const std::vector< cv::Point2d > &inPoints, bool autoClose=false)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ cv\+::\+Point2d $>$ \&}]{in\+Points, }
+\item[{bool}]{auto\+Close = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a58057e93b7b6cc50a0611f11aac17fa9}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a58057e93b7b6cc50a0611f11aac17fa9}
+
+
+Create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring} from a vector of cv\+::\+Point2d. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Points} & The vector of cv\+::\+Point2d from which to create a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{Linear\+Ring}. \\
+\hline
+\mbox{\tt in}  & {\em auto\+Close} & Whether or not to force this ring closed by adding first point to the end of the ring, default = false \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if the vector of points is not closed(e.\+g. first and last points co-\/located) and auto\+Close = false \\
+\hline
+\end{DoxyExceptions}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring(const cv\+::\+Rect2d \&other)}{LinearRing(const cv::Rect2d &other)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Rect2d \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ae37fb6e59aa30e09f524ca7c2c09134e}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ae37fb6e59aa30e09f524ca7c2c09134e}
+
+
+Convert a cv\+::\+Rect2d into a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}, from top left, clockwise. Note a 5th point is added to the rectangle in order to close the ring. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The cv\+::\+Rect2d to be converted. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring(const O\+G\+R\+Linear\+Ring \&other, bool auto\+Close=false)}{LinearRing(const OGRLinearRing &other, bool autoClose=false)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+\item[{const O\+G\+R\+Linear\+Ring \&}]{other, }
+\item[{bool}]{auto\+Close = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_abdc373186177459d4c0cd0e19411e2a0}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_abdc373186177459d4c0cd0e19411e2a0}
+
+
+Convert an O\+G\+R\+Linear\+Ring into a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The O\+G\+R\+Linear\+Ring to be converted. \\
+\hline
+\mbox{\tt in}  & {\em auto\+Close} & Whether or not to force this ring closed by adding first point to the end of the ring, default = false \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if the vector of points is not closed(e.\+g. first and last points co-\/located) and auto\+Close = false \\
+\hline
+\end{DoxyExceptions}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!Linear\+Ring@{Linear\+Ring}}
+\index{Linear\+Ring@{Linear\+Ring}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{Linear\+Ring(const geos\+::geom\+::\+Line\+String \&other, bool auto\+Close=false)}{LinearRing(const geos::geom::LineString &other, bool autoClose=false)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::\+Linear\+Ring (
+\begin{DoxyParamCaption}
+\item[{const geos\+::geom\+::\+Line\+String \&}]{other, }
+\item[{bool}]{auto\+Close = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad969f5a3b2e132dbd9fe97a8fe1a53e3}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad969f5a3b2e132dbd9fe97a8fe1a53e3}
+
+
+Convert a G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string}{Line\+String} into a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string}{Line\+String} to be converted. \\
+\hline
+\mbox{\tt in}  & {\em auto\+Close} & Whether or not to force this ring closed, default = false \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if the line string is not closed(e.\+g. first and last points co-\/located) and auto\+Close = false \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{clone() const override}{clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ {\bf Geometry} $>$ dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ab52ae6ef637539dce69ce9d77e8f3e3b}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ab52ae6ef637539dce69ce9d77e8f3e3b}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ Geometry $>$}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{operator==(const Geometry \&other) const override}{operator==(const Geometry &other) const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geometry} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ac6befbcbbd1c138fc620ee99e95fa1b1}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ac6befbcbbd1c138fc620ee99e95fa1b1}
+
+
+Return whether this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} is approximately equal to another. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & the \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} to compare to this geometry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if geometry types are not equivalent, true if geometry types are equivalent, contains the same number of underlying points, and all underlying points are approximately equivalent 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{group___geometry_module_gaf5b2bf20a71a57cc068e1e3ee78053f8}{dg\+::deepcore\+::geometry\+::\+Geometry}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!to\+Geos@{to\+Geos}}
+\index{to\+Geos@{to\+Geos}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{to\+Geos(const geos\+::geom\+::\+Geometry\+Factory \&factory) const override}{toGeos(const geos::geom::GeometryFactory &factory) const override}}]{\setlength{\rightskip}{0pt plus 5cm}gg\+::\+Geometry $\ast$ dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::to\+Geos (
+\begin{DoxyParamCaption}
+\item[{const geos\+::geom\+::\+Geometry\+Factory \&}]{factory}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a887b8c2280ad03fdc7b363f5a59eb299}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a887b8c2280ad03fdc7b363f5a59eb299}
+
+
+Return a raw G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em factory} & The Geos Geometry\+Factory used to create the geos \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. This factory must be used to destroy the geometry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The raw G\+E\+OS \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry} pointer, owned by the caller. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{group___geometry_module_ga9442b08cc58475d6f2f7060cc9cd8a7f}{dg\+::deepcore\+::geometry\+::\+Geometry}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!to\+Ogr@{to\+Ogr}}
+\index{to\+Ogr@{to\+Ogr}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{to\+Ogr() const override}{toOgr() const override}}]{\setlength{\rightskip}{0pt plus 5cm}O\+G\+R\+Geometry $\ast$ dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::to\+Ogr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad6ed925db7ad6b2cc77345d2d2fc704e}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ad6ed925db7ad6b2cc77345d2d2fc704e}
+
+
+Return a raw O\+G\+R\+Geometry pointer converted from this deepcore \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+\begin{DoxyReturn}{Returns}
+The raw O\+G\+R\+Geometry pointer, owned by the caller. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{Error}} & if G\+D\+AL fails to create an empty geometry. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{group___geometry_module_ga4ed7d864786c327184cd103ea068ced2}{dg\+::deepcore\+::geometry\+::\+Geometry}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}!type@{type}}
+\index{type@{type}!dg\+::deepcore\+::geometry\+::\+Linear\+Ring@{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}}
+\subsubsection[{\texorpdfstring{type() const override}{type() const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Geometry\+Type} dg\+::deepcore\+::geometry\+::\+Linear\+Ring\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a946e97571ef192be48014d71c9531e37}{}\label{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_a946e97571ef192be48014d71c9531e37}
+
+
+Return the Geometry\+Type of this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+
+\begin{DoxyReturn}{Returns}
+The Geometry\+Type of this \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_geometry}{Geometry}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{group___geometry_module_gacdfc02ad835493ef40a398bdf24e30a1}{dg\+::deepcore\+::geometry\+::\+Geometry}.
+

@@ -1,0 +1,75 @@
+\hypertarget{structdg_1_1deepcore_1_1_cloneable_value_base}{}\section{dg\+:\+:deepcore\+:\+:Cloneable\+Value\+Base$<$ T $>$ Struct Template Reference}
+\label{structdg_1_1deepcore_1_1_cloneable_value_base}\index{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ T $>$@{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ T $>$}}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\\*
+struct dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ T $>$}
+
+A base class for cloneable polymorphic values. Sets up a uniform interface form having a {\ttfamily \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{clone()}} method. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The base class for the cloneable value type hierarchy.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+Only the base class of a class hierarchy should inherit from this. 
+\end{DoxyNote}
+
+
+{\ttfamily \#include $<$utility/\+Cloneable\+Value.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_ad3c830a285f1c7c068fad7d7f10e128e}{cloneable\+\_\+value\+\_\+base} = T
+\begin{DoxyCompactList}\small\item\em Base class for the cloneable value hierarchy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_ad3c830a285f1c7c068fad7d7f10e128e}{cloneable\+\_\+value\+\_\+base} $>$ \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{clone} () const =0
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+virtual \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_a60a4331acf407c703d44928b4a65009c}{$\sim$\+Cloneable\+Value\+Base} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{dg\+::deepcore\+::\+Cloneable\+Value\+Base@{dg\+::deepcore\+::\+Cloneable\+Value\+Base}!cloneable\+\_\+value\+\_\+base@{cloneable\+\_\+value\+\_\+base}}
+\index{cloneable\+\_\+value\+\_\+base@{cloneable\+\_\+value\+\_\+base}!dg\+::deepcore\+::\+Cloneable\+Value\+Base@{dg\+::deepcore\+::\+Cloneable\+Value\+Base}}
+\subsubsection[{\texorpdfstring{cloneable\+\_\+value\+\_\+base}{cloneable_value_base}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ using {\bf dg\+::deepcore\+::\+Cloneable\+Value\+Base}$<$ T $>$\+::{\bf cloneable\+\_\+value\+\_\+base} =  T}\hypertarget{structdg_1_1deepcore_1_1_cloneable_value_base_ad3c830a285f1c7c068fad7d7f10e128e}{}\label{structdg_1_1deepcore_1_1_cloneable_value_base_ad3c830a285f1c7c068fad7d7f10e128e}
+
+
+Base class for the cloneable value hierarchy. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::\+Cloneable\+Value\+Base@{dg\+::deepcore\+::\+Cloneable\+Value\+Base}!````~Cloneable\+Value\+Base@{$\sim$\+Cloneable\+Value\+Base}}
+\index{````~Cloneable\+Value\+Base@{$\sim$\+Cloneable\+Value\+Base}!dg\+::deepcore\+::\+Cloneable\+Value\+Base@{dg\+::deepcore\+::\+Cloneable\+Value\+Base}}
+\subsubsection[{\texorpdfstring{$\sim$\+Cloneable\+Value\+Base()}{~CloneableValueBase()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf dg\+::deepcore\+::\+Cloneable\+Value\+Base}$<$ T $>$\+::$\sim${\bf Cloneable\+Value\+Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1_cloneable_value_base_a60a4331acf407c703d44928b4a65009c}{}\label{structdg_1_1deepcore_1_1_cloneable_value_base_a60a4331acf407c703d44928b4a65009c}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+Cloneable\+Value\+Base@{dg\+::deepcore\+::\+Cloneable\+Value\+Base}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::\+Cloneable\+Value\+Base@{dg\+::deepcore\+::\+Cloneable\+Value\+Base}}
+\subsubsection[{\texorpdfstring{clone() const =0}{clone() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual std\+::unique\+\_\+ptr$<${\bf cloneable\+\_\+value\+\_\+base}$>$ {\bf dg\+::deepcore\+::\+Cloneable\+Value\+Base}$<$ T $>$\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{}\label{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a43fdfdf7290d667358b01ccb266bcaf6}{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_polygon_a4b6ab74c5cbc5dd52f9b4d416120d98c}{dg\+::deepcore\+::geometry\+::\+Polygon}, \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a448c15e383231e33963e489817085b24}{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_line_string_a99e55ce0ceec4e7c0a2244901ef84b11}{dg\+::deepcore\+::geometry\+::\+Line\+String}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_linear_ring_ab52ae6ef637539dce69ce9d77e8f3e3b}{dg\+::deepcore\+::geometry\+::\+Linear\+Ring}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_point_af62a4f1c9180391ef4b569b5abec2205}{dg\+::deepcore\+::geometry\+::\+Point}, \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a612740c7482afab8039138ca4cd268f4}{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}, and \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad365e42292c0d72750aa7dd87a3a4bcc}{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}.
+

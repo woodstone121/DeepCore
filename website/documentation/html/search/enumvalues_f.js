@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unchanged',['UNCHANGED',['../namespacedg_1_1deepcore_1_1imagery.html#ga1db94ae833853b71ed501bb1ea8c1c24a46335765005ff44b1fe1e38e5d2ddfcc',1,'dg::deepcore::imagery']]],
-  ['unknown',['UNKNOWN',['../group___classification_module.html#ggafa8e703c3646c5f93ada56f3c811aac7afe99adc05982dc48ca8782d131dfeee0',1,'dg::deepcore::classification::ModelMetadata::UNKNOWN()'],['../namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da696b031073e74bf2cb98e5ef201d4aa3',1,'dg::deepcore::vector::UNKNOWN()'],['../namespacedg_1_1deepcore_1_1vector.html#gade61c1773afa31064c4eae92cb6bb0b8a696b031073e74bf2cb98e5ef201d4aa3',1,'dg::deepcore::vector::UNKNOWN()']]],
-  ['unused',['UNUSED',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972a3bc180bd00be2c60a3a5a68e0dd49503',1,'dg::deepcore']]]
+  ['thread_5flocal',['THREAD_LOCAL',['../group___utility_module.html#gga77a5aca6f6f331cac011e7759117ddcba772a52ee176003ef0c6cef7830da4ffe',1,'dg::deepcore']]],
+  ['time',['TIME',['../namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da346ff32eaa3c09983fb2ec057816d352',1,'dg::deepcore::vector']]],
+  ['tms',['TMS',['../namespacedg_1_1deepcore_1_1imagery.html#a69877eb3a0e61e72802663a976413267a9e5dfc0ebc078e4f03650d778f13d412',1,'dg::deepcore::imagery']]]
 ];

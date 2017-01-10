@@ -1,0 +1,88 @@
+\hypertarget{group___process_type}{}\section{Type System}
+\label{group___process_type}\index{Type System@{Type System}}
+
+
+\subsection{Detailed Description}
+The processing framework type system. Definitions for \hyperlink{classdg_1_1deepcore_1_1_type}{Type}, \hyperlink{classdg_1_1deepcore_1_1_value}{Value}, \hyperlink{classdg_1_1deepcore_1_1_conversion}{Conversion}, and \hyperlink{classdg_1_1deepcore_1_1_object}{Object}. 
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___process_types}{Types}
+\begin{DoxyCompactList}\small\item\em Predefined instances of Type for basic C++ types and processing framework Object types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdg_1_1deepcore_1_1_conversion}{dg\+::deepcore\+::\+Conversion}
+\begin{DoxyCompactList}\small\item\em Handles conversions between different \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1_object}{dg\+::deepcore\+::\+Object}
+\begin{DoxyCompactList}\small\item\em The base class for all the processing pipeline objects. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1_object_t}{dg\+::deepcore\+::\+Object\+T$<$ T, Base\+T $>$}
+\begin{DoxyCompactList}\small\item\em Template class used to inherit from \hyperlink{classdg_1_1deepcore_1_1_object}{Object} and classes that inherit from it. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1_named_object}{dg\+::deepcore\+::\+Named\+Object}
+\begin{DoxyCompactList}\small\item\em A base class for objects that have a name. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1_type}{dg\+::deepcore\+::\+Type}
+\begin{DoxyCompactList}\small\item\em Represents a data type. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1_value}{dg\+::deepcore\+::\+Value}
+\begin{DoxyCompactList}\small\item\em A class whose instance can hold instances of any type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{group___process_type_ga213a2a633d6658f67842bd2958c82c78}{dg\+::deepcore\+::\+Value\+Convert\+Func} = std\+::function$<$ Value(const Value \&value)$>$
+\begin{DoxyCompactList}\small\item\em A value conversion function. Used to register conversions between different \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types. \end{DoxyCompactList}\item 
+using \hyperlink{group___process_type_ga31f9e496107d11d745b3b405d38f0e64}{dg\+::deepcore\+::\+Object\+Factory} = std\+::function$<$ std\+::shared\+\_\+ptr$<$ Object $>$()$>$
+\begin{DoxyCompactList}\small\item\em Represents an \hyperlink{classdg_1_1deepcore_1_1_object}{Object} factory function. Each class inheriting from \hyperlink{classdg_1_1deepcore_1_1_object}{Object} must have a Object\+::register\+Factory call to register its factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+
+
+\subsection{Typedef Documentation}
+\index{Type System@{Type System}!Object\+Factory@{Object\+Factory}}
+\index{Object\+Factory@{Object\+Factory}!Type System@{Type System}}
+\subsubsection[{\texorpdfstring{Object\+Factory}{ObjectFactory}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf dg\+::deepcore\+::\+Object\+Factory} = typedef std\+::function$<$std\+::shared\+\_\+ptr$<$Object$>$()$>$}\hypertarget{group___process_type_ga31f9e496107d11d745b3b405d38f0e64}{}\label{group___process_type_ga31f9e496107d11d745b3b405d38f0e64}
+
+
+Represents an \hyperlink{classdg_1_1deepcore_1_1_object}{Object} factory function. Each class inheriting from \hyperlink{classdg_1_1deepcore_1_1_object}{Object} must have a Object\+::register\+Factory call to register its factory. 
+
+\begin{DoxyReturn}{Returns}
+The constructed object. 
+\end{DoxyReturn}
+\index{Type System@{Type System}!Value\+Convert\+Func@{Value\+Convert\+Func}}
+\index{Value\+Convert\+Func@{Value\+Convert\+Func}!Type System@{Type System}}
+\subsubsection[{\texorpdfstring{Value\+Convert\+Func}{ValueConvertFunc}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf dg\+::deepcore\+::\+Value\+Convert\+Func} = typedef std\+::function$<$Value(const Value\& value)$>$}\hypertarget{group___process_type_ga213a2a633d6658f67842bd2958c82c78}{}\label{group___process_type_ga213a2a633d6658f67842bd2958c82c78}
+
+
+A value conversion function. Used to register conversions between different \hyperlink{classdg_1_1deepcore_1_1_value}{Value} types. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted value. 
+\end{DoxyReturn}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Type System@{Type System}!Type\+Category@{Type\+Category}}
+\index{Type\+Category@{Type\+Category}!Type System@{Type System}}
+\subsubsection[{\texorpdfstring{Type\+Category}{TypeCategory}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dg\+::deepcore\+::\+Type\+Category}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{group___process_type_ga7df7aa6573baa85be9bbbf9b5916f038}{}\label{group___process_type_ga7df7aa6573baa85be9bbbf9b5916f038}
+
+
+Represents a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} category. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{V\+O\+ID@{V\+O\+ID}!Type System@{Type System}}\index{Type System@{Type System}!V\+O\+ID@{V\+O\+ID}}\item[{\em 
+V\+O\+ID\hypertarget{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a6d0c9fc747131795e6e5d0c5119f12cb}{}\label{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a6d0c9fc747131795e6e5d0c5119f12cb}
+}]\char`\"{}\+Void\char`\"{} or empty type. \index{S\+C\+A\+L\+AR@{S\+C\+A\+L\+AR}!Type System@{Type System}}\index{Type System@{Type System}!S\+C\+A\+L\+AR@{S\+C\+A\+L\+AR}}\item[{\em 
+S\+C\+A\+L\+AR\hypertarget{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a8f3d9a4b6a7b7f2c7afa61ca113d0db9}{}\label{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a8f3d9a4b6a7b7f2c7afa61ca113d0db9}
+}]A type representing a single value. \index{O\+B\+J\+E\+CT@{O\+B\+J\+E\+CT}!Type System@{Type System}}\index{Type System@{Type System}!O\+B\+J\+E\+CT@{O\+B\+J\+E\+CT}}\item[{\em 
+O\+B\+J\+E\+CT\hypertarget{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a8eee8e217391199668cbac89472ace53}{}\label{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a8eee8e217391199668cbac89472ace53}
+}]A type that inherits from \hyperlink{classdg_1_1deepcore_1_1_object}{Object}. \index{C\+O\+N\+T\+A\+I\+N\+ER@{C\+O\+N\+T\+A\+I\+N\+ER}!Type System@{Type System}}\index{Type System@{Type System}!C\+O\+N\+T\+A\+I\+N\+ER@{C\+O\+N\+T\+A\+I\+N\+ER}}\item[{\em 
+C\+O\+N\+T\+A\+I\+N\+ER\hypertarget{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a9bbab5f947b9e3fbb8a399ecc257459b}{}\label{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a9bbab5f947b9e3fbb8a399ecc257459b}
+}]A container type such as {\ttfamily std\+::vector}. \index{C\+L\+O\+N\+E\+A\+B\+LE@{C\+L\+O\+N\+E\+A\+B\+LE}!Type System@{Type System}}\index{Type System@{Type System}!C\+L\+O\+N\+E\+A\+B\+LE@{C\+L\+O\+N\+E\+A\+B\+LE}}\item[{\em 
+C\+L\+O\+N\+E\+A\+B\+LE\hypertarget{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a5543f4530567fb86314b5ef39c7aba8c}{}\label{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a5543f4530567fb86314b5ef39c7aba8c}
+}]A cloneable polymorphic value. \end{description}
+\end{Desc}

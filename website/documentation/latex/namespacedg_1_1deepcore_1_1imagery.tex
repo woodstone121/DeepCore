@@ -1,9 +1,22 @@
 \hypertarget{namespacedg_1_1deepcore_1_1imagery}{}\section{dg\+:\+:deepcore\+:\+:imagery Namespace Reference}
 \label{namespacedg_1_1deepcore_1_1imagery}\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+
+
+Contains image-\/handling functionality.  
+
+
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+ \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1attr}{attr}
+\item 
  \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1ows}{ows}
+\item 
+ \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type}{Pixel\+Type}
+\item 
+ \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1port}{port}
+\item 
+ \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1prop}{prop}
 \item 
  \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1wmts}{wmts}
 \end{DoxyCompactItemize}
@@ -16,22 +29,26 @@ class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_dg_wmts_client}{Dg\+Wmts\+Cl
 \begin{DoxyCompactList}\small\item\em A base class for Digital\+Globe W\+M\+TS services. \end{DoxyCompactList}\item 
 class \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_evwhs_client}{Evwhs\+Client}
 \begin{DoxyCompactList}\small\item\em A client for the Digital\+Globe E\+V\+W\+HS service. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_gdal_block_source}{Gdal\+Block\+Source}
+\begin{DoxyCompactList}\small\item\em Provides ability to read blocks from a geo-\/registered raster source using G\+D\+AL. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_gdal_image}{Gdal\+Image}
 \begin{DoxyCompactList}\small\item\em Represents a geo-\/registered image read using G\+D\+AL. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_geo_block_source}{Geo\+Block\+Source}
+\begin{DoxyCompactList}\small\item\em Provides ability to read blocks from a geo-\/registered raster source. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_geo_image}{Geo\+Image}
 \begin{DoxyCompactList}\small\item\em An abstract base class for geo-\/registered images. \end{DoxyCompactList}\item 
-struct \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}
+struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}
 \begin{DoxyCompactList}\small\item\em Stores the image batch data and the original window dimensions. \end{DoxyCompactList}\item 
-class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_image_downloader}{Image\+Downloader}
-\begin{DoxyCompactList}\small\item\em Downloads multiple images at the same time. \end{DoxyCompactList}\item 
-struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_download_request}{Image\+Download\+Request}
-\begin{DoxyCompactList}\small\item\em Represents an asynchronous image download request. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_box_client}{Map\+Box\+Client}
-\begin{DoxyCompactList}\small\item\em A client for a Map\+Box (or similar) tile service which uses Tile\+J\+S\+ON for its \char`\"{}\+Get\+Capabilities\char`\"{} request. and X\+YZ tile indexing scheme. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A client for the Map\+Box tile service. \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_block_source}{Map\+Service\+Block\+Source}
+\begin{DoxyCompactList}\small\item\em Provides ability to read blocks from a map service raster source. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_client}{Map\+Service\+Client}
 \begin{DoxyCompactList}\small\item\em A base class for asynchronous web service clients. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image}{Map\+Service\+Image}
 \begin{DoxyCompactList}\small\item\em Represents an image back by a web map service. \end{DoxyCompactList}\item 
+struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_map_service_image_config}{Map\+Service\+Image\+Config}
+\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid}{Pyramid}
 \begin{DoxyCompactList}\small\item\em Assists in calculation of pyramid levels. \end{DoxyCompactList}\item 
 struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_image}{Pyramid\+Image}
@@ -39,7 +56,7 @@ struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_image}{Pyramid\+Im
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch}{Pyramid\+Image\+Batch}
 \begin{DoxyCompactList}\small\item\em Slices an image into windows defined by a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window}{Pyramid\+Sliding\+Window} and groups the results into batches. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_iterator}{Pyramid\+Image\+Batch\+Iterator}
-\begin{DoxyCompactList}\small\item\em Represents a single \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Represents a single \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer}
 \begin{DoxyCompactList}\small\item\em Slices an image into windows defined by a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window}{Pyramid\+Sliding\+Window}. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator}{Pyramid\+Image\+Slicer\+Iterator}
@@ -56,12 +73,12 @@ class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_sliding_window}{Sliding\+Win
 \begin{DoxyCompactList}\small\item\em Assists in calculation of sliding windows. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_sliding_window_iterator}{Sliding\+Window\+Iterator}
 \begin{DoxyCompactList}\small\item\em Represents a single sliding window. \end{DoxyCompactList}\item 
-class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_spatial_reference}{Spatial\+Reference}
-\begin{DoxyCompactList}\small\item\em Represents a geographic or projected coordinate system. \end{DoxyCompactList}\item 
-class \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_downloader}{Tile\+Downloader}
-\begin{DoxyCompactList}\small\item\em Downloads web service tiles. \end{DoxyCompactList}\item 
+struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile}{Tile}
+\begin{DoxyCompactList}\small\item\em Represent an image subset or tile. \end{DoxyCompactList}\item 
 struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json}
 \begin{DoxyCompactList}\small\item\em Represents a Tile\+J\+S\+ON response. Currently supported version is 2.\+0.\+0. Reference\+: \href{https://github.com/mapbox/tilejson-spec/tree/master/2.0.0}{\tt } \end{DoxyCompactList}\item 
+class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_tile_json_client}{Tile\+Json\+Client}
+\begin{DoxyCompactList}\small\item\em A client for a Tile\+J\+S\+ON tile service. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client}
 \begin{DoxyCompactList}\small\item\em A client for a W\+M\+TS service. Currently only the K\+VP encoding scheme is supported. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
@@ -69,10 +86,6 @@ class \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client}
 \item 
 using \hyperlink{group___imagery_module_ga2238c2ef34502f68956ddef1f477ad95}{Block\+Read\+Func} = std\+::function$<$ bool(const cv\+::\+Point \&origin, cv\+::\+Mat \&\&block)$>$
 \begin{DoxyCompactList}\small\item\em Callback for block read. \end{DoxyCompactList}\item 
-using \hyperlink{group___imagery_module_gab8f15d39d6d4bd5bcd727b5d8b28a721}{Image\+Download\+Callback} = std\+::function$<$ bool(cv\+::\+Mat \&\&image)$>$
-\begin{DoxyCompactList}\small\item\em Callback to a finished image download. \end{DoxyCompactList}\item 
-using \hyperlink{group___imagery_module_ga759e24100f96d6dee1eee94f4f1d6898}{Image\+Download\+Requests} = std\+::vector$<$ \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_download_request}{Image\+Download\+Request} $>$
-\begin{DoxyCompactList}\small\item\em An std\+::vector of \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_download_request}{Image\+Download\+Request} objects. \end{DoxyCompactList}\item 
 typedef std\+::vector$<$ \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_level}{Pyramid\+Level} $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_a19b24d2d9a7e8c5b4ab65d1fa42b8b20}{Pyramid\+Levels}
 \item 
 using \hyperlink{namespacedg_1_1deepcore_1_1imagery_ad59888e5453be057c25213ce51df1439}{Preprocess\+Func} = std\+::function$<$ void(cv\+::\+Mat \&dest, const cv\+::\+Mat \&src)$>$
@@ -85,11 +98,13 @@ typedef std\+::vector$<$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_sliding_w
 \item 
 cv\+::\+Mat \hyperlink{group___imagery_module_ga95eb6f615115ac89f33bed1f11861a13}{match\+Number\+Of\+Channels} (const cv\+::\+Mat \&image, int num\+Channels)
 \begin{DoxyCompactList}\small\item\em If the input image number of channels is different from the specified number of channels, transform the image to match. \end{DoxyCompactList}\item 
-void \hyperlink{group___imagery_module_ga189c04f562d7cd66add6b7cc95bb4b27}{init\+Gdal\+Data} ()
-\begin{DoxyCompactList}\small\item\em Load the G\+D\+A\+L\+\_\+\+D\+A\+TA into G\+D\+AL\textquotesingle{}s memory.
-
-May be called multiple times and is thread safe. \end{DoxyCompactList}\item 
+void \hyperlink{namespacedg_1_1deepcore_1_1imagery_afb6943a9434cf1b3ec557cb83392ee16}{init} ()
+\begin{DoxyCompactList}\small\item\em Initializes imagery components of the processing framework. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{group___imagery_module_ga46f637f6cee80168d9ad3724aa75c7df}{operator$<$$<$} (std\+::ostream \&os, \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type_a5f0c62edf4601cbd15e52b381697069d}{Pixel\+Type\+::\+Type} t)
+\begin{DoxyCompactList}\small\item\em Outputs the \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type_a5f0c62edf4601cbd15e52b381697069d}{Pixel\+Type\+::\+Type} string representation to a {\ttfamily std\+::ostream}. \end{DoxyCompactList}\item 
 void \hyperlink{namespacedg_1_1deepcore_1_1imagery_af97da0ca48f1ad0387fcabc5b3638414}{set\+Min\+Max} (int depth, float \&depth\+Min, float \&depth\+Max)
+\item 
+{\footnotesize template$<$class T $>$ }\\unique\+\_\+ptr$<$ T $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_a4f56adcc4056062e0c0e14ad2b50c3bb}{copy\+Unique} (const unique\+\_\+ptr$<$ T $>$ \&rhs)
 \item 
 unique\+\_\+ptr$<$ string $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_a52b9270f0f9ef5ac00dc3731d46df6e6}{get\+Optional\+String} (const Value \&root, const std\+::string \&name)
 \item 
@@ -102,8 +117,34 @@ vector$<$ string $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_aa5871533ad39
 cv\+::\+Rect2d \hyperlink{namespacedg_1_1deepcore_1_1imagery_abfb515b942ddd9c5cfd5650dd715ffba}{get\+Rect2d\+With\+Default} (const Json\+::\+Value \&root, const std\+::string \&name, const cv\+::\+Rect2d default\+Bounds)
 \item 
 unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_1_1_center}{Tile\+Json\+::\+Center} $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_a051e94f679a198b8567c1ac9ad2a9b8d}{get\+Optional\+Center} (const Json\+::\+Value \&root, const std\+::string \&name)
+\item 
+int \hyperlink{namespacedg_1_1deepcore_1_1imagery_a7c47c9dcfb39612f43df1ae03eef72c1}{get\+Optional\+Int} (const Json\+::\+Value \&root, const std\+::string \&name, int default\+Value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{namespacedg_1_1deepcore_1_1imagery_a1e4fbd4aaf439a533b4ca96449f5b025}{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT} = 85.\+0511287798066
+\item 
+static const string \hyperlink{namespacedg_1_1deepcore_1_1imagery_a9e7cface2b675ff0c56c3ab563fddb0e}{D\+G\+C\+S\+\_\+\+U\+RL} = \char`\"{}https\+://services.\+digitalglobe.\+com/earthservice/wmtsaccess\char`\"{}
+\item 
+static const string \hyperlink{namespacedg_1_1deepcore_1_1imagery_a3b7112a63b420c78b01c83d0f434aff9}{E\+V\+W\+H\+S\+\_\+\+U\+RL} = \char`\"{}https\+://evwhs.\+digitalglobe.\+com/earthservice/wmtsaccess\char`\"{}
+\item 
+static const map$<$ G\+D\+A\+L\+Data\+Type, \hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type_a5f0c62edf4601cbd15e52b381697069d}{Pixel\+Type\+::\+Type} $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_a3789b9a347ec09b23d7d45351cc87707}{G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES}
+\item 
+static const map$<$ G\+D\+A\+L\+Color\+Interp, int $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_a3e6b06d7bc0e97ec15a9c43b65740ad6}{G\+D\+A\+L\+\_\+\+R\+G\+BA}
+\item 
+std\+::once\+\_\+flag \hyperlink{namespacedg_1_1deepcore_1_1imagery_a5bd34f6242dc2b966d56787202281cd3}{imagery\+Init\+Flag}
+\item 
+const string \hyperlink{namespacedg_1_1deepcore_1_1imagery_a977bcd35334fda555ec11800e73afacd}{M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL} = \char`\"{}https\+://api.\+mapbox.\+com/v4/\char`\"{}
+\item 
+static const map$<$ string, string $>$ \hyperlink{namespacedg_1_1deepcore_1_1imagery_ac6e711bbab3158f9c5e5d9e283dea88d}{E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME}
+\item 
+static const double \hyperlink{namespacedg_1_1deepcore_1_1imagery_a38334ae0e39b6cb795feceeaf7e36a77}{S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0} = 559082264.\+0287178
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains image-\/handling functionality. 
 
 \subsection{Typedef Documentation}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!Preprocess\+Func@{Preprocess\+Func}}
@@ -128,7 +169,33 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \subsubsection[{\texorpdfstring{Sliding\+Windows}{SlidingWindows}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Sliding\+Window}$>$ {\bf dg\+::deepcore\+::imagery\+::\+Sliding\+Windows}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_af586b82f51aad0d30be6ee5671df62c5}{}\label{namespacedg_1_1deepcore_1_1imagery_af586b82f51aad0d30be6ee5671df62c5}
 
 
+\subsection{Enumeration Type Documentation}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!Tile\+Json\+Scheme@{Tile\+Json\+Scheme}}
+\index{Tile\+Json\+Scheme@{Tile\+Json\+Scheme}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{Tile\+Json\+Scheme}{TileJsonScheme}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dg\+::deepcore\+::imagery\+::\+Tile\+Json\+Scheme}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267}{}\label{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267}
+
+
+Represents a Tile\+J\+S\+ON tiling scheme. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{X\+YZ@{X\+YZ}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!X\+YZ@{X\+YZ}}\item[{\em 
+X\+YZ\hypertarget{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267ae65075d550f9b5bf9992fa1d71a131be}{}\label{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267ae65075d550f9b5bf9992fa1d71a131be}
+}]X\+YZ tiling scheme, tiles are indexed from top to bottom. \index{T\+MS@{T\+MS}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!T\+MS@{T\+MS}}\item[{\em 
+T\+MS\hypertarget{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267a9e5dfc0ebc078e4f03650d778f13d412}{}\label{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267a9e5dfc0ebc078e4f03650d778f13d412}
+}]T\+MS tiling scheme, tiles are indexed from bottom to top. \end{description}
+\end{Desc}
+
+
 \subsection{Function Documentation}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!copy\+Unique@{copy\+Unique}}
+\index{copy\+Unique@{copy\+Unique}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{copy\+Unique(const unique\+\_\+ptr$<$ T $>$ \&rhs)}{copyUnique(const unique_ptr< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ unique\+\_\+ptr$<$T$>$ dg\+::deepcore\+::imagery\+::copy\+Unique (
+\begin{DoxyParamCaption}
+\item[{const unique\+\_\+ptr$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a4f56adcc4056062e0c0e14ad2b50c3bb}{}\label{namespacedg_1_1deepcore_1_1imagery_a4f56adcc4056062e0c0e14ad2b50c3bb}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Optional\+Center@{get\+Optional\+Center}}
 \index{get\+Optional\+Center@{get\+Optional\+Center}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{get\+Optional\+Center(const Json\+::\+Value \&root, const std\+::string \&name)}{getOptionalCenter(const Json::Value &root, const std::string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<${\bf Tile\+Json\+::\+Center}$>$ dg\+::deepcore\+::imagery\+::get\+Optional\+Center (
@@ -136,7 +203,16 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{const Json\+::\+Value \&}]{root, }
 \item[{const std\+::string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a051e94f679a198b8567c1ac9ad2a9b8d}{}\label{namespacedg_1_1deepcore_1_1imagery_a051e94f679a198b8567c1ac9ad2a9b8d}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a051e94f679a198b8567c1ac9ad2a9b8d}{}\label{namespacedg_1_1deepcore_1_1imagery_a051e94f679a198b8567c1ac9ad2a9b8d}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Optional\+Int@{get\+Optional\+Int}}
+\index{get\+Optional\+Int@{get\+Optional\+Int}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{get\+Optional\+Int(const Json\+::\+Value \&root, const std\+::string \&name, int default\+Value)}{getOptionalInt(const Json::Value &root, const std::string &name, int defaultValue)}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::imagery\+::get\+Optional\+Int (
+\begin{DoxyParamCaption}
+\item[{const Json\+::\+Value \&}]{root, }
+\item[{const std\+::string \&}]{name, }
+\item[{int}]{default\+Value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a7c47c9dcfb39612f43df1ae03eef72c1}{}\label{namespacedg_1_1deepcore_1_1imagery_a7c47c9dcfb39612f43df1ae03eef72c1}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Optional\+String@{get\+Optional\+String}}
 \index{get\+Optional\+String@{get\+Optional\+String}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{get\+Optional\+String(const Value \&root, const std\+::string \&name)}{getOptionalString(const Value &root, const std::string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$string$>$ dg\+::deepcore\+::imagery\+::get\+Optional\+String (
@@ -144,7 +220,7 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{const Value \&}]{root, }
 \item[{const std\+::string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a52b9270f0f9ef5ac00dc3731d46df6e6}{}\label{namespacedg_1_1deepcore_1_1imagery_a52b9270f0f9ef5ac00dc3731d46df6e6}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a52b9270f0f9ef5ac00dc3731d46df6e6}{}\label{namespacedg_1_1deepcore_1_1imagery_a52b9270f0f9ef5ac00dc3731d46df6e6}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Optional\+String\+Array@{get\+Optional\+String\+Array}}
 \index{get\+Optional\+String\+Array@{get\+Optional\+String\+Array}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{get\+Optional\+String\+Array(const Value \&root, const string \&name)}{getOptionalStringArray(const Value &root, const string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ dg\+::deepcore\+::imagery\+::get\+Optional\+String\+Array (
@@ -152,7 +228,7 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{const Value \&}]{root, }
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_aa5871533ad39eff0ac77fc48b10334b4}{}\label{namespacedg_1_1deepcore_1_1imagery_aa5871533ad39eff0ac77fc48b10334b4}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_aa5871533ad39eff0ac77fc48b10334b4}{}\label{namespacedg_1_1deepcore_1_1imagery_aa5871533ad39eff0ac77fc48b10334b4}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Rect2d\+With\+Default@{get\+Rect2d\+With\+Default}}
 \index{get\+Rect2d\+With\+Default@{get\+Rect2d\+With\+Default}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{get\+Rect2d\+With\+Default(const Json\+::\+Value \&root, const std\+::string \&name, const cv\+::\+Rect2d default\+Bounds)}{getRect2dWithDefault(const Json::Value &root, const std::string &name, const cv::Rect2d defaultBounds)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Rect2d dg\+::deepcore\+::imagery\+::get\+Rect2d\+With\+Default (
@@ -161,7 +237,7 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{const std\+::string \&}]{name, }
 \item[{const cv\+::\+Rect2d}]{default\+Bounds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_abfb515b942ddd9c5cfd5650dd715ffba}{}\label{namespacedg_1_1deepcore_1_1imagery_abfb515b942ddd9c5cfd5650dd715ffba}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_abfb515b942ddd9c5cfd5650dd715ffba}{}\label{namespacedg_1_1deepcore_1_1imagery_abfb515b942ddd9c5cfd5650dd715ffba}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Required\+String@{get\+Required\+String}}
 \index{get\+Required\+String@{get\+Required\+String}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{get\+Required\+String(const Value \&root, const string \&name)}{getRequiredString(const Value &root, const string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}string dg\+::deepcore\+::imagery\+::get\+Required\+String (
@@ -169,7 +245,7 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{const Value \&}]{root, }
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a7fe14dfc6bcd76f91894900ca0cd4db6}{}\label{namespacedg_1_1deepcore_1_1imagery_a7fe14dfc6bcd76f91894900ca0cd4db6}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a7fe14dfc6bcd76f91894900ca0cd4db6}{}\label{namespacedg_1_1deepcore_1_1imagery_a7fe14dfc6bcd76f91894900ca0cd4db6}
 \index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!get\+Required\+String\+Array@{get\+Required\+String\+Array}}
 \index{get\+Required\+String\+Array@{get\+Required\+String\+Array}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{get\+Required\+String\+Array(const Value \&root, const string \&name)}{getRequiredStringArray(const Value &root, const string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ dg\+::deepcore\+::imagery\+::get\+Required\+String\+Array (
@@ -177,8 +253,25 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{const Value \&}]{root, }
 \item[{const string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_aa683178eb392cf39baede76e51f24d12}{}\label{namespacedg_1_1deepcore_1_1imagery_aa683178eb392cf39baede76e51f24d12}
-\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!set\+Min\+Max@{set\+Min\+Max}}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_aa683178eb392cf39baede76e51f24d12}{}\label{namespacedg_1_1deepcore_1_1imagery_aa683178eb392cf39baede76e51f24d12}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!init@{init}}
+\index{init@{init}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::imagery\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_afb6943a9434cf1b3ec557cb83392ee16}{}\label{namespacedg_1_1deepcore_1_1imagery_afb6943a9434cf1b3ec557cb83392ee16}
+
+
+Initializes imagery components of the processing framework. 
+
+This function need to be called at least once for any process that uses the processing framework. It is safe to call this multiple times.
+
+This function will also call the following initialization functions\+:
+\begin{DoxyItemize}
+\item \hyperlink{namespacedg_1_1deepcore_1_1process_a93462210510d131ae36a02db8fc6f615}{process\+::init()}
+\item \hyperlink{namespacedg_1_1deepcore_1_1geometry_a232d4736f4033977fcd9d75e91c768b3}{geometry\+::init()} 
+\end{DoxyItemize}\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!set\+Min\+Max@{set\+Min\+Max}}
 \index{set\+Min\+Max@{set\+Min\+Max}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
 \subsubsection[{\texorpdfstring{set\+Min\+Max(int depth, float \&depth\+Min, float \&depth\+Max)}{setMinMax(int depth, float &depthMin, float &depthMax)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::imagery\+::set\+Min\+Max (
 \begin{DoxyParamCaption}
@@ -186,4 +279,62 @@ A function that performs an operation on a cv\+::\+Mat object and writes the res
 \item[{float \&}]{depth\+Min, }
 \item[{float \&}]{depth\+Max}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_af97da0ca48f1ad0387fcabc5b3638414}{}\label{namespacedg_1_1deepcore_1_1imagery_af97da0ca48f1ad0387fcabc5b3638414}
+)}\hypertarget{namespacedg_1_1deepcore_1_1imagery_af97da0ca48f1ad0387fcabc5b3638414}{}\label{namespacedg_1_1deepcore_1_1imagery_af97da0ca48f1ad0387fcabc5b3638414}
+
+
+\subsection{Variable Documentation}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!D\+G\+C\+S\+\_\+\+U\+RL@{D\+G\+C\+S\+\_\+\+U\+RL}}
+\index{D\+G\+C\+S\+\_\+\+U\+RL@{D\+G\+C\+S\+\_\+\+U\+RL}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{D\+G\+C\+S\+\_\+\+U\+RL}{DGCS_URL}}]{\setlength{\rightskip}{0pt plus 5cm}const string dg\+::deepcore\+::imagery\+::\+D\+G\+C\+S\+\_\+\+U\+RL = \char`\"{}https\+://services.\+digitalglobe.\+com/earthservice/wmtsaccess\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a9e7cface2b675ff0c56c3ab563fddb0e}{}\label{namespacedg_1_1deepcore_1_1imagery_a9e7cface2b675ff0c56c3ab563fddb0e}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!E\+V\+W\+H\+S\+\_\+\+U\+RL@{E\+V\+W\+H\+S\+\_\+\+U\+RL}}
+\index{E\+V\+W\+H\+S\+\_\+\+U\+RL@{E\+V\+W\+H\+S\+\_\+\+U\+RL}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{E\+V\+W\+H\+S\+\_\+\+U\+RL}{EVWHS_URL}}]{\setlength{\rightskip}{0pt plus 5cm}const string dg\+::deepcore\+::imagery\+::\+E\+V\+W\+H\+S\+\_\+\+U\+RL = \char`\"{}https\+://evwhs.\+digitalglobe.\+com/earthservice/wmtsaccess\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a3b7112a63b420c78b01c83d0f434aff9}{}\label{namespacedg_1_1deepcore_1_1imagery_a3b7112a63b420c78b01c83d0f434aff9}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME@{E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME}}
+\index{E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME@{E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME}{EXT_TO_MIME}}]{\setlength{\rightskip}{0pt plus 5cm}const map$<$string, string$>$ dg\+::deepcore\+::imagery\+::\+E\+X\+T\+\_\+\+T\+O\+\_\+\+M\+I\+ME\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_ac6e711bbab3158f9c5e5d9e283dea88d}{}\label{namespacedg_1_1deepcore_1_1imagery_ac6e711bbab3158f9c5e5d9e283dea88d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{ \textcolor{stringliteral}{"jpg"}, \textcolor{stringliteral}{"image/jpeg"} \},
+    \{ \textcolor{stringliteral}{"png"}, \textcolor{stringliteral}{"image/png"} \},
+\}
+\end{DoxyCode}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!G\+D\+A\+L\+\_\+\+R\+G\+BA@{G\+D\+A\+L\+\_\+\+R\+G\+BA}}
+\index{G\+D\+A\+L\+\_\+\+R\+G\+BA@{G\+D\+A\+L\+\_\+\+R\+G\+BA}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{G\+D\+A\+L\+\_\+\+R\+G\+BA}{GDAL_RGBA}}]{\setlength{\rightskip}{0pt plus 5cm}const map$<$G\+D\+A\+L\+Color\+Interp, int$>$ dg\+::deepcore\+::imagery\+::\+G\+D\+A\+L\+\_\+\+R\+G\+BA\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a3e6b06d7bc0e97ec15a9c43b65740ad6}{}\label{namespacedg_1_1deepcore_1_1imagery_a3e6b06d7bc0e97ec15a9c43b65740ad6}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{ GCI\_RedBand, 3 \},
+    \{ GCI\_GreenBand, 2 \},
+    \{ GCI\_BlueBand, 1 \},
+    \{ GCI\_AlphaBand, 4 \}
+\}
+\end{DoxyCode}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES@{G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES}}
+\index{G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES@{G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES}{GDAL_TYPES}}]{\setlength{\rightskip}{0pt plus 5cm}const map$<$G\+D\+A\+L\+Data\+Type, {\bf Pixel\+Type\+::\+Type}$>$ dg\+::deepcore\+::imagery\+::\+G\+D\+A\+L\+\_\+\+T\+Y\+P\+ES\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a3789b9a347ec09b23d7d45351cc87707}{}\label{namespacedg_1_1deepcore_1_1imagery_a3789b9a347ec09b23d7d45351cc87707}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{GDT\_Byte   , PixelType::UINT8 \},
+    \{GDT\_UInt16 , PixelType::UINT16 \},
+    \{GDT\_Int16  , PixelType::INT16 \},
+    \{GDT\_UInt32 , PixelType::UINT32 \},
+    \{GDT\_Int32  , PixelType::INT32 \},
+    \{GDT\_Float32, PixelType::FLOAT32 \},
+    \{GDT\_Float64, PixelType::FLOAT64 \},
+\}
+\end{DoxyCode}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!imagery\+Init\+Flag@{imagery\+Init\+Flag}}
+\index{imagery\+Init\+Flag@{imagery\+Init\+Flag}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{imagery\+Init\+Flag}{imageryInitFlag}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::once\+\_\+flag dg\+::deepcore\+::imagery\+::imagery\+Init\+Flag}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a5bd34f6242dc2b966d56787202281cd3}{}\label{namespacedg_1_1deepcore_1_1imagery_a5bd34f6242dc2b966d56787202281cd3}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL@{M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL}}
+\index{M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL@{M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL}{MAPBOX_BASE_URL}}]{\setlength{\rightskip}{0pt plus 5cm}const string dg\+::deepcore\+::imagery\+::\+M\+A\+P\+B\+O\+X\+\_\+\+B\+A\+S\+E\+\_\+\+U\+RL = \char`\"{}https\+://api.\+mapbox.\+com/v4/\char`\"{}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a977bcd35334fda555ec11800e73afacd}{}\label{namespacedg_1_1deepcore_1_1imagery_a977bcd35334fda555ec11800e73afacd}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT@{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT}}
+\index{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT@{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT}{MERCATOR_90_LAT}}]{\setlength{\rightskip}{0pt plus 5cm}const double dg\+::deepcore\+::imagery\+::\+M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT = 85.\+0511287798066\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a1e4fbd4aaf439a533b4ca96449f5b025}{}\label{namespacedg_1_1deepcore_1_1imagery_a1e4fbd4aaf439a533b4ca96449f5b025}
+\index{dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}!S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0@{S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0}}
+\index{S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0@{S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0}!dg\+::deepcore\+::imagery@{dg\+::deepcore\+::imagery}}
+\subsubsection[{\texorpdfstring{S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0}{SCALE_AT_0}}]{\setlength{\rightskip}{0pt plus 5cm}const double dg\+::deepcore\+::imagery\+::\+S\+C\+A\+L\+E\+\_\+\+A\+T\+\_\+0 = 559082264.\+0287178\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1imagery_a38334ae0e39b6cb795feceeaf7e36a77}{}\label{namespacedg_1_1deepcore_1_1imagery_a38334ae0e39b6cb795feceeaf7e36a77}

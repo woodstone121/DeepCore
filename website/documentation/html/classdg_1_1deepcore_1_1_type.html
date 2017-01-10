@@ -29,7 +29,7 @@
             <tr style="height: 56px;">
                 <td id="projectlogo"><img alt="Logo" src="community_logo.png"/></td>
                 <td id="projectalign">
-                    <div id="projectname">DeepCore
+                    <div id="projectname"><a href="https://digitalglobe.github.io/DeepCore/">DeepCore</a>
                     </div>
                     <div id="projectbrief">Deep Learning SDK for Geospatial Data</div>
                 </td>
@@ -112,26 +112,25 @@ $(document).ready(function(){initNavTree('classdg_1_1deepcore_1_1_type.html','')
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classdg_1_1deepcore_1_1_type-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">dg::deepcore::Type Class Reference<div class="ingroups"><a class="el" href="group___process.html">Processing</a> &raquo; <a class="el" href="group___process_type.html">Type System</a></div></div>  </div>
+<div class="title">dg::deepcore::Type Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group___process.html">Processing</a> &raquo; <a class="el" href="group___process_type.html">Type System</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Represents a data type.  
- <a href="classdg_1_1deepcore_1_1_type.html#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a data type. </p>
+<p><a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> class provides a way to describe data type in a portable, runtime reflective way.</p>
+<p>To get an instance of the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> object for a data type use <a class="el" href="classdg_1_1deepcore_1_1_type.html#aa142909be95af134c6edf1430de91ed7" title="Finds a Type with the given name from the type registry. ">Type::find</a> or <a class="el" href="classdg_1_1deepcore_1_1_type.html#a91d379388e31f698a98fefbc3eb49d2e" title="Gets a Type with the given name from the type registry. ">Type::get</a>.</p>
+<p>Any data type that participates in the processing framework must be registered using <a class="el" href="classdg_1_1deepcore_1_1_type.html#a50fd91c6f02c14e8ee2683e99783c329" title="Adds the given type to the Type registry. ">Type::add&lt;T&gt;()</a> first.</p>
+<p><b>Example</b> </p><div class="fragment"><div class="line"><span class="keyword">struct </span>MyType</div><div class="line">{</div><div class="line">    <span class="keywordtype">int</span> value;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">// ....</span></div><div class="line"></div><div class="line">Type::add&lt;MyType&gt;(<span class="stringliteral">&quot;MyType&quot;</span>);</div><div class="line"></div><div class="line"><span class="comment">// ....</span></div><div class="line"></div><div class="line"><span class="comment">// Later in the code</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; t1 = Type::get&lt;MyType&gt;();</div><div class="line"><span class="comment">// or</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; t2 = <a class="code" href="classdg_1_1deepcore_1_1_type.html#a031153725e4e277bafe43ebc8178afff">Type::get</a>(<span class="stringliteral">&quot;MyType&quot;</span>);</div><div class="line"><span class="comment">// or</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; t2 = <a class="code" href="classdg_1_1deepcore_1_1_type.html#a031153725e4e277bafe43ebc8178afff">Type::get</a>(<span class="keyword">typeid</span>(MyType));</div></div><!-- fragment --> </div>
 <p><code>#include &lt;<a class="el" href="_type_8h_source.html">process/Type.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a96fd513df8295f0af1538c8252e2151a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a96fd513df8295f0af1538c8252e2151a">Type</a> ()</td></tr>
-<tr class="memdesc:a96fd513df8295f0af1538c8252e2151a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> object of Void type.  <a href="#a96fd513df8295f0af1538c8252e2151a">More...</a><br /></td></tr>
-<tr class="separator:a96fd513df8295f0af1538c8252e2151a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf3ce3511318a804bff5f387dde55bb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#afbf3ce3511318a804bff5f387dde55bb">name</a> () const noexcept</td></tr>
 <tr class="memdesc:afbf3ce3511318a804bff5f387dde55bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type name.  <a href="#afbf3ce3511318a804bff5f387dde55bb">More...</a><br /></td></tr>
 <tr class="separator:afbf3ce3511318a804bff5f387dde55bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadc788b0d0a043d38e577da2ab60797c"><td class="memItemLeft" align="right" valign="top">const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#aadc788b0d0a043d38e577da2ab60797c">type</a> () const noexcept</td></tr>
-<tr class="memdesc:aadc788b0d0a043d38e577da2ab60797c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying type's <code>std::type_info</code>.  <a href="#aadc788b0d0a043d38e577da2ab60797c">More...</a><br /></td></tr>
-<tr class="separator:aadc788b0d0a043d38e577da2ab60797c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7448319c8cbc7f913a5e054f5aaba8ed"><td class="memItemLeft" align="right" valign="top">const std::type_index &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a7448319c8cbc7f913a5e054f5aaba8ed">type</a> () const noexcept</td></tr>
+<tr class="memdesc:a7448319c8cbc7f913a5e054f5aaba8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying type's <code>std::type_info</code>.  <a href="#a7448319c8cbc7f913a5e054f5aaba8ed">More...</a><br /></td></tr>
+<tr class="separator:a7448319c8cbc7f913a5e054f5aaba8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89351963b1ac286ebbabfd5ed5a9be31"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a89351963b1ac286ebbabfd5ed5a9be31">baseType</a> () const noexcept</td></tr>
 <tr class="memdesc:a89351963b1ac286ebbabfd5ed5a9be31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the base type.  <a href="#a89351963b1ac286ebbabfd5ed5a9be31">More...</a><br /></td></tr>
 <tr class="separator:a89351963b1ac286ebbabfd5ed5a9be31"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,35 +155,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a32e80f1c0b7fb80ab2729de6d5bcbdac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a32e80f1c0b7fb80ab2729de6d5bcbdac">operator&gt;=</a> (const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;rhs) const noexcept</td></tr>
 <tr class="memdesc:a32e80f1c0b7fb80ab2729de6d5bcbdac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether this object would come after <code>rhs</code> in an ordered list or if this object and <code>rhs</code> represent the same object.  <a href="#a32e80f1c0b7fb80ab2729de6d5bcbdac">More...</a><br /></td></tr>
 <tr class="separator:a32e80f1c0b7fb80ab2729de6d5bcbdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17fcaeacad5526cf527340b9bd8b4498"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a17fcaeacad5526cf527340b9bd8b4498">operator==</a> (const std::type_info &amp;rhs) const noexcept</td></tr>
-<tr class="separator:a17fcaeacad5526cf527340b9bd8b4498"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa581aa4d0d4eef73a18b530eaf789f8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#aa581aa4d0d4eef73a18b530eaf789f8c">operator!=</a> (const std::type_info &amp;rhs) const noexcept</td></tr>
-<tr class="separator:aa581aa4d0d4eef73a18b530eaf789f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af42921532263c502ca977b72ccdd9107"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#af42921532263c502ca977b72ccdd9107">operator&lt;</a> (const std::type_info &amp;rhs) const noexcept</td></tr>
-<tr class="separator:af42921532263c502ca977b72ccdd9107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bf27a012e49bcdc966e23fe1c09ae34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a9bf27a012e49bcdc966e23fe1c09ae34">operator&lt;=</a> (const std::type_info &amp;rhs) const noexcept</td></tr>
-<tr class="separator:a9bf27a012e49bcdc966e23fe1c09ae34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac72422c05b3eb5628d7fd9fc715c34a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#ac72422c05b3eb5628d7fd9fc715c34a1">operator&gt;</a> (const std::type_info &amp;rhs) const noexcept</td></tr>
-<tr class="separator:ac72422c05b3eb5628d7fd9fc715c34a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a108e525b97a6a58ab391d1572082b6af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a108e525b97a6a58ab391d1572082b6af">operator&gt;=</a> (const std::type_info &amp;rhs) const noexcept</td></tr>
-<tr class="separator:a108e525b97a6a58ab391d1572082b6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a50fd91c6f02c14e8ee2683e99783c329"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a50fd91c6f02c14e8ee2683e99783c329"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a50fd91c6f02c14e8ee2683e99783c329">add</a> (const char *<a class="el" href="classdg_1_1deepcore_1_1_type.html#afbf3ce3511318a804bff5f387dde55bb">name</a>)</td></tr>
+<tr class="memdesc:a50fd91c6f02c14e8ee2683e99783c329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given type to the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> registry.  <a href="#a50fd91c6f02c14e8ee2683e99783c329">More...</a><br /></td></tr>
+<tr class="separator:a50fd91c6f02c14e8ee2683e99783c329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d379388e31f698a98fefbc3eb49d2e"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a91d379388e31f698a98fefbc3eb49d2e">get</a> (const char *<a class="el" href="classdg_1_1deepcore_1_1_type.html#afbf3ce3511318a804bff5f387dde55bb">name</a>)</td></tr>
 <tr class="memdesc:a91d379388e31f698a98fefbc3eb49d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given name from the type registry.  <a href="#a91d379388e31f698a98fefbc3eb49d2e">More...</a><br /></td></tr>
 <tr class="separator:a91d379388e31f698a98fefbc3eb49d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa142909be95af134c6edf1430de91ed7"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#aa142909be95af134c6edf1430de91ed7">find</a> (const char *<a class="el" href="classdg_1_1deepcore_1_1_type.html#afbf3ce3511318a804bff5f387dde55bb">name</a>) noexcept</td></tr>
 <tr class="memdesc:aa142909be95af134c6edf1430de91ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given name from the type registry.  <a href="#aa142909be95af134c6edf1430de91ed7">More...</a><br /></td></tr>
 <tr class="separator:aa142909be95af134c6edf1430de91ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e080b146c5b72b808fa944e93e7728"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a48e080b146c5b72b808fa944e93e7728">get</a> (const std::type_info &amp;<a class="el" href="classdg_1_1deepcore_1_1_type.html#aadc788b0d0a043d38e577da2ab60797c">type</a>)</td></tr>
-<tr class="memdesc:a48e080b146c5b72b808fa944e93e7728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_info</code> from the type registry.  <a href="#a48e080b146c5b72b808fa944e93e7728">More...</a><br /></td></tr>
-<tr class="separator:a48e080b146c5b72b808fa944e93e7728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ddb8d5a206ff8259f364b26c4c398c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a74ddb8d5a206ff8259f364b26c4c398c">find</a> (const std::type_info &amp;<a class="el" href="classdg_1_1deepcore_1_1_type.html#aadc788b0d0a043d38e577da2ab60797c">type</a>) noexcept</td></tr>
-<tr class="memdesc:a74ddb8d5a206ff8259f364b26c4c398c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_info</code> from the type registry.  <a href="#a74ddb8d5a206ff8259f364b26c4c398c">More...</a><br /></td></tr>
-<tr class="separator:a74ddb8d5a206ff8259f364b26c4c398c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fea069a7218fc20eaa9d8ba4410b200"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a2fea069a7218fc20eaa9d8ba4410b200">find</a> (size_t typeHash) noexcept</td></tr>
-<tr class="separator:a2fea069a7218fc20eaa9d8ba4410b200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8ff6968f0ccc58c8e8ed1057bd8bda"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a5d8ff6968f0ccc58c8e8ed1057bd8bda">get</a> (std::type_index <a class="el" href="classdg_1_1deepcore_1_1_type.html#a7448319c8cbc7f913a5e054f5aaba8ed">type</a>)</td></tr>
+<tr class="memdesc:a5d8ff6968f0ccc58c8e8ed1057bd8bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_index</code> from the type registry.  <a href="#a5d8ff6968f0ccc58c8e8ed1057bd8bda">More...</a><br /></td></tr>
+<tr class="separator:a5d8ff6968f0ccc58c8e8ed1057bd8bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af360bc8a376bea173ada17e4571acd4f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#af360bc8a376bea173ada17e4571acd4f">find</a> (std::type_index <a class="el" href="classdg_1_1deepcore_1_1_type.html#a7448319c8cbc7f913a5e054f5aaba8ed">type</a>) noexcept</td></tr>
+<tr class="memdesc:af360bc8a376bea173ada17e4571acd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_info</code> from the type registry.  <a href="#af360bc8a376bea173ada17e4571acd4f">More...</a><br /></td></tr>
+<tr class="separator:af360bc8a376bea173ada17e4571acd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a031153725e4e277bafe43ebc8178afff"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a031153725e4e277bafe43ebc8178afff"><td class="memTemplItemLeft" align="right" valign="top">static const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_type.html#a031153725e4e277bafe43ebc8178afff">get</a> ()</td></tr>
 <tr class="memdesc:a031153725e4e277bafe43ebc8178afff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the given type in the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> registry.  <a href="#a031153725e4e277bafe43ebc8178afff">More...</a><br /></td></tr>
@@ -194,29 +183,48 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a52cc756bc25f7142fdfd23f10144b43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the given type in the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> registry.  <a href="#a52cc756bc25f7142fdfd23f10144b43a">More...</a><br /></td></tr>
 <tr class="separator:a52cc756bc25f7142fdfd23f10144b43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a data type. </p>
-<p><a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> class provides a way to describe data type in a portable, runtime reflective way.</p>
-<p>To get an instance of the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> object for a data type use <a class="el" href="classdg_1_1deepcore_1_1_type.html#aa142909be95af134c6edf1430de91ed7" title="Finds a Type with the given name from the type registry. ">Type::find</a> or <a class="el" href="classdg_1_1deepcore_1_1_type.html#a91d379388e31f698a98fefbc3eb49d2e" title="Gets a Type with the given name from the type registry. ">Type::get</a>. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a96fd513df8295f0af1538c8252e2151a"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a50fd91c6f02c14e8ee2683e99783c329"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">dg::deepcore::Type::Type </td>
+          <td class="memname">void dg::deepcore::Type::add </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> object of Void type. </p>
+<p>Adds the given type to the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> registry. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td><a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>It is safe to add a type to the registry multiple times, but <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> name for the same type must be the same. </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a89351963b1ac286ebbabfd5ed5a9be31"></a>
 <div class="memitem">
 <div class="memproto">
@@ -303,7 +311,7 @@ Static Public Member Functions</h2></td></tr>
 <p><b>Example</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> t = <a class="code" href="classdg_1_1deepcore_1_1_type.html#a031153725e4e277bafe43ebc8178afff">Type::get</a>(<span class="stringliteral">&quot;Int32&quot;</span>);</div><div class="line"><span class="keywordflow">if</span>(!t) {</div><div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Type Int32 not found&quot;</span> &lt;&lt; std::endl;</div><div class="line">}</div></div><!-- fragment --> 
 </div>
 </div>
-<a class="anchor" id="a74ddb8d5a206ff8259f364b26c4c398c"></a>
+<a class="anchor" id="af360bc8a376bea173ada17e4571acd4f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -313,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> * dg::deepcore::Type::find </td>
           <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
+          <td class="paramtype">std::type_index&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -328,36 +336,12 @@ Static Public Member Functions</h2></td></tr>
 <p>Finds a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_info</code> from the type registry. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>The <code>std::type_info</code> of the type. </td></tr>
+    <tr><td class="paramname">type</td><td>The <code>std::type_index</code> of the type. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a>, nullptr is returned if the type is not found. The pointer is owned by the type registry and should not be freed.</dd></dl>
 <p><b>Example</b> </p><div class="fragment"><div class="line"><span class="keyword">auto</span> t = <a class="code" href="classdg_1_1deepcore_1_1_type.html#a52cc756bc25f7142fdfd23f10144b43a">Type::find</a>(<span class="keyword">typeid</span>(int32_t));</div><div class="line"><span class="keywordflow">if</span>(!t) {</div><div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Type Int32 not found&quot;</span> &lt;&lt; std::endl;</div><div class="line">}</div></div><!-- fragment --> 
-</div>
-</div>
-<a class="anchor" id="a2fea069a7218fc20eaa9d8ba4410b200"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> * dg::deepcore::Type::find </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>typeHash</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <a class="anchor" id="a52cc756bc25f7142fdfd23f10144b43a"></a>
@@ -433,7 +417,7 @@ template&lt;typename T &gt; </div>
 <p><b>Example</b> </p><div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; t = <a class="code" href="classdg_1_1deepcore_1_1_type.html#a031153725e4e277bafe43ebc8178afff">Type::get</a>(<span class="stringliteral">&quot;Int32&quot;</span>);</div></div><!-- fragment --> 
 </div>
 </div>
-<a class="anchor" id="a48e080b146c5b72b808fa944e93e7728"></a>
+<a class="anchor" id="a5d8ff6968f0ccc58c8e8ed1057bd8bda"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -443,7 +427,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp; dg::deepcore::Type::get </td>
           <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
+          <td class="paramtype">std::type_index&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -455,7 +439,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_info</code> from the type registry. </p>
+<p>Gets a <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a> with the given <code>std::type_index</code> from the type registry. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classdg_1_1deepcore_1_1_error.html" title="Represents a DeepCore error. ">dg::deepcore::Error</a></td><td>is thrown if the type is not found. </td></tr>
@@ -464,7 +448,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>The <code>std::type_info</code> of the type. </td></tr>
+    <tr><td class="paramname">type</td><td>The <code>std::type_index</code> of the type. </td></tr>
   </table>
   </dd>
 </dl>
@@ -571,31 +555,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aa581aa4d0d4eef73a18b530eaf789f8c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool dg::deepcore::Type::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a class="anchor" id="a4c1fe67ba21b430c7f59be7769b6f31a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -626,31 +585,6 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether this object would come before <code>rhs</code> in an ordered list. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="af42921532263c502ca977b72ccdd9107"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool dg::deepcore::Type::operator&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -687,31 +621,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9bf27a012e49bcdc966e23fe1c09ae34"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool dg::deepcore::Type::operator&lt;= </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a class="anchor" id="ab0872208343650ced69584fdba040ed0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -742,31 +651,6 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether this and <code>rhs</code> represent the same <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a17fcaeacad5526cf527340b9bd8b4498"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool dg::deepcore::Type::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>
@@ -803,31 +687,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac72422c05b3eb5628d7fd9fc715c34a1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool dg::deepcore::Type::operator&gt; </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a class="anchor" id="a32e80f1c0b7fb80ab2729de6d5bcbdac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -861,7 +720,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a108e525b97a6a58ab391d1572082b6af"></a>
+<a class="anchor" id="a7448319c8cbc7f913a5e054f5aaba8ed"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -869,32 +728,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool dg::deepcore::Type::operator&gt;= </td>
-          <td>(</td>
-          <td class="paramtype">const std::type_info &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
-<a class="anchor" id="aadc788b0d0a043d38e577da2ab60797c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::type_info &amp; dg::deepcore::Type::type </td>
+          <td class="memname">const std::type_index &amp; dg::deepcore::Type::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -920,24 +754,12 @@ template&lt;typename T &gt; </div>
         <ul>
             <li class="navelem"><a class="el" href="namespacedg.html">dg</a></li><li class="navelem"><a class="el" href="namespacedg_1_1deepcore.html">deepcore</a></li><li class="navelem"><a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a></li>
             <li class="footer">
-                <a href="https://www.digitalglobe.com/">&copy; 2016 DigitalGlobe, Inc.</a>
+                <a href="https://www.digitalglobe.com/">2017 DigitalGlobe, Inc.</a>
+            </li>
+            <li class="footer">
+                <a href="mailto:deepcore@digitalglobe.com">Contact DeepCore</a>
             </li>
         </ul>
     </div>
 </body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </html>

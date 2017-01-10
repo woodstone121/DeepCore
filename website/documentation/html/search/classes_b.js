@@ -1,8 +1,12 @@
 var searchData=
 [
   ['mapboxclient',['MapBoxClient',['../classdg_1_1deepcore_1_1imagery_1_1_map_box_client.html',1,'dg::deepcore::imagery']]],
+  ['mapserviceblocksource',['MapServiceBlockSource',['../classdg_1_1deepcore_1_1imagery_1_1_map_service_block_source.html',1,'dg::deepcore::imagery']]],
   ['mapserviceclient',['MapServiceClient',['../classdg_1_1deepcore_1_1imagery_1_1_map_service_client.html',1,'dg::deepcore::imagery']]],
   ['mapserviceimage',['MapServiceImage',['../classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html',1,'dg::deepcore::imagery']]],
+  ['mapserviceimageconfig',['MapServiceImageConfig',['../structdg_1_1deepcore_1_1imagery_1_1_map_service_image_config.html',1,'dg::deepcore::imagery']]],
+  ['metric',['Metric',['../classdg_1_1deepcore_1_1_metric.html',1,'dg::deepcore']]],
+  ['metrict',['MetricT',['../structdg_1_1deepcore_1_1_metric_t.html',1,'dg::deepcore']]],
   ['model',['Model',['../classdg_1_1deepcore_1_1classification_1_1_model.html',1,'dg::deepcore::classification']]],
   ['modelmetadata',['ModelMetadata',['../classdg_1_1deepcore_1_1classification_1_1_model_metadata.html',1,'dg::deepcore::classification']]],
   ['modelmetadatajson',['ModelMetadataJson',['../classdg_1_1deepcore_1_1classification_1_1_model_metadata_json.html',1,'dg::deepcore::classification']]],

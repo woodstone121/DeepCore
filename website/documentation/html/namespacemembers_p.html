@@ -29,7 +29,7 @@
             <tr style="height: 56px;">
                 <td id="projectlogo"><img alt="Logo" src="community_logo.png"/></td>
                 <td id="projectalign">
-                    <div id="projectname">DeepCore
+                    <div id="projectname"><a href="https://digitalglobe.github.io/DeepCore/">DeepCore</a>
                     </div>
                     <div id="projectbrief">Deep Learning SDK for Geospatial Data</div>
                 </td>
@@ -171,14 +171,12 @@ $(document).ready(function(){initNavTree('namespacemembers_p.html','');});
 <li>parseWGS84BoundingBox()
 : <a class="el" href="namespacedg_1_1deepcore_1_1imagery_1_1wmts.html#a0dfd07c2c45978eeca76b3f41b8fa1be">dg::deepcore::imagery::wmts</a>
 </li>
-<li>PointFeature
-: <a class="el" href="namespacedg_1_1deepcore_1_1vector.html#a2e8401e06dc8648dfe778b719b9a3c19">dg::deepcore::vector</a>
+<li>PixelType
+: <a class="el" href="group___imagery_attributes.html#gaa884544bf20ab4b9900b402d9243a4d0">dg::deepcore::imagery::attr</a>
+, <a class="el" href="namespacedg_1_1deepcore_1_1imagery_1_1prop.html#ae1301ea34a89bf56243b8bd9e9580e65">dg::deepcore::imagery::prop</a>
 </li>
-<li>PolygonFeature
-: <a class="el" href="namespacedg_1_1deepcore_1_1vector.html#a9c0dc25684d925c9b90c71145c8b8645">dg::deepcore::vector</a>
-</li>
-<li>Port
-: <a class="el" href="group___process_types.html#ga0b9e8567acc4d21ae308cbb2927783c8">dg::deepcore::types</a>
+<li>PointToTile
+: <a class="el" href="namespacedg_1_1deepcore_1_1imagery_1_1port.html#ab85e0ca90a4630aee78454ef007e07a6">dg::deepcore::imagery::port</a>
 </li>
 <li>PreprocessFunc
 : <a class="el" href="namespacedg_1_1deepcore_1_1imagery.html#ad59888e5453be057c25213ce51df1439">dg::deepcore::imagery</a>
@@ -189,6 +187,9 @@ $(document).ready(function(){initNavTree('namespacemembers_p.html','');});
 <li>printLocation()
 : <a class="el" href="namespacedg_1_1deepcore.html#a9d0f58fd1a0292fb3052154364aec9f3">dg::deepcore</a>
 </li>
+<li>processInitFlag
+: <a class="el" href="namespacedg_1_1deepcore_1_1process.html#a03fe120762ea61445bb10cd8f9617b4e">dg::deepcore::process</a>
+</li>
 <li>Progress
 : <a class="el" href="group___utility_module.html#gae07fce8a40a5222a0dcd537a0b28a008">dg::deepcore</a>
 </li>
@@ -197,9 +198,6 @@ $(document).ready(function(){initNavTree('namespacemembers_p.html','');});
 </li>
 <li>progressString()
 : <a class="el" href="namespacedg_1_1deepcore.html#ad0ae2792453751f4ed8444126c673dc0">dg::deepcore</a>
-</li>
-<li>Property
-: <a class="el" href="group___process_types.html#ga350efafd515495303df9266e2d00c322">dg::deepcore::types</a>
 </li>
 <li>PyramidLevels
 : <a class="el" href="namespacedg_1_1deepcore_1_1imagery.html#a19b24d2d9a7e8c5b4ab65d1fa42b8b20">dg::deepcore::imagery</a>
@@ -212,24 +210,12 @@ $(document).ready(function(){initNavTree('namespacemembers_p.html','');});
         <!-- id is needed for treeview function! -->
         <ul>
             <li class="footer">
-                <a href="https://www.digitalglobe.com/">&copy; 2016 DigitalGlobe, Inc.</a>
+                <a href="https://www.digitalglobe.com/">2017 DigitalGlobe, Inc.</a>
+            </li>
+            <li class="footer">
+                <a href="mailto:deepcore@digitalglobe.com">Contact DeepCore</a>
             </li>
         </ul>
     </div>
 </body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </html>

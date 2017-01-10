@@ -9,8 +9,10 @@
 \item 
 \hyperlink{group___imagery_module_gab8b3f9886530d00229870234b0457e5a}{Pyramid\+Image\+Slicer\+Iterator} () noexcept
 \begin{DoxyCompactList}\small\item\em The default constructor. Constructs the \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator}{Pyramid\+Image\+Slicer\+Iterator} that can be \char`\"{}equal\char`\"{} to \hyperlink{group___imagery_module_ga6956abd01339df9e8c60963702ce3543}{Pyramid\+Image\+Slicer\+::end()}. \end{DoxyCompactList}\item 
-\hyperlink{group___imagery_module_gae2892ba870dde12cc9fe000bd8ef35b4}{Pyramid\+Image\+Slicer\+Iterator} (const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer} \&slicer, const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window_iterator}{Pyramid\+Sliding\+Window\+Iterator} \&pyramid\+Sliding\+Window)
+\hyperlink{group___imagery_module_gae2892ba870dde12cc9fe000bd8ef35b4}{Pyramid\+Image\+Slicer\+Iterator} (const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer} \&\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator_a786876d9ddfcb70bbcfb815f71e20f7c}{slicer}, const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window_iterator}{Pyramid\+Sliding\+Window\+Iterator} \&pyramid\+Sliding\+Window)
 \begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator}{Pyramid\+Image\+Slicer\+Iterator}. \end{DoxyCompactList}\item 
+const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer} \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator_a786876d9ddfcb70bbcfb815f71e20f7c}{slicer} () const 
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer} of this iterator. \end{DoxyCompactList}\item 
 const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_image}{Pyramid\+Image} \& \hyperlink{group___imagery_module_ga600dc58ba1610e9a397382f55c394c19}{operator$\ast$} () const 
 \begin{DoxyCompactList}\small\item\em Returns the current \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_image}{Pyramid\+Image}. \end{DoxyCompactList}\item 
 const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_image}{Pyramid\+Image} $\ast$ \hyperlink{group___imagery_module_gaf104201dafb494801f82aa216e2ea012}{operator-\/$>$} () const 
@@ -19,3 +21,25 @@ const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_pyramid_image}{Pyramid\+Ima
 \begin{DoxyCompactList}\small\item\em Moves on to the next window. \end{DoxyCompactList}\item 
 bool \hyperlink{group___imagery_module_gac660f2df0d221e909f0ccf3e503e8c26}{operator==} (const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator}{Pyramid\+Image\+Slicer\+Iterator} \&rhs) const noexcept
 \begin{DoxyCompactList}\small\item\em The equality operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Slicer\+Iterator@{dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Slicer\+Iterator}!slicer@{slicer}}
+\index{slicer@{slicer}!dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Slicer\+Iterator@{dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Slicer\+Iterator}}
+\subsubsection[{\texorpdfstring{slicer() const }{slicer() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Pyramid\+Image\+Slicer} \& dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Slicer\+Iterator\+::slicer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator_a786876d9ddfcb70bbcfb815f71e20f7c}{}\label{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer_iterator_a786876d9ddfcb70bbcfb815f71e20f7c}
+
+
+Gets the \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer} of this iterator. 
+
+\begin{DoxyReturn}{Returns}
+A const reference to the \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer}{Pyramid\+Image\+Slicer}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em An} & exception will be thrown if this iterator does not contain a slicer. \\
+\hline
+\end{DoxyExceptions}

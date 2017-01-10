@@ -1,5 +1,10 @@
 \hypertarget{namespacedg_1_1deepcore_1_1vector}{}\section{dg\+:\+:deepcore\+:\+:vector Namespace Reference}
 \label{namespacedg_1_1deepcore_1_1vector}\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+
+
+Contains vector-\/handling functionality.  
+
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -9,8 +14,6 @@ class \hyperlink{classdg_1_1deepcore_1_1vector_1_1_feature}{Feature}
 \begin{DoxyCompactList}\small\item\em Base class for vector features. \end{DoxyCompactList}\item 
 class \hyperlink{classdg_1_1deepcore_1_1vector_1_1_feature_set}{Feature\+Set}
 \begin{DoxyCompactList}\small\item\em Assists in creation of a vector feature set. \end{DoxyCompactList}\item 
-class \hyperlink{structdg_1_1deepcore_1_1vector_1_1_feature_t}{FeatureT}
-\begin{DoxyCompactList}\small\item\em A helper base class for \hyperlink{classdg_1_1deepcore_1_1vector_1_1_feature}{Feature} implementations. \end{DoxyCompactList}\item 
 struct \hyperlink{structdg_1_1deepcore_1_1vector_1_1_field}{Field}
 \begin{DoxyCompactList}\small\item\em Represents a vector attribute field. \end{DoxyCompactList}\item 
 struct \hyperlink{structdg_1_1deepcore_1_1vector_1_1_field_definition}{Field\+Definition}
@@ -24,14 +27,35 @@ using \hyperlink{namespacedg_1_1deepcore_1_1vector_a89a39c2fa657ff95f116cfed4a95
 \item 
 using \hyperlink{group___vector_module_gabeca0d4b0cbea4335ae890255ca59128}{Fields} = std\+::map$<$ std\+::string, \hyperlink{structdg_1_1deepcore_1_1vector_1_1_field}{Field} $>$
 \begin{DoxyCompactList}\small\item\em Represent a list of vector attribute fields. \end{DoxyCompactList}\item 
-using \hyperlink{namespacedg_1_1deepcore_1_1vector_a2e8401e06dc8648dfe778b719b9a3c19}{Point\+Feature} = \hyperlink{structdg_1_1deepcore_1_1vector_1_1_feature_t}{FeatureT}$<$ \hyperlink{namespacedg_1_1deepcore_1_1vector_gade61c1773afa31064c4eae92cb6bb0b8aaebdbcb765394d25d6a604589a890f82}{Geometry\+Type\+::\+P\+O\+I\+NT}, cv\+::\+Point2d $>$
-\item 
-using \hyperlink{namespacedg_1_1deepcore_1_1vector_a9c0dc25684d925c9b90c71145c8b8645}{Polygon\+Feature} = \hyperlink{structdg_1_1deepcore_1_1vector_1_1_feature_t}{FeatureT}$<$ \hyperlink{namespacedg_1_1deepcore_1_1vector_gade61c1773afa31064c4eae92cb6bb0b8aecdc92bf56d960b73b02ee40125758bc}{Geometry\+Type\+::\+P\+O\+L\+Y\+G\+ON}, std\+::vector$<$ cv\+::\+Point2d $>$$>$
-\item 
 using \hyperlink{namespacedg_1_1deepcore_1_1vector_ab18ed4ff537b320bfc6ab749908f0192}{O\+G\+R\+Feature\+Ptr} = std\+::unique\+\_\+ptr$<$ O\+G\+R\+Feature, std\+::function$<$ void(O\+G\+R\+Feature $\ast$)$>$$>$
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{namespacedg_1_1deepcore_1_1vector_a94001d40e9e9e2e89410a7138ac11f17}{set\+Ogr\+Time\+Date\+Field} (const char $\ast$field\+Name, time\+\_\+t date\+Time, O\+G\+R\+Feature \&feature)
+\item 
+static time\+\_\+t \hyperlink{namespacedg_1_1deepcore_1_1vector_aed05f0ef6e8b6c622da4dab04820eb15}{from\+Ogr\+Time} (O\+G\+R\+Feature \&ogr\+Feature, O\+G\+R\+Field\+Defn $\ast$ogr\+Field, size\+\_\+t index)
+\item 
+static void \hyperlink{namespacedg_1_1deepcore_1_1vector_a9681ed52db63589d467d44d450cb80bd}{set\+Field} (O\+G\+R\+Feature \&ogr\+Feature, int index, const \hyperlink{structdg_1_1deepcore_1_1vector_1_1_field}{Field} \&field)
+\item 
+static O\+G\+R\+Feature $\ast$ \hyperlink{namespacedg_1_1deepcore_1_1vector_a4cb24d3cb95c30cee40366f3e3cf5854}{to\+Ogr\+Feature} (O\+G\+R\+Layer \&layer, const \hyperlink{classdg_1_1deepcore_1_1vector_1_1_feature}{Feature} \&feature)
+\item 
+static void \hyperlink{namespacedg_1_1deepcore_1_1vector_af125629571af7f859852eb191087030b}{create\+Layer\+Fields} (O\+G\+R\+Layer \&layer, const \hyperlink{namespacedg_1_1deepcore_1_1vector_a89a39c2fa657ff95f116cfed4a951386}{Field\+Definitions} \&field\+Definitions)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{namespacedg_1_1deepcore_1_1vector_a0ea54c7d7ed3423c8bdc5b777e19a1a3}{buffer\+Number} = 0
+\item 
+static mutex \hyperlink{namespacedg_1_1deepcore_1_1vector_ad7a8cd187c2310e6fbec1c46bc5ca5a5}{buffer\+Mutex}
+\item 
+static map$<$ string, string $>$ \hyperlink{namespacedg_1_1deepcore_1_1vector_ae8c82b697aef9d6329705ab30268c18c}{S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS}
+\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains vector-\/handling functionality. 
 
 \subsection{Typedef Documentation}
 \index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!Field\+Definitions@{Field\+Definitions}}
@@ -40,9 +64,72 @@ using \hyperlink{namespacedg_1_1deepcore_1_1vector_ab18ed4ff537b320bfc6ab749908f
 \index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!O\+G\+R\+Feature\+Ptr@{O\+G\+R\+Feature\+Ptr}}
 \index{O\+G\+R\+Feature\+Ptr@{O\+G\+R\+Feature\+Ptr}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
 \subsubsection[{\texorpdfstring{O\+G\+R\+Feature\+Ptr}{OGRFeaturePtr}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf dg\+::deepcore\+::vector\+::\+O\+G\+R\+Feature\+Ptr} = typedef std\+::unique\+\_\+ptr$<$O\+G\+R\+Feature, std\+::function$<$void(O\+G\+R\+Feature$\ast$)$>$$>$}\hypertarget{namespacedg_1_1deepcore_1_1vector_ab18ed4ff537b320bfc6ab749908f0192}{}\label{namespacedg_1_1deepcore_1_1vector_ab18ed4ff537b320bfc6ab749908f0192}
-\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!Point\+Feature@{Point\+Feature}}
-\index{Point\+Feature@{Point\+Feature}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
-\subsubsection[{\texorpdfstring{Point\+Feature}{PointFeature}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf dg\+::deepcore\+::vector\+::\+Point\+Feature} = typedef {\bf FeatureT}$<${\bf Geometry\+Type\+::\+P\+O\+I\+NT}, cv\+::\+Point2d$>$}\hypertarget{namespacedg_1_1deepcore_1_1vector_a2e8401e06dc8648dfe778b719b9a3c19}{}\label{namespacedg_1_1deepcore_1_1vector_a2e8401e06dc8648dfe778b719b9a3c19}
-\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!Polygon\+Feature@{Polygon\+Feature}}
-\index{Polygon\+Feature@{Polygon\+Feature}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
-\subsubsection[{\texorpdfstring{Polygon\+Feature}{PolygonFeature}}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf dg\+::deepcore\+::vector\+::\+Polygon\+Feature} = typedef {\bf FeatureT}$<${\bf Geometry\+Type\+::\+P\+O\+L\+Y\+G\+ON}, std\+::vector$<$cv\+::\+Point2d$>$$>$}\hypertarget{namespacedg_1_1deepcore_1_1vector_a9c0dc25684d925c9b90c71145c8b8645}{}\label{namespacedg_1_1deepcore_1_1vector_a9c0dc25684d925c9b90c71145c8b8645}
+
+
+\subsection{Function Documentation}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!create\+Layer\+Fields@{create\+Layer\+Fields}}
+\index{create\+Layer\+Fields@{create\+Layer\+Fields}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{create\+Layer\+Fields(\+O\+G\+R\+Layer \&layer, const Field\+Definitions \&field\+Definitions)}{createLayerFields(OGRLayer &layer, const FieldDefinitions &fieldDefinitions)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::vector\+::create\+Layer\+Fields (
+\begin{DoxyParamCaption}
+\item[{O\+G\+R\+Layer \&}]{layer, }
+\item[{const {\bf Field\+Definitions} \&}]{field\+Definitions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_af125629571af7f859852eb191087030b}{}\label{namespacedg_1_1deepcore_1_1vector_af125629571af7f859852eb191087030b}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!from\+Ogr\+Time@{from\+Ogr\+Time}}
+\index{from\+Ogr\+Time@{from\+Ogr\+Time}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{from\+Ogr\+Time(\+O\+G\+R\+Feature \&ogr\+Feature, O\+G\+R\+Field\+Defn $\ast$ogr\+Field, size\+\_\+t index)}{fromOgrTime(OGRFeature &ogrFeature, OGRFieldDefn *ogrField, size_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}static time\+\_\+t dg\+::deepcore\+::vector\+::from\+Ogr\+Time (
+\begin{DoxyParamCaption}
+\item[{O\+G\+R\+Feature \&}]{ogr\+Feature, }
+\item[{O\+G\+R\+Field\+Defn $\ast$}]{ogr\+Field, }
+\item[{size\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_aed05f0ef6e8b6c622da4dab04820eb15}{}\label{namespacedg_1_1deepcore_1_1vector_aed05f0ef6e8b6c622da4dab04820eb15}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!set\+Field@{set\+Field}}
+\index{set\+Field@{set\+Field}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{set\+Field(\+O\+G\+R\+Feature \&ogr\+Feature, int index, const Field \&field)}{setField(OGRFeature &ogrFeature, int index, const Field &field)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::vector\+::set\+Field (
+\begin{DoxyParamCaption}
+\item[{O\+G\+R\+Feature \&}]{ogr\+Feature, }
+\item[{int}]{index, }
+\item[{const {\bf Field} \&}]{field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_a9681ed52db63589d467d44d450cb80bd}{}\label{namespacedg_1_1deepcore_1_1vector_a9681ed52db63589d467d44d450cb80bd}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!set\+Ogr\+Time\+Date\+Field@{set\+Ogr\+Time\+Date\+Field}}
+\index{set\+Ogr\+Time\+Date\+Field@{set\+Ogr\+Time\+Date\+Field}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{set\+Ogr\+Time\+Date\+Field(const char $\ast$field\+Name, time\+\_\+t date\+Time, O\+G\+R\+Feature \&feature)}{setOgrTimeDateField(const char *fieldName, time_t dateTime, OGRFeature &feature)}}]{\setlength{\rightskip}{0pt plus 5cm}static void dg\+::deepcore\+::vector\+::set\+Ogr\+Time\+Date\+Field (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{field\+Name, }
+\item[{time\+\_\+t}]{date\+Time, }
+\item[{O\+G\+R\+Feature \&}]{feature}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_a94001d40e9e9e2e89410a7138ac11f17}{}\label{namespacedg_1_1deepcore_1_1vector_a94001d40e9e9e2e89410a7138ac11f17}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!to\+Ogr\+Feature@{to\+Ogr\+Feature}}
+\index{to\+Ogr\+Feature@{to\+Ogr\+Feature}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{to\+Ogr\+Feature(\+O\+G\+R\+Layer \&layer, const Feature \&feature)}{toOgrFeature(OGRLayer &layer, const Feature &feature)}}]{\setlength{\rightskip}{0pt plus 5cm}O\+G\+R\+Feature $\ast$ dg\+::deepcore\+::vector\+::to\+Ogr\+Feature (
+\begin{DoxyParamCaption}
+\item[{O\+G\+R\+Layer \&}]{layer, }
+\item[{const {\bf Feature} \&}]{feature}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_a4cb24d3cb95c30cee40366f3e3cf5854}{}\label{namespacedg_1_1deepcore_1_1vector_a4cb24d3cb95c30cee40366f3e3cf5854}
+
+
+\subsection{Variable Documentation}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!buffer\+Mutex@{buffer\+Mutex}}
+\index{buffer\+Mutex@{buffer\+Mutex}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{buffer\+Mutex}{bufferMutex}}]{\setlength{\rightskip}{0pt plus 5cm}mutex dg\+::deepcore\+::vector\+::buffer\+Mutex\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_ad7a8cd187c2310e6fbec1c46bc5ca5a5}{}\label{namespacedg_1_1deepcore_1_1vector_ad7a8cd187c2310e6fbec1c46bc5ca5a5}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!buffer\+Number@{buffer\+Number}}
+\index{buffer\+Number@{buffer\+Number}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{buffer\+Number}{bufferNumber}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::vector\+::buffer\+Number = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_a0ea54c7d7ed3423c8bdc5b777e19a1a3}{}\label{namespacedg_1_1deepcore_1_1vector_a0ea54c7d7ed3423c8bdc5b777e19a1a3}
+\index{dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}!S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS@{S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS}}
+\index{S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS@{S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS}!dg\+::deepcore\+::vector@{dg\+::deepcore\+::vector}}
+\subsubsection[{\texorpdfstring{S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS}{SUPPORTED_FORMATS}}]{\setlength{\rightskip}{0pt plus 5cm}map$<$string, string$>$ dg\+::deepcore\+::vector\+::\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+O\+R\+M\+A\+TS\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1vector_ae8c82b697aef9d6329705ab30268c18c}{}\label{namespacedg_1_1deepcore_1_1vector_ae8c82b697aef9d6329705ab30268c18c}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \{ \textcolor{stringliteral}{"shp"},  \textcolor{stringliteral}{"ESRI Shapefile"} \},
+    \{ \textcolor{stringliteral}{"kml"},  \textcolor{stringliteral}{"KML"} \},
+    
+    \{ \textcolor{stringliteral}{"geojson"}, \textcolor{stringliteral}{"GeoJson"} \},
+    \{ \textcolor{stringliteral}{"postgis"}, \textcolor{stringliteral}{"PostgreSQL"} \},
+    \{ \textcolor{stringliteral}{"elasticsearch"}, \textcolor{stringliteral}{"ElasticSearch"} \},
+\}
+\end{DoxyCode}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['geometrytype',['GeometryType',['../group___vector_module.html#gade61c1773afa31064c4eae92cb6bb0b8',1,'dg::deepcore::vector']]]
+  ['geometrytype',['GeometryType',['../group___geometry_module.html#gad9a3ec0b998629dbcf8274512700964a',1,'dg::deepcore::geometry']]]
 ];

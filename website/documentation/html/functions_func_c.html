@@ -29,7 +29,7 @@
             <tr style="height: 56px;">
                 <td id="projectlogo"><img alt="Logo" src="community_logo.png"/></td>
                 <td id="projectalign">
-                    <div id="projectname">DeepCore
+                    <div id="projectname"><a href="https://digitalglobe.github.io/DeepCore/">DeepCore</a>
                     </div>
                     <div id="projectbrief">Deep Learning SDK for Geospatial Data</div>
                 </td>
@@ -150,6 +150,9 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 <li>CaffeBatchClassifier()
 : <a class="el" href="group___classification_module.html#ga8501a61fcaf492b0fe8b43b4e9440085">dg::deepcore::classification::CaffeBatchClassifier</a>
 </li>
+<li>callOnError()
+: <a class="el" href="classdg_1_1deepcore_1_1_async_error.html#a110fc34acc63e4eaa95fab542fa2d622">dg::deepcore::AsyncError</a>
+</li>
 <li>callStack()
 : <a class="el" href="classdg_1_1deepcore_1_1_error.html#af326513a1dad0dde7d595c2b9f9d9d1e">dg::deepcore::Error</a>
 </li>
@@ -163,7 +166,7 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 : <a class="el" href="group___classification_module.html#ga27cea1c556b1303cd34db8df4f4a33da">dg::deepcore::classification::Model</a>
 </li>
 <li>canConvert()
-: <a class="el" href="classdg_1_1deepcore_1_1_conversion.html#adf7b7ecb0254618c18a79eafe076fd65">dg::deepcore::Conversion</a>
+: <a class="el" href="classdg_1_1deepcore_1_1_conversion.html#a0d7831bed4cf2b2dcfde144e712a2512">dg::deepcore::Conversion</a>
 </li>
 <li>canDetect()
 : <a class="el" href="group___classification_module.html#gaafe846e469639d35d62b4f68bc59d85c">dg::deepcore::classification::Model</a>
@@ -173,7 +176,9 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 , <a class="el" href="group___classification_module.html#ga1a7ca79fbb134c78c7e88df94cf8d374">dg::deepcore::classification::Model</a>
 </li>
 <li>cast()
-: <a class="el" href="classdg_1_1deepcore_1_1_value.html#a6674e197751e507f6735ae30e7ad2a57">dg::deepcore::Value</a>
+: <a class="el" href="classdg_1_1deepcore_1_1_attribute.html#ab32490e3f6976e32398a623a45885701">dg::deepcore::Attribute</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_property.html#a519536a488a5406928ea976921b2f6aa">dg::deepcore::Property</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_value.html#a997ca31ac2e3d60f9811ba8bfc31210c">dg::deepcore::Value</a>
 </li>
 <li>categories()
 : <a class="el" href="group___utility_module.html#ga89b9c96322231a81b2e64f178a8291e3">dg::deepcore::MultiProgressDisplay</a>
@@ -181,11 +186,14 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 <li>category()
 : <a class="el" href="classdg_1_1deepcore_1_1_type.html#a3143689119d10d57f94b41bfb5bca1e2">dg::deepcore::Type</a>
 </li>
+<li>changed()
+: <a class="el" href="classdg_1_1deepcore_1_1_metric.html#abfe9d5ee8727333300f6211fb598e909">dg::deepcore::Metric</a>
+</li>
 <li>check()
 : <a class="el" href="classdg_1_1deepcore_1_1_semaphore.html#aea211c595501c6f7b2a2a33984247608">dg::deepcore::Semaphore</a>
 </li>
 <li>checkConnectivity()
-: <a class="el" href="group___network_module.html#gab82b59cab6622abae4998f5fde08e688">dg::deepcore::network::HttpDownloader</a>
+: <a class="el" href="classdg_1_1deepcore_1_1network_1_1_http_downloader.html#ab82b59cab6622abae4998f5fde08e688">dg::deepcore::network::HttpDownloader</a>
 </li>
 <li>classifer()
 : <a class="el" href="group___classification_module.html#gafe563e22d16379a9cd82e0a46d08e15a">dg::deepcore::classification::Model</a>
@@ -196,9 +204,27 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 </li>
 <li>clear()
 : <a class="el" href="classdg_1_1deepcore_1_1_semaphore.html#ac472f96df82a6ee0ab69f60b7b787e73">dg::deepcore::Semaphore</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_value.html#a437ebe636c3eb1fae63b3921b395a123">dg::deepcore::Value</a>
 </li>
 <li>clearId()
 : <a class="el" href="group___network_module.html#gaa92eeabe2c022b96d2820a02118dc1b2">dg::deepcore::network::JsonRpc</a>
+</li>
+<li>clone()
+: <a class="el" href="structdg_1_1deepcore_1_1_cloneable_value_base.html#afa66af64c1335e01931f7919f0033730">dg::deepcore::CloneableValueBase&lt; T &gt;</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_affine_transformation.html#a43fdfdf7290d667358b01ccb266bcaf6">dg::deepcore::geometry::AffineTransformation</a>
+, <a class="el" href="classdg_1_1deepcore_1_1geometry_1_1_geo_transformation.html#a448c15e383231e33963e489817085b24">dg::deepcore::geometry::GeoTransformation</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_identity_transformation.html#ad365e42292c0d72750aa7dd87a3a4bcc">dg::deepcore::geometry::IdentityTransformation</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_linear_ring.html#ab52ae6ef637539dce69ce9d77e8f3e3b">dg::deepcore::geometry::LinearRing</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_line_string.html#a99e55ce0ceec4e7c0a2244901ef84b11">dg::deepcore::geometry::LineString</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_point.html#af62a4f1c9180391ef4b569b5abec2205">dg::deepcore::geometry::Point</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_polygon.html#a4b6ab74c5cbc5dd52f9b4d416120d98c">dg::deepcore::geometry::Polygon</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_transformation_chain.html#a612740c7482afab8039138ca4cd268f4">dg::deepcore::geometry::TransformationChain</a>
+, <a class="el" href="structdg_1_1deepcore_1_1imagery_1_1_dgcs_client.html#ab90b1061bcc84a100ff3e760f1d288e2">dg::deepcore::imagery::DgcsClient</a>
+, <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_dg_wmts_client.html#a5b788d2ffccd50c992f8cf16daa37756">dg::deepcore::imagery::DgWmtsClient</a>
+, <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_map_box_client.html#a86688655b43ca268e6b73e7539bf1679">dg::deepcore::imagery::MapBoxClient</a>
+, <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_map_service_client.html#a0010dc0a07c7ec55b7b3ea1d94b65c9d">dg::deepcore::imagery::MapServiceClient</a>
+, <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_tile_json_client.html#a0b16a50a0b8912c9e94842b97e64bd42">dg::deepcore::imagery::TileJsonClient</a>
+, <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_wmts_client.html#a2719956d896a32d0172a8cdeda0928e6">dg::deepcore::imagery::WmtsClient</a>
 </li>
 <li>close()
 : <a class="el" href="group___classification_module.html#gabb8c5d415c526a83a3c4e9222bfada9b">dg::deepcore::classification::GbdxModelWriter</a>
@@ -210,11 +236,24 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 : <a class="el" href="group___network_module.html#ga7dcace94fa3fc37b1f0f6881438c6446">dg::deepcore::network::HttpError</a>
 , <a class="el" href="group___network_module.html#gab5f760ae09f901ed94e08ea1c0d26e50">dg::deepcore::network::JsonRpcError</a>
 </li>
+<li>Coefficients()
+: <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients.html#a3de0c09185de7efb091d1848ce77507b">dg::deepcore::geometry::AffineTransformation::Coefficients</a>
+</li>
 <li>colorMode()
 : <a class="el" href="group___classification_module.html#ga3ba94c7945195ba13d1698849926656f">dg::deepcore::classification::ModelMetadata</a>
 </li>
+<li>compact()
+: <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_transformation.html#aa6ae47727744b0ed3eed5630bfcc8e98">dg::deepcore::geometry::Transformation</a>
+, <a class="el" href="structdg_1_1deepcore_1_1geometry_1_1_transformation_chain.html#a4b0cd8c4646de8957469387fbd3abcc0">dg::deepcore::geometry::TransformationChain</a>
+</li>
 <li>confidence()
 : <a class="el" href="group___classification_module.html#ga11004d28f6b88023d1ae1bed44261dc9">dg::deepcore::classification::Detector</a>
+</li>
+<li>configFromArea()
+: <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_map_service_client.html#a2d0e5d751822be87f5acfd1c0922eb0f">dg::deepcore::imagery::MapServiceClient</a>
+</li>
+<li>configFromTiles()
+: <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_map_service_client.html#a9435311817f328944a05f6d9c6e2bfc3">dg::deepcore::imagery::MapServiceClient</a>
 </li>
 <li>connect()
 : <a class="el" href="group___imagery_module.html#ga5e5f58c725cafba7966936f688a6ade0">dg::deepcore::imagery::MapServiceClient</a>
@@ -238,11 +277,15 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 , <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_tile_json_client.html#ab27ce371e1b62021024e92cf935e1000">dg::deepcore::imagery::TileJsonClient</a>
 , <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_wmts_client.html#a455a22a51644b4f89a70c163141cc3a1">dg::deepcore::imagery::WmtsClient</a>
 </li>
-<li>connectTo()
-: <a class="el" href="classdg_1_1deepcore_1_1_port.html#ae74904a03298308cedfdbadc6b1fa16e">dg::deepcore::Port</a>
+<li>connectWith()
+: <a class="el" href="classdg_1_1deepcore_1_1_port.html#ae09223b25061e685b9a58e543081241a">dg::deepcore::Port</a>
 </li>
 <li>convert()
-: <a class="el" href="classdg_1_1deepcore_1_1_conversion.html#ac832e8fb2f28829c47066c0fd0021394">dg::deepcore::Conversion</a>
+: <a class="el" href="classdg_1_1deepcore_1_1_attribute.html#a96f30f95fed1f6a495eb32bdd8ab1519">dg::deepcore::Attribute</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_conversion.html#ac832e8fb2f28829c47066c0fd0021394">dg::deepcore::Conversion</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_metric.html#a5b0f2e859ea95562412e18057cf81024">dg::deepcore::Metric</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_property.html#a9c43ca7f86d7b3d37552b58e9ba9f656">dg::deepcore::Property</a>
+, <a class="el" href="classdg_1_1deepcore_1_1_value.html#ace42fd82b33e8bd99181853a5344cc94">dg::deepcore::Value</a>
 </li>
 <li>copy()
 : <a class="el" href="group___classification_module.html#ga851d179b56e5c32b25512df0141f3ca2">dg::deepcore::classification::ModelMetadata</a>
@@ -251,7 +294,7 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
 <li>create()
 : <a class="el" href="group___classification_module.html#ga7b908a0f56b71ac72ae872e903a042e2">dg::deepcore::classification::Model</a>
 , <a class="el" href="group___classification_module.html#gaefd1b5db6a78f7fae50f1ec637672c67">dg::deepcore::classification::ModelMetadata</a>
-, <a class="el" href="group___classification_module.html#gaa4bb1ba1156829db5249f2583da252d6">dg::deepcore::classification::ModelPackage</a>
+, <a class="el" href="group___classification_module.html#ga0c294e3def7dceac4acb48b191ee6df0">dg::deepcore::classification::ModelPackage</a>
 , <a class="el" href="classdg_1_1deepcore_1_1_object.html#abea39ade7192fc0479cf932767c5ddfc">dg::deepcore::Object</a>
 , <a class="el" href="classdg_1_1deepcore_1_1_object_t.html#af1c55ff313922010d054060c22adbf91">dg::deepcore::ObjectT&lt; T, BaseT &gt;</a>
 </li>
@@ -272,24 +315,12 @@ $(document).ready(function(){initNavTree('functions_func_c.html','');});
         <!-- id is needed for treeview function! -->
         <ul>
             <li class="footer">
-                <a href="https://www.digitalglobe.com/">&copy; 2016 DigitalGlobe, Inc.</a>
+                <a href="https://www.digitalglobe.com/">2017 DigitalGlobe, Inc.</a>
+            </li>
+            <li class="footer">
+                <a href="mailto:deepcore@digitalglobe.com">Contact DeepCore</a>
             </li>
         </ul>
     </div>
 </body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </html>

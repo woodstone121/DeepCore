@@ -2,10 +2,8 @@
 \label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
 
 
-A client for a W\+M\+TS service. Currently only the K\+VP encoding scheme is supported.  
-
-
-
+\subsection{Detailed Description}
+A client for a W\+M\+TS service. Currently only the K\+VP encoding scheme is supported. 
 
 {\ttfamily \#include $<$imagery/\+Wmts\+Client.\+h$>$}
 
@@ -26,7 +24,17 @@ Collaboration diagram for dg\+:\+:deepcore\+:\+:imagery\+:\+:Wmts\+Client\+:
 \item 
 \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a7795f68322e43cc9485d541f70caea1c}{Wmts\+Client} (const std\+::string \&\hyperlink{group___imagery_module_gadf279770cec6dc9ac56348bb2e1b29e1}{base\+Url}, const std\+::string \&\hyperlink{group___imagery_module_gac4c03ea635c336ca2fe7de533706c11c}{credentials}=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} given a base U\+RL and credentials. \end{DoxyCompactList}\item 
-const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_spatial_reference}{Spatial\+Reference} \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a9aa6eb184d4769e1c7b4242ecf4f3d8d}{spatial\+Reference} () override
+\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a364b883e40e217fb5f4653d53de21e59}{Wmts\+Client} (const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} \&rhs)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ab4f05e3d9d3bce118d5f74d0570215dc}{Wmts\+Client} (\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} \&\&rhs)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a9306a2e8c09ab015a1336a0177e81025}{operator=} (const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} \&rhs)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a0bee1f9ef12b706228f12bf34bf62f74}{operator=} (\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Client} \&\&rhs)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_client}{Map\+Service\+Client} $\ast$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a2719956d896a32d0172a8cdeda0928e6}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+const \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{geometry\+::\+Spatial\+Reference} \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a9aa6eb184d4769e1c7b4242ecf4f3d8d}{spatial\+Reference} () override
 \begin{DoxyCompactList}\small\item\em Gets the spatial coordinate reference for the web service. May cause \hyperlink{group___imagery_module_ga5e5f58c725cafba7966936f688a6ade0}{Map\+Service\+Client\+::connect()} to be called. \end{DoxyCompactList}\item 
 const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1wmts_1_1_tile_matrix}{wmts\+::\+Tile\+Matrix} \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a9d4a95bddb0537f61815b3d48a9363af}{tile\+Matrix} () override
 \begin{DoxyCompactList}\small\item\em Gets the current tile matrix parameters. \end{DoxyCompactList}\item 
@@ -36,7 +44,7 @@ int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a2f01504ae2c8c6578
 \begin{DoxyCompactList}\small\item\em Gets the number of raster bands in the image. \end{DoxyCompactList}\item 
 \hyperlink{group___imagery_module_ga1db94ae833853b71ed501bb1ea8c1c24}{Image\+Read\+Mode} \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a011ce59444a970647066f9edf3a7544b}{mode} () override
 \begin{DoxyCompactList}\small\item\em Gets the image read mode. \end{DoxyCompactList}\item 
-int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_aa37e7de3375cc1d6027d11bec347375a}{pixel\+Type} () override
+\hyperlink{namespacedg_1_1deepcore_1_1imagery_1_1_pixel_type_a5f0c62edf4601cbd15e52b381697069d}{Pixel\+Type\+::\+Type} \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_add4e49d815a0670abd0c0c59c8b698e7}{pixel\+Type} () override
 \begin{DoxyCompactList}\small\item\em Gets the image pixel type as a cv\+::\+Mat type i.\+e. C\+V\+\_\+8U, C\+V\+\_\+8S, C\+V\+\_\+32F, etc. \end{DoxyCompactList}\item 
 const std\+::vector$<$ std\+::string $>$ \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_aadea619994a1fba8c8ed51894381a234}{layers} () override
 \begin{DoxyCompactList}\small\item\em Gets the available layer names. \end{DoxyCompactList}\item 
@@ -62,13 +70,8 @@ void \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_aad9106986ebd3f1a
 bool \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_af896545533026802ea688f59f170aa0f}{layer\+Names\+Restricted} () const noexceptoverride
 \begin{DoxyCompactList}\small\item\em Gets whether the layer names are restricted. If true, layer name must be in the vector returned by Map\+Service\+Image(), if false, layer names can be arbitrary. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ae9ec4a090ea93422dd3beec62c50f5bc}{url\+Template} () override
-\begin{DoxyCompactList}\small\item\em Gets the U\+RL template for the current layer, tile matrix set, and tile matrix. The template must contain \{x\} and \{y\} placeholders for the tile coordinate. \end{DoxyCompactList}\item 
-virtual \hyperlink{classdg_1_1deepcore_1_1_error}{Error} $\ast$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ae8429816853b38f7bdb29c1a75daebe5}{on\+Http\+Error} (const \hyperlink{classdg_1_1deepcore_1_1_error}{Error} \&e) const noexceptoverride
-\begin{DoxyCompactList}\small\item\em H\+T\+TP \hyperlink{classdg_1_1deepcore_1_1_error}{Error} callback method. Note that this method will only be invoked for exceptions of type Http\+Error. The implementing class can override this function to interpret and optionally transform the input Http\+Error. If the \hyperlink{classdg_1_1deepcore_1_1_error}{Error} does not need to be transformed, nullptr should be returned. Caller takes ownership of the pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the U\+RL template for the current layer, tile matrix set, and tile matrix. The template must contain \{x\} and \{y\} placeholders for the tile coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-
-\subsection{Detailed Description}
-A client for a W\+M\+TS service. Currently only the K\+VP encoding scheme is supported. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!Wmts\+Client@{Wmts\+Client}}
@@ -97,9 +100,41 @@ Constructs a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_wmts_client}{Wmts\+Cl
 \mbox{\tt in}  & {\em credentials} & The servcie credentials, if required. \\
 \hline
 \end{DoxyParams}
+\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!Wmts\+Client@{Wmts\+Client}}
+\index{Wmts\+Client@{Wmts\+Client}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
+\subsubsection[{\texorpdfstring{Wmts\+Client(const Wmts\+Client \&rhs)}{WmtsClient(const WmtsClient &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::\+Wmts\+Client (
+\begin{DoxyParamCaption}
+\item[{const {\bf Wmts\+Client} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a364b883e40e217fb5f4653d53de21e59}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a364b883e40e217fb5f4653d53de21e59}
+\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!Wmts\+Client@{Wmts\+Client}}
+\index{Wmts\+Client@{Wmts\+Client}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
+\subsubsection[{\texorpdfstring{Wmts\+Client(\+Wmts\+Client \&\&rhs)}{WmtsClient(WmtsClient &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::\+Wmts\+Client (
+\begin{DoxyParamCaption}
+\item[{{\bf Wmts\+Client} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ab4f05e3d9d3bce118d5f74d0570215dc}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ab4f05e3d9d3bce118d5f74d0570215dc}
 
 
 \subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
+\subsubsection[{\texorpdfstring{clone() const override}{clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Map\+Service\+Client} $\ast$ dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a2719956d896a32d0172a8cdeda0928e6}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a2719956d896a32d0172a8cdeda0928e6}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. Caller takes ownership of the pointer. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_client_a0010dc0a07c7ec55b7b3ea1d94b65c9d}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
+
 \index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!connect\+Internal@{connect\+Internal}}
 \index{connect\+Internal@{connect\+Internal}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
 \subsubsection[{\texorpdfstring{connect\+Internal() override}{connectInternal() override}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::connect\+Internal (
@@ -223,40 +258,27 @@ The number of bands.
 
 Implements \hyperlink{group___imagery_module_ga7b7d8333be9d5386d8ddca5148b041b5}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
 
-\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!on\+Http\+Error@{on\+Http\+Error}}
-\index{on\+Http\+Error@{on\+Http\+Error}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
-\subsubsection[{\texorpdfstring{on\+Http\+Error(const Error \&e) const noexceptoverride}{onHttpError(const Error &e) const noexceptoverride}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error} $\ast$ dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::on\+Http\+Error (
+\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
+\subsubsection[{\texorpdfstring{operator=(const Wmts\+Client \&rhs)}{operator=(const WmtsClient &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wmts\+Client} \& dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf Error} \&}]{e}
+\item[{const {\bf Wmts\+Client} \&}]{rhs}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ae8429816853b38f7bdb29c1a75daebe5}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_ae8429816853b38f7bdb29c1a75daebe5}
-
-
-H\+T\+TP \hyperlink{classdg_1_1deepcore_1_1_error}{Error} callback method. Note that this method will only be invoked for exceptions of type Http\+Error. The implementing class can override this function to interpret and optionally transform the input Http\+Error. If the \hyperlink{classdg_1_1deepcore_1_1_error}{Error} does not need to be transformed, nullptr should be returned. Caller takes ownership of the pointer. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em e} & The input Http\+Error. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A new instance of \hyperlink{classdg_1_1deepcore_1_1_error}{Error}, or nullptr if \hyperlink{classdg_1_1deepcore_1_1_error}{Error} was not transformed. 
-\end{DoxyReturn}
-
-
-Reimplemented from \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_client_ae53b20c2986e1b9898c77b2065cbdd54}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
-
-
-
-Reimplemented in \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_dg_wmts_client_abce47a0dd9861f62a39d135dcf750cd0}{dg\+::deepcore\+::imagery\+::\+Dg\+Wmts\+Client}.
-
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a9306a2e8c09ab015a1336a0177e81025}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a9306a2e8c09ab015a1336a0177e81025}
+\index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
+\subsubsection[{\texorpdfstring{operator=(\+Wmts\+Client \&\&rhs)}{operator=(WmtsClient &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wmts\+Client} \& dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Wmts\+Client} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a0bee1f9ef12b706228f12bf34bf62f74}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_a0bee1f9ef12b706228f12bf34bf62f74}
 \index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!pixel\+Type@{pixel\+Type}}
 \index{pixel\+Type@{pixel\+Type}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
-\subsubsection[{\texorpdfstring{pixel\+Type() override}{pixelType() override}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::pixel\+Type (
+\subsubsection[{\texorpdfstring{pixel\+Type() override}{pixelType() override}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pixel\+Type\+::\+Type} dg\+::deepcore\+::imagery\+::\+Wmts\+Client\+::pixel\+Type (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_aa37e7de3375cc1d6027d11bec347375a}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_aa37e7de3375cc1d6027d11bec347375a}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_add4e49d815a0670abd0c0c59c8b698e7}{}\label{classdg_1_1deepcore_1_1imagery_1_1_wmts_client_add4e49d815a0670abd0c0c59c8b698e7}
 
 
 Gets the image pixel type as a cv\+::\+Mat type i.\+e. C\+V\+\_\+8U, C\+V\+\_\+8S, C\+V\+\_\+32F, etc. 
@@ -266,7 +288,7 @@ The pixel type.
 \end{DoxyReturn}
 
 
-Implements \hyperlink{group___imagery_module_gaa94fd511ae5e578357ceba16a9039b51}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
+Implements \hyperlink{group___imagery_module_gaac6e8dc94732e24fcc43bb8662990363}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
 
 \index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!set\+Connected@{set\+Connected}}
 \index{set\+Connected@{set\+Connected}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}
@@ -373,7 +395,7 @@ The spatial coordinate reference.
 \end{DoxyReturn}
 
 
-Implements \hyperlink{group___imagery_module_gadfaf375c95456bdf445d774f5dd24bbc}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
+Implements \hyperlink{group___imagery_module_ga12013189aa3bae04ed159d917d41ab63}{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Client}.
 
 \index{dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}!tile\+Matrix@{tile\+Matrix}}
 \index{tile\+Matrix@{tile\+Matrix}!dg\+::deepcore\+::imagery\+::\+Wmts\+Client@{dg\+::deepcore\+::imagery\+::\+Wmts\+Client}}

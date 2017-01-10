@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['processing',['Processing',['../group___process.html',1,'']]],
-  ['properties',['Properties',['../group___process_properties.html',1,'']]]
+  ['metrics',['Metrics',['../group___process_metrics.html',1,'']]]
 ];

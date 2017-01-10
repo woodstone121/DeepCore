@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['wchar',['WChar',['../group___attributes.html#gaae8956988d8184c8612522c0f7bf95f3',1,'dg::deepcore::attr::WChar()'],['../group___process_properties.html#ga0259b5488d3e8eb0dca8d4ff630eb90f',1,'dg::deepcore::prop::WChar()']]],
-  ['wptr',['WPtr',['../classdg_1_1deepcore_1_1_object.html#ab4d85713f22f753fff52e1d4a2769251',1,'dg::deepcore::Object::WPtr()'],['../classdg_1_1deepcore_1_1_object_t.html#a7cf2958227ec5d42c71a74562af4e3b8',1,'dg::deepcore::ObjectT::WPtr()']]],
-  ['wstring',['WString',['../group___attributes.html#gafbc911757b794babe4866ad9c709fa44',1,'dg::deepcore::attr::WString()'],['../group___process_properties.html#gaf9c2048c12577553d955c02ce1247d2b',1,'dg::deepcore::prop::WString()']]],
-  ['wstringvector',['WStringVector',['../group___attributes.html#gad1c4369cb66531cd432b69cbdb9ea527',1,'dg::deepcore::attr::WStringVector()'],['../group___process_properties.html#gaace0f946c7fa66d4294f15b240a3bb1a',1,'dg::deepcore::prop::WStringVector()']]]
+  ['value_5ftype',['value_type',['../classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch.html#a64329b050ba9864aec3e3532c7a2aad3',1,'dg::deepcore::imagery::PyramidImageBatch::value_type()'],['../classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_slicer.html#a6a2ca5ffdf4ce25771ce96dec3be678a',1,'dg::deepcore::imagery::PyramidImageSlicer::value_type()'],['../classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window.html#ab19431f1af5d94cf35d3c13e62831b0a',1,'dg::deepcore::imagery::PyramidSlidingWindow::value_type()'],['../classdg_1_1deepcore_1_1imagery_1_1_sliding_window.html#aa709c18e431e937e57b72a869e2bf272',1,'dg::deepcore::imagery::SlidingWindow::value_type()']]],
+  ['valueconvertfunc',['ValueConvertFunc',['../group___process_type.html#ga213a2a633d6658f67842bd2958c82c78',1,'dg::deepcore']]]
 ];

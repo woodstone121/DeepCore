@@ -1,0 +1,100 @@
+\hypertarget{structdg_1_1deepcore_1_1_property_t}{}\section{dg\+:\+:deepcore\+:\+:PropertyT$<$ T $>$ Struct Template Reference}
+\label{structdg_1_1deepcore_1_1_property_t}\index{dg\+::deepcore\+::\+Property\+T$<$ T $>$@{dg\+::deepcore\+::\+Property\+T$<$ T $>$}}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\\*
+struct dg\+::deepcore\+::\+Property\+T$<$ T $>$}
+
+A helper template to declare \hyperlink{classdg_1_1deepcore_1_1_property}{Property} types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The \hyperlink{classdg_1_1deepcore_1_1_property}{Property} value\textquotesingle{}s data type.\\
+\hline
+\end{DoxyTemplParams}
+The template implements the \hyperlink{structdg_1_1deepcore_1_1_property_t_a58e459741375097dc9551206b8f7ca32}{value\+Type()} virtual method using the template argument to construct the return \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. 
+
+{\ttfamily \#include $<$process/\+Property.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:PropertyT$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{structdg_1_1deepcore_1_1_property_t__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1_property_t_a120c29a057794f782b261d963b4dc671}{PropertyT} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1_property}{Property} with the default name, which is \hyperlink{structdg_1_1deepcore_1_1_property_t_a58e459741375097dc9551206b8f7ca32}{value\+Type()}.\hyperlink{classdg_1_1deepcore_1_1_named_object_ab1379a28467dd39a81ceb02cf50dedde}{name()}. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1_property_t_a344ae039c8cf8a81b2596509e6168ed1}{PropertyT} (const char $\ast$\hyperlink{classdg_1_1deepcore_1_1_named_object_ab1379a28467dd39a81ceb02cf50dedde}{name})
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1_property}{Property} with the given name. \end{DoxyCompactList}\item 
+const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{structdg_1_1deepcore_1_1_property_t_a58e459741375097dc9551206b8f7ca32}{value\+Type} () const override
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_property}{Property} \hyperlink{classdg_1_1deepcore_1_1_property}{Property}\textquotesingle{}s value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::\+PropertyT@{dg\+::deepcore\+::\+PropertyT}!PropertyT@{PropertyT}}
+\index{PropertyT@{PropertyT}!dg\+::deepcore\+::\+PropertyT@{dg\+::deepcore\+::\+PropertyT}}
+\subsubsection[{\texorpdfstring{Property\+T()}{PropertyT()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf dg\+::deepcore\+::\+PropertyT}$<$ T $>$\+::{\bf PropertyT} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1_property_t_a120c29a057794f782b261d963b4dc671}{}\label{structdg_1_1deepcore_1_1_property_t_a120c29a057794f782b261d963b4dc671}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1_property}{Property} with the default name, which is \hyperlink{structdg_1_1deepcore_1_1_property_t_a58e459741375097dc9551206b8f7ca32}{value\+Type()}.\hyperlink{classdg_1_1deepcore_1_1_named_object_ab1379a28467dd39a81ceb02cf50dedde}{name()}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of property. \\
+\hline
+\end{DoxyTemplParams}
+\index{dg\+::deepcore\+::\+PropertyT@{dg\+::deepcore\+::\+PropertyT}!PropertyT@{PropertyT}}
+\index{PropertyT@{PropertyT}!dg\+::deepcore\+::\+PropertyT@{dg\+::deepcore\+::\+PropertyT}}
+\subsubsection[{\texorpdfstring{Property\+T(const char $\ast$name)}{PropertyT(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf dg\+::deepcore\+::\+PropertyT}$<$ T $>$\+::{\bf PropertyT} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1_property_t_a344ae039c8cf8a81b2596509e6168ed1}{}\label{structdg_1_1deepcore_1_1_property_t_a344ae039c8cf8a81b2596509e6168ed1}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1_property}{Property} with the given name. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of \hyperlink{classdg_1_1deepcore_1_1_property}{Property}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The property name. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+PropertyT@{dg\+::deepcore\+::\+PropertyT}!value\+Type@{value\+Type}}
+\index{value\+Type@{value\+Type}!dg\+::deepcore\+::\+PropertyT@{dg\+::deepcore\+::\+PropertyT}}
+\subsubsection[{\texorpdfstring{value\+Type() const override}{valueType() const override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Type} \& {\bf dg\+::deepcore\+::\+PropertyT}$<$ T $>$\+::value\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1_property_t_a58e459741375097dc9551206b8f7ca32}{}\label{structdg_1_1deepcore_1_1_property_t_a58e459741375097dc9551206b8f7ca32}
+
+
+Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_property}{Property} \hyperlink{classdg_1_1deepcore_1_1_property}{Property}\textquotesingle{}s value. 
+
+\begin{DoxyReturn}{Returns}
+The type of \hyperlink{classdg_1_1deepcore_1_1_property}{Property}\textquotesingle{}s value. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classdg_1_1deepcore_1_1_property_aa424d7706d3f07ab625b3a8abbfcfc7a}{dg\+::deepcore\+::\+Property}.
+

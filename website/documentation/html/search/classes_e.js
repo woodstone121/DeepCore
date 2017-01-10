@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['pointfeature',['PointFeature',['../class_point_feature.html',1,'']]],
-  ['polygonfeature',['PolygonFeature',['../class_polygon_feature.html',1,'']]],
+  ['point',['Point',['../structdg_1_1deepcore_1_1geometry_1_1_point.html',1,'dg::deepcore::geometry']]],
+  ['polygon',['Polygon',['../structdg_1_1deepcore_1_1geometry_1_1_polygon.html',1,'dg::deepcore::geometry']]],
   ['port',['Port',['../classdg_1_1deepcore_1_1_port.html',1,'dg::deepcore']]],
   ['portt',['PortT',['../structdg_1_1deepcore_1_1_port_t.html',1,'dg::deepcore']]],
   ['prediction',['Prediction',['../structdg_1_1deepcore_1_1classification_1_1_prediction.html',1,'dg::deepcore::classification']]],
