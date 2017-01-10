@@ -22,24 +22,16 @@ var group___vector_module =
       [ "value", "structdg_1_1deepcore_1_1vector_1_1_field.html#a236f34fb91447d2c807943a28ebcd119", null ]
     ] ],
     [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html", [
-      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a61cf667be7f926941f50b24c88b27e9c", null ],
-      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a39c425e8cf84ed1915481290e8fae942", null ],
-      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a9cd51645d01c1e727f6bb0b54d352e25", null ],
-      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a7456940b2ee743ba40f04b5cbc9c8ae8", null ],
+      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#af7032e28bfb20039016e379a8d01bbc1", null ],
+      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#ab8dbb8d6de715975feabacaaff5adba9", null ],
+      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#adddae739d09abc8ef57106a2382f9394", null ],
+      [ "Feature", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a843977ce099e283f26a366501173fe5a", null ],
+      [ "from", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a0bf4203c24a8c9564e7f712499547ab8", null ],
+      [ "toOgr", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a741151fba7758f5b76ccee544c01dce3", null ],
       [ "type", "classdg_1_1deepcore_1_1vector_1_1_feature.html#af8c970b232d0c9758603fed27ce4fbf0", null ],
       [ "fields", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a932740031038833666cd2afd1ada92f4", null ],
-      [ "type_", "classdg_1_1deepcore_1_1vector_1_1_feature.html#a2454e027df5975864b2adc3a22d650ba", null ]
+      [ "geometry", "classdg_1_1deepcore_1_1vector_1_1_feature.html#af5ba964b4c660e021e4e99e1752462b4", null ]
     ] ],
-    [ "FeatureT", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html", [
-      [ "FeatureT", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html#a41874b8b106bf9b69775d53b54ed3c1b", null ],
-      [ "FeatureT", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html#ae7b578e2d238e4d637995be45b01d733", null ],
-      [ "FeatureT", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html#a8d3dfcfe50bedc93bbe88dfddbdcf8a2", null ],
-      [ "FeatureT", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html#a992f343f01c3b49daf3c5ca33b309859", null ],
-      [ "FeatureT", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html#a703766e00a89de30f9149f5e8c25133f", null ],
-      [ "geometry", "structdg_1_1deepcore_1_1vector_1_1_feature_t.html#a4bfe214fd6ded7e74affd4246fe7f960", null ]
-    ] ],
-    [ "PointFeature", "class_point_feature.html", null ],
-    [ "PolygonFeature", "class_polygon_feature.html", null ],
     [ "FeatureSet", "classdg_1_1deepcore_1_1vector_1_1_feature_set.html", [
       [ "FeatureSet", "group___vector_module.html#ga22680002b22c9e68d0fbaeada82d6e23", null ],
       [ "~FeatureSet", "classdg_1_1deepcore_1_1vector_1_1_feature_set.html#acc3af359cff5a59c1ca421e8970c6118", null ],
@@ -62,11 +54,6 @@ var group___vector_module =
       [ "STRING", "namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da63b588d5559f64f89a416e656880b949", null ],
       [ "DATE", "namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da633a6c7a6b9958f8174250094daf1e6a", null ],
       [ "TIME", "namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da346ff32eaa3c09983fb2ec057816d352", null ]
-    ] ],
-    [ "GeometryType", "group___vector_module.html#gade61c1773afa31064c4eae92cb6bb0b8", [
-      [ "UNKNOWN", "namespacedg_1_1deepcore_1_1vector.html#gade61c1773afa31064c4eae92cb6bb0b8a696b031073e74bf2cb98e5ef201d4aa3", null ],
-      [ "POINT", "namespacedg_1_1deepcore_1_1vector.html#gade61c1773afa31064c4eae92cb6bb0b8aaebdbcb765394d25d6a604589a890f82", null ],
-      [ "POLYGON", "namespacedg_1_1deepcore_1_1vector.html#gade61c1773afa31064c4eae92cb6bb0b8aecdc92bf56d960b73b02ee40125758bc", null ]
     ] ],
     [ "VectorOpenMode", "group___vector_module.html#ga1ee9d7536b27c1a7852203d093939d2b", [
       [ "READONLY", "group___vector_module.html#gga1ee9d7536b27c1a7852203d093939d2ba7d737e43c359af32ce26dc7a7b575041", null ],

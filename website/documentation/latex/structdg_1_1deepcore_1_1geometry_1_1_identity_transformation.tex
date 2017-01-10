@@ -1,0 +1,161 @@
+\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation}{}\section{dg\+:\+:deepcore\+:\+:geometry\+:\+:Identity\+Transformation Struct Reference}
+\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation}\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+
+
+\subsection{Detailed Description}
+Represents an identity transformation. 
+
+{\ttfamily \#include $<$geometry/\+Identity\+Transformation.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:geometry\+:\+:Identity\+Transformation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Point2d \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a9a095f1b9da9c078faf2b291a1d3019d}{transform} (const cv\+::\+Point2d \&p) const override
+\begin{DoxyCompactList}\small\item\em Transforms a point. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad823ed13d450a823416b221671412912}{inverse} () const override
+\begin{DoxyCompactList}\small\item\em Returns an inverse of this transformation. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_abfa0af70a5b3cf481e8b90aea03a32d7}{is\+Identity} () const override
+\begin{DoxyCompactList}\small\item\em Returns whether the transformation is an identity, meaning that transformation will return the value unchanged. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad365e42292c0d72750aa7dd87a3a4bcc}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a926efdf8f7937e4583a9c4d734a52816}{operator==} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em Returns whether {\ttfamily rhs} is equivalent to this. The two transformations don\textquotesingle{}t have to represent two identical objects. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a11ba1b24e9b5c7827e812028717f9d00}{append} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em If possible, appends {\ttfamily rhs} to this transformation to form a single combined transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}!append@{append}}
+\index{append@{append}!dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+\subsubsection[{\texorpdfstring{append(const Transformation \&rhs) const override}{append(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Identity\+Transformation\+::append (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a11ba1b24e9b5c7827e812028717f9d00}{}\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a11ba1b24e9b5c7827e812028717f9d00}
+
+
+If possible, appends {\ttfamily rhs} to this transformation to form a single combined transformation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The transformation to append to this. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The combined transformation, or {\ttfamily nullptr} if concatenation is not possible.
+\end{DoxyReturn}
+The combined transformation is equivalent to first transforming the object by this transformation, then by {\ttfamily rhs}. 
+
+Reimplemented from \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_ae67c450f28cd7fa5cb4607b5cf6d04a9}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+\subsubsection[{\texorpdfstring{clone() const override}{clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Identity\+Transformation\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad365e42292c0d72750aa7dd87a3a4bcc}{}\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad365e42292c0d72750aa7dd87a3a4bcc}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ Transformation $>$}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}!inverse@{inverse}}
+\index{inverse@{inverse}!dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+\subsubsection[{\texorpdfstring{inverse() const override}{inverse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Identity\+Transformation\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad823ed13d450a823416b221671412912}{}\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_ad823ed13d450a823416b221671412912}
+
+
+Returns an inverse of this transformation. 
+
+\begin{DoxyReturn}{Returns}
+The inverse of this transformation. {\ttfamily nullptr} is returned if no inverse is available. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a2f707de3ae95f13861d5ddbb2125b26c}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+\subsubsection[{\texorpdfstring{is\+Identity() const override}{isIdentity() const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Identity\+Transformation\+::is\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_abfa0af70a5b3cf481e8b90aea03a32d7}{}\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_abfa0af70a5b3cf481e8b90aea03a32d7}
+
+
+Returns whether the transformation is an identity, meaning that transformation will return the value unchanged. 
+
+\begin{DoxyReturn}{Returns}
+Whether the transformation is an identity. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a7423095c12275c3ade1bad443f47dbdd}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+\subsubsection[{\texorpdfstring{operator==(const Transformation \&rhs) const override}{operator==(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Identity\+Transformation\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a926efdf8f7937e4583a9c4d734a52816}{}\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a926efdf8f7937e4583a9c4d734a52816}
+
+
+Returns whether {\ttfamily rhs} is equivalent to this. The two transformations don\textquotesingle{}t have to represent two identical objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The other transformation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily rhs} is equivalent to this. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a18f3dec54c0018c032e24d294a4e63a6}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}!transform@{transform}}
+\index{transform@{transform}!dg\+::deepcore\+::geometry\+::\+Identity\+Transformation@{dg\+::deepcore\+::geometry\+::\+Identity\+Transformation}}
+\subsubsection[{\texorpdfstring{transform(const cv\+::\+Point2d \&p) const override}{transform(const cv::Point2d &p) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point2d dg\+::deepcore\+::geometry\+::\+Identity\+Transformation\+::transform (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Point2d \&}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a9a095f1b9da9c078faf2b291a1d3019d}{}\label{structdg_1_1deepcore_1_1geometry_1_1_identity_transformation_a9a095f1b9da9c078faf2b291a1d3019d}
+
+
+Transforms a point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & The point to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed point. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a1a7c7cf330f61adeba1803dd3651d479}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+

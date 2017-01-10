@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['scalar',['SCALAR',['../group___process_type.html#gga7df7aa6573baa85be9bbbf9b5916f038a8f3d9a4b6a7b7f2c7afa61ca113d0db9',1,'dg::deepcore']]],
-  ['server_5ferror',['SERVER_ERROR',['../namespacedg_1_1deepcore_1_1network.html#a396e76c62ff66c95c20af09d8e45ce44a4f9e80577b63b98117bba936c8c2db9b',1,'dg::deepcore::network']]],
-  ['sliding_5fwindow',['SLIDING_WINDOW',['../classdg_1_1deepcore_1_1classification_1_1_detector.html#ga9fa0b4fe3495e513c3c0746aa0940f41aca8e47c0b42a004fa08e654ae25fb036',1,'dg::deepcore::classification::Detector']]],
-  ['stopped',['STOPPED',['../group___process_framework.html#gga6cb7b5530ce6ccea164f9157b5b2cc0aa09d4d696b4e935115b9313e3c412509a',1,'dg::deepcore']]],
-  ['string',['STRING',['../namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da63b588d5559f64f89a416e656880b949',1,'dg::deepcore::vector']]],
-  ['strong',['STRONG',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972a3dfb3ae3cdaa322f0388f1a531c39520',1,'dg::deepcore']]]
+  ['readonly',['READONLY',['../group___vector_module.html#gga1ee9d7536b27c1a7852203d093939d2ba7d737e43c359af32ce26dc7a7b575041',1,'dg::deepcore::vector']]],
+  ['real',['REAL',['../namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da8cf125b0e31559ba75a9d9b4f818a554',1,'dg::deepcore::vector']]],
+  ['reserved1',['RESERVED1',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972ad8179a090910d4923b044cbce813c8ea',1,'dg::deepcore']]],
+  ['reserved2',['RESERVED2',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972a0b5885d29a74762639e4b55c51ce2d85',1,'dg::deepcore']]],
+  ['reserved3',['RESERVED3',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972aeb65411a7ccd9efc5037b3d1ca03b8b3',1,'dg::deepcore']]],
+  ['rgb',['RGB',['../group___classification_module.html#ggafa8e703c3646c5f93ada56f3c811aac7a82cdee03dcc18f834282137011a5191b',1,'dg::deepcore::classification::ModelMetadata']]],
+  ['running',['RUNNING',['../group___process_framework.html#gga6cb7b5530ce6ccea164f9157b5b2cc0aa43491564ebcfd38568918efbd6e840fd',1,'dg::deepcore']]]
 ];

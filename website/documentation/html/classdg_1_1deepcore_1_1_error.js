@@ -6,7 +6,6 @@ var classdg_1_1deepcore_1_1_error =
     [ "Error", "group___utility_module.html#gab98e5ffafca5efc6945f295698550854", null ],
     [ "Error", "group___utility_module.html#ga0e8a3ee91298ab22afb0d7146afa23fb", null ],
     [ "Error", "classdg_1_1deepcore_1_1_error.html#a52a11a112b48830eb9d49dc5e394b3d7", null ],
-    [ "Error", "classdg_1_1deepcore_1_1_error.html#ab8d42d693d3c3c915f25f794feaab651", null ],
     [ "Error", "group___utility_module.html#ga50ae85ad2e348408fa2552abfb6570f9", null ],
     [ "Error", "group___utility_module.html#ga3d20a4e6ef5f0579707ccf7b01f235b2", null ],
     [ "callStack", "classdg_1_1deepcore_1_1_error.html#af326513a1dad0dde7d595c2b9f9d9d1e", null ],
@@ -17,6 +16,5 @@ var classdg_1_1deepcore_1_1_error =
     [ "log", "classdg_1_1deepcore_1_1_error.html#a2b4a03a6ce3cc8b5ab2fdc719e270e61", null ],
     [ "message", "group___utility_module.html#ga7269ba8049ed86338733955565242539", null ],
     [ "operator=", "classdg_1_1deepcore_1_1_error.html#a3a6f1fff16acc79358c1a6e45e43ad02", null ],
-    [ "operator=", "classdg_1_1deepcore_1_1_error.html#a530ecc45f43e6c9307b5186e159e64a6", null ],
     [ "what", "group___utility_module.html#ga7dff6b319144bcfcf602e0124fb0fb01", null ]
 ];

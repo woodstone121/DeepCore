@@ -1,0 +1,273 @@
+\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{}\section{dg\+:\+:deepcore\+:\+:geometry\+:\+:Geo\+Transformation Class Reference}
+\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+
+
+\subsection{Detailed Description}
+Represents a geographic coordinate transformation. 
+
+{\ttfamily \#include $<$geometry/\+Geo\+Transformation.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:geometry\+:\+:Geo\+Transformation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a8791803539260e5b62b099ab3eb8ddfa}{Geo\+Transformation} ()=default
+\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_aa58054eed25c58cc4adea026123ae879}{Geo\+Transformation} (const \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{Spatial\+Reference} \&\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a38e2d96b36aed7db3a87fca5b313b0aa}{from}, const \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{Spatial\+Reference} \&\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a1f0952b9e9d094c7702c9669a0b205e0}{to})
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} between two coordinate reference systems. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a3681c3f9779f4c568c8c2f15d260b6cc}{Geo\+Transformation} (const O\+G\+R\+Coordinate\+Transformation \&t)
+\begin{DoxyCompactList}\small\item\em Construct from a {\ttfamily O\+G\+R\+Coordinate\+Transformation}. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a23797c7c7e843eb1f6959bf213213cc3}{Geo\+Transformation} (O\+G\+R\+Coordinate\+Transformation $\ast$t)
+\begin{DoxyCompactList}\small\item\em Construct from a {\ttfamily O\+G\+R\+Coordinate\+Transformation}. \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} takes ownership of the pointer. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a062ab090d4afd46b424921de435557f7}{Geo\+Transformation} (const \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} \&rhs)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} \& \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a85f49e823058ae4f1802412c44e3c2fd}{operator=} (const \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} \&rhs)
+\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_acee277c24e3c6391d84c191a364ba808}{Geo\+Transformation} (\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} \&\&rhs)=default
+\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} \& \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_ad35340c77b4a22d10c196403ca30da65}{operator=} (\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} \&\&rhs)=default
+\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{Spatial\+Reference} \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a38e2d96b36aed7db3a87fca5b313b0aa}{from} () const 
+\begin{DoxyCompactList}\small\item\em Gets the source coordinate reference system. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{Spatial\+Reference} \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a1f0952b9e9d094c7702c9669a0b205e0}{to} () const 
+\begin{DoxyCompactList}\small\item\em Gets the target coordinate reference system. \end{DoxyCompactList}\item 
+cv\+::\+Point2d \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_ab5a6914031cdb5a6f2898195a810def0}{transform} (const cv\+::\+Point2d \&p) const override
+\begin{DoxyCompactList}\small\item\em Transforms a point. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_abd77dc4ae76ac30094f4eccdcaf82635}{inverse} () const override
+\begin{DoxyCompactList}\small\item\em Returns an inverse of this transformation. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a2e861b4541aa6f9b208c05b229feb665}{is\+Identity} () const override
+\begin{DoxyCompactList}\small\item\em Returns whether the transformation is an identity, meaning that transformation will return the value unchanged. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a448c15e383231e33963e489817085b24}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_af49413c6749681ada8be2f4f77091263}{operator==} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em Returns whether {\ttfamily rhs} is equivalent to this. The two transformations don\textquotesingle{}t have to represent two identical objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!Geo\+Transformation@{Geo\+Transformation}}
+\index{Geo\+Transformation@{Geo\+Transformation}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{Geo\+Transformation()=default}{GeoTransformation()=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::\+Geo\+Transformation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a8791803539260e5b62b099ab3eb8ddfa}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a8791803539260e5b62b099ab3eb8ddfa}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!Geo\+Transformation@{Geo\+Transformation}}
+\index{Geo\+Transformation@{Geo\+Transformation}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{Geo\+Transformation(const Spatial\+Reference \&from, const Spatial\+Reference \&to)}{GeoTransformation(const SpatialReference &from, const SpatialReference &to)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::\+Geo\+Transformation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Spatial\+Reference} \&}]{from, }
+\item[{const {\bf Spatial\+Reference} \&}]{to}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_aa58054eed25c58cc4adea026123ae879}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_aa58054eed25c58cc4adea026123ae879}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} between two coordinate reference systems. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em from} & The source \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{Spatial\+Reference}. \\
+\hline
+\mbox{\tt in}  & {\em to} & The target \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_spatial_reference}{Spatial\+Reference}. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!Geo\+Transformation@{Geo\+Transformation}}
+\index{Geo\+Transformation@{Geo\+Transformation}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{Geo\+Transformation(const O\+G\+R\+Coordinate\+Transformation \&t)}{GeoTransformation(const OGRCoordinateTransformation &t)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::\+Geo\+Transformation (
+\begin{DoxyParamCaption}
+\item[{const O\+G\+R\+Coordinate\+Transformation \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a3681c3f9779f4c568c8c2f15d260b6cc}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a3681c3f9779f4c568c8c2f15d260b6cc}
+
+
+Construct from a {\ttfamily O\+G\+R\+Coordinate\+Transformation}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & A {\ttfamily O\+G\+R\+Coordinate\+Transformation}. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!Geo\+Transformation@{Geo\+Transformation}}
+\index{Geo\+Transformation@{Geo\+Transformation}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{Geo\+Transformation(\+O\+G\+R\+Coordinate\+Transformation $\ast$t)}{GeoTransformation(OGRCoordinateTransformation *t)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::\+Geo\+Transformation (
+\begin{DoxyParamCaption}
+\item[{O\+G\+R\+Coordinate\+Transformation $\ast$}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a23797c7c7e843eb1f6959bf213213cc3}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a23797c7c7e843eb1f6959bf213213cc3}
+
+
+Construct from a {\ttfamily O\+G\+R\+Coordinate\+Transformation}. \hyperlink{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation}{Geo\+Transformation} takes ownership of the pointer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em t} & A pointer to {\ttfamily O\+G\+R\+Coordinate\+Transformation}. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!Geo\+Transformation@{Geo\+Transformation}}
+\index{Geo\+Transformation@{Geo\+Transformation}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{Geo\+Transformation(const Geo\+Transformation \&rhs)}{GeoTransformation(const GeoTransformation &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::\+Geo\+Transformation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geo\+Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a062ab090d4afd46b424921de435557f7}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a062ab090d4afd46b424921de435557f7}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!Geo\+Transformation@{Geo\+Transformation}}
+\index{Geo\+Transformation@{Geo\+Transformation}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{Geo\+Transformation(\+Geo\+Transformation \&\&rhs)=default}{GeoTransformation(GeoTransformation &&rhs)=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::\+Geo\+Transformation (
+\begin{DoxyParamCaption}
+\item[{{\bf Geo\+Transformation} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_acee277c24e3c6391d84c191a364ba808}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_acee277c24e3c6391d84c191a364ba808}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{clone() const override}{clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a448c15e383231e33963e489817085b24}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a448c15e383231e33963e489817085b24}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ Transformation $>$}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!from@{from}}
+\index{from@{from}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{from() const }{from() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spatial\+Reference} dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::from (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a38e2d96b36aed7db3a87fca5b313b0aa}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a38e2d96b36aed7db3a87fca5b313b0aa}
+
+
+Gets the source coordinate reference system. 
+
+\begin{DoxyReturn}{Returns}
+The source coordinate reference system. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!inverse@{inverse}}
+\index{inverse@{inverse}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{inverse() const override}{inverse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_abd77dc4ae76ac30094f4eccdcaf82635}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_abd77dc4ae76ac30094f4eccdcaf82635}
+
+
+Returns an inverse of this transformation. 
+
+\begin{DoxyReturn}{Returns}
+The inverse of this transformation. {\ttfamily nullptr} is returned if no inverse is available. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a2f707de3ae95f13861d5ddbb2125b26c}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{is\+Identity() const override}{isIdentity() const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::is\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a2e861b4541aa6f9b208c05b229feb665}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a2e861b4541aa6f9b208c05b229feb665}
+
+
+Returns whether the transformation is an identity, meaning that transformation will return the value unchanged. 
+
+\begin{DoxyReturn}{Returns}
+Whether the transformation is an identity. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a7423095c12275c3ade1bad443f47dbdd}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{operator=(const Geo\+Transformation \&rhs)}{operator=(const GeoTransformation &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Geo\+Transformation} \& dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Geo\+Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a85f49e823058ae4f1802412c44e3c2fd}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a85f49e823058ae4f1802412c44e3c2fd}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{operator=(\+Geo\+Transformation \&\&rhs)=default}{operator=(GeoTransformation &&rhs)=default}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Geo\+Transformation}\& dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Geo\+Transformation} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_ad35340c77b4a22d10c196403ca30da65}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_ad35340c77b4a22d10c196403ca30da65}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{operator==(const Transformation \&rhs) const override}{operator==(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_af49413c6749681ada8be2f4f77091263}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_af49413c6749681ada8be2f4f77091263}
+
+
+Returns whether {\ttfamily rhs} is equivalent to this. The two transformations don\textquotesingle{}t have to represent two identical objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The other transformation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily rhs} is equivalent to this. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a18f3dec54c0018c032e24d294a4e63a6}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!to@{to}}
+\index{to@{to}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{to() const }{to() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spatial\+Reference} dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::to (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a1f0952b9e9d094c7702c9669a0b205e0}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_a1f0952b9e9d094c7702c9669a0b205e0}
+
+
+Gets the target coordinate reference system. 
+
+\begin{DoxyReturn}{Returns}
+The target coordinate reference system. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}!transform@{transform}}
+\index{transform@{transform}!dg\+::deepcore\+::geometry\+::\+Geo\+Transformation@{dg\+::deepcore\+::geometry\+::\+Geo\+Transformation}}
+\subsubsection[{\texorpdfstring{transform(const cv\+::\+Point2d \&p) const override}{transform(const cv::Point2d &p) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point2d dg\+::deepcore\+::geometry\+::\+Geo\+Transformation\+::transform (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Point2d \&}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_ab5a6914031cdb5a6f2898195a810def0}{}\label{classdg_1_1deepcore_1_1geometry_1_1_geo_transformation_ab5a6914031cdb5a6f2898195a810def0}
+
+
+Transforms a point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & The point to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed point. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a1a7c7cf330f61adeba1803dd3651d479}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+

@@ -9,7 +9,7 @@ var classdg_1_1deepcore_1_1_object =
     [ "as", "classdg_1_1deepcore_1_1_object.html#ac90291fa8d78643bcb2856bf5744034b", null ],
     [ "create", "classdg_1_1deepcore_1_1_object.html#abea39ade7192fc0479cf932767c5ddfc", null ],
     [ "create", "classdg_1_1deepcore_1_1_object.html#a8ceffb0726dfc320c3e4f0f132d31526", null ],
-    [ "create", "classdg_1_1deepcore_1_1_object.html#a46927a287262574d30514af58c650733", null ],
+    [ "create", "classdg_1_1deepcore_1_1_object.html#abebce2036d380211beed7d435e3c8999", null ],
     [ "init", "classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99", null ],
     [ "ptr", "classdg_1_1deepcore_1_1_object.html#a8b8b14a44dd1164568619897713753f0", null ],
     [ "ptr", "classdg_1_1deepcore_1_1_object.html#abc06ba7cd66b57139455b4c73c1e3b27", null ],

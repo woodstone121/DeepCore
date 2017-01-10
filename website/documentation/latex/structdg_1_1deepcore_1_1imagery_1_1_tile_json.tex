@@ -2,10 +2,8 @@
 \label{structdg_1_1deepcore_1_1imagery_1_1_tile_json}\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 
 
-Represents a Tile\+J\+S\+ON response. Currently supported version is 2.\+0.\+0. Reference\+: \href{https://github.com/mapbox/tilejson-spec/tree/master/2.0.0}{\tt }  
-
-
-
+\subsection{Detailed Description}
+Represents a Tile\+J\+S\+ON response. Currently supported version is 2.\+0.\+0. Reference\+: \href{https://github.com/mapbox/tilejson-spec/tree/master/2.0.0}{\tt } 
 
 {\ttfamily \#include $<$imagery/\+Tile\+Json.\+h$>$}
 
@@ -13,6 +11,19 @@ Represents a Tile\+J\+S\+ON response. Currently supported version is 2.\+0.\+0. 
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_1_1_center}{Center}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6cf2c225e8f36239a8d9c0f96bda6bf1}{Tile\+Json} ()=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_acc6e93165ccda5b1d70198390d1fa9ef}{Tile\+Json} (\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json} \&\&)=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6d5b4ee20a818a29de0eb6feae9d8431}{Tile\+Json} (const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json} \&rhs)
+\item 
+\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json} \& \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ad1fc21511a31885373ac1987215b32a7}{operator=} (\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json} \&\&)=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json} \& \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ad8427c54a7785023c1e501ad70734089}{operator=} (const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json}{Tile\+Json} \&rhs)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -36,7 +47,7 @@ std\+::unique\+\_\+ptr$<$ std\+::string $>$ \hyperlink{structdg_1_1deepcore_1_1i
 \item 
 std\+::unique\+\_\+ptr$<$ std\+::string $>$ \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6c3f9e95dcca896f30244d71b4a93be1}{legend}
 \item 
-std\+::string \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aa81ddd251615c83ed800924570aa6530}{scheme} = \char`\"{}xyz\char`\"{}
+\hyperlink{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267}{Tile\+Json\+Scheme} \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aa2b4d8a34030e5244783bac674fd6b8c}{scheme} = \hyperlink{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267ae65075d550f9b5bf9992fa1d71a131be}{Tile\+Json\+Scheme\+::\+X\+YZ}
 \item 
 std\+::string \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a0ac858ae62a9b9243e8bd8c31a86af7b}{format} = \char`\"{}jpg\char`\"{}
 \item 
@@ -48,32 +59,82 @@ int \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a77756c09c221095697
 \item 
 int \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a8f32c4c1ca4750f301ed39ce8d3c19f5}{maxzoom} = 22
 \item 
-cv\+::\+Rect2d \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a7c0423d8989a5e6b0f5600ac5223b823}{bounds} = \{ -\/180, -\/M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT, 360, M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT $\ast$ 2 \}
+cv\+::\+Rect2d \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a7c0423d8989a5e6b0f5600ac5223b823}{bounds} = \{ -\/180, -\/\hyperlink{namespacedg_1_1deepcore_1_1imagery_a1e4fbd4aaf439a533b4ca96449f5b025}{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT}, 360, \hyperlink{namespacedg_1_1deepcore_1_1imagery_a1e4fbd4aaf439a533b4ca96449f5b025}{M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT} $\ast$ 2 \}
 \item 
 std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_1_1_center}{Center} $>$ \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a774610a2770889bf336b90335a93f4c1}{center}
+\item 
+std\+::string \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_afb89809dd8e7f4d6a9387cb50500a31d}{acquisition\+\_\+date}
+\item 
+std\+::string \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a3dbce2d3f97e8abdb60db7cf5b1ede54}{extent}
+\item 
+std\+::string \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aaa10ce3c28b1d8a9b3cb678366241a56}{sat\+\_\+id}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Represents a Tile\+J\+S\+ON response. Currently supported version is 2.\+0.\+0. Reference\+: \href{https://github.com/mapbox/tilejson-spec/tree/master/2.0.0}{\tt } 
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!Tile\+Json@{Tile\+Json}}
+\index{Tile\+Json@{Tile\+Json}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{Tile\+Json()=default}{TileJson()=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::\+Tile\+Json (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6cf2c225e8f36239a8d9c0f96bda6bf1}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6cf2c225e8f36239a8d9c0f96bda6bf1}
+\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!Tile\+Json@{Tile\+Json}}
+\index{Tile\+Json@{Tile\+Json}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{Tile\+Json(\+Tile\+Json \&\&)=default}{TileJson(TileJson &&)=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::\+Tile\+Json (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Json} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_acc6e93165ccda5b1d70198390d1fa9ef}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_acc6e93165ccda5b1d70198390d1fa9ef}
+\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!Tile\+Json@{Tile\+Json}}
+\index{Tile\+Json@{Tile\+Json}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{Tile\+Json(const Tile\+Json \&rhs)}{TileJson(const TileJson &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::\+Tile\+Json (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tile\+Json} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6d5b4ee20a818a29de0eb6feae9d8431}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6d5b4ee20a818a29de0eb6feae9d8431}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{operator=(\+Tile\+Json \&\&)=default}{operator=(TileJson &&)=default}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+Json}\& dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Tile\+Json} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ad1fc21511a31885373ac1987215b32a7}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ad1fc21511a31885373ac1987215b32a7}
+\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{operator=(const Tile\+Json \&rhs)}{operator=(const TileJson &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+Json} \& dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tile\+Json} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ad8427c54a7785023c1e501ad70734089}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ad8427c54a7785023c1e501ad70734089}
+
 
 \subsection{Member Data Documentation}
 \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!\+\_\+template@{\+\_\+template}}
 \index{\+\_\+template@{\+\_\+template}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{\+\_\+template}{_template}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$std\+::string$>$ dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::\+\_\+template}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aed003e5b44a92c2dcaf84a71fa19acd0}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aed003e5b44a92c2dcaf84a71fa19acd0}
-O\+P\+T\+I\+O\+N\+AL. Default\+: null. Contains a mustache template to be used to format data from grids for interaction. See \href{https://github.com/mapbox/utfgrid-spec/tree/master/1.2}{\tt https\+://github.\+com/mapbox/utfgrid-\/spec/tree/master/1.\+2} for the interactivity specification. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!attribution@{attribution}}
+O\+P\+T\+I\+O\+N\+AL. Default\+: null. Contains a mustache template to be used to format data from grids for interaction. See \href{https://github.com/mapbox/utfgrid-spec/tree/master/1.2}{\tt https\+://github.\+com/mapbox/utfgrid-\/spec/tree/master/1.\+2} for the interactivity specification. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!acquisition\+\_\+date@{acquisition\+\_\+date}}
+\index{acquisition\+\_\+date@{acquisition\+\_\+date}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{acquisition\+\_\+date}{acquisition_date}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::acquisition\+\_\+date}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_afb89809dd8e7f4d6a9387cb50500a31d}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_afb89809dd8e7f4d6a9387cb50500a31d}
+N\+O\+N-\/\+S\+T\+A\+N\+D\+A\+RD. Acquisition date \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!attribution@{attribution}}
 \index{attribution@{attribution}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{attribution}{attribution}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$std\+::string$>$ dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::attribution}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aaa14afeb610f9e02b8ffb7e6641160d6}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aaa14afeb610f9e02b8ffb7e6641160d6}
 O\+P\+T\+I\+O\+N\+AL. Default\+: null. Contains an attribution to be displayed when the map is shown to a user. Implementations M\+AY decide to treat this as H\+T\+ML or literal text. For security reasons, make absolutely sure that this field can\textquotesingle{}t be abused as a vector for X\+SS or beacon tracking. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!bounds@{bounds}}
 \index{bounds@{bounds}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
-\subsubsection[{\texorpdfstring{bounds}{bounds}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Rect2d dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::bounds = \{ -\/180, -\/M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT, 360, M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT $\ast$ 2 \}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a7c0423d8989a5e6b0f5600ac5223b823}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a7c0423d8989a5e6b0f5600ac5223b823}
+\subsubsection[{\texorpdfstring{bounds}{bounds}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Rect2d dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::bounds = \{ -\/180, -\/{\bf M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT}, 360, {\bf M\+E\+R\+C\+A\+T\+O\+R\+\_\+90\+\_\+\+L\+AT} $\ast$ 2 \}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a7c0423d8989a5e6b0f5600ac5223b823}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a7c0423d8989a5e6b0f5600ac5223b823}
 O\+P\+T\+I\+O\+N\+AL. Default\+: \{ -\/180, -\/85.\+0511287798066, 360, 170.\+10225756 \} The maximum extent of available map tiles. Bounds M\+U\+ST define an area covered by all zoom levels. The bounds are represented in W\+GS\+:84 latitude and longitude values. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!center@{center}}
 \index{center@{center}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{center}{center}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Center}$>$ dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::center}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a774610a2770889bf336b90335a93f4c1}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a774610a2770889bf336b90335a93f4c1}
 \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!description@{description}}
 \index{description@{description}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{description}{description}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$std\+::string$>$ dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::description}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ac2dd8a58ac978ddb8c01fbd5c7fa4820}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_ac2dd8a58ac978ddb8c01fbd5c7fa4820}
-O\+P\+T\+I\+O\+N\+AL. Default\+: null. A text description of the tileset. The description can contain any legal character. Implementations S\+H\+O\+U\+LD N\+OT interpret the description as H\+T\+ML. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!format@{format}}
+O\+P\+T\+I\+O\+N\+AL. Default\+: null. A text description of the tileset. The description can contain any legal character. Implementations S\+H\+O\+U\+LD N\+OT interpret the description as H\+T\+ML. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!extent@{extent}}
+\index{extent@{extent}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{extent}{extent}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::extent}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a3dbce2d3f97e8abdb60db7cf5b1ede54}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a3dbce2d3f97e8abdb60db7cf5b1ede54}
+N\+O\+N-\/\+S\+T\+A\+N\+D\+A\+RD. A W\+KT polygon specifying imagery extents.\index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!format@{format}}
 \index{format@{format}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{format}{format}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::format = \char`\"{}jpg\char`\"{}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a0ac858ae62a9b9243e8bd8c31a86af7b}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a0ac858ae62a9b9243e8bd8c31a86af7b}
 N\+O\+N-\/\+S\+T\+A\+N\+D\+A\+RD, Image format, i.\+e. \char`\"{}jpg\char`\"{} \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!grids@{grids}}
@@ -91,10 +152,13 @@ O\+P\+T\+I\+O\+N\+AL. Default\+: 22. $>$= 0, $<$= 22. An integer specifying the 
 O\+P\+T\+I\+O\+N\+AL. Default\+: 0. $>$= 0, $<$= 22. An integer specifying the minimum zoom level. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!name@{name}}
 \index{name@{name}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$std\+::string$>$ dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::name}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a5e1cb3591fa0d3c15184869d90bf42f9}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a5e1cb3591fa0d3c15184869d90bf42f9}
-O\+P\+T\+I\+O\+N\+AL. Default\+: null. A name describing the tileset. The name can contain any legal character. Implementations S\+H\+O\+U\+LD N\+OT interpret the name as H\+T\+ML. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!scheme@{scheme}}
+O\+P\+T\+I\+O\+N\+AL. Default\+: null. A name describing the tileset. The name can contain any legal character. Implementations S\+H\+O\+U\+LD N\+OT interpret the name as H\+T\+ML. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!sat\+\_\+id@{sat\+\_\+id}}
+\index{sat\+\_\+id@{sat\+\_\+id}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
+\subsubsection[{\texorpdfstring{sat\+\_\+id}{sat_id}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::sat\+\_\+id}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aaa10ce3c28b1d8a9b3cb678366241a56}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aaa10ce3c28b1d8a9b3cb678366241a56}
+N\+O\+N-\/\+S\+T\+A\+N\+D\+A\+RD. Satellite id. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!scheme@{scheme}}
 \index{scheme@{scheme}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
-\subsubsection[{\texorpdfstring{scheme}{scheme}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::scheme = \char`\"{}xyz\char`\"{}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aa81ddd251615c83ed800924570aa6530}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aa81ddd251615c83ed800924570aa6530}
-O\+P\+T\+I\+O\+N\+AL. Default\+: \char`\"{}xyz\char`\"{}. Either \char`\"{}xyz\char`\"{} or \char`\"{}tms\char`\"{}. Influences the y direction of the tile coordinates. The global-\/mercator (aka Spherical Mercator) profile is assumed. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!tilejson@{tilejson}}
+\subsubsection[{\texorpdfstring{scheme}{scheme}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tile\+Json\+Scheme} dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::scheme = {\bf Tile\+Json\+Scheme\+::\+X\+YZ}}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aa2b4d8a34030e5244783bac674fd6b8c}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_aa2b4d8a34030e5244783bac674fd6b8c}
+O\+P\+T\+I\+O\+N\+AL. Default\+: \hyperlink{namespacedg_1_1deepcore_1_1imagery_a69877eb3a0e61e72802663a976413267ae65075d550f9b5bf9992fa1d71a131be}{Tile\+Json\+Scheme\+::\+X\+YZ}. Influences the y direction of the tile coordinates. The global-\/mercator (aka Spherical Mercator) profile is assumed. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!tilejson@{tilejson}}
 \index{tilejson@{tilejson}!dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}}
 \subsubsection[{\texorpdfstring{tilejson}{tilejson}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::imagery\+::\+Tile\+Json\+::tilejson}\hypertarget{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6eaf5b206fdf010f6c4b089d9f1dbe32}{}\label{structdg_1_1deepcore_1_1imagery_1_1_tile_json_a6eaf5b206fdf010f6c4b089d9f1dbe32}
 R\+E\+Q\+U\+I\+R\+ED. A semver.\+org style version number. Describes the version of the Tile\+J\+S\+ON spec that is implemented by this J\+S\+ON object. \index{dg\+::deepcore\+::imagery\+::\+Tile\+Json@{dg\+::deepcore\+::imagery\+::\+Tile\+Json}!tiles@{tiles}}

@@ -1,0 +1,233 @@
+\hypertarget{classdg_1_1deepcore_1_1_metric}{}\section{dg\+:\+:deepcore\+:\+:Metric Class Reference}
+\label{classdg_1_1deepcore_1_1_metric}\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+
+
+\subsection{Detailed Description}
+Base class for \hyperlink{classdg_1_1deepcore_1_1_node}{Node}\textquotesingle{}s metrics. 
+
+\begin{DoxyNote}{Note}
+You should not inherit from this directly, use \hyperlink{structdg_1_1deepcore_1_1_metric_t}{MetricT} instead.
+\end{DoxyNote}
+{\bfseries Example \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric} Declaration} 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }MyType \{ ... \};
+
+\textcolor{keyword}{namespace }met \{
+    \textcolor{comment}{// Declare}
+    \textcolor{keyword}{using} MyType = MetricT<MyType>;
+\}
+
+\textcolor{comment}{// .................}
+
+Type::add<MyType>(\textcolor{stringliteral}{"MyType"});
+\end{DoxyCode}
+ 
+
+{\ttfamily \#include $<$process/\+Metric.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:Metric\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classdg_1_1deepcore_1_1_metric__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{classdg_1_1deepcore_1_1_metric_a5f9522838757d77a38aad6acdb35852f}{value\+Type} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classdg_1_1deepcore_1_1_node}{Node} $>$ \hyperlink{classdg_1_1deepcore_1_1_metric_ae5f748b7a393cc48b31ef95423dda28a}{node} () const noexcept
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s \hyperlink{classdg_1_1deepcore_1_1_node}{Node}. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_value}{Value} \hyperlink{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}{value} () const 
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1_metric_a951f45d7e2f0d17bb939ed5efc852548}{set\+Value} (const \hyperlink{classdg_1_1deepcore_1_1_value}{Value} \&\hyperlink{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}{value}, bool notify=true)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1_metric_a76ae6e3cfe3fce8ba216fcd6d3328dfd}{set\+Value} (\hyperlink{classdg_1_1deepcore_1_1_value}{Value} \&\&\hyperlink{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}{value}, bool notify=true)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_semaphore}{Semaphore} \& \hyperlink{classdg_1_1deepcore_1_1_metric_abfe9d5ee8727333300f6211fb598e909}{changed} () const noexcept
+\begin{DoxyCompactList}\small\item\em Gets the semaphore that is notified when this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value has changed. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_metric}{Metric} \& \hyperlink{classdg_1_1deepcore_1_1_metric_add916e062f783883b39ec55a794e7c3d}{operator=} (const \hyperlink{classdg_1_1deepcore_1_1_value}{Value} \&rhs)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_metric}{Metric} \& \hyperlink{classdg_1_1deepcore_1_1_metric_a3b4ac859c91f555217f6c86868ae9622}{operator=} (\hyperlink{classdg_1_1deepcore_1_1_value}{Value} \&\&rhs)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_metric_ab310817e29f1fd8f21c4e8046c9d4fed}{operator Value} () const 
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\Value\+::\+Return\+Type$<$ T $>$\+::\hyperlink{classdg_1_1deepcore_1_1_object_a80356589437cb086680c6b5fbd8044d4}{type} \hyperlink{classdg_1_1deepcore_1_1_metric_a5b0f2e859ea95562412e18057cf81024}{convert} ()
+\begin{DoxyCompactList}\small\item\em Converts the underlying value of this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric} to the requested type and returns a copy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!changed@{changed}}
+\index{changed@{changed}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{changed() const noexcept}{changed() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Semaphore} \& dg\+::deepcore\+::\+Metric\+::changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_metric_abfe9d5ee8727333300f6211fb598e909}{}\label{classdg_1_1deepcore_1_1_metric_abfe9d5ee8727333300f6211fb598e909}
+
+
+Gets the semaphore that is notified when this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value has changed. 
+
+\begin{DoxyReturn}{Returns}
+The semaphore that is notified when this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value has changed. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!convert@{convert}}
+\index{convert@{convert}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{convert()}{convert()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ Value\+::\+Return\+Type$<$ T $>$\+::{\bf type} dg\+::deepcore\+::\+Metric\+::convert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_metric_a5b0f2e859ea95562412e18057cf81024}{}\label{classdg_1_1deepcore_1_1_metric_a5b0f2e859ea95562412e18057cf81024}
+
+
+Converts the underlying value of this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric} to the requested type and returns a copy. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The returned value type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The underlying value converted to the requested type.
+\end{DoxyReturn}
+This is the same as calling \hyperlink{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}{Metric\+::value()}.\hyperlink{classdg_1_1deepcore_1_1_metric_a5b0f2e859ea95562412e18057cf81024}{convert$<$\+T$>$()}. \index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!node@{node}}
+\index{node@{node}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{node() const noexcept}{node() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<$ {\bf Node} $>$ dg\+::deepcore\+::\+Metric\+::node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_metric_ae5f748b7a393cc48b31ef95423dda28a}{}\label{classdg_1_1deepcore_1_1_metric_ae5f748b7a393cc48b31ef95423dda28a}
+
+
+Gets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s \hyperlink{classdg_1_1deepcore_1_1_node}{Node}. 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classdg_1_1deepcore_1_1_node}{Node} this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric} belongs to. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!operator Value@{operator Value}}
+\index{operator Value@{operator Value}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{operator Value() const }{operator Value() const }}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::\+Metric\+::operator {\bf Value} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_metric_ab310817e29f1fd8f21c4e8046c9d4fed}{}\label{classdg_1_1deepcore_1_1_metric_ab310817e29f1fd8f21c4e8046c9d4fed}
+
+
+Gets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+\begin{DoxyReturn}{Returns}
+The value.
+\end{DoxyReturn}
+This is the same as calling \hyperlink{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}{Metric\+::value()}. \index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{operator=(const Value \&rhs)}{operator=(const Value &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Metric} \& dg\+::deepcore\+::\+Metric\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Value} \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_metric_add916e062f783883b39ec55a794e7c3d}{}\label{classdg_1_1deepcore_1_1_metric_add916e062f783883b39ec55a794e7c3d}
+
+
+Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this.
+\end{DoxyReturn}
+This is the same as calling Metric\+::set\+Value(rhs, true). \index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{operator=(\+Value \&\&rhs)}{operator=(Value &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Metric} \& dg\+::deepcore\+::\+Metric\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Value} \&\&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_metric_a3b4ac859c91f555217f6c86868ae9622}{}\label{classdg_1_1deepcore_1_1_metric_a3b4ac859c91f555217f6c86868ae9622}
+
+
+Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em rhs} & The value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this.
+\end{DoxyReturn}
+This is the same as calling Metric\+::set\+Value(rhs, true). \index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{set\+Value(const Value \&value, bool notify=true)}{setValue(const Value &value, bool notify=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::\+Metric\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf Value} \&}]{value, }
+\item[{bool}]{notify = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_metric_a951f45d7e2f0d17bb939ed5efc852548}{}\label{classdg_1_1deepcore_1_1_metric_a951f45d7e2f0d17bb939ed5efc852548}
+
+
+Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The value. \\
+\hline
+\mbox{\tt in}  & {\em notify} & Whether \hyperlink{classdg_1_1deepcore_1_1_metric_abfe9d5ee8727333300f6211fb598e909}{Metric\+::changed()} semaphore should be notified that the value has changed. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{set\+Value(\+Value \&\&value, bool notify=true)}{setValue(Value &&value, bool notify=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::\+Metric\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Value} \&\&}]{value, }
+\item[{bool}]{notify = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1_metric_a76ae6e3cfe3fce8ba216fcd6d3328dfd}{}\label{classdg_1_1deepcore_1_1_metric_a76ae6e3cfe3fce8ba216fcd6d3328dfd}
+
+
+Sets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em value} & The value. \\
+\hline
+\mbox{\tt in}  & {\em notify} & Whether \hyperlink{classdg_1_1deepcore_1_1_metric_abfe9d5ee8727333300f6211fb598e909}{Metric\+::changed()} semaphore should be notified that the value has changed. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!value@{value}}
+\index{value@{value}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{value() const }{value() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} dg\+::deepcore\+::\+Metric\+::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}{}\label{classdg_1_1deepcore_1_1_metric_a65106535395d90b5d0e2f6759579a009}
+
+
+Gets this \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+\begin{DoxyReturn}{Returns}
+The value. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}!value\+Type@{value\+Type}}
+\index{value\+Type@{value\+Type}!dg\+::deepcore\+::\+Metric@{dg\+::deepcore\+::\+Metric}}
+\subsubsection[{\texorpdfstring{value\+Type() const =0}{valueType() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Type}\& dg\+::deepcore\+::\+Metric\+::value\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classdg_1_1deepcore_1_1_metric_a5f9522838757d77a38aad6acdb35852f}{}\label{classdg_1_1deepcore_1_1_metric_a5f9522838757d77a38aad6acdb35852f}
+
+
+Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_metric}{Metric}\textquotesingle{}s value. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdg_1_1deepcore_1_1_metric_t_a171054fd7df03fbeba5118727bda15f3}{dg\+::deepcore\+::\+Metric\+T$<$ T $>$}.
+

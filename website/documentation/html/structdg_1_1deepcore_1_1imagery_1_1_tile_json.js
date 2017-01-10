@@ -1,7 +1,12 @@
 var structdg_1_1deepcore_1_1imagery_1_1_tile_json =
 [
     [ "Center", "structdg_1_1deepcore_1_1imagery_1_1_tile_json_1_1_center.html", "structdg_1_1deepcore_1_1imagery_1_1_tile_json_1_1_center" ],
+    [ "TileJson", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#a6cf2c225e8f36239a8d9c0f96bda6bf1", null ],
+    [ "TileJson", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#acc6e93165ccda5b1d70198390d1fa9ef", null ],
+    [ "TileJson", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#a6d5b4ee20a818a29de0eb6feae9d8431", null ],
     [ "fromJson", "group___imagery_module.html#ga00a8cf6ff58f7d1e46ab5d710efe8e79", null ],
+    [ "operator=", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#ad1fc21511a31885373ac1987215b32a7", null ],
+    [ "operator=", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#ad8427c54a7785023c1e501ad70734089", null ],
     [ "_template", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#aed003e5b44a92c2dcaf84a71fa19acd0", null ],
     [ "acquisition_date", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#afb89809dd8e7f4d6a9387cb50500a31d", null ],
     [ "attribution", "structdg_1_1deepcore_1_1imagery_1_1_tile_json.html#aaa14afeb610f9e02b8ffb7e6641160d6", null ],

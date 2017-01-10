@@ -1,17 +1,12 @@
 var classdg_1_1deepcore_1_1imagery_1_1_map_service_image =
 [
-    [ "MapServiceImage", "group___imagery_module.html#gacf8dbc680dc88bda0c9b8f289b659be4", null ],
-    [ "MapServiceImage", "group___imagery_module.html#gab2e2d296871f5372c45b2c4f55a9120c", null ],
-    [ "blockSize", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#afef951f5317ff1c8781dbd1f7c9876a1", null ],
+    [ "MapServiceImage", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#abdf5dd9f1d43df9198e7f755d383a982", null ],
+    [ "initialTimeout", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a180cfdfa718df0f1368f03d78362e5db", null ],
     [ "maxConnections", "group___imagery_module.html#ga1774c7d4c06c8e18a98db65b088b19b9", null ],
-    [ "numBands", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a1ff44d3ae2adde1c3d0a0304c4139052", null ],
-    [ "origin", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a60100be52a03f32adb25eb8237cd3836", null ],
-    [ "pixelSize", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a0bb95ccc2ad0160d8e2e1a248c26a51e", null ],
-    [ "pixelToProj", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#abcdf7a48a9594c8653ef6d36941ae23a", null ],
-    [ "pixelType", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a248e1db1221651de23b1ef2c155f4124", null ],
-    [ "projToPixel", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a7eaf758ec97a0ffc997721a82beb907a", null ],
-    [ "readImage", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a85793caaddbd6781c6cdc2b8047d2470", null ],
-    [ "readImageAsync", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a4629dabbfca2f1f2ecddcc2439438ff0", null ],
+    [ "numRetries", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a67022c59d300b94c472d3d6b0e4254fb", null ],
+    [ "readBlocks", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a54d32c97fee4bd6e4782c32beaf64fc1", null ],
+    [ "readImage", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a0117186c5bcc7b9f142cd80543f6c4c1", null ],
+    [ "setInitialTimeout", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a0335fe1cbdde4b7329edafeb29c43b1c", null ],
     [ "setMaxConnections", "group___imagery_module.html#gacdb5a20006863ccb0f9601362e635df9", null ],
-    [ "size", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#a1e27b85df43101633e27fd4ee38dd979", null ]
+    [ "setNumRetries", "classdg_1_1deepcore_1_1imagery_1_1_map_service_image.html#ac1b795032697774aaae91ef2ed8c1875", null ]
 ];

@@ -1,5 +1,10 @@
 \hypertarget{namespacedg_1_1deepcore_1_1classification}{}\section{dg\+:\+:deepcore\+:\+:classification Namespace Reference}
 \label{namespacedg_1_1deepcore_1_1classification}\index{dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}}
+
+
+Contains classification and feature detection functionality.  
+
+
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,8 +62,14 @@ boost\+::log\+::formatting\+\_\+ostream \& \hyperlink{namespacedg_1_1deepcore_1_
 \item 
 std\+::vector$<$ \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} $>$ \hyperlink{group___classification_module_ga30426b4ff4fd24cceff0dda284ea4a05}{non\+Max\+Suppression} (const vector$<$ \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} $>$ \&window\+Predictions, float overlap\+Threshold)
 \begin{DoxyCompactList}\small\item\em Run Non-\/\+Maximum Suppression (N\+MS) to remove overlapping prediction windows. \end{DoxyCompactList}\item 
+static vector$<$ int $>$ \hyperlink{namespacedg_1_1deepcore_1_1classification_a5b4de12eaaa47332fd96160adb152d6e}{argmax} (const float $\ast$buf, int buf\+Size, int num\+Values)
+\item 
 formatting\+\_\+ostream \& \hyperlink{group___classification_module_ga2ca3a003d928630b46eed89e774eda35}{operator$<$$<$} (formatting\+\_\+ostream \&os, const \hyperlink{group___classification_module_gafa8e703c3646c5f93ada56f3c811aac7}{Model\+Metadata\+::\+Color\+Mode} \&mode)
-\begin{DoxyCompactList}\small\item\em Allows logging a \hyperlink{group___classification_module_gafa8e703c3646c5f93ada56f3c811aac7}{Model\+Metadata\+::\+Color\+Mode} with D\+G\+\_\+\+L\+OG. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allows logging a \hyperlink{group___classification_module_gafa8e703c3646c5f93ada56f3c811aac7}{Model\+Metadata\+::\+Color\+Mode} with D\+G\+\_\+\+L\+OG. \end{DoxyCompactList}\item 
+static vector$<$ vector$<$ const \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} $\ast$ $>$ $>$ \hyperlink{namespacedg_1_1deepcore_1_1classification_a35bbb1bc49ff748a106cc46510a8c605}{index\+By\+Label} (const vector$<$ \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} $>$ \&window\+Predictions)
+\item 
+static void \hyperlink{namespacedg_1_1deepcore_1_1classification_aad018c85056765ac4163143920b17cdc}{nms} (const vector$<$ const \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} $\ast$ $>$ \&window\+Predictions, float threshold, vector$<$ \hyperlink{structdg_1_1deepcore_1_1classification_1_1_window_prediction}{Window\+Prediction} $>$ \&filtered)
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,7 +77,35 @@ constexpr int \hyperlink{namespacedg_1_1deepcore_1_1classification_aa446ed99e9dd
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Contains classification and feature detection functionality. 
+
 \subsection{Function Documentation}
+\index{dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}!argmax@{argmax}}
+\index{argmax@{argmax}!dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}}
+\subsubsection[{\texorpdfstring{argmax(const float $\ast$buf, int buf\+Size, int num\+Values)}{argmax(const float *buf, int bufSize, int numValues)}}]{\setlength{\rightskip}{0pt plus 5cm}static vector$<$ int $>$ dg\+::deepcore\+::classification\+::argmax (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$}]{buf, }
+\item[{int}]{buf\+Size, }
+\item[{int}]{num\+Values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1classification_a5b4de12eaaa47332fd96160adb152d6e}{}\label{namespacedg_1_1deepcore_1_1classification_a5b4de12eaaa47332fd96160adb152d6e}
+\index{dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}!index\+By\+Label@{index\+By\+Label}}
+\index{index\+By\+Label@{index\+By\+Label}!dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}}
+\subsubsection[{\texorpdfstring{index\+By\+Label(const vector$<$ Window\+Prediction $>$ \&window\+Predictions)}{indexByLabel(const vector< WindowPrediction > &windowPredictions)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ const {\bf Window\+Prediction} $\ast$ $>$ $>$ dg\+::deepcore\+::classification\+::index\+By\+Label (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Window\+Prediction} $>$ \&}]{window\+Predictions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1classification_a35bbb1bc49ff748a106cc46510a8c605}{}\label{namespacedg_1_1deepcore_1_1classification_a35bbb1bc49ff748a106cc46510a8c605}
+\index{dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}!nms@{nms}}
+\index{nms@{nms}!dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}}
+\subsubsection[{\texorpdfstring{nms(const vector$<$ const Window\+Prediction $\ast$ $>$ \&window\+Predictions, float threshold, vector$<$ Window\+Prediction $>$ \&filtered)}{nms(const vector< const WindowPrediction * > &windowPredictions, float threshold, vector< WindowPrediction > &filtered)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::classification\+::nms (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ const {\bf Window\+Prediction} $\ast$ $>$ \&}]{window\+Predictions, }
+\item[{float}]{threshold, }
+\item[{vector$<$ {\bf Window\+Prediction} $>$ \&}]{filtered}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1classification_aad018c85056765ac4163143920b17cdc}{}\label{namespacedg_1_1deepcore_1_1classification_aad018c85056765ac4163143920b17cdc}
 \index{dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!dg\+::deepcore\+::classification@{dg\+::deepcore\+::classification}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(boost\+::log\+::formatting\+\_\+ostream \&os, const dg\+::deepcore\+::classification\+::\+Model\+Metadata\+::\+Color\+Mode \&mode)}{operator<<(boost::log::formatting_ostream &os, const dg::deepcore::classification::ModelMetadata::ColorMode &mode)}}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::log\+::formatting\+\_\+ostream\& dg\+::deepcore\+::classification\+::operator$<$$<$ (

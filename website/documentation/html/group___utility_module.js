@@ -1,11 +1,25 @@
 var group___utility_module =
 [
+    [ "AsyncError", "classdg_1_1deepcore_1_1_async_error.html", [
+      [ "callOnError", "classdg_1_1deepcore_1_1_async_error.html#a110fc34acc63e4eaa95fab542fa2d622", null ],
+      [ "error", "classdg_1_1deepcore_1_1_async_error.html#a354a3ed3bdb3b9084602fc2ce2028478", null ],
+      [ "rethrowIfError", "classdg_1_1deepcore_1_1_async_error.html#a4a111596085600b017485d15078760eb", null ],
+      [ "setAndCallOnError", "classdg_1_1deepcore_1_1_async_error.html#a8cc565e1f74ae9d7cea234dde3154a5b", null ],
+      [ "setError", "classdg_1_1deepcore_1_1_async_error.html#a02732133e16f3e573f1b6eb971d95bdc", null ],
+      [ "setError", "classdg_1_1deepcore_1_1_async_error.html#afe76c579587f5c6a2255257b9a624c4b", null ],
+      [ "setOnError", "classdg_1_1deepcore_1_1_async_error.html#aa71c047173cec3f535d24f67599d9a18", null ]
+    ] ],
     [ "CallStackSymbol", "structdg_1_1deepcore_1_1_call_stack_symbol.html", [
       [ "address", "structdg_1_1deepcore_1_1_call_stack_symbol.html#a017a9b54f804965736f2c5fb4ab57893", null ],
       [ "file", "structdg_1_1deepcore_1_1_call_stack_symbol.html#a71bdd1fa76748bd2ec9b2259b773a607", null ],
       [ "line", "structdg_1_1deepcore_1_1_call_stack_symbol.html#a3877758a7e10671163f02948abe725d5", null ],
       [ "name", "structdg_1_1deepcore_1_1_call_stack_symbol.html#a6792f8a2df6115a99a1d4fd44c6fafff", null ],
       [ "offset", "structdg_1_1deepcore_1_1_call_stack_symbol.html#a47e23cb3fa667d087a9630017cc478ce", null ]
+    ] ],
+    [ "CloneableValueBase", "structdg_1_1deepcore_1_1_cloneable_value_base.html", [
+      [ "cloneable_value_base", "structdg_1_1deepcore_1_1_cloneable_value_base.html#ad3c830a285f1c7c068fad7d7f10e128e", null ],
+      [ "~CloneableValueBase", "structdg_1_1deepcore_1_1_cloneable_value_base.html#a60a4331acf407c703d44928b4a65009c", null ],
+      [ "clone", "structdg_1_1deepcore_1_1_cloneable_value_base.html#afa66af64c1335e01931f7919f0033730", null ]
     ] ],
     [ "EmbeddedResource", "structdg_1_1deepcore_1_1_embedded_resource.html", [
       [ "data", "structdg_1_1deepcore_1_1_embedded_resource.html#a6f46534d2ed8e52a2d738e6b23bdc095", null ],
@@ -34,6 +48,15 @@ var group___utility_module =
       [ "waitUntil", "classdg_1_1deepcore_1_1_semaphore.html#a43a7c09ca93ddb29911bde136a4d7090", null ],
       [ "waitUntil", "classdg_1_1deepcore_1_1_semaphore.html#a1dbe50feb8a21abd08ac63d1843f7b9e", null ]
     ] ],
+    [ "is_container", "structdg_1_1deepcore_1_1is__container.html", null ],
+    [ "is_specialization_of", "structdg_1_1deepcore_1_1is__specialization__of.html", null ],
+    [ "is_function", "structdg_1_1deepcore_1_1is__function.html", null ],
+    [ "is_shared_ptr", "structdg_1_1deepcore_1_1is__shared__ptr.html", null ],
+    [ "is_cloneable_value", "structdg_1_1deepcore_1_1is__cloneable__value.html", null ],
+    [ "rref_capture", "classdg_1_1deepcore_1_1rref__capture.html", [
+      [ "rref_capture", "classdg_1_1deepcore_1_1rref__capture.html#aab978ba67e7eaebe6be0929354cbcf75", null ],
+      [ "operator T &&", "classdg_1_1deepcore_1_1rref__capture.html#a2303956d75f80a8eed8b0eeb7d7d8fc7", null ]
+    ] ],
     [ "Error", "classdg_1_1deepcore_1_1_error.html", [
       [ "Error", "classdg_1_1deepcore_1_1_error.html#a943534a24622307ce6903bd92d5a60a8", null ],
       [ "Error", "classdg_1_1deepcore_1_1_error.html#aeedd4c1e5e96e13e92eede0f9597a7eb", null ],
@@ -41,7 +64,6 @@ var group___utility_module =
       [ "Error", "group___utility_module.html#gab98e5ffafca5efc6945f295698550854", null ],
       [ "Error", "group___utility_module.html#ga0e8a3ee91298ab22afb0d7146afa23fb", null ],
       [ "Error", "classdg_1_1deepcore_1_1_error.html#a52a11a112b48830eb9d49dc5e394b3d7", null ],
-      [ "Error", "classdg_1_1deepcore_1_1_error.html#ab8d42d693d3c3c915f25f794feaab651", null ],
       [ "Error", "group___utility_module.html#ga50ae85ad2e348408fa2552abfb6570f9", null ],
       [ "Error", "group___utility_module.html#ga3d20a4e6ef5f0579707ccf7b01f235b2", null ],
       [ "callStack", "classdg_1_1deepcore_1_1_error.html#af326513a1dad0dde7d595c2b9f9d9d1e", null ],
@@ -52,7 +74,6 @@ var group___utility_module =
       [ "log", "classdg_1_1deepcore_1_1_error.html#a2b4a03a6ce3cc8b5ab2fdc719e270e61", null ],
       [ "message", "group___utility_module.html#ga7269ba8049ed86338733955565242539", null ],
       [ "operator=", "classdg_1_1deepcore_1_1_error.html#a3a6f1fff16acc79358c1a6e45e43ad02", null ],
-      [ "operator=", "classdg_1_1deepcore_1_1_error.html#a530ecc45f43e6c9307b5186e159e64a6", null ],
       [ "what", "group___utility_module.html#ga7dff6b319144bcfcf602e0124fb0fb01", null ]
     ] ],
     [ "MultiProgressDisplay", "classdg_1_1deepcore_1_1_multi_progress_display.html", [
@@ -80,7 +101,6 @@ var group___utility_module =
       [ "UnZipFile", "group___utility_module.html#ga1efd284e3fbbef3d57a598c47a7cc73b", null ],
       [ "UnZipFile", "group___utility_module.html#ga4418028e98c6031359ace40625987864", null ],
       [ "~UnZipFile", "group___utility_module.html#ga325131b751ccc5a391367afb09084036", null ],
-      [ "UnZipFile", "classdg_1_1deepcore_1_1_un_zip_file.html#aae918141726089605648d22560cfce7d", null ],
       [ "UnZipFile", "classdg_1_1deepcore_1_1_un_zip_file.html#a1c1da90565db56d9d8eed0f10a8a8b2e", null ],
       [ "close", "group___utility_module.html#ga6f28d71dffa80123aaa68ebf44783d0c", null ],
       [ "encrypted", "group___utility_module.html#gafd884d3fc036bfe37ec3e4e4c272d466", null ],
@@ -104,7 +124,6 @@ var group___utility_module =
       [ "ZipFile", "group___utility_module.html#gaeb5b4a5bdcfb3401601b79d5b2b8d67f", null ],
       [ "ZipFile", "group___utility_module.html#gafa1ff9f05e738574c7ab39179c553a10", null ],
       [ "~ZipFile", "group___utility_module.html#ga4a3d14bf12cdc92d728b1bee2ef3afbe", null ],
-      [ "ZipFile", "classdg_1_1deepcore_1_1_zip_file.html#adf2263875e7094658f836d69056cbcd3", null ],
       [ "ZipFile", "classdg_1_1deepcore_1_1_zip_file.html#a5a254be95e73344dd5abfad64aceeab5", null ],
       [ "addFile", "group___utility_module.html#gabe05472ab2b9e7af516484c107dafe5a", null ],
       [ "addFile", "group___utility_module.html#ga14fc46ab41bdf091a4e278e941e175a0", null ],
@@ -114,11 +133,11 @@ var group___utility_module =
       [ "close", "group___utility_module.html#gab6e19571b30242e6604590e978a932ef", null ],
       [ "operator=", "classdg_1_1deepcore_1_1_zip_file.html#ab424ebe12558c54fb848df2fa015d8bd", null ]
     ] ],
-    [ "DG_CHECK", "group___utility_module.html#gaa226e9947e37cd076e8adf02ab473910", null ],
+    [ "DG_CHECK", "group___utility_module.html#ga7f4f3b960c6275e5faa4d14f15f71f7d", null ],
     [ "DG_CONCAT", "group___utility_module.html#gadf8d173e1b80686691061b680ce1b062", null ],
-    [ "DG_ERROR_INIT", "group___utility_module.html#gaf6227f9c970f2c98edd3520ed616f6ec", null ],
+    [ "DG_ERROR_INIT", "group___utility_module.html#ga3fd0b6b41d830c2e3b357841465ace88", null ],
     [ "DG_ERROR_LOG", "group___utility_module.html#ga43295d768f6d9ee49180610e3d1a99ee", null ],
-    [ "DG_ERROR_THROW", "group___utility_module.html#ga0460fddf1407217eacdeff8e007cbdbf", null ],
+    [ "DG_ERROR_THROW", "group___utility_module.html#ga71c74d9e1b6d7f9d8896d6818a5a0cdf", null ],
     [ "DG_LOG", "group___utility_module.html#gaccdc4ecc408590a0c9e70a014e36df03", null ],
     [ "DG_LOG_LOCAL", "group___utility_module.html#gaf0f303ba463f71805710b4ad637b5140", null ],
     [ "DG_LOG_LOCAL_PARAMS", "group___utility_module.html#ga5da92d91fa3446e9251ec613e360b8d5", null ],
@@ -126,6 +145,7 @@ var group___utility_module =
     [ "DG_VFUNC", "group___utility_module.html#ga0f639943a56e3c011d388b31a68e41e5", null ],
     [ "CallStack", "group___utility_module.html#gabdf2d70ae3aab3c57142eddec69a725c", null ],
     [ "ErrorFunc", "group___utility_module.html#gaa93ea71a4ed4c044369d3b323aec4435", null ],
+    [ "OnErrorFunc", "group___utility_module.html#ga21a199c126b87ba8bfe8ad7952dbaf3b", null ],
     [ "Progress", "group___utility_module.html#gae07fce8a40a5222a0dcd537a0b28a008", null ],
     [ "SimpleProgress", "group___utility_module.html#ga6763018df79e4bdbcd8cd14cea5342b2", null ],
     [ "SingletonStorage", "group___utility_module.html#ga77a5aca6f6f331cac011e7759117ddcb", [

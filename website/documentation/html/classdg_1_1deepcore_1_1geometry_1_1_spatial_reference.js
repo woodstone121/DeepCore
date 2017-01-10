@@ -1,0 +1,28 @@
+var classdg_1_1deepcore_1_1geometry_1_1_spatial_reference =
+[
+    [ "SpatialReference", "group___imagery_module.html#ga00013f2d2c981a6c7182fb165818ef73", null ],
+    [ "~SpatialReference", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#a4559d0b1b1e92be9584c09e964aa9f9a", null ],
+    [ "SpatialReference", "group___imagery_module.html#ga69e2cbc90f02865a0847647e59f64483", null ],
+    [ "SpatialReference", "group___imagery_module.html#gae24120971e90069c45802d2c6eca0472", null ],
+    [ "SpatialReference", "group___imagery_module.html#gae3c45a81c4b51c965c5bbf0b1d01e3b8", null ],
+    [ "SpatialReference", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#a5e7a351aebdf1211fc3e73edd437285c", null ],
+    [ "from", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#af1b1d35423ca07aa3775dfe46e8db4f6", null ],
+    [ "fromEpsg", "group___imagery_module.html#ga4ef6ea29f2717ed5572522fe50b23d99", null ],
+    [ "fromLatLon", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#a625240eeb6fb0ceb10524b5d84f97e82", null ],
+    [ "fromUrn", "group___imagery_module.html#ga926f04f2b75c645a6fcd732c85de507f", null ],
+    [ "fromWkt", "group___imagery_module.html#gaffb292540698074ced3a1dbe8ce7ba64", null ],
+    [ "isGeographic", "group___imagery_module.html#ga104ad283cf3f583194751ebb95ccd36c", null ],
+    [ "isLocal", "group___imagery_module.html#gad3e91dd4112c714c81850ab4c4dc0d2d", null ],
+    [ "isProjected", "group___imagery_module.html#gaae4f5ba455b10e8f1964f9f20b4c486a", null ],
+    [ "operator=", "group___imagery_module.html#gab5c9702deb9e8e005780196b5a5b7b4f", null ],
+    [ "operator==", "group___imagery_module.html#ga447d6d2e3c69d16c90b6efe701b2d306", null ],
+    [ "to", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#a1f43bf8053bab0b45f04dce419089673", null ],
+    [ "toLatLon", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#a1baea411e091246c72e7f7f3023ae2e6", null ],
+    [ "units", "group___imagery_module.html#gabd8135b44030a971a078c0d8fbe2be26", null ],
+    [ "unitsCoefficient", "group___imagery_module.html#gad2a19eadaf57004567c09badf4fdaab3", null ],
+    [ "wkt", "group___imagery_module.html#ga82c05ce0a6e02aa7cec17a68131b5263", null ],
+    [ "GeoTransformation", "classdg_1_1deepcore_1_1geometry_1_1_spatial_reference.html#aedc6a0815d3b502b75d469ff99a7a26a", null ],
+    [ "WEB_MERCATOR", "group___imagery_module.html#ga91bb1b661e9fc39639771e80c1fc98e4", null ],
+    [ "WGS84", "group___imagery_module.html#gaec91c35670e3d08a4113cea23f7f9ed8", null ],
+    [ "WORLD_MERCATOR", "group___imagery_module.html#ga07533c6dcdfd100538307ceef2152f24", null ]
+];

@@ -2,9 +2,17 @@
 \label{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch}\index{dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Batch$<$ T $>$@{dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Batch$<$ T $>$}}
 
 
-Slices an image into windows defined by a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window}{Pyramid\+Sliding\+Window} and groups the results into batches.  
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\\*
+class dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Batch$<$ T $>$}
+
+Slices an image into windows defined by a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window}{Pyramid\+Sliding\+Window} and groups the results into batches. 
 
 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The output data type. Must be a numeric type supported by Caffe. i.\+e. float or unsigned char. \\
+\hline
+\end{DoxyTemplParams}
 
 
 {\ttfamily \#include $<$imagery/\+Pyramid\+Image\+Batch.\+h$>$}
@@ -12,9 +20,9 @@ Slices an image into windows defined by a \hyperlink{classdg_1_1deepcore_1_1imag
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}$<$ T $>$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_a64329b050ba9864aec3e3532c7a2aad3}{value\+\_\+type}
+typedef \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}$<$ T $>$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_a64329b050ba9864aec3e3532c7a2aad3}{value\+\_\+type}
 \item 
-typedef \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}$<$ T $>$ \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_ac40a046993c4d0ccdc5a44659b130c68}{reference}
+typedef \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_image_batch}{Image\+Batch}$<$ T $>$ \& \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_ac40a046993c4d0ccdc5a44659b130c68}{reference}
 \item 
 typedef \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_iterator}{Pyramid\+Image\+Batch\+Iterator}$<$ T $>$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_a4cad1aac53a144da29324e48ea357f78}{iterator}
 \end{DoxyCompactItemize}
@@ -41,19 +49,6 @@ const \hyperlink{namespacedg_1_1deepcore_1_1imagery_ad59888e5453be057c25213ce51d
 \begin{DoxyCompactList}\small\item\em Returns the beginning \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_iterator}{Pyramid\+Image\+Batch\+Iterator}. \end{DoxyCompactList}\item 
 \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_a4cad1aac53a144da29324e48ea357f78}{iterator} \hyperlink{group___imagery_module_ga7e2fa7f2608bc1784f52c8f165fcc2f7}{end} ()
 \begin{DoxyCompactList}\small\item\em Returns the ending \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_image_batch_iterator}{Pyramid\+Image\+Batch\+Iterator}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Detailed Description}
-\subsubsection*{template$<$typename T$>$\\*
-class dg\+::deepcore\+::imagery\+::\+Pyramid\+Image\+Batch$<$ T $>$}
-
-Slices an image into windows defined by a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_pyramid_sliding_window}{Pyramid\+Sliding\+Window} and groups the results into batches. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em T} & The output data type. Must be a numeric type supported by Caffe. i.\+e. float or unsigned char. \\
-\hline
-\end{DoxyTemplParams}
 
 
 \subsection{Member Typedef Documentation}

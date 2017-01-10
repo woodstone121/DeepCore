@@ -5,7 +5,6 @@ var classdg_1_1deepcore_1_1_un_zip_file =
     [ "UnZipFile", "group___utility_module.html#ga1efd284e3fbbef3d57a598c47a7cc73b", null ],
     [ "UnZipFile", "group___utility_module.html#ga4418028e98c6031359ace40625987864", null ],
     [ "~UnZipFile", "group___utility_module.html#ga325131b751ccc5a391367afb09084036", null ],
-    [ "UnZipFile", "classdg_1_1deepcore_1_1_un_zip_file.html#aae918141726089605648d22560cfce7d", null ],
     [ "UnZipFile", "classdg_1_1deepcore_1_1_un_zip_file.html#a1c1da90565db56d9d8eed0f10a8a8b2e", null ],
     [ "close", "group___utility_module.html#ga6f28d71dffa80123aaa68ebf44783d0c", null ],
     [ "encrypted", "group___utility_module.html#gafd884d3fc036bfe37ec3e4e4c272d466", null ],

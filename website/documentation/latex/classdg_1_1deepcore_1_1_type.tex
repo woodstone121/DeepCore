@@ -1,0 +1,438 @@
+\hypertarget{classdg_1_1deepcore_1_1_type}{}\section{dg\+:\+:deepcore\+:\+:Type Class Reference}
+\label{classdg_1_1deepcore_1_1_type}\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+
+
+\subsection{Detailed Description}
+Represents a data type. 
+
+\hyperlink{classdg_1_1deepcore_1_1_type}{Type} class provides a way to describe data type in a portable, runtime reflective way.
+
+To get an instance of the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} object for a data type use \hyperlink{classdg_1_1deepcore_1_1_type_aa142909be95af134c6edf1430de91ed7}{Type\+::find} or \hyperlink{classdg_1_1deepcore_1_1_type_a91d379388e31f698a98fefbc3eb49d2e}{Type\+::get}.
+
+Any data type that participates in the processing framework must be registered using \hyperlink{classdg_1_1deepcore_1_1_type_a50fd91c6f02c14e8ee2683e99783c329}{Type\+::add$<$\+T$>$()} first.
+
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{struct }MyType
+\{
+    \textcolor{keywordtype}{int} value;
+\}
+
+\textcolor{comment}{// ....}
+
+Type::add<MyType>(\textcolor{stringliteral}{"MyType"});
+
+\textcolor{comment}{// ....}
+
+\textcolor{comment}{// Later in the code}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& t1 = Type::get<MyType>();
+\textcolor{comment}{// or}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& t2 = \hyperlink{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{Type::get}(\textcolor{stringliteral}{"MyType"});
+\textcolor{comment}{// or}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& t2 = \hyperlink{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{Type::get}(\textcolor{keyword}{typeid}(MyType));
+\end{DoxyCode}
+ 
+
+{\ttfamily \#include $<$process/\+Type.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{classdg_1_1deepcore_1_1_type_afbf3ce3511318a804bff5f387dde55bb}{name} () const noexcept
+\begin{DoxyCompactList}\small\item\em Gets the type name. \end{DoxyCompactList}\item 
+const std\+::type\+\_\+index \& \hyperlink{classdg_1_1deepcore_1_1_type_a7448319c8cbc7f913a5e054f5aaba8ed}{type} () const noexcept
+\begin{DoxyCompactList}\small\item\em Gets the underlying type\textquotesingle{}s {\ttfamily std\+::type\+\_\+info}. \end{DoxyCompactList}\item 
+const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{classdg_1_1deepcore_1_1_type_a89351963b1ac286ebbabfd5ed5a9be31}{base\+Type} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the base type. \end{DoxyCompactList}\item 
+\hyperlink{group___process_type_ga7df7aa6573baa85be9bbbf9b5916f038}{Type\+Category} \hyperlink{classdg_1_1deepcore_1_1_type_a3143689119d10d57f94b41bfb5bca1e2}{category} () const noexcept
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} category. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_type_ab0872208343650ced69584fdba040ed0}{operator==} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether {\ttfamily rhs} represents the same \hyperlink{classdg_1_1deepcore_1_1_type}{Type} as this object. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_type_a110a62ff965795aa926efc962729c0b0}{operator!=} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether {\ttfamily rhs} does not represent the same \hyperlink{classdg_1_1deepcore_1_1_type}{Type} as this object. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_type_a4c1fe67ba21b430c7f59be7769b6f31a}{operator$<$} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether this object would come before {\ttfamily rhs} in an ordered list. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_type_aeaa6e92a7b3b06baace0543bb3436a40}{operator$<$=} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether this object would come before {\ttfamily rhs} in an ordered list or if this object and {\ttfamily rhs} represent the same object. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_type_ab7f7f06afef3c8aa511b12590b5245e6}{operator$>$} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether this object would come after {\ttfamily rhs} in an ordered list. \end{DoxyCompactList}\item 
+bool \hyperlink{classdg_1_1deepcore_1_1_type_a32e80f1c0b7fb80ab2729de6d5bcbdac}{operator$>$=} (const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether this object would come after {\ttfamily rhs} in an ordered list or if this object and {\ttfamily rhs} represent the same object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\static void \hyperlink{classdg_1_1deepcore_1_1_type_a50fd91c6f02c14e8ee2683e99783c329}{add} (const char $\ast$\hyperlink{classdg_1_1deepcore_1_1_type_afbf3ce3511318a804bff5f387dde55bb}{name})
+\begin{DoxyCompactList}\small\item\em Adds the given type to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} registry. \end{DoxyCompactList}\item 
+static const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{classdg_1_1deepcore_1_1_type_a91d379388e31f698a98fefbc3eb49d2e}{get} (const char $\ast$\hyperlink{classdg_1_1deepcore_1_1_type_afbf3ce3511318a804bff5f387dde55bb}{name})
+\begin{DoxyCompactList}\small\item\em Gets a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given name from the type registry. \end{DoxyCompactList}\item 
+static const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} $\ast$ \hyperlink{classdg_1_1deepcore_1_1_type_aa142909be95af134c6edf1430de91ed7}{find} (const char $\ast$\hyperlink{classdg_1_1deepcore_1_1_type_afbf3ce3511318a804bff5f387dde55bb}{name}) noexcept
+\begin{DoxyCompactList}\small\item\em Finds a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given name from the type registry. \end{DoxyCompactList}\item 
+static const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{classdg_1_1deepcore_1_1_type_a5d8ff6968f0ccc58c8e8ed1057bd8bda}{get} (std\+::type\+\_\+index \hyperlink{classdg_1_1deepcore_1_1_type_a7448319c8cbc7f913a5e054f5aaba8ed}{type})
+\begin{DoxyCompactList}\small\item\em Gets a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given {\ttfamily std\+::type\+\_\+index} from the type registry. \end{DoxyCompactList}\item 
+static const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} $\ast$ \hyperlink{classdg_1_1deepcore_1_1_type_af360bc8a376bea173ada17e4571acd4f}{find} (std\+::type\+\_\+index \hyperlink{classdg_1_1deepcore_1_1_type_a7448319c8cbc7f913a5e054f5aaba8ed}{type}) noexcept
+\begin{DoxyCompactList}\small\item\em Finds a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given {\ttfamily std\+::type\+\_\+info} from the type registry. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{get} ()
+\begin{DoxyCompactList}\small\item\em Gets the given type in the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} registry. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} $\ast$ \hyperlink{classdg_1_1deepcore_1_1_type_a52cc756bc25f7142fdfd23f10144b43a}{find} () noexcept
+\begin{DoxyCompactList}\small\item\em Finds the given type in the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} registry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!add@{add}}
+\index{add@{add}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{add(const char $\ast$name)}{add(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void dg\+::deepcore\+::\+Type\+::add (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classdg_1_1deepcore_1_1_type_a50fd91c6f02c14e8ee2683e99783c329}{}\label{classdg_1_1deepcore_1_1_type_a50fd91c6f02c14e8ee2683e99783c329}
+
+
+Adds the given type to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} registry. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type to add. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & \hyperlink{classdg_1_1deepcore_1_1_type}{Type} name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+It is safe to add a type to the registry multiple times, but \hyperlink{classdg_1_1deepcore_1_1_type}{Type} name for the same type must be the same. 
+\end{DoxyPrecond}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!base\+Type@{base\+Type}}
+\index{base\+Type@{base\+Type}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{base\+Type() const noexcept}{baseType() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} \& dg\+::deepcore\+::\+Type\+::base\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a89351963b1ac286ebbabfd5ed5a9be31}{}\label{classdg_1_1deepcore_1_1_type_a89351963b1ac286ebbabfd5ed5a9be31}
+
+
+Returns the base type. 
+
+Returns the Void \hyperlink{classdg_1_1deepcore_1_1_type}{Type} for \hyperlink{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a8f3d9a4b6a7b7f2c7afa61ca113d0db9}{S\+C\+A\+L\+AR} types, the base class \hyperlink{classdg_1_1deepcore_1_1_type}{Type} for the \hyperlink{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a8eee8e217391199668cbac89472ace53}{O\+B\+J\+E\+CT} types, or the item \hyperlink{classdg_1_1deepcore_1_1_type}{Type} for the \hyperlink{group___process_type_gga7df7aa6573baa85be9bbbf9b5916f038a9bbab5f947b9e3fbb8a399ecc257459b}{C\+O\+N\+T\+A\+I\+N\+ER} types.
+
+\begin{DoxyReturn}{Returns}
+A reference to the base type. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!category@{category}}
+\index{category@{category}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{category() const noexcept}{category() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type\+Category} dg\+::deepcore\+::\+Type\+::category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a3143689119d10d57f94b41bfb5bca1e2}{}\label{classdg_1_1deepcore_1_1_type_a3143689119d10d57f94b41bfb5bca1e2}
+
+
+Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} category. 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} category. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!find@{find}}
+\index{find@{find}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{find(const char $\ast$name) noexcept}{find(const char *name) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} $\ast$ dg\+::deepcore\+::\+Type\+::find (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_aa142909be95af134c6edf1430de91ed7}{}\label{classdg_1_1deepcore_1_1_type_aa142909be95af134c6edf1430de91ed7}
+
+
+Finds a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given name from the type registry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type}, nullptr is returned if the type is not found. The pointer is owned by the type registry and should not be freed.
+\end{DoxyReturn}
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} t = \hyperlink{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{Type::get}(\textcolor{stringliteral}{"Int32"});
+\textcolor{keywordflow}{if}(!t) \{
+    std::cerr << \textcolor{stringliteral}{"Type Int32 not found"} << std::endl;
+\}
+\end{DoxyCode}
+ \index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!find@{find}}
+\index{find@{find}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{find(std\+::type\+\_\+index type) noexcept}{find(std::type_index type) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} $\ast$ dg\+::deepcore\+::\+Type\+::find (
+\begin{DoxyParamCaption}
+\item[{std\+::type\+\_\+index}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_af360bc8a376bea173ada17e4571acd4f}{}\label{classdg_1_1deepcore_1_1_type_af360bc8a376bea173ada17e4571acd4f}
+
+
+Finds a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given {\ttfamily std\+::type\+\_\+info} from the type registry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The {\ttfamily std\+::type\+\_\+index} of the type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type}, nullptr is returned if the type is not found. The pointer is owned by the type registry and should not be freed.
+\end{DoxyReturn}
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} t = \hyperlink{classdg_1_1deepcore_1_1_type_a52cc756bc25f7142fdfd23f10144b43a}{Type::find}(\textcolor{keyword}{typeid}(int32\_t));
+\textcolor{keywordflow}{if}(!t) \{
+    std::cerr << \textcolor{stringliteral}{"Type Int32 not found"} << std::endl;
+\}
+\end{DoxyCode}
+ \index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!find@{find}}
+\index{find@{find}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{find() noexcept}{find() noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const {\bf Type} $\ast$ dg\+::deepcore\+::\+Type\+::find (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a52cc756bc25f7142fdfd23f10144b43a}{}\label{classdg_1_1deepcore_1_1_type_a52cc756bc25f7142fdfd23f10144b43a}
+
+
+Finds the given type in the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} registry. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type to find. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type}, nullptr is returned if the type is not found. The pointer is owned by the type registry and should not be freed.
+\end{DoxyReturn}
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} t = Type::find<int32\_t>();
+\textcolor{keywordflow}{if}(!t) \{
+    std::cerr << \textcolor{stringliteral}{"Type Int32 not found"} << std::endl;
+\}
+\end{DoxyCode}
+ \index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!get@{get}}
+\index{get@{get}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{get(const char $\ast$name)}{get(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} \& dg\+::deepcore\+::\+Type\+::get (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classdg_1_1deepcore_1_1_type_a91d379388e31f698a98fefbc3eb49d2e}{}\label{classdg_1_1deepcore_1_1_type_a91d379388e31f698a98fefbc3eb49d2e}
+
+
+Gets a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given name from the type registry. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{dg\+::deepcore\+::\+Error}} & is thrown if the type is not found. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type}.
+\end{DoxyReturn}
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& t = \hyperlink{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{Type::get}(\textcolor{stringliteral}{"Int32"});
+\end{DoxyCode}
+ \index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!get@{get}}
+\index{get@{get}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{get(std\+::type\+\_\+index type)}{get(std::type_index type)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Type} \& dg\+::deepcore\+::\+Type\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::type\+\_\+index}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classdg_1_1deepcore_1_1_type_a5d8ff6968f0ccc58c8e8ed1057bd8bda}{}\label{classdg_1_1deepcore_1_1_type_a5d8ff6968f0ccc58c8e8ed1057bd8bda}
+
+
+Gets a \hyperlink{classdg_1_1deepcore_1_1_type}{Type} with the given {\ttfamily std\+::type\+\_\+index} from the type registry. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{dg\+::deepcore\+::\+Error}} & is thrown if the type is not found. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The {\ttfamily std\+::type\+\_\+index} of the type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type}.
+\end{DoxyReturn}
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& t = \hyperlink{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{Type::get}(\textcolor{keyword}{typeid}(int32\_t));
+\end{DoxyCode}
+ \index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!get@{get}}
+\index{get@{get}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{get()}{get()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const {\bf Type} \& dg\+::deepcore\+::\+Type\+::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}{}\label{classdg_1_1deepcore_1_1_type_a031153725e4e277bafe43ebc8178afff}
+
+
+Gets the given type in the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} registry. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdg_1_1deepcore_1_1_error}{dg\+::deepcore\+::\+Error}} & is thrown if the type is not found. \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type to find. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \hyperlink{classdg_1_1deepcore_1_1_type}{Type}.
+\end{DoxyReturn}
+{\bfseries Example} 
+\begin{DoxyCode}
+\textcolor{keyword}{const} \textcolor{keyword}{auto}& t = Type::get<int32\_t>();
+\end{DoxyCode}
+ \index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!name@{name}}
+\index{name@{name}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{name() const noexcept}{name() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dg\+::deepcore\+::\+Type\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_afbf3ce3511318a804bff5f387dde55bb}{}\label{classdg_1_1deepcore_1_1_type_afbf3ce3511318a804bff5f387dde55bb}
+
+
+Gets the type name. 
+
+\begin{DoxyReturn}{Returns}
+The type name. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{operator"!=(const Type \&rhs) const noexcept}{operator!=(const Type &rhs) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Type\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a110a62ff965795aa926efc962729c0b0}{}\label{classdg_1_1deepcore_1_1_type_a110a62ff965795aa926efc962729c0b0}
+
+
+Gets whether {\ttfamily rhs} does not represent the same \hyperlink{classdg_1_1deepcore_1_1_type}{Type} as this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether this and {\ttfamily rhs} represent the not the same \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{operator$<$(const Type \&rhs) const noexcept}{operator<(const Type &rhs) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Type\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a4c1fe67ba21b430c7f59be7769b6f31a}{}\label{classdg_1_1deepcore_1_1_type_a4c1fe67ba21b430c7f59be7769b6f31a}
+
+
+Gets whether this object would come before {\ttfamily rhs} in an ordered list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether this object would come before {\ttfamily rhs} in an ordered list. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{operator$<$=(const Type \&rhs) const noexcept}{operator<=(const Type &rhs) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Type\+::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_aeaa6e92a7b3b06baace0543bb3436a40}{}\label{classdg_1_1deepcore_1_1_type_aeaa6e92a7b3b06baace0543bb3436a40}
+
+
+Gets whether this object would come before {\ttfamily rhs} in an ordered list or if this object and {\ttfamily rhs} represent the same object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether this object would come before {\ttfamily rhs} in an ordered list or if this object and {\ttfamily rhs} represent the same object. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{operator==(const Type \&rhs) const noexcept}{operator==(const Type &rhs) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Type\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_ab0872208343650ced69584fdba040ed0}{}\label{classdg_1_1deepcore_1_1_type_ab0872208343650ced69584fdba040ed0}
+
+
+Gets whether {\ttfamily rhs} represents the same \hyperlink{classdg_1_1deepcore_1_1_type}{Type} as this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The type to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether this and {\ttfamily rhs} represent the same \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{operator$>$(const Type \&rhs) const noexcept}{operator>(const Type &rhs) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Type\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_ab7f7f06afef3c8aa511b12590b5245e6}{}\label{classdg_1_1deepcore_1_1_type_ab7f7f06afef3c8aa511b12590b5245e6}
+
+
+Gets whether this object would come after {\ttfamily rhs} in an ordered list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether this object would come after {\ttfamily rhs} in an ordered list. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{operator$>$=(const Type \&rhs) const noexcept}{operator>=(const Type &rhs) const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::\+Type\+::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Type} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a32e80f1c0b7fb80ab2729de6d5bcbdac}{}\label{classdg_1_1deepcore_1_1_type_a32e80f1c0b7fb80ab2729de6d5bcbdac}
+
+
+Gets whether this object would come after {\ttfamily rhs} in an ordered list or if this object and {\ttfamily rhs} represent the same object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether this object would come after {\ttfamily rhs} in an ordered list or if this object and {\ttfamily rhs} represent the same object. 
+\end{DoxyReturn}
+\index{dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}!type@{type}}
+\index{type@{type}!dg\+::deepcore\+::\+Type@{dg\+::deepcore\+::\+Type}}
+\subsubsection[{\texorpdfstring{type() const noexcept}{type() const noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::type\+\_\+index \& dg\+::deepcore\+::\+Type\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}\hypertarget{classdg_1_1deepcore_1_1_type_a7448319c8cbc7f913a5e054f5aaba8ed}{}\label{classdg_1_1deepcore_1_1_type_a7448319c8cbc7f913a5e054f5aaba8ed}
+
+
+Gets the underlying type\textquotesingle{}s {\ttfamily std\+::type\+\_\+info}. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the {\ttfamily std\+::type\+\_\+info}. 
+\end{DoxyReturn}

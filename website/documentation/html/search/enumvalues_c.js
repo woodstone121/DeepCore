@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['readonly',['READONLY',['../group___vector_module.html#gga1ee9d7536b27c1a7852203d093939d2ba7d737e43c359af32ce26dc7a7b575041',1,'dg::deepcore::vector']]],
-  ['real',['REAL',['../namespacedg_1_1deepcore_1_1vector.html#gaedcee2e418daac47dd4516efa9a0b99da8cf125b0e31559ba75a9d9b4f818a554',1,'dg::deepcore::vector']]],
-  ['reserved1',['RESERVED1',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972ad8179a090910d4923b044cbce813c8ea',1,'dg::deepcore']]],
-  ['reserved2',['RESERVED2',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972a0b5885d29a74762639e4b55c51ce2d85',1,'dg::deepcore']]],
-  ['reserved3',['RESERVED3',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972aeb65411a7ccd9efc5037b3d1ca03b8b3',1,'dg::deepcore']]],
-  ['rgb',['RGB',['../group___classification_module.html#ggafa8e703c3646c5f93ada56f3c811aac7a82cdee03dcc18f834282137011a5191b',1,'dg::deepcore::classification::ModelMetadata']]],
-  ['running',['RUNNING',['../group___process_framework.html#gga6cb7b5530ce6ccea164f9157b5b2cc0aa43491564ebcfd38568918efbd6e840fd',1,'dg::deepcore']]]
+  ['parse_5ferror',['PARSE_ERROR',['../namespacedg_1_1deepcore_1_1network.html#a396e76c62ff66c95c20af09d8e45ce44a0524638ba0ab13fe3c437e48c60ba414',1,'dg::deepcore::network']]],
+  ['patched',['PATCHED',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972a558afe9f453959dd62b9e563451aa4f2',1,'dg::deepcore']]],
+  ['point',['POINT',['../group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aaaebdbcb765394d25d6a604589a890f82',1,'dg::deepcore::geometry']]],
+  ['polygon',['POLYGON',['../group___geometry_module.html#ggad9a3ec0b998629dbcf8274512700964aaecdc92bf56d960b73b02ee40125758bc',1,'dg::deepcore::geometry']]]
 ];

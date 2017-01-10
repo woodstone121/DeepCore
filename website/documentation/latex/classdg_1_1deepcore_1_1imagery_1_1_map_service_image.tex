@@ -2,10 +2,8 @@
 \label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image}\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
 
 
-Represents an image back by a web map service.  
-
-
-
+\subsection{Detailed Description}
+Represents an image back by a web map service. 
 
 {\ttfamily \#include $<$imagery/\+Map\+Service\+Image.\+h$>$}
 
@@ -16,247 +14,161 @@ Collaboration diagram for dg\+:\+:deepcore\+:\+:imagery\+:\+:Map\+Service\+Image
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=315pt]{classdg_1_1deepcore_1_1imagery_1_1_map_service_image__coll__graph}
+\includegraphics[width=208pt]{classdg_1_1deepcore_1_1imagery_1_1_map_service_image__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{group___imagery_module_gacf8dbc680dc88bda0c9b8f289b659be4}{Map\+Service\+Image} (const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_downloader}{Tile\+Downloader} \&downloader, const cv\+::\+Point2d \&\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a60100be52a03f32adb25eb8237cd3836}{origin}, const cv\+::\+Size2d \&\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0bb95ccc2ad0160d8e2e1a248c26a51e}{pixel\+Size}, const \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_spatial_reference}{Spatial\+Reference} \&sr, int \hyperlink{group___imagery_module_ga1774c7d4c06c8e18a98db65b088b19b9}{max\+Connections}=10)
+\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_abdf5dd9f1d43df9198e7f755d383a982}{Map\+Service\+Image} (const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_map_service_image_config}{Map\+Service\+Image\+Config} \&config)
 \begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image}{Map\+Service\+Image}. \end{DoxyCompactList}\item 
-\hyperlink{group___imagery_module_gab2e2d296871f5372c45b2c4f55a9120c}{Map\+Service\+Image} (\hyperlink{structdg_1_1deepcore_1_1imagery_1_1_tile_downloader}{Tile\+Downloader} \&\&downloader, cv\+::\+Point2d \&\&\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a60100be52a03f32adb25eb8237cd3836}{origin}, cv\+::\+Size2d \&\&\hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0bb95ccc2ad0160d8e2e1a248c26a51e}{pixel\+Size}, \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_spatial_reference}{Spatial\+Reference} \&\&sr, int \hyperlink{group___imagery_module_ga1774c7d4c06c8e18a98db65b088b19b9}{max\+Connections}=10)
-\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image}{Map\+Service\+Image}. \end{DoxyCompactList}\item 
-cv\+::\+Size \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a1e27b85df43101633e27fd4ee38dd979}{size} () const override
-\begin{DoxyCompactList}\small\item\em Gets the image\textquotesingle{}s pixel size. \end{DoxyCompactList}\item 
-cv\+::\+Point2d \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a60100be52a03f32adb25eb8237cd3836}{origin} () const override
-\begin{DoxyCompactList}\small\item\em Gets the origin in the image\textquotesingle{}s native coordinate system. The origin is the north-\/west corner. \end{DoxyCompactList}\item 
-cv\+::\+Size2d \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0bb95ccc2ad0160d8e2e1a248c26a51e}{pixel\+Size} () const override
-\begin{DoxyCompactList}\small\item\em Gets the pixel size in the image\textquotesingle{}s native coordinate system. \end{DoxyCompactList}\item 
-cv\+::\+Size \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_afef951f5317ff1c8781dbd1f7c9876a1}{block\+Size} () const override
-\begin{DoxyCompactList}\small\item\em Gets the image block size. \end{DoxyCompactList}\item 
-int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a1ff44d3ae2adde1c3d0a0304c4139052}{num\+Bands} () const override
-\begin{DoxyCompactList}\small\item\em Gets the number of raster bands in the image. \end{DoxyCompactList}\item 
-int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a248e1db1221651de23b1ef2c155f4124}{pixel\+Type} () const override
-\begin{DoxyCompactList}\small\item\em Gets the image pixel type as a cv\+::\+Mat type i.\+e. C\+V\+\_\+8U, C\+V\+\_\+8S, C\+V\+\_\+32F, etc. \end{DoxyCompactList}\item 
-cv\+::\+Point2d \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_abcdf7a48a9594c8653ef6d36941ae23a}{pixel\+To\+Proj} (cv\+::\+Point pixel\+Coord) const override
-\begin{DoxyCompactList}\small\item\em Convert a pixel coordinate to the image\textquotesingle{}s coordinate system. \end{DoxyCompactList}\item 
-cv\+::\+Point \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a7eaf758ec97a0ffc997721a82beb907a}{proj\+To\+Pixel} (cv\+::\+Point2d proj\+Coord) const override
-\begin{DoxyCompactList}\small\item\em Convert a coordinate in the image\textquotesingle{}s coordinate system to a pixel coordiante. \end{DoxyCompactList}\item 
-cv\+::\+Mat \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a85793caaddbd6781c6cdc2b8047d2470}{read\+Image} (\hyperlink{group___utility_module_ga6763018df79e4bdbcd8cd14cea5342b2}{Simple\+Progress} progress\+Func=nullptr) const override
-\begin{DoxyCompactList}\small\item\em Reads the image into a cv\+::\+Mat. \end{DoxyCompactList}\item 
-std\+::future$<$ bool $>$ \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a4629dabbfca2f1f2ecddcc2439438ff0}{read\+Image\+Async} (\hyperlink{group___imagery_module_ga2238c2ef34502f68956ddef1f477ad95}{Block\+Read\+Func} read\+Func, \hyperlink{group___utility_module_ga6763018df79e4bdbcd8cd14cea5342b2}{Simple\+Progress} progress\+Func=nullptr) const override
-\begin{DoxyCompactList}\small\item\em Reades the image asynchronously. \end{DoxyCompactList}\item 
 int \hyperlink{group___imagery_module_ga1774c7d4c06c8e18a98db65b088b19b9}{max\+Connections} () const noexcept
 \begin{DoxyCompactList}\small\item\em Gets the number of simultaneous connections to use. \end{DoxyCompactList}\item 
 void \hyperlink{group___imagery_module_gacdb5a20006863ccb0f9601362e635df9}{set\+Max\+Connections} (int connections)
-\begin{DoxyCompactList}\small\item\em Sets the number of simultaneous connections to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the number of simultaneous connections to use. \end{DoxyCompactList}\item 
+int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a67022c59d300b94c472d3d6b0e4254fb}{num\+Retries} () const 
+\begin{DoxyCompactList}\small\item\em Gets number of allowed retries. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_ac1b795032697774aaae91ef2ed8c1875}{set\+Num\+Retries} (int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a67022c59d300b94c472d3d6b0e4254fb}{num\+Retries})
+\begin{DoxyCompactList}\small\item\em Sets number of allowed retries. \end{DoxyCompactList}\item 
+int \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a180cfdfa718df0f1368f03d78362e5db}{initial\+Timeout} () const 
+\begin{DoxyCompactList}\small\item\em Gets the initial timeout value. Timeout values are calculated as 2$\ast$$\ast$num\+Retries $\ast$ initial\+Timeout. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0335fe1cbdde4b7329edafeb29c43b1c}{set\+Initial\+Timeout} (int timeout\+Ms)
+\begin{DoxyCompactList}\small\item\em Sets the initial timeout value. Timeout values are calculated as 2$\ast$$\ast$num\+Retries $\ast$ initial\+Timeout. \end{DoxyCompactList}\item 
+void \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a54d32c97fee4bd6e4782c32beaf64fc1}{read\+Blocks} (const std\+::vector$<$ cv\+::\+Point $>$ \&blocks) override
+\begin{DoxyCompactList}\small\item\em Queues blocks to be read. The blocks are then passed back using \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_geo_image_a2eb4fdc320aee10e8afd337138e2e7e1}{read\+Func()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0117186c5bcc7b9f142cd80543f6c4c1}{read\+Image} (const \hyperlink{structdg_1_1deepcore_1_1imagery_1_1_map_service_image_config}{Map\+Service\+Image\+Config} \&config, const cv\+::\+Rect \&aoi=\{\}, \hyperlink{group___utility_module_ga6763018df79e4bdbcd8cd14cea5342b2}{Simple\+Progress} progress=nullptr)
+\begin{DoxyCompactList}\small\item\em Reads the whole image or an image subset. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Detailed Description}
-Represents an image back by a web map service. 
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!Map\+Service\+Image@{Map\+Service\+Image}}
+\index{Map\+Service\+Image@{Map\+Service\+Image}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
+\subsubsection[{\texorpdfstring{Map\+Service\+Image(const Map\+Service\+Image\+Config \&config)}{MapServiceImage(const MapServiceImageConfig &config)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::\+Map\+Service\+Image (
+\begin{DoxyParamCaption}
+\item[{const {\bf Map\+Service\+Image\+Config} \&}]{config}
+\end{DoxyParamCaption}
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_abdf5dd9f1d43df9198e7f755d383a982}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_abdf5dd9f1d43df9198e7f755d383a982}
+
+
+Constructs a \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_map_service_image}{Map\+Service\+Image}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em config} & Map service image configuration. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!block\+Size@{block\+Size}}
-\index{block\+Size@{block\+Size}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{block\+Size() const override}{blockSize() const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Size dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::block\+Size (
+\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!initial\+Timeout@{initial\+Timeout}}
+\index{initial\+Timeout@{initial\+Timeout}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
+\subsubsection[{\texorpdfstring{initial\+Timeout() const }{initialTimeout() const }}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::initial\+Timeout (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_afef951f5317ff1c8781dbd1f7c9876a1}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_afef951f5317ff1c8781dbd1f7c9876a1}
+) const}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a180cfdfa718df0f1368f03d78362e5db}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a180cfdfa718df0f1368f03d78362e5db}
 
 
-Gets the image block size. 
+Gets the initial timeout value. Timeout values are calculated as 2$\ast$$\ast$num\+Retries $\ast$ initial\+Timeout. 
 
 \begin{DoxyReturn}{Returns}
-The image block size. 
+The initial timeout value in milliseconds. 
 \end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga02738a1beaa1dd55f6d06593fe9a4c6f}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!num\+Bands@{num\+Bands}}
-\index{num\+Bands@{num\+Bands}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{num\+Bands() const override}{numBands() const override}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::num\+Bands (
+\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!num\+Retries@{num\+Retries}}
+\index{num\+Retries@{num\+Retries}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
+\subsubsection[{\texorpdfstring{num\+Retries() const }{numRetries() const }}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::num\+Retries (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a1ff44d3ae2adde1c3d0a0304c4139052}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a1ff44d3ae2adde1c3d0a0304c4139052}
+) const}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a67022c59d300b94c472d3d6b0e4254fb}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a67022c59d300b94c472d3d6b0e4254fb}
 
 
-Gets the number of raster bands in the image. 
-
-\begin{DoxyReturn}{Returns}
-The number of raster bands. 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga27b0bde15551e580dc658947d7d29f61}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!origin@{origin}}
-\index{origin@{origin}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{origin() const override}{origin() const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point2d dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::origin (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a60100be52a03f32adb25eb8237cd3836}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a60100be52a03f32adb25eb8237cd3836}
-
-
-Gets the origin in the image\textquotesingle{}s native coordinate system. The origin is the north-\/west corner. 
+Gets number of allowed retries. 
 
 \begin{DoxyReturn}{Returns}
-The origin. 
+The number of allowed retries. 
 \end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga6dff2792da9db73d8d80e5841edce606}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!pixel\+Size@{pixel\+Size}}
-\index{pixel\+Size@{pixel\+Size}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{pixel\+Size() const override}{pixelSize() const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Size2d dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::pixel\+Size (
+\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!read\+Blocks@{read\+Blocks}}
+\index{read\+Blocks@{read\+Blocks}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
+\subsubsection[{\texorpdfstring{read\+Blocks(const std\+::vector$<$ cv\+::\+Point $>$ \&blocks) override}{readBlocks(const std::vector< cv::Point > &blocks) override}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::read\+Blocks (
 \begin{DoxyParamCaption}
-{}
+\item[{const std\+::vector$<$ cv\+::\+Point $>$ \&}]{blocks}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0bb95ccc2ad0160d8e2e1a248c26a51e}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0bb95ccc2ad0160d8e2e1a248c26a51e}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a54d32c97fee4bd6e4782c32beaf64fc1}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a54d32c97fee4bd6e4782c32beaf64fc1}
 
 
-Gets the pixel size in the image\textquotesingle{}s native coordinate system. 
-
-\begin{DoxyReturn}{Returns}
-The pixel size. 
-\end{DoxyReturn}
+Queues blocks to be read. The blocks are then passed back using \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_geo_image_a2eb4fdc320aee10e8afd337138e2e7e1}{read\+Func()}. 
 
 
-Implements \hyperlink{group___imagery_module_ga11359d5f53eff7d8ac2e661f31eb4f1a}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!pixel\+To\+Proj@{pixel\+To\+Proj}}
-\index{pixel\+To\+Proj@{pixel\+To\+Proj}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{pixel\+To\+Proj(cv\+::\+Point pixel\+Coord) const override}{pixelToProj(cv::Point pixelCoord) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point2d dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::pixel\+To\+Proj (
-\begin{DoxyParamCaption}
-\item[{cv\+::\+Point}]{pixel\+Coord}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_abcdf7a48a9594c8653ef6d36941ae23a}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_abcdf7a48a9594c8653ef6d36941ae23a}
-
-
-Convert a pixel coordinate to the image\textquotesingle{}s coordinate system. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em pixel\+Coord} & A pixel coordinate. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em blocks} & The block to read. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A coordinate in image\textquotesingle{}s coordinate system. 
-\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Read function must be set using \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_geo_image_af836dcf21d949fd76993485242317d8f}{set\+Read\+Func()} prior to calling this method.
+\end{DoxyPrecond}
+This function can either queue blocks for reading or read them synchronously, whatever is more efficient for the implementation. 
 
-
-Implements \hyperlink{group___imagery_module_ga6ef753bbb1d8a5dfa56a72de21af4f08}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!pixel\+Type@{pixel\+Type}}
-\index{pixel\+Type@{pixel\+Type}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{pixel\+Type() const override}{pixelType() const override}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::pixel\+Type (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a248e1db1221651de23b1ef2c155f4124}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a248e1db1221651de23b1ef2c155f4124}
-
-
-Gets the image pixel type as a cv\+::\+Mat type i.\+e. C\+V\+\_\+8U, C\+V\+\_\+8S, C\+V\+\_\+32F, etc. 
-
-\begin{DoxyReturn}{Returns}
-The image pixel type. 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga3cb616a1de3ee19bebfdf14957d90d7c}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!proj\+To\+Pixel@{proj\+To\+Pixel}}
-\index{proj\+To\+Pixel@{proj\+To\+Pixel}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{proj\+To\+Pixel(cv\+::\+Point2d proj\+Coord) const override}{projToPixel(cv::Point2d projCoord) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::proj\+To\+Pixel (
-\begin{DoxyParamCaption}
-\item[{cv\+::\+Point2d}]{proj\+Coord}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a7eaf758ec97a0ffc997721a82beb907a}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a7eaf758ec97a0ffc997721a82beb907a}
-
-
-Convert a coordinate in the image\textquotesingle{}s coordinate system to a pixel coordiante. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em proj\+Coord} & A coordinate in the image\textquotesingle{}s coordinate system. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A pixel coordinate. 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga4935502553685c597c803da24f706b99}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
+Implements \hyperlink{classdg_1_1deepcore_1_1imagery_1_1_geo_image_ab9967ec5b39d1a0247366ff2d32bc883}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
 
 \index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!read\+Image@{read\+Image}}
 \index{read\+Image@{read\+Image}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{read\+Image(\+Simple\+Progress progress\+Func=nullptr) const override}{readImage(SimpleProgress progressFunc=nullptr) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::read\+Image (
+\subsubsection[{\texorpdfstring{read\+Image(const Map\+Service\+Image\+Config \&config, const cv\+::\+Rect \&aoi=\lcurly{}\rcurly{}, Simple\+Progress progress=nullptr)}{readImage(const MapServiceImageConfig &config, const cv::Rect &aoi=\{\}, SimpleProgress progress=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::read\+Image (
 \begin{DoxyParamCaption}
-\item[{{\bf Simple\+Progress}}]{progress\+Func = {\ttfamily nullptr}}
+\item[{const {\bf Map\+Service\+Image\+Config} \&}]{config, }
+\item[{const cv\+::\+Rect \&}]{aoi = {\ttfamily \{\}}, }
+\item[{{\bf Simple\+Progress}}]{progress = {\ttfamily nullptr}}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a85793caaddbd6781c6cdc2b8047d2470}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a85793caaddbd6781c6cdc2b8047d2470}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0117186c5bcc7b9f142cd80543f6c4c1}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0117186c5bcc7b9f142cd80543f6c4c1}
 
 
-Reads the image into a cv\+::\+Mat. 
+Reads the whole image or an image subset. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em progress\+Func} & The progress reporting callback. \\
+\mbox{\tt in}  & {\em config} & The service configuration. \\
+\hline
+\mbox{\tt in}  & {\em aoi} & The optional A\+OI. If {\ttfamily aoi.\+size() == 0}, then the full image extent will be returned. \\
+\hline
+\mbox{\tt in}  & {\em progress} & The optional progress reporting function. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The cv\+::\+Mat containing the pixel data. 
+The image or image subset. 
 \end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga58e7e5d070e788600714a331c5bdaf02}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!read\+Image\+Async@{read\+Image\+Async}}
-\index{read\+Image\+Async@{read\+Image\+Async}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{read\+Image\+Async(\+Block\+Read\+Func read\+Func, Simple\+Progress progress\+Func=nullptr) const override}{readImageAsync(BlockReadFunc readFunc, SimpleProgress progressFunc=nullptr) const override}}]{\setlength{\rightskip}{0pt plus 5cm}future$<$ bool $>$ dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::read\+Image\+Async (
+\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!set\+Initial\+Timeout@{set\+Initial\+Timeout}}
+\index{set\+Initial\+Timeout@{set\+Initial\+Timeout}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
+\subsubsection[{\texorpdfstring{set\+Initial\+Timeout(int timeout\+Ms)}{setInitialTimeout(int timeoutMs)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::set\+Initial\+Timeout (
 \begin{DoxyParamCaption}
-\item[{{\bf Block\+Read\+Func}}]{read\+Func, }
-\item[{{\bf Simple\+Progress}}]{progress\+Func = {\ttfamily nullptr}}
+\item[{int}]{timeout\+Ms}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a4629dabbfca2f1f2ecddcc2439438ff0}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a4629dabbfca2f1f2ecddcc2439438ff0}
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0335fe1cbdde4b7329edafeb29c43b1c}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a0335fe1cbdde4b7329edafeb29c43b1c}
 
 
-Reades the image asynchronously. 
+Sets the initial timeout value. Timeout values are calculated as 2$\ast$$\ast$num\+Retries $\ast$ initial\+Timeout. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em read\+Func} & Function that is called for every block read. \\
-\hline
-\mbox{\tt in}  & {\em progress\+Func} & The progress reporting callback. \\
+\mbox{\tt in}  & {\em timeout\+Ms} & The initial timeout value in milliseconds. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The future that will be true if the download compeleted, false if cancelled. 
-\end{DoxyReturn}
-
-
-Implements \hyperlink{group___imagery_module_ga546feafefa76af28c13edab7a92e1cee}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
-\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!size@{size}}
-\index{size@{size}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
-\subsubsection[{\texorpdfstring{size() const override}{size() const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Size dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::size (
+\index{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}!set\+Num\+Retries@{set\+Num\+Retries}}
+\index{set\+Num\+Retries@{set\+Num\+Retries}!dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image@{dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image}}
+\subsubsection[{\texorpdfstring{set\+Num\+Retries(int num\+Retries)}{setNumRetries(int numRetries)}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::imagery\+::\+Map\+Service\+Image\+::set\+Num\+Retries (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{num\+Retries}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a1e27b85df43101633e27fd4ee38dd979}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_a1e27b85df43101633e27fd4ee38dd979}
+)}\hypertarget{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_ac1b795032697774aaae91ef2ed8c1875}{}\label{classdg_1_1deepcore_1_1imagery_1_1_map_service_image_ac1b795032697774aaae91ef2ed8c1875}
 
 
-Gets the image\textquotesingle{}s pixel size. 
-
-\begin{DoxyReturn}{Returns}
-The image\textquotesingle{}s pixel size. 
-\end{DoxyReturn}
+Sets number of allowed retries. 
 
 
-Implements \hyperlink{group___imagery_module_gaac80b110347bd25c8fbdefef229d89c6}{dg\+::deepcore\+::imagery\+::\+Geo\+Image}.
-
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em num\+Retries} & The number of allowed retries. \\
+\hline
+\end{DoxyParams}

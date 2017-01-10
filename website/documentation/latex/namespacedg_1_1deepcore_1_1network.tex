@@ -1,5 +1,10 @@
 \hypertarget{namespacedg_1_1deepcore_1_1network}{}\section{dg\+:\+:deepcore\+:\+:network Namespace Reference}
 \label{namespacedg_1_1deepcore_1_1network}\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+
+
+Contains networking functionality.  
+
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -31,7 +36,7 @@ class \hyperlink{classdg_1_1deepcore_1_1network_1_1_json_rpc_server}{Json\+Rpc\+
 \begin{DoxyCompactItemize}
 \item 
 using \hyperlink{group___network_module_ga4d618c88e9b1e6e961f70621dc9aab41}{Download\+Callback} = std\+::function$<$ bool(std\+::istream \&stream)$>$
-\begin{DoxyCompactList}\small\item\em Callback for a finished download. \end{DoxyCompactList}\item 
+\item 
 using \hyperlink{group___network_module_ga6a460317d5e2b04bbaa2bb5389ca2ce3}{Download\+Requests} = std\+::vector$<$ \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_request}{Download\+Request} $>$
 \begin{DoxyCompactList}\small\item\em An std\+::vector of \hyperlink{structdg_1_1deepcore_1_1network_1_1_download_request}{Download\+Request} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
@@ -50,6 +55,20 @@ std\+::string \hyperlink{group___network_module_gae91a77df82de63d6bce7940e22d5db
 \begin{DoxyCompactList}\small\item\em Decodes a string previously encoded with url\+Encode, or equivalent. Equivalent to the Java\+Script decode\+U\+R\+I\+Component. \end{DoxyCompactList}\item 
 std\+::string \hyperlink{namespacedg_1_1deepcore_1_1network_af2d3502a6309acacaebc8b19a0cf76bb}{html\+To\+Xml} (const std\+::string \&html)
 \item 
+static atomic$<$ bool $>$ \hyperlink{namespacedg_1_1deepcore_1_1network_a31b61d83b19cb48734e04c7e43f6b470}{verbose\+Logging\+Enabled} (false)
+\item 
+static size\+\_\+t \hyperlink{namespacedg_1_1deepcore_1_1network_a9e2a9407168fd2acdc95c73b187d091b}{write\+Callback} (char $\ast$buffer, size\+\_\+t size, size\+\_\+t nitems, void $\ast$context)
+\item 
+static int \hyperlink{namespacedg_1_1deepcore_1_1network_a451b4f6cdd41452521a3442c7a0aed9a}{debug\+Callback} (C\+U\+RL $\ast$handle, curl\+\_\+infotype type, char $\ast$data, size\+\_\+t size, void $\ast$)
+\item 
+static int \hyperlink{namespacedg_1_1deepcore_1_1network_a1cee786cd5accb26ff7bf0e065ddea6c}{progress\+Callback} (void $\ast$context, curl\+\_\+off\+\_\+t dl\+Total, curl\+\_\+off\+\_\+t dl\+Current, curl\+\_\+off\+\_\+t, curl\+\_\+off\+\_\+t)
+\item 
+static curl\+\_\+slist $\ast$ \hyperlink{namespacedg_1_1deepcore_1_1network_a2f2c3016d250ee26e57336ec000751c9}{create\+Headers} (const vector$<$ string $>$ \&additional\+Headers)
+\item 
+static string \hyperlink{namespacedg_1_1deepcore_1_1network_af8c6ece14ed242de55ae0198cdd6e44a}{init\+Message} (const std\+::string \&url, int code) noexcept
+\item 
+static const string \& \hyperlink{namespacedg_1_1deepcore_1_1network_ace31958a77a7f3ce1bd1aa0cf27f72d4}{status\+From\+Code} (int code) noexcept
+\item 
 int \hyperlink{namespacedg_1_1deepcore_1_1network_a50c68eaf4787d70e3236ceea5c651aed}{code\+From\+Type} (const \hyperlink{namespacedg_1_1deepcore_1_1network_a396e76c62ff66c95c20af09d8e45ce44}{Json\+Rpc\+Error\+Type} type)
 \item 
 std\+::string \hyperlink{namespacedg_1_1deepcore_1_1network_ad7e27867c00b5fbca5999693c70d9e99}{message\+From\+Type} (const \hyperlink{namespacedg_1_1deepcore_1_1network_a396e76c62ff66c95c20af09d8e45ce44}{Json\+Rpc\+Error\+Type} type)
@@ -61,9 +80,20 @@ Json\+::\+Value \hyperlink{namespacedg_1_1deepcore_1_1network_af041406cc8c73fcda
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+static shared\+\_\+ptr$<$ \hyperlink{classdg_1_1deepcore_1_1network_1_1_http_cleanup}{Http\+Cleanup} $>$ \hyperlink{namespacedg_1_1deepcore_1_1network_aa6af71198ea26578d79a088d54bf3fd4}{cleanup}
+\item 
+static mutex \hyperlink{namespacedg_1_1deepcore_1_1network_a37e8315e615e6bb14b06c76f5eff5963}{cleanup\+Mutex}
+\item 
+static const size\+\_\+t \hyperlink{namespacedg_1_1deepcore_1_1network_aab421b85c3d0dc5fecb970e3790f9e0b}{M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN} = 1024
+\item 
 set$<$ long $>$ \hyperlink{namespacedg_1_1deepcore_1_1network_aac2ec119bfabeb0695c296eeffaac58c}{R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES} = \{ 408, 429, 500, 504 \}
+\item 
+static const map$<$ int, string $>$ \hyperlink{namespacedg_1_1deepcore_1_1network_a3c20dd1e9f91ecf06c6776207829cc5e}{H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains networking functionality. 
 
 \subsection{Enumeration Type Documentation}
 \index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!Json\+Rpc\+Error\+Type@{Json\+Rpc\+Error\+Type}}
@@ -98,6 +128,24 @@ A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR\hypertarget{namespacedg_1_1de
 \item[{const {\bf Json\+Rpc\+Error\+Type}}]{type}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacedg_1_1deepcore_1_1network_a50c68eaf4787d70e3236ceea5c651aed}{}\label{namespacedg_1_1deepcore_1_1network_a50c68eaf4787d70e3236ceea5c651aed}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!create\+Headers@{create\+Headers}}
+\index{create\+Headers@{create\+Headers}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{create\+Headers(const vector$<$ string $>$ \&additional\+Headers)}{createHeaders(const vector< string > &additionalHeaders)}}]{\setlength{\rightskip}{0pt plus 5cm}curl\+\_\+slist $\ast$ dg\+::deepcore\+::network\+::create\+Headers (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ string $>$ \&}]{additional\+Headers}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a2f2c3016d250ee26e57336ec000751c9}{}\label{namespacedg_1_1deepcore_1_1network_a2f2c3016d250ee26e57336ec000751c9}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!debug\+Callback@{debug\+Callback}}
+\index{debug\+Callback@{debug\+Callback}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{debug\+Callback(\+C\+U\+R\+L $\ast$handle, curl\+\_\+infotype type, char $\ast$data, size\+\_\+t size, void $\ast$)}{debugCallback(CURL *handle, curl_infotype type, char *data, size_t size, void *)}}]{\setlength{\rightskip}{0pt plus 5cm}static int dg\+::deepcore\+::network\+::debug\+Callback (
+\begin{DoxyParamCaption}
+\item[{C\+U\+RL $\ast$}]{handle, }
+\item[{curl\+\_\+infotype}]{type, }
+\item[{char $\ast$}]{data, }
+\item[{size\+\_\+t}]{size, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a451b4f6cdd41452521a3442c7a0aed9a}{}\label{namespacedg_1_1deepcore_1_1network_a451b4f6cdd41452521a3442c7a0aed9a}
 \index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!from\+Error\+Json@{from\+Error\+Json}}
 \index{from\+Error\+Json@{from\+Error\+Json}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
 \subsubsection[{\texorpdfstring{from\+Error\+Json(const Json\+::\+Value \&root)}{fromErrorJson(const Json::Value &root)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Json\+Rpc\+Error} dg\+::deepcore\+::network\+::from\+Error\+Json (
@@ -112,6 +160,14 @@ A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR\hypertarget{namespacedg_1_1de
 \item[{const std\+::string \&}]{html}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacedg_1_1deepcore_1_1network_af2d3502a6309acacaebc8b19a0cf76bb}{}\label{namespacedg_1_1deepcore_1_1network_af2d3502a6309acacaebc8b19a0cf76bb}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!init\+Message@{init\+Message}}
+\index{init\+Message@{init\+Message}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{init\+Message(const std\+::string \&url, int code) noexcept}{initMessage(const std::string &url, int code) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}static string dg\+::deepcore\+::network\+::init\+Message (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{url, }
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}\hypertarget{namespacedg_1_1deepcore_1_1network_af8c6ece14ed242de55ae0198cdd6e44a}{}\label{namespacedg_1_1deepcore_1_1network_af8c6ece14ed242de55ae0198cdd6e44a}
 \index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!message\+From\+Type@{message\+From\+Type}}
 \index{message\+From\+Type@{message\+From\+Type}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
 \subsubsection[{\texorpdfstring{message\+From\+Type(const Json\+Rpc\+Error\+Type type)}{messageFromType(const JsonRpcErrorType type)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dg\+::deepcore\+::network\+::message\+From\+Type (
@@ -119,6 +175,24 @@ A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR\hypertarget{namespacedg_1_1de
 \item[{const {\bf Json\+Rpc\+Error\+Type}}]{type}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacedg_1_1deepcore_1_1network_ad7e27867c00b5fbca5999693c70d9e99}{}\label{namespacedg_1_1deepcore_1_1network_ad7e27867c00b5fbca5999693c70d9e99}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!progress\+Callback@{progress\+Callback}}
+\index{progress\+Callback@{progress\+Callback}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{progress\+Callback(void $\ast$context, curl\+\_\+off\+\_\+t dl\+Total, curl\+\_\+off\+\_\+t dl\+Current, curl\+\_\+off\+\_\+t, curl\+\_\+off\+\_\+t)}{progressCallback(void *context, curl_off_t dlTotal, curl_off_t dlCurrent, curl_off_t, curl_off_t)}}]{\setlength{\rightskip}{0pt plus 5cm}int dg\+::deepcore\+::network\+::progress\+Callback (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{context, }
+\item[{curl\+\_\+off\+\_\+t}]{dl\+Total, }
+\item[{curl\+\_\+off\+\_\+t}]{dl\+Current, }
+\item[{curl\+\_\+off\+\_\+t}]{, }
+\item[{curl\+\_\+off\+\_\+t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a1cee786cd5accb26ff7bf0e065ddea6c}{}\label{namespacedg_1_1deepcore_1_1network_a1cee786cd5accb26ff7bf0e065ddea6c}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!status\+From\+Code@{status\+From\+Code}}
+\index{status\+From\+Code@{status\+From\+Code}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{status\+From\+Code(int code) noexcept}{statusFromCode(int code) noexcept}}]{\setlength{\rightskip}{0pt plus 5cm}static const string \& dg\+::deepcore\+::network\+::status\+From\+Code (
+\begin{DoxyParamCaption}
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}\hypertarget{namespacedg_1_1deepcore_1_1network_ace31958a77a7f3ce1bd1aa0cf27f72d4}{}\label{namespacedg_1_1deepcore_1_1network_ace31958a77a7f3ce1bd1aa0cf27f72d4}
 \index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!to\+Error\+Json@{to\+Error\+Json}}
 \index{to\+Error\+Json@{to\+Error\+Json}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
 \subsubsection[{\texorpdfstring{to\+Error\+Json(const Json\+Rpc\+Error \&rpc\+Error)}{toErrorJson(const JsonRpcError &rpcError)}}]{\setlength{\rightskip}{0pt plus 5cm}Json\+::\+Value dg\+::deepcore\+::network\+::to\+Error\+Json (
@@ -126,9 +200,38 @@ A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+E\+R\+R\+OR\hypertarget{namespacedg_1_1de
 \item[{const {\bf Json\+Rpc\+Error} \&}]{rpc\+Error}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacedg_1_1deepcore_1_1network_af041406cc8c73fcda34f96399159d9c2}{}\label{namespacedg_1_1deepcore_1_1network_af041406cc8c73fcda34f96399159d9c2}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!verbose\+Logging\+Enabled@{verbose\+Logging\+Enabled}}
+\index{verbose\+Logging\+Enabled@{verbose\+Logging\+Enabled}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{verbose\+Logging\+Enabled(false)}{verboseLoggingEnabled(false)}}]{\setlength{\rightskip}{0pt plus 5cm}static atomic$<$bool$>$ dg\+::deepcore\+::network\+::verbose\+Logging\+Enabled (
+\begin{DoxyParamCaption}
+\item[{false}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a31b61d83b19cb48734e04c7e43f6b470}{}\label{namespacedg_1_1deepcore_1_1network_a31b61d83b19cb48734e04c7e43f6b470}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!write\+Callback@{write\+Callback}}
+\index{write\+Callback@{write\+Callback}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{write\+Callback(char $\ast$buffer, size\+\_\+t size, size\+\_\+t nitems, void $\ast$context)}{writeCallback(char *buffer, size_t size, size_t nitems, void *context)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t dg\+::deepcore\+::network\+::write\+Callback (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{size, }
+\item[{size\+\_\+t}]{nitems, }
+\item[{void $\ast$}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a9e2a9407168fd2acdc95c73b187d091b}{}\label{namespacedg_1_1deepcore_1_1network_a9e2a9407168fd2acdc95c73b187d091b}
 
 
 \subsection{Variable Documentation}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{cleanup}{cleanup}}]{\setlength{\rightskip}{0pt plus 5cm}shared\+\_\+ptr$<${\bf Http\+Cleanup}$>$ dg\+::deepcore\+::network\+::cleanup\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_aa6af71198ea26578d79a088d54bf3fd4}{}\label{namespacedg_1_1deepcore_1_1network_aa6af71198ea26578d79a088d54bf3fd4}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!cleanup\+Mutex@{cleanup\+Mutex}}
+\index{cleanup\+Mutex@{cleanup\+Mutex}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{cleanup\+Mutex}{cleanupMutex}}]{\setlength{\rightskip}{0pt plus 5cm}mutex dg\+::deepcore\+::network\+::cleanup\+Mutex\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a37e8315e615e6bb14b06c76f5eff5963}{}\label{namespacedg_1_1deepcore_1_1network_a37e8315e615e6bb14b06c76f5eff5963}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US@{H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US}}
+\index{H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US@{H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US}{HTTP_STATUS}}]{\setlength{\rightskip}{0pt plus 5cm}const map$<$int, string$>$ dg\+::deepcore\+::network\+::\+H\+T\+T\+P\+\_\+\+S\+T\+A\+T\+US\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_a3c20dd1e9f91ecf06c6776207829cc5e}{}\label{namespacedg_1_1deepcore_1_1network_a3c20dd1e9f91ecf06c6776207829cc5e}
+\index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN@{M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN}}
+\index{M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN@{M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN}{MAX_DEBUG_LEN}}]{\setlength{\rightskip}{0pt plus 5cm}const size\+\_\+t dg\+::deepcore\+::network\+::\+M\+A\+X\+\_\+\+D\+E\+B\+U\+G\+\_\+\+L\+EN = 1024\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{namespacedg_1_1deepcore_1_1network_aab421b85c3d0dc5fecb970e3790f9e0b}{}\label{namespacedg_1_1deepcore_1_1network_aab421b85c3d0dc5fecb970e3790f9e0b}
 \index{dg\+::deepcore\+::network@{dg\+::deepcore\+::network}!R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES@{R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES}}
 \index{R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES@{R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES}!dg\+::deepcore\+::network@{dg\+::deepcore\+::network}}
 \subsubsection[{\texorpdfstring{R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES}{RETRY_RESPONSES}}]{\setlength{\rightskip}{0pt plus 5cm}set$<$long$>$ dg\+::deepcore\+::network\+::\+R\+E\+T\+R\+Y\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES = \{ 408, 429, 500, 504 \}}\hypertarget{namespacedg_1_1deepcore_1_1network_aac2ec119bfabeb0695c296eeffaac58c}{}\label{namespacedg_1_1deepcore_1_1network_aac2ec119bfabeb0695c296eeffaac58c}

@@ -1,19 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classdg_1_1deepcore_1_1_object.html" title="The base class for all the processing pipeline objects. " alt="" coords="220,111,363,138"/>
-<area shape="rect" id="node3" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; NamedObject \&gt;" alt="" coords="411,104,561,145"/>
-<area shape="rect" id="node4" href="$classdg_1_1deepcore_1_1_named_object.html" title="A base class for objects that have a name. " alt="" coords="609,111,795,138"/>
-<area shape="rect" id="node5" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Attribute, NamedObject \&gt;" alt="" coords="843,5,1025,47"/>
-<area shape="rect" id="node9" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Node, NamedObject \&gt;" alt="" coords="851,71,1017,112"/>
-<area shape="rect" id="node11" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Port, NamedObject \&gt;" alt="" coords="855,136,1013,177"/>
-<area shape="rect" id="node15" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Property, NamedObject \&gt;" alt="" coords="843,201,1025,243"/>
-<area shape="rect" id="node6" href="$classdg_1_1deepcore_1_1_attribute.html" title="Base class for Node&#39;s attributes. " alt="" coords="1073,13,1228,39"/>
-<area shape="rect" id="node7" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; AttributeT\&lt; T \&gt;, Attribute \&gt;" alt="" coords="1276,5,1468,47"/>
-<area shape="rect" id="node8" href="$structdg_1_1deepcore_1_1_attribute_t.html" title="A helper template to declare Attribute types. " alt="" coords="1516,13,1711,39"/>
-<area shape="rect" id="node10" href="$classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. " alt="" coords="1083,78,1219,105"/>
-<area shape="rect" id="node12" href="$classdg_1_1deepcore_1_1_port.html" title="Base class for Node&#39;s ports. " alt="" coords="1086,143,1215,170"/>
-<area shape="rect" id="node13" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; PortT\&lt; I, O \&gt;, Port \&gt;" alt="" coords="1294,136,1450,177"/>
-<area shape="rect" id="node14" href="$structdg_1_1deepcore_1_1_port_t.html" title="A helper template to declare Port types. " alt="" coords="1545,136,1682,177"/>
-<area shape="rect" id="node16" href="$classdg_1_1deepcore_1_1_property.html" title="Base class for Node&#39;s properties. " alt="" coords="1073,209,1228,235"/>
-<area shape="rect" id="node17" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; PropertyT\&lt; T \&gt;, Property \&gt;" alt="" coords="1276,201,1468,243"/>
-<area shape="rect" id="node18" href="$structdg_1_1deepcore_1_1_property_t.html" title="A helper template to declare Property types. " alt="" coords="1516,209,1711,235"/>
+<area shape="rect" id="node1" href="$structdg_1_1deepcore_1_1network_1_1_apache_tomcat_error.html" title="Represents an HTML Apache Tomcat error report. " alt="" coords="5,5,156,47"/>
 </map>

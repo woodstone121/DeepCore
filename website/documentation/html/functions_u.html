@@ -29,7 +29,7 @@
             <tr style="height: 56px;">
                 <td id="projectlogo"><img alt="Logo" src="community_logo.png"/></td>
                 <td id="projectalign">
-                    <div id="projectname">DeepCore
+                    <div id="projectname"><a href="https://digitalglobe.github.io/DeepCore/">DeepCore</a>
                     </div>
                     <div id="projectbrief">Deep Learning SDK for Geospatial Data</div>
                 </td>
@@ -111,6 +111,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions_u.html#index_u"><span>u</span></a></li>
       <li><a href="functions_v.html#index_v"><span>v</span></a></li>
       <li><a href="functions_w.html#index_w"><span>w</span></a></li>
+      <li><a href="functions_x.html#index_x"><span>x</span></a></li>
+      <li><a href="functions_y.html#index_y"><span>y</span></a></li>
       <li><a href="functions_z.html#index_z"><span>z</span></a></li>
       <li><a href="functions_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
@@ -148,32 +150,28 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
-<li>underlying_type
-: <a class="el" href="structdg_1_1deepcore_1_1_type_t.html#ae5f072864e1ee6c4d8ef2c025e09ff42">dg::deepcore::TypeT&lt; T &gt;</a>
-</li>
 <li>units()
-: <a class="el" href="group___imagery_module.html#gac88786aa96148f649fc063229cebba89">dg::deepcore::imagery::SpatialReference</a>
+: <a class="el" href="group___imagery_module.html#gabd8135b44030a971a078c0d8fbe2be26">dg::deepcore::geometry::SpatialReference</a>
 </li>
 <li>unitsCoefficient()
-: <a class="el" href="group___imagery_module.html#gab96d28b4a4fc932393d3fc3d536e6a80">dg::deepcore::imagery::SpatialReference</a>
+: <a class="el" href="group___imagery_module.html#gad2a19eadaf57004567c09badf4fdaab3">dg::deepcore::geometry::SpatialReference</a>
 </li>
 <li>UNKNOWN
 : <a class="el" href="group___classification_module.html#ggafa8e703c3646c5f93ada56f3c811aac7afe99adc05982dc48ca8782d131dfeee0">dg::deepcore::classification::ModelMetadata</a>
 </li>
 <li>UnZipFile()
-: <a class="el" href="group___utility_module.html#ga4418028e98c6031359ace40625987864">dg::deepcore::UnZipFile</a>
+: <a class="el" href="group___utility_module.html#gac32fa3973017fa76647d90ab64bbceae">dg::deepcore::UnZipFile</a>
 </li>
 <li>update()
 : <a class="el" href="group___utility_module.html#gadbcb8e02b7d21ce799baa34e93bc9fee">dg::deepcore::MultiProgressDisplay</a>
 </li>
 <li>url
-: <a class="el" href="structdg_1_1deepcore_1_1imagery_1_1_image_download_request.html#a5080adfbdc1224d479c6f1818c832608">dg::deepcore::imagery::ImageDownloadRequest</a>
-, <a class="el" href="structdg_1_1deepcore_1_1network_1_1_download_request.html#a27a77bb34f9c7a50280643a7f5642645">dg::deepcore::network::DownloadRequest</a>
+: <a class="el" href="structdg_1_1deepcore_1_1network_1_1_download_request.html#a27a77bb34f9c7a50280643a7f5642645">dg::deepcore::network::DownloadRequest</a>
 , <a class="el" href="group___network_module.html#ga979dcee6ab51c4f6be456ae242c8f90b">dg::deepcore::network::HttpError</a>
 </li>
 <li>urlTemplate()
 : <a class="el" href="group___imagery_module.html#gaafa4e8cc2a047f6467e227603ccf1a23">dg::deepcore::imagery::MapServiceClient</a>
-, <a class="el" href="structdg_1_1deepcore_1_1imagery_1_1_tile_downloader.html#ac8fb59cb29683585c7f868e6d8a70f6f">dg::deepcore::imagery::TileDownloader</a>
+, <a class="el" href="structdg_1_1deepcore_1_1imagery_1_1_map_service_image_config.html#a8187c250438a019d1e5f9f100fd368e7">dg::deepcore::imagery::MapServiceImageConfig</a>
 , <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_tile_json_client.html#ae244e98e95f177712376a116be409912">dg::deepcore::imagery::TileJsonClient</a>
 , <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_wmts_client.html#ae9ec4a090ea93422dd3beec62c50f5bc">dg::deepcore::imagery::WmtsClient</a>
 </li>
@@ -191,24 +189,20 @@ $(document).ready(function(){initNavTree('functions_u.html','');});
         <!-- id is needed for treeview function! -->
         <ul>
             <li class="footer">
-                <a href="https://www.digitalglobe.com/">&copy; 2016 DigitalGlobe, Inc.</a>
+                <a href="https://www.digitalglobe.com/">2017 DigitalGlobe, Inc.</a>
+            </li>
+            <li class="footer">
+                <a href="mailto:deepcore@digitalglobe.com">Contact DeepCore</a>
             </li>
         </ul>
     </div>
 </body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-85773269-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </html>

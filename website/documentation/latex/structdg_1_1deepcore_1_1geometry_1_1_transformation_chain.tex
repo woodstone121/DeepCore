@@ -1,0 +1,276 @@
+\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain}{}\section{dg\+:\+:deepcore\+:\+:geometry\+:\+:Transformation\+Chain Struct Reference}
+\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain}\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+
+
+\subsection{Detailed Description}
+Represents a chain of coordinate transformations to perform in order. 
+
+{\ttfamily \#include $<$geometry/\+Transformation\+Chain.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:geometry\+:\+:Transformation\+Chain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a465ca21337bb9e529edb0d8b60cfbe38}{Transformation\+Chain} ()=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a0e088e1768bb70a847061b3fd445be9b}{Transformation\+Chain} (std\+::initializer\+\_\+list$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $\ast$ $>$ \hyperlink{namespacedg_1_1deepcore_1_1geometry_a232d4736f4033977fcd9d75e91c768b3}{init})
+\begin{DoxyCompactList}\small\item\em Constructs a Tranformation\+Chain taking ownership of the listed \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4e82357f5019839530419ef5dfb8ad62}{Transformation\+Chain} (std\+::initializer\+\_\+list$<$ std\+::reference\+\_\+wrapper$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$$>$ \hyperlink{namespacedg_1_1deepcore_1_1geometry_a232d4736f4033977fcd9d75e91c768b3}{init})
+\begin{DoxyCompactList}\small\item\em Constructs a Tranformation\+Chain initialized with listed \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a13e8f48dc6aa57ba5701d444e04892ea}{Transformation\+Chain} (std\+::initializer\+\_\+list$<$ \hyperlink{classdg_1_1deepcore_1_1rref__capture}{rref\+\_\+capture}$<$ std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$$>$$>$ \hyperlink{namespacedg_1_1deepcore_1_1geometry_a232d4736f4033977fcd9d75e91c768b3}{init})
+\begin{DoxyCompactList}\small\item\em Constructs a Tranformation\+Chain taking ownership of the listed \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects. \end{DoxyCompactList}\item 
+cv\+::\+Point2d \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a6d783f6b2e293389aa56581b0855c52b}{transform} (const cv\+::\+Point2d \&p) const override
+\begin{DoxyCompactList}\small\item\em Transforms a point. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a2a5d78b5e8d4147f81c02dfae2905bf2}{inverse} () const override
+\begin{DoxyCompactList}\small\item\em Returns an inverse of this transformation. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_ad399116480e22fd354a3a4ea23fe7c1f}{is\+Identity} () const override
+\begin{DoxyCompactList}\small\item\em Returns whether the chain is empty, or if all transformations in the chain are identity transformations. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a612740c7482afab8039138ca4cd268f4}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a74f127f92e5dffd68411b51cfab2b3a2}{operator==} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em Returns whether {\ttfamily rhs} is equivalent to this. \end{DoxyCompactList}\item 
+void \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4b0cd8c4646de8957469387fbd3abcc0}{compact} () override
+\begin{DoxyCompactList}\small\item\em Compact or optimize the transformation, normally a noop. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a305e6a2df733dd02a5ba3649ef24bbcf}{append} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em If possible, appends {\ttfamily rhs} to this transformation to form a single combined transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::ptr\+\_\+deque$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_aab8b8b0c9477345178730985c417f92a}{chain}
+\begin{DoxyCompactList}\small\item\em The coordinate transformations to perform in order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!Transformation\+Chain@{Transformation\+Chain}}
+\index{Transformation\+Chain@{Transformation\+Chain}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{Transformation\+Chain()=default}{TransformationChain()=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::\+Transformation\+Chain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a465ca21337bb9e529edb0d8b60cfbe38}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a465ca21337bb9e529edb0d8b60cfbe38}
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!Transformation\+Chain@{Transformation\+Chain}}
+\index{Transformation\+Chain@{Transformation\+Chain}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{Transformation\+Chain(std\+::initializer\+\_\+list$<$ Transformation $\ast$ $>$ init)}{TransformationChain(std::initializer_list< Transformation * > init)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::\+Transformation\+Chain (
+\begin{DoxyParamCaption}
+\item[{std\+::initializer\+\_\+list$<$ {\bf Transformation} $\ast$ $>$}]{init}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a0e088e1768bb70a847061b3fd445be9b}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a0e088e1768bb70a847061b3fd445be9b}
+
+
+Constructs a Tranformation\+Chain taking ownership of the listed \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em init} & The \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} object pointers to add to the chain. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!Transformation\+Chain@{Transformation\+Chain}}
+\index{Transformation\+Chain@{Transformation\+Chain}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{Transformation\+Chain(std\+::initializer\+\_\+list$<$ std\+::reference\+\_\+wrapper$<$ Transformation $>$$>$ init)}{TransformationChain(std::initializer_list< std::reference_wrapper< Transformation >> init)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::\+Transformation\+Chain (
+\begin{DoxyParamCaption}
+\item[{std\+::initializer\+\_\+list$<$ std\+::reference\+\_\+wrapper$<$ {\bf Transformation} $>$$>$}]{init}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4e82357f5019839530419ef5dfb8ad62}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4e82357f5019839530419ef5dfb8ad62}
+
+
+Constructs a Tranformation\+Chain initialized with listed \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em init} & The \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects to add to the chain. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!Transformation\+Chain@{Transformation\+Chain}}
+\index{Transformation\+Chain@{Transformation\+Chain}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{Transformation\+Chain(std\+::initializer\+\_\+list$<$ rref\+\_\+capture$<$ std\+::unique\+\_\+ptr$<$ Transformation $>$$>$$>$ init)}{TransformationChain(std::initializer_list< rref_capture< std::unique_ptr< Transformation >>> init)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::\+Transformation\+Chain (
+\begin{DoxyParamCaption}
+\item[{std\+::initializer\+\_\+list$<$ {\bf rref\+\_\+capture}$<$ std\+::unique\+\_\+ptr$<$ {\bf Transformation} $>$$>$$>$}]{init}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a13e8f48dc6aa57ba5701d444e04892ea}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a13e8f48dc6aa57ba5701d444e04892ea}
+
+
+Constructs a Tranformation\+Chain taking ownership of the listed \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em init} & The \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} object {\ttfamily std\+::unique\+\_\+ptr(s)} to add to the chain.\\
+\hline
+\end{DoxyParams}
+{\bfseries Example}
+
+An example of usage of this is creating a lat/lon-\/to-\/pixel transformation for a Geo\+Image. {\ttfamily image} in this example is an instance of Geo\+Image\+:
+
+
+\begin{DoxyCode}
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a465ca21337bb9e529edb0d8b60cfbe38}{TransformationChain} llToPixel \{
+    image\_->spatialReference().fromLatLon(),
+    image\_->pixelToProj().inverse()
+\};
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!append@{append}}
+\index{append@{append}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{append(const Transformation \&rhs) const override}{append(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::append (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a305e6a2df733dd02a5ba3649ef24bbcf}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a305e6a2df733dd02a5ba3649ef24bbcf}
+
+
+If possible, appends {\ttfamily rhs} to this transformation to form a single combined transformation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The transformation to append to this. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The combined transformation, or {\ttfamily nullptr} if concatenation is not possible.
+\end{DoxyReturn}
+The combined transformation is equivalent to first transforming the object by this transformation, then by {\ttfamily rhs}. 
+
+Reimplemented from \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_ae67c450f28cd7fa5cb4607b5cf6d04a9}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{clone() const override}{clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a612740c7482afab8039138ca4cd268f4}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a612740c7482afab8039138ca4cd268f4}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ Transformation $>$}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!compact@{compact}}
+\index{compact@{compact}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{compact() override}{compact() override}}]{\setlength{\rightskip}{0pt plus 5cm}void dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::compact (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4b0cd8c4646de8957469387fbd3abcc0}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4b0cd8c4646de8957469387fbd3abcc0}
+
+
+Compact or optimize the transformation, normally a noop. 
+
+
+
+Reimplemented from \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_aa6ae47727744b0ed3eed5630bfcc8e98}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!inverse@{inverse}}
+\index{inverse@{inverse}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{inverse() const override}{inverse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a2a5d78b5e8d4147f81c02dfae2905bf2}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a2a5d78b5e8d4147f81c02dfae2905bf2}
+
+
+Returns an inverse of this transformation. 
+
+\begin{DoxyReturn}{Returns}
+The inverse of this transformation. {\ttfamily nullptr} is returned if no inverse is available. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a2f707de3ae95f13861d5ddbb2125b26c}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{is\+Identity() const override}{isIdentity() const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::is\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_ad399116480e22fd354a3a4ea23fe7c1f}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_ad399116480e22fd354a3a4ea23fe7c1f}
+
+
+Returns whether the chain is empty, or if all transformations in the chain are identity transformations. 
+
+\begin{DoxyReturn}{Returns}
+whether the chain is empty, or if all transformations in the chain are identity transformations.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+It is recommended to run \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_aa6ae47727744b0ed3eed5630bfcc8e98}{Transformation\+::compact()} before checking the chain for identity, since it is possible that transformations within the chain will combine into an identity. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a7423095c12275c3ade1bad443f47dbdd}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{operator==(const Transformation \&rhs) const override}{operator==(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a74f127f92e5dffd68411b51cfab2b3a2}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a74f127f92e5dffd68411b51cfab2b3a2}
+
+
+Returns whether {\ttfamily rhs} is equivalent to this. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The other transformation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily rhs} is equivalent to this.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function will compare to chains of transformations as is, without making sure they can be made equivalent. To make sure the comparison is correct, call \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4b0cd8c4646de8957469387fbd3abcc0}{Transformation\+Chain\+::compact()} on this transformation. If {\ttfamily rhs} is also a \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain}{Transformation\+Chain}, call \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a4b0cd8c4646de8957469387fbd3abcc0}{Transformation\+Chain\+::compact()} on {\ttfamily rhs} as well. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a18f3dec54c0018c032e24d294a4e63a6}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!transform@{transform}}
+\index{transform@{transform}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{transform(const cv\+::\+Point2d \&p) const override}{transform(const cv::Point2d &p) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point2d dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::transform (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Point2d \&}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a6d783f6b2e293389aa56581b0855c52b}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_a6d783f6b2e293389aa56581b0855c52b}
+
+
+Transforms a point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & The point to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed point. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a1a7c7cf330f61adeba1803dd3651d479}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+
+
+\subsection{Member Data Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}!chain@{chain}}
+\index{chain@{chain}!dg\+::deepcore\+::geometry\+::\+Transformation\+Chain@{dg\+::deepcore\+::geometry\+::\+Transformation\+Chain}}
+\subsubsection[{\texorpdfstring{chain}{chain}}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::ptr\+\_\+deque$<${\bf Transformation}$>$ dg\+::deepcore\+::geometry\+::\+Transformation\+Chain\+::chain}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_aab8b8b0c9477345178730985c417f92a}{}\label{structdg_1_1deepcore_1_1geometry_1_1_transformation_chain_aab8b8b0c9477345178730985c417f92a}
+
+
+The coordinate transformations to perform in order. 
+

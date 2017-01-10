@@ -1,0 +1,119 @@
+\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{}\section{dg\+:\+:deepcore\+:\+:geometry\+:\+:Affine\+Transformation\+:\+:Coefficients Struct Reference}
+\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+
+
+\subsection{Detailed Description}
+Represents the Affine transformation coefficients. 
+
+The coefficient matrix looks like this\+:
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*3{|X[-1]}|}
+\hline
+tx  &a  &b   \\\cline{1-3}
+ty  &c  &d   \\\cline{1-3}
+\end{longtabu}
+
+
+The transformation is performed with this formula\+:
+
+x\textquotesingle{} = tx + x $\ast$ a + y $\ast$ b y\textquotesingle{} = ty + x $\ast$ c + y $\ast$ d 
+
+{\ttfamily \#include $<$geometry/\+Affine\+Transformation.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a3de0c09185de7efb091d1848ce77507b}{Coefficients} ()=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_af135e2bd2bf1749467175c65f02cb3b8}{Coefficients} (double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_aeb1fd6e7b3fc0362b8634c7d8ec71fb9}{tx}, double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a5b7e8004953585d75272ae0dcdcbe4e6}{a}, double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_acd09c37810ceaca840b00e1d75cfc9dc}{b}, double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a9db9f5df99d6bcb63930e024320215ff}{ty}, double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a1e466cd17851d7d1543440e3ed118776}{c}, double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a04e053dd46073bfab0811374f5f31fb0}{d})
+\begin{DoxyCompactList}\small\item\em Constructs \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients} with the given coefficients. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_ad9c84445af4cd04f8da59a7e7b1ea21f}{operator==} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients} \&rhs) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_aeb1fd6e7b3fc0362b8634c7d8ec71fb9}{tx} = 0.\+0
+\item 
+double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a5b7e8004953585d75272ae0dcdcbe4e6}{a} = 1.\+0
+\item 
+double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_acd09c37810ceaca840b00e1d75cfc9dc}{b} = 0.\+0
+\item 
+double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a9db9f5df99d6bcb63930e024320215ff}{ty} = 0.\+0
+\item 
+double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a1e466cd17851d7d1543440e3ed118776}{c} = 0.\+0
+\item 
+double \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a04e053dd46073bfab0811374f5f31fb0}{d} = 1.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!Coefficients@{Coefficients}}
+\index{Coefficients@{Coefficients}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{Coefficients()=default}{Coefficients()=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::\+Coefficients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a3de0c09185de7efb091d1848ce77507b}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a3de0c09185de7efb091d1848ce77507b}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!Coefficients@{Coefficients}}
+\index{Coefficients@{Coefficients}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{Coefficients(double tx, double a, double b, double ty, double c, double d)}{Coefficients(double tx, double a, double b, double ty, double c, double d)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::\+Coefficients (
+\begin{DoxyParamCaption}
+\item[{double}]{tx, }
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double}]{ty, }
+\item[{double}]{c, }
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_af135e2bd2bf1749467175c65f02cb3b8}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_af135e2bd2bf1749467175c65f02cb3b8}
+
+
+Constructs \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients} with the given coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tx} & The {\itshape tx} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em a} & The {\itshape a} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em b} & The {\itshape b} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em ty} & The {\itshape ty} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em c} & The {\itshape c} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em d} & The {\itshape d} coefficient. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{operator==(const Coefficients \&rhs) const }{operator==(const Coefficients &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coefficients} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_ad9c84445af4cd04f8da59a7e7b1ea21f}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_ad9c84445af4cd04f8da59a7e7b1ea21f}
+
+
+\subsection{Member Data Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!a@{a}}
+\index{a@{a}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{a}{a}}]{\setlength{\rightskip}{0pt plus 5cm}double dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::a = 1.\+0}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a5b7e8004953585d75272ae0dcdcbe4e6}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a5b7e8004953585d75272ae0dcdcbe4e6}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!b@{b}}
+\index{b@{b}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{b}{b}}]{\setlength{\rightskip}{0pt plus 5cm}double dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::b = 0.\+0}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_acd09c37810ceaca840b00e1d75cfc9dc}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_acd09c37810ceaca840b00e1d75cfc9dc}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!c@{c}}
+\index{c@{c}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{c}{c}}]{\setlength{\rightskip}{0pt plus 5cm}double dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::c = 0.\+0}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a1e466cd17851d7d1543440e3ed118776}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a1e466cd17851d7d1543440e3ed118776}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!d@{d}}
+\index{d@{d}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{d}{d}}]{\setlength{\rightskip}{0pt plus 5cm}double dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::d = 1.\+0}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a04e053dd46073bfab0811374f5f31fb0}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a04e053dd46073bfab0811374f5f31fb0}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!tx@{tx}}
+\index{tx@{tx}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{tx}{tx}}]{\setlength{\rightskip}{0pt plus 5cm}double dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::tx = 0.\+0}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_aeb1fd6e7b3fc0362b8634c7d8ec71fb9}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_aeb1fd6e7b3fc0362b8634c7d8ec71fb9}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}!ty@{ty}}
+\index{ty@{ty}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients}}
+\subsubsection[{\texorpdfstring{ty}{ty}}]{\setlength{\rightskip}{0pt plus 5cm}double dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Coefficients\+::ty = 0.\+0}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a9db9f5df99d6bcb63930e024320215ff}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients_a9db9f5df99d6bcb63930e024320215ff}

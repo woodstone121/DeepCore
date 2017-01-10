@@ -2,10 +2,8 @@
 \label{classdg_1_1deepcore_1_1_error}\index{dg\+::deepcore\+::\+Error@{dg\+::deepcore\+::\+Error}}
 
 
-Represents a Deep\+Core error.  
-
-
-
+\subsection{Detailed Description}
+Represents a Deep\+Core error. 
 
 {\ttfamily \#include $<$utility/\+Error.\+h$>$}
 
@@ -22,6 +20,10 @@ Represents a Deep\+Core error.
 \begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error}. \end{DoxyCompactList}\item 
 \hyperlink{group___utility_module_ga0e8a3ee91298ab22afb0d7146afa23fb}{Error} (const std\+::string \&\hyperlink{group___utility_module_ga0b75e32780cb8534179ff3c060739496}{file}, const unsigned int \hyperlink{group___utility_module_ga13437b5caffe754b7a32fc3c514907e5}{line}, const std\+::string \&\hyperlink{group___utility_module_gaa69c98222c56544a9094154a8eab4db9}{function}, const std\+::string \&\hyperlink{group___utility_module_ga7269ba8049ed86338733955565242539}{message})
 \begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error}. \end{DoxyCompactList}\item 
+\hyperlink{classdg_1_1deepcore_1_1_error_a52a11a112b48830eb9d49dc5e394b3d7}{Error} (const \hyperlink{classdg_1_1deepcore_1_1_error}{Error} \&)=default
+\item 
+\hyperlink{classdg_1_1deepcore_1_1_error}{Error} \& \hyperlink{classdg_1_1deepcore_1_1_error_a3a6f1fff16acc79358c1a6e45e43ad02}{operator=} (const \hyperlink{classdg_1_1deepcore_1_1_error}{Error} \&)=default
+\item 
 virtual const char $\ast$ \hyperlink{group___utility_module_ga7dff6b319144bcfcf602e0124fb0fb01}{what} () const noexceptoverride
 \begin{DoxyCompactList}\small\item\em Returns the error description in format \char`\"{}\{message\} in \{function\}, file\+: \{file\}, line\+: \{line\}.\char`\"{}. \end{DoxyCompactList}\item 
 const std\+::string \& \hyperlink{group___utility_module_ga0b75e32780cb8534179ff3c060739496}{file} () const noexcept
@@ -49,9 +51,6 @@ static \hyperlink{classdg_1_1deepcore_1_1_error}{Error} \hyperlink{group___utili
 \hyperlink{group___utility_module_ga3d20a4e6ef5f0579707ccf7b01f235b2}{Error} (const char $\ast$\hyperlink{group___utility_module_ga0b75e32780cb8534179ff3c060739496}{file}, const unsigned int \hyperlink{group___utility_module_ga13437b5caffe754b7a32fc3c514907e5}{line}, const char $\ast$\hyperlink{group___utility_module_gaa69c98222c56544a9094154a8eab4db9}{function}, const std\+::string \&\hyperlink{group___utility_module_ga7269ba8049ed86338733955565242539}{message}, const \hyperlink{group___utility_module_gabdf2d70ae3aab3c57142eddec69a725c}{Call\+Stack} \&call\+Stack\+Override)
 \begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error} with ability to override the callstack. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-
-\subsection{Detailed Description}
-Represents a Deep\+Core error. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{dg\+::deepcore\+::\+Error@{dg\+::deepcore\+::\+Error}!Error@{Error}}
@@ -84,6 +83,13 @@ Constructs an \hyperlink{classdg_1_1deepcore_1_1_error}{Error} with parameters o
 {\em message} & The error message. \\
 \hline
 \end{DoxyParams}
+\index{dg\+::deepcore\+::\+Error@{dg\+::deepcore\+::\+Error}!Error@{Error}}
+\index{Error@{Error}!dg\+::deepcore\+::\+Error@{dg\+::deepcore\+::\+Error}}
+\subsubsection[{\texorpdfstring{Error(const Error \&)=default}{Error(const Error &)=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::\+Error\+::\+Error (
+\begin{DoxyParamCaption}
+\item[{const {\bf Error} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classdg_1_1deepcore_1_1_error_a52a11a112b48830eb9d49dc5e394b3d7}{}\label{classdg_1_1deepcore_1_1_error_a52a11a112b48830eb9d49dc5e394b3d7}
 
 
 \subsection{Member Function Documentation}
@@ -108,3 +114,10 @@ The callstack.
 \item[{const std\+::string \&}]{channel}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classdg_1_1deepcore_1_1_error_a2b4a03a6ce3cc8b5ab2fdc719e270e61}{}\label{classdg_1_1deepcore_1_1_error_a2b4a03a6ce3cc8b5ab2fdc719e270e61}
+\index{dg\+::deepcore\+::\+Error@{dg\+::deepcore\+::\+Error}!operator=@{operator=}}
+\index{operator=@{operator=}!dg\+::deepcore\+::\+Error@{dg\+::deepcore\+::\+Error}}
+\subsubsection[{\texorpdfstring{operator=(const Error \&)=default}{operator=(const Error &)=default}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Error}\& dg\+::deepcore\+::\+Error\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Error} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{classdg_1_1deepcore_1_1_error_a3a6f1fff16acc79358c1a6e45e43ad02}{}\label{classdg_1_1deepcore_1_1_error_a3a6f1fff16acc79358c1a6e45e43ad02}

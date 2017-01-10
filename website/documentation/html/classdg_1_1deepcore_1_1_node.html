@@ -29,7 +29,7 @@
             <tr style="height: 56px;">
                 <td id="projectlogo"><img alt="Logo" src="community_logo.png"/></td>
                 <td id="projectalign">
-                    <div id="projectname">DeepCore
+                    <div id="projectname"><a href="https://digitalglobe.github.io/DeepCore/">DeepCore</a>
                     </div>
                     <div id="projectbrief">Deep Learning SDK for Geospatial Data</div>
                 </td>
@@ -115,10 +115,10 @@ $(document).ready(function(){initNavTree('classdg_1_1deepcore_1_1_node.html','')
 <div class="title">dg::deepcore::Node Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="group___process.html">Processing</a> &raquo; <a class="el" href="group___process_framework.html">Framework</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Base class for processing framework nodes.  
- <a href="classdg_1_1deepcore_1_1_node.html#details">More...</a></p>
-
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for processing framework nodes. </p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a> implementations should not inherit from this class directly, use <a class="el" href="structdg_1_1deepcore_1_1_node_t.html" title="A helper template to inherit from the Node class. ">NodeT</a> instead.</dd></dl>
+<p><b>Example</b> </p><div class="fragment"><div class="line"><span class="keyword">class </span>MyNode : <span class="keyword">public</span> NodeT&lt;MyNode, Node&gt;</div><div class="line">{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">// Create your input and output Ports, Atributes, and Properties here.</span></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99">init</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a23edc019ecfa40357fddf55861ec2092">setInputs</a>({</div><div class="line">            port::Foo::create(<span class="stringliteral">&quot;Foo&quot;</span>)</div><div class="line">        });</div><div class="line"></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#aac67a930b471ada2d1038965a59f17f3">setOutputs</a>({</div><div class="line">            port::Bar::create(<span class="stringliteral">&quot;Bar&quot;</span>)</div><div class="line">        });</div><div class="line"></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a9fedbd6a255711fe28efd9c9ac80374c">setAttrs</a>({</div><div class="line">            <a class="code" href="group___process_attributes.html#ga685518764bcfc2ffb146ef7eb5882b3b">attr::UInt32</a>(<span class="stringliteral">&quot;Size&quot;</span>),</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        });</div><div class="line"></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a51eecd22edf086dd1ab03af684f91c0d">setProps</a>({</div><div class="line">            <a class="code" href="group___process_properties.html#gaf4b72b7a32150a9db0aa1ce09139aa15">prop::UInt32</a>(<span class="stringliteral">&quot;ActualSize&quot;</span>),</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        });</div><div class="line"></div><div class="line">        <span class="comment">// do more initialization ...</span></div><div class="line">    }</div><div class="line"></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#a2efcf271a58556b5d1e961795885facb">setup</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// Do your setup actions here. This is the time to set your Properties.</span></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a24db8fed9656e8dab99eaa0c1f02e3cb">props</a>(<span class="stringliteral">&quot;ActualSize&quot;</span>).setValue(42);</div><div class="line">        <span class="comment">// ...</span></div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#ab602547ac51ca40c06b0c3d4073bb1f4">tearDown</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// close your files and free your resources here</span></div><div class="line">        <span class="comment">// ...</span></div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#a3b0d2e8c397f3d039dea77b8c7fdf53e">pull</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// This is where you request data from your input ports. Usually only</span></div><div class="line">        <span class="comment">// the sink nodes will do this, but any node is allowed to request</span></div><div class="line">        <span class="comment">// data.</span></div><div class="line">        <span class="keyword">auto</span>&amp; foo = <a class="code" href="classdg_1_1deepcore_1_1_node.html#ab989e614ca802698356be8a5d46faa49">input</a>(<span class="stringliteral">&quot;Foo&quot;</span>);</div><div class="line">        foo.put(dataRequest);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">// You must override this method, the rest are optional</span></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#aef240255b12a25d235fffa1c206e4925">process</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// do the work here.</span></div><div class="line">        <span class="keyword">auto</span>&amp; foo = <a class="code" href="classdg_1_1deepcore_1_1_node.html#ab989e614ca802698356be8a5d46faa49">input</a>(<span class="stringliteral">&quot;Foo&quot;</span>);</div><div class="line">        <span class="keyword">auto</span>&amp; bar = <a class="code" href="classdg_1_1deepcore_1_1_node.html#a2f88c5f894f2151877525cf305129a8f">output</a>(<span class="stringliteral">&quot;Bar&quot;</span>);</div><div class="line"></div><div class="line">        <span class="keyword">auto</span>&amp; requests = bar.getAll();</div><div class="line">        <span class="keyword">auto</span>&amp; responses = foo.getAll();</div><div class="line"></div><div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; request : requests) {</div><div class="line">            <span class="comment">// don&#39;t forget to check for cancelled() as often as you can</span></div><div class="line">            <span class="keywordflow">if</span>(cancelled()) { <span class="keywordflow">return</span>; }</div><div class="line"></div><div class="line">            <span class="comment">// .....</span></div><div class="line">            foo.put(newRequest);</div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; response : responses) {</div><div class="line">            <span class="comment">// also a good idea to report progress if you can, that will</span></div><div class="line">            <span class="comment">// also give you a &quot;cancelled&quot; status as well.</span></div><div class="line">            <span class="keywordflow">if</span>(!<a class="code" href="classdg_1_1deepcore_1_1_node.html#a500a8cb8d1f8f8438025fe196aea04ab">progress</a>(myProgress)) { <span class="keywordflow">return</span>; }</div><div class="line"></div><div class="line">            <span class="comment">// .....</span></div><div class="line">            bar.put(newResponse);</div><div class="line">        }</div><div class="line">    }</div><div class="line">};</div></div><!-- fragment --> </div>
 <p><code>#include &lt;<a class="el" href="_node_8h_source.html">process/Node.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for dg::deepcore::Node:</div>
@@ -207,6 +207,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d2743103cf759313c06948238b04b1d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdg_1_1deepcore_1_1_property.html">Property</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a1d2743103cf759313c06948238b04b1d">prop</a> (const std::string &amp;<a class="el" href="classdg_1_1deepcore_1_1_named_object.html#ab1379a28467dd39a81ceb02cf50dedde">name</a>) const </td></tr>
 <tr class="memdesc:a1d2743103cf759313c06948238b04b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classdg_1_1deepcore_1_1_property.html" title="Base class for Node&#39;s properties. ">Property</a>.  <a href="#a1d2743103cf759313c06948238b04b1d">More...</a><br /></td></tr>
 <tr class="separator:a1d2743103cf759313c06948238b04b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e97304bbd6a18baec9c4a08bad1dd3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a27e97304bbd6a18baec9c4a08bad1dd3">metrics</a> () const </td></tr>
+<tr class="memdesc:a27e97304bbd6a18baec9c4a08bad1dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a> names.  <a href="#a27e97304bbd6a18baec9c4a08bad1dd3">More...</a><br /></td></tr>
+<tr class="separator:a27e97304bbd6a18baec9c4a08bad1dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9142212348d2d4e2849dc81f745d0d53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a9142212348d2d4e2849dc81f745d0d53">metric</a> (const std::string &amp;<a class="el" href="classdg_1_1deepcore_1_1_named_object.html#ab1379a28467dd39a81ceb02cf50dedde">name</a>)</td></tr>
+<tr class="memdesc:a9142212348d2d4e2849dc81f745d0d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>.  <a href="#a9142212348d2d4e2849dc81f745d0d53">More...</a><br /></td></tr>
+<tr class="separator:a9142212348d2d4e2849dc81f745d0d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af754575f3f03e6d247efee6e8bc6dcb4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#af754575f3f03e6d247efee6e8bc6dcb4">metric</a> (const std::string &amp;<a class="el" href="classdg_1_1deepcore_1_1_named_object.html#ab1379a28467dd39a81ceb02cf50dedde">name</a>) const </td></tr>
+<tr class="memdesc:af754575f3f03e6d247efee6e8bc6dcb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>.  <a href="#af754575f3f03e6d247efee6e8bc6dcb4">More...</a><br /></td></tr>
+<tr class="separator:af754575f3f03e6d247efee6e8bc6dcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classdg_1_1deepcore_1_1_object_t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdg_1_1deepcore_1_1_object_t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1_object_t.html">dg::deepcore::ObjectT&lt; Node, NamedObject &gt;</a></td></tr>
 <tr class="memitem:ab2513323757cee301fb419901535f7b1 inherit pub_methods_classdg_1_1deepcore_1_1_object_t"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_object_t.html#ab2513323757cee301fb419901535f7b1">ptr</a> ()</td></tr>
 <tr class="memdesc:ab2513323757cee301fb419901535f7b1 inherit pub_methods_classdg_1_1deepcore_1_1_object_t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an std::shared_ptr&lt;T&gt; of this object or <a class="el" href="classdg_1_1deepcore_1_1_object_t.html#ab54805874b0d6881bc1d1a2ced7d49bf">T::Ptr</a> for short.  <a href="#ab2513323757cee301fb419901535f7b1">More...</a><br /></td></tr>
@@ -286,6 +295,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aef240255b12a25d235fffa1c206e4925"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#aef240255b12a25d235fffa1c206e4925">process</a> ()=0</td></tr>
 <tr class="memdesc:aef240255b12a25d235fffa1c206e4925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the main work for this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>.  <a href="#aef240255b12a25d235fffa1c206e4925">More...</a><br /></td></tr>
 <tr class="separator:aef240255b12a25d235fffa1c206e4925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36897e066128a1104c0e77b8ff500f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#ae36897e066128a1104c0e77b8ff500f3">setError</a> (std::exception_ptr <a class="el" href="classdg_1_1deepcore_1_1_object_t.html#ab2513323757cee301fb419901535f7b1">ptr</a>)</td></tr>
+<tr class="memdesc:ae36897e066128a1104c0e77b8ff500f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <code>ptr</code> has an exception sets the node error condition and cancels processing.  <a href="#ae36897e066128a1104c0e77b8ff500f3">More...</a><br /></td></tr>
+<tr class="separator:ae36897e066128a1104c0e77b8ff500f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8330c5614e67cb467e47aec393545d7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdg_1_1deepcore_1_1_semaphore.html">Semaphore</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a8330c5614e67cb467e47aec393545d7e">workAvailable</a> ()</td></tr>
+<tr class="memdesc:a8330c5614e67cb467e47aec393545d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">When this semaphore is notified, there may work available for the node.  <a href="#a8330c5614e67cb467e47aec393545d7e">More...</a><br /></td></tr>
+<tr class="separator:a8330c5614e67cb467e47aec393545d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23edc019ecfa40357fddf55861ec2092"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
 <tr class="memitem:a23edc019ecfa40357fddf55861ec2092"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a23edc019ecfa40357fddf55861ec2092">setInputs</a> (RangeT &amp;&amp;<a class="el" href="classdg_1_1deepcore_1_1_node.html#a1e89da6fe3941b07685f0f57e6d2a4c6">inputs</a>)</td></tr>
 <tr class="memdesc:a23edc019ecfa40357fddf55861ec2092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a23edc019ecfa40357fddf55861ec2092">More...</a><br /></td></tr>
@@ -314,6 +329,48 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad395c871edf1de6cc630e1a19472cc93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#ad395c871edf1de6cc630e1a19472cc93">setProps</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Property::Ptr</a> &gt; <a class="el" href="classdg_1_1deepcore_1_1_node.html#a24db8fed9656e8dab99eaa0c1f02e3cb">props</a>)</td></tr>
 <tr class="memdesc:ad395c871edf1de6cc630e1a19472cc93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#ad395c871edf1de6cc630e1a19472cc93">More...</a><br /></td></tr>
 <tr class="separator:ad395c871edf1de6cc630e1a19472cc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e3da3dfc4823caaba39b42cbd258df"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
+<tr class="memitem:a98e3da3dfc4823caaba39b42cbd258df"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a98e3da3dfc4823caaba39b42cbd258df">setMetrics</a> (RangeT &amp;&amp;mets)</td></tr>
+<tr class="memdesc:a98e3da3dfc4823caaba39b42cbd258df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a98e3da3dfc4823caaba39b42cbd258df">More...</a><br /></td></tr>
+<tr class="separator:a98e3da3dfc4823caaba39b42cbd258df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28313d67a357f9e63dbc618715f02888"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a28313d67a357f9e63dbc618715f02888">setMetrics</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Metric::Ptr</a> &gt; mets)</td></tr>
+<tr class="memdesc:a28313d67a357f9e63dbc618715f02888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a28313d67a357f9e63dbc618715f02888">More...</a><br /></td></tr>
+<tr class="separator:a28313d67a357f9e63dbc618715f02888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec1b419f8b7031649b6902cc690a85b"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
+<tr class="memitem:a6ec1b419f8b7031649b6902cc690a85b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a6ec1b419f8b7031649b6902cc690a85b">addInputs</a> (RangeT &amp;&amp;<a class="el" href="classdg_1_1deepcore_1_1_node.html#a1e89da6fe3941b07685f0f57e6d2a4c6">inputs</a>)</td></tr>
+<tr class="memdesc:a6ec1b419f8b7031649b6902cc690a85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a6ec1b419f8b7031649b6902cc690a85b">More...</a><br /></td></tr>
+<tr class="separator:a6ec1b419f8b7031649b6902cc690a85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7450705ca067788cf0d77d2af7074b0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a7450705ca067788cf0d77d2af7074b0b">addInputs</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Port::Ptr</a> &gt; <a class="el" href="classdg_1_1deepcore_1_1_node.html#a1e89da6fe3941b07685f0f57e6d2a4c6">inputs</a>)</td></tr>
+<tr class="memdesc:a7450705ca067788cf0d77d2af7074b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a7450705ca067788cf0d77d2af7074b0b">More...</a><br /></td></tr>
+<tr class="separator:a7450705ca067788cf0d77d2af7074b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6cef5818fb0e04f1ded65b79b624c3"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
+<tr class="memitem:adb6cef5818fb0e04f1ded65b79b624c3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#adb6cef5818fb0e04f1ded65b79b624c3">addOutputs</a> (RangeT &amp;&amp;<a class="el" href="classdg_1_1deepcore_1_1_node.html#a81cc04114467cd4724c05dfa3d1e975c">outputs</a>)</td></tr>
+<tr class="memdesc:adb6cef5818fb0e04f1ded65b79b624c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the output <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#adb6cef5818fb0e04f1ded65b79b624c3">More...</a><br /></td></tr>
+<tr class="separator:adb6cef5818fb0e04f1ded65b79b624c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8b97bd4e0359f9a022dcc29dcbe4ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a8b8b97bd4e0359f9a022dcc29dcbe4ae">addOutputs</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Port::Ptr</a> &gt; <a class="el" href="classdg_1_1deepcore_1_1_node.html#a81cc04114467cd4724c05dfa3d1e975c">outputs</a>)</td></tr>
+<tr class="memdesc:a8b8b97bd4e0359f9a022dcc29dcbe4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the output <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a8b8b97bd4e0359f9a022dcc29dcbe4ae">More...</a><br /></td></tr>
+<tr class="separator:a8b8b97bd4e0359f9a022dcc29dcbe4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e02addf850ed8e5a5c79b2127f5e31"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
+<tr class="memitem:af3e02addf850ed8e5a5c79b2127f5e31"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#af3e02addf850ed8e5a5c79b2127f5e31">addAttrs</a> (RangeT &amp;&amp;<a class="el" href="classdg_1_1deepcore_1_1_node.html#acbf1083b3a00898cbd5170ac730e5777">attrs</a>)</td></tr>
+<tr class="memdesc:af3e02addf850ed8e5a5c79b2127f5e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <a class="el" href="classdg_1_1deepcore_1_1_attribute.html">Attributes</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#af3e02addf850ed8e5a5c79b2127f5e31">More...</a><br /></td></tr>
+<tr class="separator:af3e02addf850ed8e5a5c79b2127f5e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617b988fbfba7860b91bc1e7f46d67fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a617b988fbfba7860b91bc1e7f46d67fb">addAttrs</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Attribute::Ptr</a> &gt; <a class="el" href="classdg_1_1deepcore_1_1_node.html#acbf1083b3a00898cbd5170ac730e5777">attrs</a>)</td></tr>
+<tr class="memdesc:a617b988fbfba7860b91bc1e7f46d67fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <a class="el" href="classdg_1_1deepcore_1_1_attribute.html">Attributes</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a617b988fbfba7860b91bc1e7f46d67fb">More...</a><br /></td></tr>
+<tr class="separator:a617b988fbfba7860b91bc1e7f46d67fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d597936ca9b59ea9932da1738d98791"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
+<tr class="memitem:a8d597936ca9b59ea9932da1738d98791"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a8d597936ca9b59ea9932da1738d98791">addProps</a> (RangeT &amp;&amp;<a class="el" href="classdg_1_1deepcore_1_1_node.html#a24db8fed9656e8dab99eaa0c1f02e3cb">props</a>)</td></tr>
+<tr class="memdesc:a8d597936ca9b59ea9932da1738d98791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a8d597936ca9b59ea9932da1738d98791">More...</a><br /></td></tr>
+<tr class="separator:a8d597936ca9b59ea9932da1738d98791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0cb94c9913b7283f4bb74c8aff0c75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a0e0cb94c9913b7283f4bb74c8aff0c75">addProps</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Property::Ptr</a> &gt; <a class="el" href="classdg_1_1deepcore_1_1_node.html#a24db8fed9656e8dab99eaa0c1f02e3cb">props</a>)</td></tr>
+<tr class="memdesc:a0e0cb94c9913b7283f4bb74c8aff0c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a0e0cb94c9913b7283f4bb74c8aff0c75">More...</a><br /></td></tr>
+<tr class="separator:a0e0cb94c9913b7283f4bb74c8aff0c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0815e338b1fe1183bf9e05997af9a53e"><td class="memTemplParams" colspan="2">template&lt;class RangeT &gt; </td></tr>
+<tr class="memitem:a0815e338b1fe1183bf9e05997af9a53e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a0815e338b1fe1183bf9e05997af9a53e">addMetrics</a> (RangeT &amp;&amp;mets)</td></tr>
+<tr class="memdesc:a0815e338b1fe1183bf9e05997af9a53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a0815e338b1fe1183bf9e05997af9a53e">More...</a><br /></td></tr>
+<tr class="separator:a0815e338b1fe1183bf9e05997af9a53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0e4be56fa5f8231ae53e1053bb9994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_node.html#a7d0e4be56fa5f8231ae53e1053bb9994">addMetrics</a> (std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Metric::Ptr</a> &gt; <a class="el" href="classdg_1_1deepcore_1_1_node.html#a24db8fed9656e8dab99eaa0c1f02e3cb">props</a>)</td></tr>
+<tr class="memdesc:a7d0e4be56fa5f8231ae53e1053bb9994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>.  <a href="#a7d0e4be56fa5f8231ae53e1053bb9994">More...</a><br /></td></tr>
+<tr class="separator:a7d0e4be56fa5f8231ae53e1053bb9994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classdg_1_1deepcore_1_1_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classdg_1_1deepcore_1_1_object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classdg_1_1deepcore_1_1_object.html">dg::deepcore::Object</a></td></tr>
 <tr class="memitem:a0982aef61087daaf910acfe8b6dcac99 inherit pro_methods_classdg_1_1deepcore_1_1_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99">init</a> ()</td></tr>
 <tr class="memdesc:a0982aef61087daaf910acfe8b6dcac99 inherit pro_methods_classdg_1_1deepcore_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the instance. Inheriting classes should override this method and use it instead of the constructor.  <a href="#a0982aef61087daaf910acfe8b6dcac99">More...</a><br /></td></tr>
@@ -374,14 +431,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a8ceffb0726dfc320c3e4f0f132d31526 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_object.html#a8ceffb0726dfc320c3e4f0f132d31526">create</a> (const <a class="el" href="classdg_1_1deepcore_1_1_type.html">Type</a> &amp;<a class="el" href="classdg_1_1deepcore_1_1_object.html#a80356589437cb086680c6b5fbd8044d4">type</a>)</td></tr>
 <tr class="memdesc:a8ceffb0726dfc320c3e4f0f132d31526 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object of the requested <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a>.  <a href="#a8ceffb0726dfc320c3e4f0f132d31526">More...</a><br /></td></tr>
 <tr class="separator:a8ceffb0726dfc320c3e4f0f132d31526 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46927a287262574d30514af58c650733 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_object.html#a46927a287262574d30514af58c650733">create</a> (const std::type_info &amp;<a class="el" href="classdg_1_1deepcore_1_1_object.html#a80356589437cb086680c6b5fbd8044d4">type</a>)</td></tr>
-<tr class="memdesc:a46927a287262574d30514af58c650733 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object of the requested <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a>.  <a href="#a46927a287262574d30514af58c650733">More...</a><br /></td></tr>
-<tr class="separator:a46927a287262574d30514af58c650733 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abebce2036d380211beed7d435e3c8999 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1deepcore_1_1_object.html#abebce2036d380211beed7d435e3c8999">create</a> (std::type_index <a class="el" href="classdg_1_1deepcore_1_1_object.html#a80356589437cb086680c6b5fbd8044d4">type</a>)</td></tr>
+<tr class="memdesc:abebce2036d380211beed7d435e3c8999 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object of the requested <a class="el" href="classdg_1_1deepcore_1_1_type.html" title="Represents a data type. ">Type</a>.  <a href="#abebce2036d380211beed7d435e3c8999">More...</a><br /></td></tr>
+<tr class="separator:abebce2036d380211beed7d435e3c8999 inherit pub_static_methods_classdg_1_1deepcore_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for processing framework nodes. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a> implementations should not inherit from this class directly, use <a class="el" href="structdg_1_1deepcore_1_1_node_t.html" title="A helper template to inherit from the Node class. ">NodeT</a> instead.</dd></dl>
-<p><b>Example</b> </p><div class="fragment"><div class="line"><span class="keyword">class </span>MyNode : <span class="keyword">public</span> NodeT&lt;MyNode, Node&gt;</div><div class="line">{</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="comment">// Create your input and output Ports, Atributes, and Properties here.</span></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99">init</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a23edc019ecfa40357fddf55861ec2092">setInputs</a>({</div><div class="line">            port::Foo::create(<span class="stringliteral">&quot;Foo&quot;</span>)</div><div class="line">        });</div><div class="line"></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#aac67a930b471ada2d1038965a59f17f3">setOutputs</a>({</div><div class="line">            port::Bar::create(<span class="stringliteral">&quot;Bar&quot;</span>)</div><div class="line">        });</div><div class="line"></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a9fedbd6a255711fe28efd9c9ac80374c">setAttrs</a>({</div><div class="line">            <a class="code" href="group___attributes.html#ga685518764bcfc2ffb146ef7eb5882b3b">attr::UInt32</a>(<span class="stringliteral">&quot;Size&quot;</span>),</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        });</div><div class="line"></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a51eecd22edf086dd1ab03af684f91c0d">setProps</a>({</div><div class="line">            <a class="code" href="group___process_properties.html#gaf4b72b7a32150a9db0aa1ce09139aa15">prop::UInt32</a>(<span class="stringliteral">&quot;ActualSize&quot;</span>),</div><div class="line">            <span class="comment">// ...</span></div><div class="line">        });</div><div class="line"></div><div class="line">        <span class="comment">// do more initialization ...</span></div><div class="line">    }</div><div class="line"></div><div class="line"><span class="keyword">protected</span>:</div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#a2efcf271a58556b5d1e961795885facb">setup</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// Do your setup actions here. This is the time to set your Properties.</span></div><div class="line">        <a class="code" href="classdg_1_1deepcore_1_1_node.html#a24db8fed9656e8dab99eaa0c1f02e3cb">props</a>(<span class="stringliteral">&quot;ActualSize&quot;</span>).setValue(42);</div><div class="line">        <span class="comment">// ...</span></div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#ab602547ac51ca40c06b0c3d4073bb1f4">tearDown</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// close your files and free your resources here</span></div><div class="line">        <span class="comment">// ...</span></div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#a3b0d2e8c397f3d039dea77b8c7fdf53e">pull</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// This is where you request data from your input ports. Usually only</span></div><div class="line">        <span class="comment">// the sink nodes will do this, but any node is allowed to request</span></div><div class="line">        <span class="comment">// data.</span></div><div class="line">        <span class="keyword">auto</span>&amp; foo = <a class="code" href="classdg_1_1deepcore_1_1_node.html#ab989e614ca802698356be8a5d46faa49">input</a>(<span class="stringliteral">&quot;Foo&quot;</span>);</div><div class="line">        foo.put(dataRequest);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">// You must override this method, the rest are optional</span></div><div class="line">    <span class="keywordtype">void</span> <a class="code" href="classdg_1_1deepcore_1_1_node.html#aef240255b12a25d235fffa1c206e4925">process</a>()<span class="keyword"> override</span></div><div class="line"><span class="keyword">    </span>{</div><div class="line">        <span class="comment">// do the work here.</span></div><div class="line">        <span class="keyword">auto</span>&amp; foo = <a class="code" href="classdg_1_1deepcore_1_1_node.html#ab989e614ca802698356be8a5d46faa49">input</a>(<span class="stringliteral">&quot;Foo&quot;</span>);</div><div class="line">        <span class="keyword">auto</span>&amp; bar = <a class="code" href="classdg_1_1deepcore_1_1_node.html#a2f88c5f894f2151877525cf305129a8f">output</a>(<span class="stringliteral">&quot;Bar&quot;</span>);</div><div class="line"></div><div class="line">        <span class="keyword">auto</span>&amp; requests = bar.getAll();</div><div class="line">        <span class="keyword">auto</span>&amp; responses = foo.getAll();</div><div class="line"></div><div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; request : requests) {</div><div class="line">            <span class="comment">// don&#39;t forget to check for cancelled() as often as you can</span></div><div class="line">            <span class="keywordflow">if</span>(cancelled()) { <span class="keywordflow">return</span>; }</div><div class="line"></div><div class="line">            <span class="comment">// .....</span></div><div class="line">            foo.put(newRequest);</div><div class="line">        }</div><div class="line"></div><div class="line">        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; response : responses) {</div><div class="line">            <span class="comment">// also a good idea to report progress if you can, that will</span></div><div class="line">            <span class="comment">// also give you a &quot;cancelled&quot; status as well.</span></div><div class="line">            <span class="keywordflow">if</span>(!<a class="code" href="classdg_1_1deepcore_1_1_node.html#a500a8cb8d1f8f8438025fe196aea04ab">progress</a>(myProgress)) { <span class="keywordflow">return</span>; }</div><div class="line"></div><div class="line">            <span class="comment">// .....</span></div><div class="line">            bar.put(newResponse);</div><div class="line">        }</div><div class="line">    }</div><div class="line">};</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adb976ec538663efc018da5093005dfa1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -406,6 +460,336 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af3e02addf850ed8e5a5c79b2127f5e31"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RangeT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addAttrs </td>
+          <td>(</td>
+          <td class="paramtype">RangeT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>attrs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the <a class="el" href="classdg_1_1deepcore_1_1_attribute.html">Attributes</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">attrs</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_attribute.html">Attributes</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a617b988fbfba7860b91bc1e7f46d67fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addAttrs </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Attribute::Ptr</a> &gt;&#160;</td>
+          <td class="paramname"><em>attrs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the <a class="el" href="classdg_1_1deepcore_1_1_attribute.html">Attributes</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">attrs</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_attribute.html">Attributes</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ec1b419f8b7031649b6902cc690a85b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RangeT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addInputs </td>
+          <td>(</td>
+          <td class="paramtype">RangeT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>inputs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inputs</td><td>The input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7450705ca067788cf0d77d2af7074b0b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addInputs </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Port::Ptr</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inputs</td><td>The input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0815e338b1fe1183bf9e05997af9a53e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RangeT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addMetrics </td>
+          <td>(</td>
+          <td class="paramtype">RangeT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>mets</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mets</td><td><a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d0e4be56fa5f8231ae53e1053bb9994"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addMetrics </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Metric::Ptr</a> &gt;&#160;</td>
+          <td class="paramname"><em>mets</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mets</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adb6cef5818fb0e04f1ded65b79b624c3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RangeT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addOutputs </td>
+          <td>(</td>
+          <td class="paramtype">RangeT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>outputs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the output <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">outputs</td><td>The output <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8b8b97bd4e0359f9a022dcc29dcbe4ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addOutputs </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Port::Ptr</a> &gt;&#160;</td>
+          <td class="paramname"><em>outputs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the output <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">outputs</td><td>The output <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8d597936ca9b59ea9932da1738d98791"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RangeT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addProps </td>
+          <td>(</td>
+          <td class="paramtype">RangeT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>props</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">props</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e0cb94c9913b7283f4bb74c8aff0c75"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::addProps </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Property::Ptr</a> &gt;&#160;</td>
+          <td class="paramname"><em>props</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds the <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">props</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ac49c9fe2e0635198b791c58060e5aad2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -622,6 +1006,74 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9142212348d2d4e2849dc81f745d0d53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metric</a> &amp; dg::deepcore::Node::metric </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af754575f3f03e6d247efee6e8bc6dcb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metric</a> &amp; dg::deepcore::Node::metric </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a27e97304bbd6a18baec9c4a08bad1dd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; dg::deepcore::Node::metrics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a list of <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a> names. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list of <a class="el" href="classdg_1_1deepcore_1_1_metric.html" title="Base class for Node&#39;s metrics. ">Metric</a> names. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a535a4f006ea0572a863da4a3b409467f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -748,6 +1200,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Performs the main work for this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>. </p>
 <p>This method is called when there's data on any of the <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>'s <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a> (input or output). The port can process all the data available on the port, or it can process a single transaction and return. In addition, this method can block for long periods of time, occasionally checking if more data is available on one of the <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a> or if processing was cancelled.</p>
 <p><a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a> implementers should check the cancelled() flag as often as it is feasible and use the <a class="el" href="classdg_1_1deepcore_1_1_node.html#a500a8cb8d1f8f8438025fe196aea04ab" title="Gets the progress callback. ">progress()</a> callback to report progress. </p>
+
+<p>Implemented in <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_block_source.html#a08ec451da8ed96c642509dc2c975aa10">dg::deepcore::imagery::GeoBlockSource</a>.</p>
 
 </div>
 </div>
@@ -981,6 +1435,38 @@ template&lt;class RangeT &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae36897e066128a1104c0e77b8ff500f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::setError </td>
+          <td>(</td>
+          <td class="paramtype">std::exception_ptr&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If <code>ptr</code> has an exception sets the node error condition and cancels processing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>The error; </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a23edc019ecfa40357fddf55861ec2092"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1047,6 +1533,78 @@ template&lt;class RangeT &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">inputs</td><td>The input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a98e3da3dfc4823caaba39b42cbd258df"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class RangeT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::setMetrics </td>
+          <td>(</td>
+          <td class="paramtype">RangeT &amp;&amp;&#160;</td>
+          <td class="paramname"><em>mets</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RangeT</td><td>A container holding a list of <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mets</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a28313d67a357f9e63dbc618715f02888"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dg::deepcore::Node::setMetrics </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classdg_1_1deepcore_1_1_object.html#a4565c5c2ba828aaaa4354befbac8b2f9">Metric::Ptr</a> &gt;&#160;</td>
+          <td class="paramname"><em>mets</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. This method should normally called from <a class="el" href="classdg_1_1deepcore_1_1_object.html#a0982aef61087daaf910acfe8b6dcac99" title="Initializes the instance. Inheriting classes should override this method and use it instead of the co...">init()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mets</td><td>The <a class="el" href="classdg_1_1deepcore_1_1_metric.html">Metrics</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1246,6 +1804,8 @@ template&lt;class RangeT &gt; </div>
 <p>This method is called during initialization. The call will always be made from this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>'s worker thread, the same thread as the <a class="el" href="classdg_1_1deepcore_1_1_node.html#aef240255b12a25d235fffa1c206e4925" title="Performs the main work for this Node. ">process()</a> method. Before this method is called, all ports connected to the input <a class="el" href="classdg_1_1deepcore_1_1_port.html">Ports</a> of this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a> will have been initialized, so their <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a> can be accessed.</p>
 <p>This method should open files, make connections, and generally allocate resouces. This is also the place to set this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>'s <a class="el" href="classdg_1_1deepcore_1_1_property.html">Properties</a>. </p>
 
+<p>Reimplemented in <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_block_source.html#a716fcfc4460d2877b0683efc30ecd32f">dg::deepcore::imagery::GeoBlockSource</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a6d99e9f00dd745d25502a14cb13fd272"></a>
@@ -1314,7 +1874,10 @@ template&lt;class RangeT &gt; </div>
 </div><div class="memdoc">
 
 <p>Cleans up after processing has finished. </p>
-<p>This method is called after processing has finished. The call is always made from this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>'s worker thread, the same thread as the <a class="el" href="classdg_1_1deepcore_1_1_node.html#aef240255b12a25d235fffa1c206e4925" title="Performs the main work for this Node. ">process()</a> method. When this method is called, other <a class="el" href="classdg_1_1deepcore_1_1_node.html">Nodes</a> are also in various stages of shutting down, so you should not access other <a class="el" href="classdg_1_1deepcore_1_1_node.html">Nodes</a> from this method. </p>
+<p>This method is called after processing has finished. The call is always made from this <a class="el" href="classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. ">Node</a>'s worker thread, the same thread as the <a class="el" href="classdg_1_1deepcore_1_1_node.html#aef240255b12a25d235fffa1c206e4925" title="Performs the main work for this Node. ">process()</a> method. When this method is called, other <a class="el" href="classdg_1_1deepcore_1_1_node.html">Nodes</a> are also in various stages of shutting down, so you should not access other <a class="el" href="classdg_1_1deepcore_1_1_node.html">Nodes</a> from this method.</p>
+<p>You should always call <a class="el" href="classdg_1_1deepcore_1_1_node.html#ab602547ac51ca40c06b0c3d4073bb1f4" title="Cleans up after processing has finished. ">Node::tearDown()</a> from your overridden method. </p>
+
+<p>Reimplemented in <a class="el" href="classdg_1_1deepcore_1_1imagery_1_1_geo_block_source.html#a1a056b8435ab2b73574b5d10e4341b20">dg::deepcore::imagery::GeoBlockSource</a>.</p>
 
 </div>
 </div>
@@ -1342,6 +1905,32 @@ template&lt;class RangeT &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a8330c5614e67cb467e47aec393545d7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdg_1_1deepcore_1_1_semaphore.html">Semaphore</a> &amp; dg::deepcore::Node::workAvailable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When this semaphore is notified, there may work available for the node. </p>
+<dl class="section return"><dt>Returns</dt><dd>The "work available" semaphore. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- start footer part -->
@@ -1350,24 +1939,20 @@ template&lt;class RangeT &gt; </div>
         <ul>
             <li class="navelem"><a class="el" href="namespacedg.html">dg</a></li><li class="navelem"><a class="el" href="namespacedg_1_1deepcore.html">deepcore</a></li><li class="navelem"><a class="el" href="classdg_1_1deepcore_1_1_node.html">Node</a></li>
             <li class="footer">
-                <a href="https://www.digitalglobe.com/">&copy; 2016 DigitalGlobe, Inc.</a>
+                <a href="https://www.digitalglobe.com/">2017 DigitalGlobe, Inc.</a>
+            </li>
+            <li class="footer">
+                <a href="mailto:deepcore@digitalglobe.com">Contact DeepCore</a>
             </li>
         </ul>
     </div>
 </body>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-85773269-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </html>

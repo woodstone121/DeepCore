@@ -87,4 +87,18 @@ a + h2.groupheader {
 
 .fieldtable th {
     background-image: none;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.fieldtable th + th {
+    border-left: 1px solid #77B3D8;
+}
+
+.fieldtable tr + tr th {
+    background: #ebf4fa;
 }

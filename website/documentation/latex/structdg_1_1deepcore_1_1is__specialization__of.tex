@@ -1,0 +1,26 @@
+\hypertarget{structdg_1_1deepcore_1_1is__specialization__of}{}\section{dg\+:\+:deepcore\+:\+:is\+\_\+specialization\+\_\+of$<$ X, Y $>$ Struct Template Reference}
+\label{structdg_1_1deepcore_1_1is__specialization__of}\index{dg\+::deepcore\+::is\+\_\+specialization\+\_\+of$<$ X, Y $>$@{dg\+::deepcore\+::is\+\_\+specialization\+\_\+of$<$ X, Y $>$}}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class X, class Y$>$\\*
+struct dg\+::deepcore\+::is\+\_\+specialization\+\_\+of$<$ X, Y $>$}
+
+Checks whether {\ttfamily Y} is a specialization of template {\ttfamily X}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em X} & The template. \\
+\hline
+{\em Y} & The template instantiation.\\
+\hline
+\end{DoxyTemplParams}
+{\bfseries Example} 
+\begin{DoxyCode}
+assert((is\_specialization\_of<std::shared\_ptr, int>::value == \textcolor{keyword}{false}));
+assert((is\_specialization\_of<std::shared\_ptr, std::shared\_ptr<int>>::value == \textcolor{keyword}{true}));
+\end{DoxyCode}
+ 
+
+{\ttfamily \#include $<$utility/\+Type\+Traits.\+h$>$}
+

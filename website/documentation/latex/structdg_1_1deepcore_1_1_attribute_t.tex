@@ -1,0 +1,111 @@
+\hypertarget{structdg_1_1deepcore_1_1_attribute_t}{}\section{dg\+:\+:deepcore\+:\+:AttributeT$<$ T $>$ Struct Template Reference}
+\label{structdg_1_1deepcore_1_1_attribute_t}\index{dg\+::deepcore\+::\+Attribute\+T$<$ T $>$@{dg\+::deepcore\+::\+Attribute\+T$<$ T $>$}}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\\*
+struct dg\+::deepcore\+::\+Attribute\+T$<$ T $>$}
+
+A helper template to declare \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} value\textquotesingle{}s data type.\\
+\hline
+\end{DoxyTemplParams}
+The template implements the \hyperlink{structdg_1_1deepcore_1_1_attribute_t_a01feaa6ee7327284f7e618152f733ff1}{value\+Type()} virtual method using the template argument to construct the return \hyperlink{classdg_1_1deepcore_1_1_type}{Type}. 
+
+{\ttfamily \#include $<$process/\+Attribute.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:AttributeT$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{structdg_1_1deepcore_1_1_attribute_t__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1_attribute_t_a96ecb1397afe18629576293bb00929bc}{AttributeT} ()
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} with the default name. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1_attribute_t_acf67f891a842b7207965014262b349ec}{AttributeT} (const char $\ast$\hyperlink{classdg_1_1deepcore_1_1_named_object_ab1379a28467dd39a81ceb02cf50dedde}{name})
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} and sets its name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class U $>$ }\\\hyperlink{structdg_1_1deepcore_1_1_attribute_t_aea9837ba811026a76567ccaca85424b4}{AttributeT} (const char $\ast$\hyperlink{classdg_1_1deepcore_1_1_named_object_ab1379a28467dd39a81ceb02cf50dedde}{name}, U \&\&init\+Value)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} and sets its name and initial value. \end{DoxyCompactList}\item 
+const \hyperlink{classdg_1_1deepcore_1_1_type}{Type} \& \hyperlink{structdg_1_1deepcore_1_1_attribute_t_a01feaa6ee7327284f7e618152f733ff1}{value\+Type} () const override
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute}\textquotesingle{}s value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}!AttributeT@{AttributeT}}
+\index{AttributeT@{AttributeT}!dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}}
+\subsubsection[{\texorpdfstring{Attribute\+T()}{AttributeT()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf dg\+::deepcore\+::\+AttributeT}$<$ T $>$\+::{\bf AttributeT} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1_attribute_t_a96ecb1397afe18629576293bb00929bc}{}\label{structdg_1_1deepcore_1_1_attribute_t_a96ecb1397afe18629576293bb00929bc}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} with the default name. 
+
+The default name is {\ttfamily \hyperlink{structdg_1_1deepcore_1_1_attribute_t_a01feaa6ee7327284f7e618152f733ff1}{value\+Type()}}.\hyperlink{classdg_1_1deepcore_1_1_named_object_ab1379a28467dd39a81ceb02cf50dedde}{name()} \index{dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}!AttributeT@{AttributeT}}
+\index{AttributeT@{AttributeT}!dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}}
+\subsubsection[{\texorpdfstring{Attribute\+T(const char $\ast$name)}{AttributeT(const char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf dg\+::deepcore\+::\+AttributeT}$<$ T $>$\+::{\bf AttributeT} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1_attribute_t_acf67f891a842b7207965014262b349ec}{}\label{structdg_1_1deepcore_1_1_attribute_t_acf67f891a842b7207965014262b349ec}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} and sets its name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}!AttributeT@{AttributeT}}
+\index{AttributeT@{AttributeT}!dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}}
+\subsubsection[{\texorpdfstring{Attribute\+T(const char $\ast$name, U \&\&init\+Value)}{AttributeT(const char *name, U &&initValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ template$<$class U $>$ {\bf dg\+::deepcore\+::\+AttributeT}$<$ T $>$\+::{\bf AttributeT} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{U \&\&}]{init\+Value}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1_attribute_t_aea9837ba811026a76567ccaca85424b4}{}\label{structdg_1_1deepcore_1_1_attribute_t_aea9837ba811026a76567ccaca85424b4}
+
+
+Constructs an \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute} and sets its name and initial value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name. \\
+\hline
+\mbox{\tt in}  & {\em init\+Value} & The initial value. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}!value\+Type@{value\+Type}}
+\index{value\+Type@{value\+Type}!dg\+::deepcore\+::\+AttributeT@{dg\+::deepcore\+::\+AttributeT}}
+\subsubsection[{\texorpdfstring{value\+Type() const override}{valueType() const override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Type} \& {\bf dg\+::deepcore\+::\+AttributeT}$<$ T $>$\+::value\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1_attribute_t_a01feaa6ee7327284f7e618152f733ff1}{}\label{structdg_1_1deepcore_1_1_attribute_t_a01feaa6ee7327284f7e618152f733ff1}
+
+
+Gets the \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute}\textquotesingle{}s value. 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classdg_1_1deepcore_1_1_type}{Type} of \hyperlink{classdg_1_1deepcore_1_1_attribute}{Attribute}\textquotesingle{}s value. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classdg_1_1deepcore_1_1_attribute_a89c2ec9ce2e0dab7ece99571ddc5509d}{dg\+::deepcore\+::\+Attribute}.
+

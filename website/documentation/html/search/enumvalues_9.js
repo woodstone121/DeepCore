@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['no_5fcompression',['NO_COMPRESSION',['../classdg_1_1deepcore_1_1_zip_file.html#afbf537eaa2281817c203388707564bdda386fd795eecb0a3d664109067e7bb2cd',1,'dg::deepcore::ZipFile']]],
-  ['none',['NONE',['../classdg_1_1deepcore_1_1classification_1_1_model.html#gabbae0a103af9e91d0afd0d4cc84b2be4a838741fba7c255fdffa269b273e44c92',1,'dg::deepcore::classification::Model']]]
+  ['mask',['MASK',['../namespacedg_1_1deepcore.html#afd046fec5b746209d21544a49540a972a0a9501840acacfc8efe7522f5340000c',1,'dg::deepcore']]],
+  ['method_5fnot_5ffound',['METHOD_NOT_FOUND',['../namespacedg_1_1deepcore_1_1network.html#a396e76c62ff66c95c20af09d8e45ce44a298057212fa43844273565f820529ab8',1,'dg::deepcore::network']]],
+  ['multiband',['MULTIBAND',['../group___classification_module.html#ggafa8e703c3646c5f93ada56f3c811aac7a72e5b84548a20636c9628c6a06057f06',1,'dg::deepcore::classification::ModelMetadata']]]
 ];

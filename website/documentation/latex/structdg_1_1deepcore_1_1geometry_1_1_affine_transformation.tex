@@ -1,0 +1,283 @@
+\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{}\section{dg\+:\+:deepcore\+:\+:geometry\+:\+:Affine\+Transformation Struct Reference}
+\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+
+
+\subsection{Detailed Description}
+Represents a six-\/parameter Affine transformation. 
+
+{\ttfamily \#include $<$geometry/\+Affine\+Transformation.\+h$>$}
+
+
+
+Collaboration diagram for dg\+:\+:deepcore\+:\+:geometry\+:\+:Affine\+Transformation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients}
+\begin{DoxyCompactList}\small\item\em Represents the Affine transformation coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_afd6dcc755d93563ed9a48e91dd60fade}{Affine\+Transformation} ()=default
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad217fdf19be738506b45d86562a61921}{Affine\+Transformation} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients} \&in\+Coeff)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad9a629a72e7bc4c22008734c13ed5bfd}{Affine\+Transformation} (\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients} \&\&in\+Coeff)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_aa0bb97cf89ad95a843dc30da391ba663}{Affine\+Transformation} (double tx, double a, double b, double ty, double c, double d)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. \end{DoxyCompactList}\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ac8ba3233bba3b73c0526a8810e94ae60}{Affine\+Transformation} (const double $\ast$in\+Coeff)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. \end{DoxyCompactList}\item 
+cv\+::\+Point2d \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad616f03d3e0e6c45a694df24053b1b90}{transform} (const cv\+::\+Point2d \&p) const override
+\begin{DoxyCompactList}\small\item\em Transforms a point. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ac2ea1e7bd48e1c8be85d14b47d627d8e}{inverse} () const override
+\begin{DoxyCompactList}\small\item\em Returns an inverse of this transformation. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a040c5bc4bf124ad593f07a8f95725b97}{is\+Identity} () const override
+\begin{DoxyCompactList}\small\item\em Returns whether the transformation is an identity, meaning that transformation will return the value unchanged. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a43fdfdf7290d667358b01ccb266bcaf6}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Creates a copy of this object. \end{DoxyCompactList}\item 
+bool \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_aee20663f0c25d1278de0df2c37925cb5}{operator==} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em Returns whether {\ttfamily rhs} is equivalent to this. The two transformations don\textquotesingle{}t have to represent two identical objects. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} $>$ \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_afb1469fc816b9113330095fc4a6c41ec}{append} (const \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation}{Transformation} \&rhs) const override
+\begin{DoxyCompactList}\small\item\em If possible, appends {\ttfamily rhs} to this transformation to form a single combined transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients}{Coefficients} \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a897985015acbc20306e9d02b51468ca7}{coeff}
+\begin{DoxyCompactList}\small\item\em Affine transformation coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!Affine\+Transformation@{Affine\+Transformation}}
+\index{Affine\+Transformation@{Affine\+Transformation}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{Affine\+Transformation()=default}{AffineTransformation()=default}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Affine\+Transformation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [default]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_afd6dcc755d93563ed9a48e91dd60fade}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_afd6dcc755d93563ed9a48e91dd60fade}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!Affine\+Transformation@{Affine\+Transformation}}
+\index{Affine\+Transformation@{Affine\+Transformation}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{Affine\+Transformation(const Coefficients \&in\+Coeff)}{AffineTransformation(const Coefficients &inCoeff)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Affine\+Transformation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Coefficients} \&}]{in\+Coeff}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad217fdf19be738506b45d86562a61921}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad217fdf19be738506b45d86562a61921}
+
+
+Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Coeff} & The coefficients. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!Affine\+Transformation@{Affine\+Transformation}}
+\index{Affine\+Transformation@{Affine\+Transformation}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{Affine\+Transformation(\+Coefficients \&\&in\+Coeff)}{AffineTransformation(Coefficients &&inCoeff)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Affine\+Transformation (
+\begin{DoxyParamCaption}
+\item[{{\bf Affine\+Transformation\+::\+Coefficients} \&\&}]{in\+Coeff}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad9a629a72e7bc4c22008734c13ed5bfd}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad9a629a72e7bc4c22008734c13ed5bfd}
+
+
+Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em in\+Coeff} & The coefficients. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!Affine\+Transformation@{Affine\+Transformation}}
+\index{Affine\+Transformation@{Affine\+Transformation}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{Affine\+Transformation(double tx, double a, double b, double ty, double c, double d)}{AffineTransformation(double tx, double a, double b, double ty, double c, double d)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Affine\+Transformation (
+\begin{DoxyParamCaption}
+\item[{double}]{tx, }
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double}]{ty, }
+\item[{double}]{c, }
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_aa0bb97cf89ad95a843dc30da391ba663}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_aa0bb97cf89ad95a843dc30da391ba663}
+
+
+Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tx} & The {\itshape tx} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em a} & The {\itshape a} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em b} & The {\itshape b} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em ty} & The {\itshape ty} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em c} & The {\itshape c} coefficient. \\
+\hline
+\mbox{\tt in}  & {\em d} & The {\itshape d} coefficient. \\
+\hline
+\end{DoxyParams}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!Affine\+Transformation@{Affine\+Transformation}}
+\index{Affine\+Transformation@{Affine\+Transformation}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{Affine\+Transformation(const double $\ast$in\+Coeff)}{AffineTransformation(const double *inCoeff)}}]{\setlength{\rightskip}{0pt plus 5cm}dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::\+Affine\+Transformation (
+\begin{DoxyParamCaption}
+\item[{const double $\ast$}]{in\+Coeff}
+\end{DoxyParamCaption}
+)}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ac8ba3233bba3b73c0526a8810e94ae60}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ac8ba3233bba3b73c0526a8810e94ae60}
+
+
+Constructs an \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation}{Affine\+Transformation} with the given coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Coeff} & The coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+{\ttfamily in\+Coeff} must be an array of {\ttfamily double} with the size of 6. No internal checks are performed to determine if the array is valid. 
+\end{DoxyPrecond}
+
+
+\subsection{Member Function Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!append@{append}}
+\index{append@{append}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{append(const Transformation \&rhs) const override}{append(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::append (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_afb1469fc816b9113330095fc4a6c41ec}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_afb1469fc816b9113330095fc4a6c41ec}
+
+
+If possible, appends {\ttfamily rhs} to this transformation to form a single combined transformation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The transformation to append to this. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The combined transformation, or {\ttfamily nullptr} if concatenation is not possible.
+\end{DoxyReturn}
+The combined transformation is equivalent to first transforming the object by this transformation, then by {\ttfamily rhs}. 
+
+Reimplemented from \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_ae67c450f28cd7fa5cb4607b5cf6d04a9}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!clone@{clone}}
+\index{clone@{clone}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{clone() const override}{clone() const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a43fdfdf7290d667358b01ccb266bcaf6}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a43fdfdf7290d667358b01ccb266bcaf6}
+
+
+Creates a copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1_cloneable_value_base_afa66af64c1335e01931f7919f0033730}{dg\+::deepcore\+::\+Cloneable\+Value\+Base$<$ Transformation $>$}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!inverse@{inverse}}
+\index{inverse@{inverse}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{inverse() const override}{inverse() const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ {\bf Transformation} $>$ dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ac2ea1e7bd48e1c8be85d14b47d627d8e}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ac2ea1e7bd48e1c8be85d14b47d627d8e}
+
+
+Returns an inverse of this transformation. 
+
+\begin{DoxyReturn}{Returns}
+The inverse of this transformation. {\ttfamily nullptr} is returned if no inverse is available. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a2f707de3ae95f13861d5ddbb2125b26c}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{is\+Identity() const override}{isIdentity() const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::is\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a040c5bc4bf124ad593f07a8f95725b97}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a040c5bc4bf124ad593f07a8f95725b97}
+
+
+Returns whether the transformation is an identity, meaning that transformation will return the value unchanged. 
+
+\begin{DoxyReturn}{Returns}
+Whether the transformation is an identity. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a7423095c12275c3ade1bad443f47dbdd}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!operator==@{operator==}}
+\index{operator==@{operator==}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{operator==(const Transformation \&rhs) const override}{operator==(const Transformation &rhs) const override}}]{\setlength{\rightskip}{0pt plus 5cm}bool dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transformation} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_aee20663f0c25d1278de0df2c37925cb5}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_aee20663f0c25d1278de0df2c37925cb5}
+
+
+Returns whether {\ttfamily rhs} is equivalent to this. The two transformations don\textquotesingle{}t have to represent two identical objects. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rhs} & The other transformation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\ttfamily rhs} is equivalent to this. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a18f3dec54c0018c032e24d294a4e63a6}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!transform@{transform}}
+\index{transform@{transform}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{transform(const cv\+::\+Point2d \&p) const override}{transform(const cv::Point2d &p) const override}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Point2d dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::transform (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Point2d \&}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad616f03d3e0e6c45a694df24053b1b90}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_ad616f03d3e0e6c45a694df24053b1b90}
+
+
+Transforms a point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & The point to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed point. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdg_1_1deepcore_1_1geometry_1_1_transformation_a1a7c7cf330f61adeba1803dd3651d479}{dg\+::deepcore\+::geometry\+::\+Transformation}.
+
+
+
+\subsection{Member Data Documentation}
+\index{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}!coeff@{coeff}}
+\index{coeff@{coeff}!dg\+::deepcore\+::geometry\+::\+Affine\+Transformation@{dg\+::deepcore\+::geometry\+::\+Affine\+Transformation}}
+\subsubsection[{\texorpdfstring{coeff}{coeff}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Coefficients} dg\+::deepcore\+::geometry\+::\+Affine\+Transformation\+::coeff}\hypertarget{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a897985015acbc20306e9d02b51468ca7}{}\label{structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_a897985015acbc20306e9d02b51468ca7}
+
+
+Affine transformation coefficients. 
+
