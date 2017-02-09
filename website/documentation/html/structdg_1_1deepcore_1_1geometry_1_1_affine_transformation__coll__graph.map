@@ -1,5 +1,0 @@
-<map id="dg::deepcore::geometry::AffineTransformation" name="dg::deepcore::geometry::AffineTransformation">
-<area shape="rect" id="node2" href="$structdg_1_1deepcore_1_1geometry_1_1_transformation.html" title="Represents a coordinate transformation. " alt="" coords="251,5,409,47"/>
-<area shape="rect" id="node3" href="$structdg_1_1deepcore_1_1_cloneable_value_base.html" title="dg::deepcore::CloneableValue\lBase\&lt; Transformation \&gt;" alt="" coords="5,5,201,47"/>
-<area shape="rect" id="node4" href="$structdg_1_1deepcore_1_1geometry_1_1_affine_transformation_1_1_coefficients.html" title="Represents the Affine transformation coefficients. " alt="" coords="251,70,409,126"/>
-</map>

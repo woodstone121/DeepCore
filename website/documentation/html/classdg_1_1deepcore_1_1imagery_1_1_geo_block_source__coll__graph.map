@@ -1,9 +1,0 @@
-<map id="dg::deepcore::imagery::GeoBlockSource" name="dg::deepcore::imagery::GeoBlockSource">
-<area shape="rect" id="node2" href="$structdg_1_1deepcore_1_1_node_t.html" title="dg::deepcore::NodeT\l\&lt; GeoBlockSource \&gt;" alt="" coords="26,497,170,539"/>
-<area shape="rect" id="node3" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; GeoBlockSource, Node \&gt;" alt="" coords="7,408,189,449"/>
-<area shape="rect" id="node4" href="$classdg_1_1deepcore_1_1_node.html" title="Base class for processing framework nodes. " alt="" coords="30,333,166,360"/>
-<area shape="rect" id="node5" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Node, NamedObject \&gt;" alt="" coords="15,244,181,285"/>
-<area shape="rect" id="node6" href="$classdg_1_1deepcore_1_1_named_object.html" title="A base class for objects that have a name. " alt="" coords="5,169,191,196"/>
-<area shape="rect" id="node7" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; NamedObject \&gt;" alt="" coords="23,80,173,121"/>
-<area shape="rect" id="node8" href="$classdg_1_1deepcore_1_1_object.html" title="The base class for all the processing pipeline objects. " alt="" coords="27,5,169,32"/>
-</map>

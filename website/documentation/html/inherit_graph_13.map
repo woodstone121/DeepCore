@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structdg_1_1deepcore_1_1_cloneable_value_base.html" title="dg::deepcore::CloneableValue\lBase\&lt; Transformation \&gt;" alt="" coords="5,104,201,145"/>
-<area shape="rect" id="node2" href="$structdg_1_1deepcore_1_1geometry_1_1_transformation.html" title="Represents a coordinate transformation. " alt="" coords="249,104,408,145"/>
-<area shape="rect" id="node3" href="$structdg_1_1deepcore_1_1geometry_1_1_affine_transformation.html" title="Represents a six&#45;parameter Affine transformation. " alt="" coords="457,5,615,47"/>
-<area shape="rect" id="node4" href="$classdg_1_1deepcore_1_1geometry_1_1_geo_transformation.html" title="Represents a geographic coordinate transformation. " alt="" coords="457,71,615,112"/>
-<area shape="rect" id="node5" href="$structdg_1_1deepcore_1_1geometry_1_1_identity_transformation.html" title="Represents an identity transformation. " alt="" coords="456,136,616,177"/>
-<area shape="rect" id="node6" href="$structdg_1_1deepcore_1_1geometry_1_1_transformation_chain.html" title="Represents a chain of coordinate transformations to perform in order. " alt="" coords="457,201,615,243"/>
-</map>

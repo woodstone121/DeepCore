@@ -1,6 +1,0 @@
-<map id="dg::deepcore::Metric" name="dg::deepcore::Metric">
-<area shape="rect" id="node2" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; Metric, NamedObject \&gt;" alt="" coords="13,244,183,285"/>
-<area shape="rect" id="node3" href="$classdg_1_1deepcore_1_1_named_object.html" title="A base class for objects that have a name. " alt="" coords="5,169,191,196"/>
-<area shape="rect" id="node4" href="$classdg_1_1deepcore_1_1_object_t.html" title="dg::deepcore::ObjectT\l\&lt; NamedObject \&gt;" alt="" coords="23,80,173,121"/>
-<area shape="rect" id="node5" href="$classdg_1_1deepcore_1_1_object.html" title="The base class for all the processing pipeline objects. " alt="" coords="27,5,169,32"/>
-</map>
