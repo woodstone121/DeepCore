@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="website/stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="website/stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="website/stylesheets/deepcorestyles.css" media="screen">
     <link rel="stylesheet" type="text/css" href="website/stylesheets/print.css" media="print">
 
     <!--[if lt IE 9]>
@@ -27,12 +28,13 @@
 <div id="content-wrapper">
     <div class="inner clearfix">
         <section id="main-content">
-            <h3>
+            <h2>
                 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
-                        aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to DeepCore</h3>
+                        aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to DeepCore</h2>
+            <img src="website/images/atlanta_airport_detection_example.png"/>
+            <p class="image-caption">Object detection being used to find aircraft on the ground in Atlanta, GA. </p>
             <p>DeepCore is a machine learning abstraction framework and utility toolkit, written in modern C++(C++11) by
-                <a href="http://www.digitalglobe.com">DigitalGlobe</a>. It allows a user to download, perform object
-                detection, and manipulate geospatial vector files. DeepCore is intended to be a machine learning
+                <a href="http://www.digitalglobe.com">DigitalGlobe</a>. It allows a user to download, perform either image classification or object detection, and manipulate geospatial vector files. DeepCore is intended to be a machine learning
                 framework agnostic toolkit, allowing for a simple, clean, consistent programmatic interface. It also
                 provides easy access to the DigitalGlobe imagery archive. As new
                 machine learning techniques and frameworks emerge, they can easily be integrated into DeepCore. This
@@ -72,6 +74,8 @@
                     frameworks such as Microsoft’s <a href="https://github.com/Microsoft/CNTK">CNTK</a> and <a
                             href="https://www.tensorflow.org/">Google Tensorflow</a> are coming online soon.
                 </li>
+                <li><strong>Geometry</strong> - contains libraries that define vector primitives, spatial coordinate reference systems, as well as various utility functions for dealing with geometry.
+                </li>
             </ul>
             </p>
 
@@ -94,6 +98,8 @@
                 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span
                         aria-hidden="true" class="octicon octicon-link"></span></a>Sample Application - OpenSpaceNet
             </h3>
+            <img src="website/images/airliner_detection_example2.png"/>
+            <p class="image-caption">Object detection being used to find aircraft on the ground at an airport.</p>
             <p><a href="https://github.com/DigitalGlobe/OpenSpaceNet">OpenSpaceNet</a> is a DeepCore-based sample
                 application that uses DigitalGlobe satellite imagery as an input source for the object detection. Using
                 DigitalGlobe image services, such as the <a href="https://developer.digitalglobe.com/maps-api/">DigitalGlobe
@@ -165,17 +171,30 @@ endif()
             A sample model can be downloaded from <a href="https://s3.amazonaws.com/deepcore/model/airplane.gbdxm">our
             download site</a>. This model is suitable for detecting airliners and a few other features.
 
+            <h3>Coming Soon</h3>
+              <ul>
+                <li> Python bindings</li>
+                <li> Dlib support</li>
+                <li> Support for additional techniques and algorithms like CNTK and others</li>
+                <li> and much more...</li>
+
+              </ul>
+
             <h3>Support or Contact</h3>
 
             <p>Having issues with DeepCore? Email us at <a href="mailto:deepcore@digitalglobe.com">
                 <strong>DeepCore</strong> </a> or
                 visit our <a href="https://github.com/DigitalGlobe/DeepCore/issues"><strong>Issues</strong></a> page to
                 log a bug or get some help. Also, check out the DeepCore documentation <a
-                        href="https://s3.amazonaws.com/deepcore/Documentation/index.html"> <strong>here</strong>.</a></p>
-        </section>
 
+             href="https://s3.amazonaws.com/deepcore/Documentation/index.html"> <strong>here</strong>.</a></p>
+
+             <p class="dg-copyright"><a href="http://www.digitalglobe.com">©2017 DigitalGlobe</a></p>
+
+        </section>
         <aside id="sidebar">
-            <h3>GBDXM</h3>
+            <h2>Downloads</h2>
+            <h3>GBDXM for Linux</h3>
             <a href="https://s3.amazonaws.com/deepcore/current/gbdxm" class="button"><img
                     src="website/images/package.png"/></a>
             <h3>OpenSpaceNet</h3>
@@ -187,11 +206,11 @@ endif()
                 <strong>HERE</strong></a>.
             </p>
             <br/>
-            <h3>Documentation</h3>
+            <h2>Documentation</h2>
             <a href="https://s3.amazonaws.com/deepcore/Documentation/index.html" class="button"><img src="website/images/api.png"/></a>
-            <h3>Issues</h3>
+            <h2>Issues</h2>
             <a href="https://github.com/DigitalGlobe/DeepCore/issues" class="button"><img src="website/images/bug.png"/></a>
-            <h3>License</h3>
+            <h2>License</h2>
             <a href="https://github.com/DigitalGlobe/DeepCore/blob/master/LICENSE" class="button"><img
                     src="website/images/article.png"/></a>
 
@@ -202,10 +221,7 @@ endif()
                     href="https://github.com/DigitalGlobe">DigitalGlobe</a>.</p>
         </aside>
     </div>
-
 </div>
-
-
 </body>
 <script>
     (function (i, s, o, g, r, a, m) {
