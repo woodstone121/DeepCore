@@ -3085,6 +3085,14 @@
 			background: #B5231D;
 		}
 
+		.wrapper.style2 a {
+			color: #ffffff
+		}
+		.wrapper.style2 a:hover {
+			color: #000000 !important;
+			border-bottom-color: transparent;
+		}
+
 			.wrapper.style2 input[type="text"]:focus,
 			.wrapper.style2 input[type="password"]:focus,
 			.wrapper.style2 input[type="email"]:focus,
