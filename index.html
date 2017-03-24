@@ -27,19 +27,18 @@
 								<a href="#">Pages</a>
 								<ul>
 									<li><a href="#one">Overview</a></li>
-									<li><a href="#two">Architecture</a></li>
+									<li><a href="#two">DeepCore API</a></li>
 									<li><a href="#three">GBDXM Tool</a></li>
 									<li><a href="#four">OpenSpaceNet</a></li>
 									<li><a href="#five">Downloads</a></li>
-									<!--<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#one">Option 1</a></li>
-											<li><a href="#two">Option 2</a></li>
-											<li><a href="#three">Option 3</a></li>
-											<li><a href="#four">Option 4</a></li>
-										</ul>
-									</li>-->
+								</ul>
+							</li>
+							<li>
+								<a href="#">Documentation</a>
+								<ul>
+									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/index.html">DeepCore API</a></li>
+									<li><a href="https://github.com/DigitalGlobe/OpenSpaceNet">OpenSpaceNet</a></li>
+									<li><a href="https://github.com/DigitalGlobe/gbdxm">GBDXM</a></li>
 								</ul>
 							</li>
 							<li><a href="#six">Contact</a></li>
@@ -54,10 +53,9 @@
 					<div class="content">
 						<header>
 							<h2>The DeepCore SDK by</h2>
-							<p><a href="#five">Get Started!</a><br />
-							</p>
 						</header>
 						<span class="image"><img src="images/banner.png" alt="" /></span>
+						<a href="#five">Get Started!</a>
 					</div>
 					<a href="#one" class="goto-next scrolly">Next</a>
 				</section>
@@ -71,7 +69,7 @@
 								<div class="4u 12u$(medium)">
 									<header>
 										<h2>DeepCore Machine Learning Abstraction Framework</h2>
-										<p>DeepCore is a utility toolkit, written in modern C++(C++11) by
+										<p>DeepCore is a utility toolkit, written in modern C++ (C++11) by
                 <a href="http://www.digitalglobe.com">DigitalGlobe</a></p>
 									</header>
 								</div>
@@ -97,45 +95,12 @@
 				</section>
 
 			<!-- Two -->
-				<section id="two" class="spotlight style1 bottom">
+				<section id="two" class="spotlight style1 left">
 					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
 					<div class="content">
-						<!--<header>
-							<h2>Interdum amet non magna accumsan</h2>
-							<p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
-						</header>-->
-						            <p>DeepCore is split into libraries that are grouped by function. The core libraries are:
-            <ul>
-                <li><strong>Utility</strong> - contains toolkit type functions that are very general and don’t fit into
-                    any of the other categories. This includes logging via Google glog, zip file reading and writing,
-                    basic math, and other basic functions.
-                </li>
-                <li><strong>Network</strong> - contains functions and classes for communication across networks,
-                    including HTTP and <a href="http://json-rpc.org/">JSON-RPC</a> requests
-                </li>
-                <li><strong>Vector </strong>- contains functions and classes for writing vector features out to disk or
-                    network sources. Supported formats are:
-                    <ul>
-                        <li><a href="https://en.wikipedia.org/wiki/Shapefile">Shapefile</a></li>
-                        <li><a href="https://developers.google.com/kml/">KML</a></li>
-                        <li><a href="http://www.postgis.net/">PostGRES/PostGIS</a></li>
-                        <li><a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a></li>
-                        <li><a href="http://geojson.org/">GeoJSON</a></li>
-                    </ul>
-                </li>
-                <li><strong>Imagery</strong> - contains functions and classes for reading imagery from a variety of
-                    sources. Using <a href="http://www.gdal.org">GDAL</a> and <a href="http://opencv.org">OpenCV</a>,
-                    most image formats can be read in for processing.
-                </li>
-                <li><strong>Classification</strong> - contains the functions and classes necessary to do classification
-                    and object detection with a supported model. Currently, only <a
-                            href="http://caffe.berkeleyvision.org/">Caffe</a> models are supported, but additional
-                    frameworks such as Microsoft’s <a href="https://github.com/Microsoft/CNTK">CNTK</a> and <a
-                            href="https://www.tensorflow.org/">Google Tensorflow</a> are coming online soon.
-                </li>
-                <li><strong>Geometry</strong> - contains libraries that define geometry primitives, spatial coordinate reference systems, as well as various utility functions for dealing with geometry.  It has ties to <a href="http://www.gdal.org">GDAL</a> and <a href="https://trac.osgeo.org/geos/">GEOS</a> for full featured geometry
-                </li>
-            </ul>
+					<h2>DeepCore Design and API</h2>
+					<p>DeepCore is split into libraries that are grouped by function. This decoupled approach allows the application developer to use the pieces necessary for their needs, and no more.  For more information on DeepCore, it's architecture and uses, please visit the <a href="deepcore.html">DeepCore Architecture page.</a>
+
             </p>
 					</div>
 					<a href="#three" class="goto-next scrolly">Next</a>
