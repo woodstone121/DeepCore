@@ -48,7 +48,7 @@ The second approach makes more sense for us, but there are a few details to work
 #### Hitting the target
 ![alt text][offset_predictions]
 
-Which of these images is a good detection?  We don't want to be too picky about the exact location of objects, since its not really important in most applications, but we have to draw the line somewhere.  A simple way to deal with this is to set a threshold on the proportion of the object area covered by the prediction.
+Which of these images is a good detection?  We don't want to be too picky about the exact location of objects, since its not really important in most applications, but we have to draw the line somewhere.  A simple way to deal with this is to set a threshold on the proportion of the object area covered by the prediction.  We can set a minimum of 0.4 to make sure we got most of the object in the image.
 
 #### Box Size
 ![alt text][sized_predictions]
@@ -58,7 +58,7 @@ What about boxes that contain an entire object, but are much larger than the act
 Before computing the **Jaccard index**, we'll switch from using the precise object markings to using a box circumcscibing the object because this gives better results.  
 
 ![alt text][sized_predictions_jacc]  
-From looking at these images, it looks like a *Jaccard index* over 0.45 is a good detection.
+From looking at these images, it looks like a **Jaccard index** over 0.45 is a good detection.  A number below that is a sign that the box is too big or too small.  We can use a Jaccard cutoff instead of a proportion cutoff.
 
 
 #### Multiple Detections
@@ -68,18 +68,17 @@ From looking at these images, it looks like a *Jaccard index* over 0.45 is a goo
 ![alt text][2pred3] 
 
 
-Should we let a single box detect multiple airplanes?
+Should we let a single box detect multiple airplanes?  If you just want to find airplanes, you might not care whether a box touches one plane or more than one.  But if your goal is to count planes, then you really want to enforce strict correspondence between boxes and planes.  If you want to restrict boxes to planes, then you can enforce that rule in the error calculation. My error calculator supports both.
 
 #### False Positives
 ![alt text][total_miss]
 ![alt text][double_down] 
 
-The picture on the left is clearly a miss.  The box just missed the target.  But what about the picture on the right?  Should be count both of those as hits, or count just one?
+The picture on the left is clearly a miss.  The box just missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?
 
-I made the following decisions about these questions.
+## Conclusions
 
-
-We do care if the boxes are oversized.  An object with a **Jaccard Index** over 0.4 is probably a good detection.  So we could apply a threshold to the **Jaccard Index**, and say all scores over 0.4 are good detections and scores below 0.4 are not.  However, we'd still like to give the model some credit for an oversized detection box, so instead of a threshold, we can also try summing up the **Jaccard Scores** for all partial detections.  So an oversized (or undersized) detection box still counts for less than a perfect box, but we haven't just thrown them out either.
+I made my own decisions on these questions, and wrote a calculator that scores models based on my criteria.  In some cases, I supported more than one option so we could tailor our error measurement to specific problems.
 
 
 
@@ -89,7 +88,7 @@ We do care if the boxes are oversized.  An object with a **Jaccard Index** over 
 {: width="400px"}
 [bad_prediction]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/bad_prediction.png "A bad prediction that catches all of the airplanes."
 {: width="400px"}
-[offset_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/offset_predictions.png "Predictions at different offsets"
+[offset_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/offset_predictions_prop.png "Predictions at different offsets"
 {: width="1000px"}
 [sized_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/sized_predictions.png "Predictions at different sizes"
 {: width="1000px"}
@@ -98,9 +97,9 @@ We do care if the boxes are oversized.  An object with a **Jaccard Index** over 
 
 
 [2pred2]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/2pred2.png "Two targets, one match"
-{: width="300px"}
+{: width="200px"}
 [2pred3]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/2pred3.png "Two targets, two matches"
-{: width="300px"}
+{: width="200px"}
 
 [total_miss]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/total_miss.png "This prediction missed the target completely."
 {: width="400px"}
