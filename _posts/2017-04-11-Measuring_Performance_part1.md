@@ -6,11 +6,11 @@ author: Alan J. Schoen
 
 # Measuring Performance for Object Detectors
 
+This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming more important to have a standard way to score our models so we can decide which one is the best for a particular application.  We can score a model by making a ground truth image, where a person (or people) mark all of the aircraft, and then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
+
+This post will cover the different decisions that went into the error calculation, and my next post will apply this to several different neural nets that me and my colleagues at DigitalGlobe have developed.
+
 ## Part 1: Defining a Metric
-
-We build a lot of neural networks to detect objects, using different techniques, different machine learning packages, and different training sets.  It's important not to lose sight of the big picture: finding the best model to detect the things we're looking for.  To do this, we need a measurement of accuracy that lets us reduce everything to a single number.  In part 1 of this series of blog posts, I'll outline some of the challenges in defining a good metric to measure the quality of a model.
-
-For the last few months, I have been training neural networks to detect different kinds of aircraft.  I create training sets using DigitalGlobe imagery and a python library that I am writing to turn this imagery into tiles I can feed into neural networks.  Now that we're training a lot of neural networks, we need a good way to decide which are the best ones.
 
 Consider this example.  I've got a small image showing part of the famous airplane graveyard in Nevada.
 
@@ -20,7 +20,7 @@ I have an image of the airplane graveyard in Nevada, and I want to detect all of
 
 ![alt text][graveyard_marked]
 
-So now we can use the image and the ground truth markings to score models, but we'll need to define a good metric to measure model quality.  We can't score a model by just counting the number of airplanes that it found, becuase its too easy to cheat.  A model could cover the whole image with a giant prediction, and that would find all the airplanes. 
+So now we can use the image and the ground truth markings to score models, but we'll need to define a good metric to measure model quality.  We can't score a model by just counting the number of airplanes that it found, because its too easy to cheat.  A model could cover the whole image with a giant prediction, and that would find all the airplanes. 
 
 ![alt text][bad_prediction]
 
@@ -30,13 +30,13 @@ We found all the planes! Great, right?  Not really, because we just predicted th
 * **False positive rate**: The number of times the model predicted an airplane, but there wasn't really a plane there
 * **False negative rate**: When there's a plane, but the model doesn't find it
 
-A good model will have a high **true positive rate**, and low **false positive** and **false negative** rates.  There are a few metrics used widely in machine learning which combine these numbers together into a single score.  Two common examples are **ROC curves** and **F1** scores.  We'd like to apply these scores to our models, but there's a problem.  Our data doesn't look like normal data, so there's more than one way to define the **true positive rate** and the **false positive rate**.  We'll need to compare several different ways to do it and decide how to proceed.
+A good model will have a high **true positive rate**, and low **false positive** and **false negative** rates.  There are a few metrics used widely in machine learning which combine these numbers together into a single score.  Two common examples are **ROC curves** and **F1** scores.  We'd like to apply these scores to our models, but there's a problem.  These metrics are usually applied to data that's structured differently from our data, so there's some ambiguity in applying them to satellite imagery.  There's more than one way to define the **true positive rate** and the **false positive rate**.  We'll need to compare several different ways to do it and decide how to proceed.
 
 Starting with the **true positive rate**, here are two ways to measure it.
 1. Count each image pixel as a data point, and score the model based on how many pixels it classifies correctly.
 2. Use an object-based approach, where we could an object as detected only if it is sufficiently covered by the prediction.  Predictions that did not find objects are false positives.
 
-The first approach is really turning the problem into a segmentation problem, which is a different thing from detection.  That's not ideal for this case, because it makes large objects more important than small objects.  If we're detecting aircraft, we want to weigh large aircraft like airliners equally with small aircraft like fighter jets.  So segmentation won't do.
+The first approach is really turning the problem into a segmentation problem, which is a different thing from detection.  That's not ideal for this case, because it makes large objects more important than small objects.  If we're detecting aircraft, we want to weigh large aircraft like airliners equally with small aircraft like fighter jets.  So pixel-counting won't do.
 
 The second approach makes more sense for us, but there are a few details to work out.  First, how do we decide whether or not an object is detected.
 
@@ -55,7 +55,7 @@ Which of these images is a good detection?  We don't want to be too picky about 
 
 What about boxes that contain an entire object, but are much larger than the actual object?  Is it even a valid detection if we have a ridiculously oversized box like the one we looked at before? We want the boxes to represent the size of the object, and we'd like to avoid a scenario where a model gets rewarded for using big, imprecise boxes to increase it's hit rate.  So let's introduce the **Jaccard Index**, also known as **intersection over union** (**IoU**).
 
-Before computing the **Jaccard index**, we'll switch from using the precise object markings to using a box circumcscibing the object because this gives better results.  
+Before computing the **Jaccard index**, we'll switch from using the precise object markings to using a box circumscribing the object because this gives better results.  
 
 ![alt text][sized_predictions_jacc]  
 From looking at these images, it looks like a **Jaccard index** over 0.45 is a good detection.  A number below that is a sign that the box is too big or too small.  We can use a Jaccard cutoff instead of a proportion cutoff.
@@ -74,12 +74,13 @@ Should we let a single box detect multiple airplanes?  If you just want to find 
 ![alt text][total_miss]
 ![alt text][double_down] 
 
-The picture on the left is clearly a miss.  The box just missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?
+The picture on the left is clearly a miss.  The box just missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
 
 ## Conclusions
 
-I made my own decisions on these questions, and wrote a calculator that scores models based on my criteria.  In some cases, I supported more than one option so we could tailor our error measurement to specific problems.
+Deciding how to score true positives, false positives, and false negatives will determine which models look better than others, so it's important to make decisions that make sense for your particular application.  I made my own decisions on these questions, based on what I thought our model would be used for.  Then I wrote an accuracy calculator to score models against test imagery based on my criteria.  In some cases, I supported multiple options because I thought we might need to use a different measurement for different problems.
 
+In my next post, I will compare models against each other using my accuracy calculator.
 
 
 [graveyard_plain]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_plain.png "A section of the airplane graveyard"
