@@ -4,8 +4,6 @@ title: Measuring Performance for Object Detectors - Part 1
 author: Alan J. Schoen
 ---
 
-# Measuring Performance for Object Detectors
-
 This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming important to have a standard score that tells us how well each model performed on a problem, so we can choose the best one for each application.  Do do this, we need to have ground truth images for reference.  These are created by having real live humans mark the images with the targets.  Then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
 
 This post will cover the different decisions that went into the error calculation, and my next post will apply this to several different neural nets that me and my colleagues at DigitalGlobe have developed.
@@ -82,8 +80,6 @@ Deciding how to score true positives, false positives, and false negatives will 
 
 In my next post, I will compare models against each other using my accuracy calculator.
 
-
-### Alan J. Schoen
 ![alt-text]({{ site.baseurl }}/images/banner2.png)
 
 [graveyard_plain]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_plain.png "A section of the airplane graveyard"
