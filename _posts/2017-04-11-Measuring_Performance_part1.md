@@ -4,8 +4,6 @@ title: Measuring Performance for Object Detectors - Part 1
 author: Alan J. Schoen
 ---
 
-# Measuring Performance for Object Detectors
-
 This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming more important to have a standard way to score our models so we can decide which one is the best for a particular application.  We can score a model by making a ground truth image, where a person (or people) mark all of the aircraft, and then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
 
 This post will cover the different decisions that went into the error calculation, and my next post will apply this to several different neural nets that me and my colleagues at DigitalGlobe have developed.
