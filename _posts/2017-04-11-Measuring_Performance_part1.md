@@ -83,6 +83,9 @@ Deciding how to score true positives, false positives, and false negatives will 
 In my next post, I will compare models against each other using my accuracy calculator.
 
 
+### Alan J. Schoen
+![alt-text]({{ site.baseurl }}/images/banner2.png)
+
 [graveyard_plain]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_plain.png "A section of the airplane graveyard"
 {: width="400px"}
 [graveyard_marked]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_marked.png "A section of the airplane graveyard, marked with polygons"
