@@ -1,14 +1,15 @@
 ---
 layout: page
 ---
-<section id="contact">
-    <div class="container">
-        <div class="col-md-6 col-md-offset-3">
-            <br>
-            {{ content }}
-        </div>
+<div class="container">
+    <header class="major">
+        <h2>{{ page.title }}</h2>
+        <p>By: {{ page.author }}</p>
+    </header>
+    <div class="col-md-6 col-md-offset-3">
+        {{ content }}
     </div>
-</section>
+</div>
 
 <div class="container">
 <div id="disqus_thread"></div>
