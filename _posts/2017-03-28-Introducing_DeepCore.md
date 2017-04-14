@@ -17,9 +17,9 @@ There are a couple of sample projects using DeepCore out there in Github.  First
 
 Next is OpenSpaceNet.  This sample uses DeepCore to download web service map tiles or load a local image, run a detection cycle with a model, then output the results as a geospatial vector file format or database.  This is more of a full featured way to get DigitalGlobe imagery from our services, run a detector on it, and get results that can be visualized  in a desktop GIS application.  The user is responsible for getting their own credentials for each service, though.
  
- The services are:
+The services are:
  * [DigitalGlobe Services](https://services.digitalglobe.com)
- * [DigtalGlobe Web Maps API](https://platform.digitalglobe.com/maps-api/)
+ * [DigitalGlobe Web Maps API](https://platform.digitalglobe.com/maps-api/)
  
 Please visit the service websites to sign up and start making use of DigitalGlobe imagery!
 
