@@ -1,194 +1,95 @@
 ---
-layout: empty
+layout: default
+title: DeepCore SDK
 ---
 
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>DeepCore SDK</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="Keywords" content="computer vision, deep learning, machine learning, c++, caffe, tensorflow, cntk, opencv, gdal, geospatial, digital globe" />
-		<meta name="Description" content="DeepCore is a utility toolkit, written in modern C++ (C++11) by DigitalGlobe. It allows a user to download, perform either image classification or object detection, and manipulate geospatial vector files." />
-		<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
-		<div id="page-wrapper">
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>The DeepCore SDK</h2>
+		</header>
+	</div>
+</section>
 
-			<!-- Header -->
-				<header id="header">
-                    <h1 id="logo"><a href="http://github.com"><img src="{{ site.baseurl }}/images/GitHub-Mark-Light-32px.png"/></a> <a href="index.html">DeepCore SDK</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#">Pages</a>
-								<ul>
-									<li><a href="#one">Classification</a></li>
-									<li><a href="#two">Geometry</a></li>
-									<li><a href="#three">Imagery</a></li>
-									<li><a href="#four">Network</a></li>
-									<li><a href="#five">Processing</a></li>
-									<li><a href="#six">Utility</a></li>
-									<li><a href="#seven">Vector</a></li>
-								</ul>
-							</li>
-							<li><a href="blog.html">Blog</a> </li>
-							<li>
-								<a href="#">Documentation</a>
-								<ul>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/index.html">DeepCore</a></li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___classification_module.html">Classification</a></li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___geometry_module.html">Geometry</a></li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___imagery_module.html">Imagery</a> </li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___network_module.html">Network</a></li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___process.html">Processing</a> </li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___utility_module.html">Utility</a></li>
-									<li><a href="https://s3.amazonaws.com/deepcore/Documentation/group___vector_module.html">Vector</a></li>
-								</ul>
-							</li>
-							<!--<li><a href="#" class="button special">Sign Up</a></li>-->
-							<li><a href="https://github.com/DigitalGlobe/DeepCore/issues">Issues</a> </li>
-						</ul>
-					</nav>
-				</header>
+<!-- Three -->
+<section id="one" class="spotlight style2 left">
+	<span class="image fit main bottom"><img src="{{ site.baseurl }}/images/pic12.jpg" alt="" /></span>
+	<div class="content">
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>The DeepCore SDK</h2>
-						</header>
-					</div>
-				</section>
+		<h2>Classification</h2>
+		<p>The Classification module is the heart of DeepCore.  It's where the machine learning framework integrations happen, and where the standard interfaces for interacting with those frameworks are defined.  This allows us to present a commmon contract that each framework implmentor must use, allowing for a single, coherent interface into many different frameworks.  Currently, we only support <a href="https://github.com/bvlc/caffe">Caffe</a>, but other frameworks, such as <a href="https://dlib.net">Dlib</a> and <a href="https://tensorflow.org">TensorFlow</a>, are currently being implemented in DeepCore. For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___classification_module.html">Classification module documentation.</a> </p>
+	</div>
+	<a href="#two" class="goto-next scrolly">Next</a>
+</section>
 
-			<!-- Three -->
-			<section id="one" class="spotlight style2 left">
-				<span class="image fit main bottom"><img src="{{ site.baseurl }}/images/pic12.jpg" alt="" /></span>
-				<div class="content">
+<!-- Two -->
+<section id="two" class="spotlight style1 right">
+	<span class="image fit main"><img src="{{ site.baseurl }}/images/pic03.jpg" alt="" /></span>
+	<div class="content">
+		<h2>Geometry</h2>
+		<p>The Geometry module contains geometry primitives, spatial coordinate reference systems, as well as various utility functions for dealing with geometry.  It has ties to <a href="http://www.gdal.org">GDAL</a> and <a href="https://trac.osgeo.org/geos/">GEOS</a> for full featured geometry support.  For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___geometry_module.html">Geometry module documentation.</a></p>
+	</div>
+	<a href="#three" class="goto-next scrolly">Next</a>
+</section>
 
-					<h2>Classification</h2>
-					<p>The Classification module is the heart of DeepCore.  It's where the machine learning framework integrations happen, and where the standard interfaces for interacting with those frameworks are defined.  This allows us to present a commmon contract that each framework implmentor must use, allowing for a single, coherent interface into many different frameworks.  Currently, we only support <a href="https://github.com/bvlc/caffe">Caffe</a>, but other frameworks, such as <a href="https://dlib.net">Dlib</a> and <a href="https://tensorflow.org">TensorFlow</a>, are currently being implemented in DeepCore. For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___classification_module.html">Classification module documentation.</a> </p>
-				</div>
-				<a href="#two" class="goto-next scrolly">Next</a>
-			</section>
+<!-- Three -->
+<section id="three" class="spotlight style2 left">
+	<span class="image fit main bottom"><img src="{{ site.baseurl }}/images/pic10.jpg" alt="" /></span>
+	<div class="content">
 
-			<!-- Two -->
-				<section id="two" class="spotlight style1 right">
-					<span class="image fit main"><img src="{{ site.baseurl }}/images/pic03.jpg" alt="" /></span>
-					<div class="content">
-						<h2>Geometry</h2>
-						<p>The Geometry module contains geometry primitives, spatial coordinate reference systems, as well as various utility functions for dealing with geometry.  It has ties to <a href="http://www.gdal.org">GDAL</a> and <a href="https://trac.osgeo.org/geos/">GEOS</a> for full featured geometry support.  For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___geometry_module.html">Geometry module documentation.</a></p>
-					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
+		<h2>Imagery</h2>
+		<p>The Imagery module provides support for opening and processing images.  Using <a href="https://opencv.org">OpenCV</a> and <a href="http://www.gdal.org">GDAL</a>, we support both georeferenced and non-georeferenced imagery.  In the Imagery module, we have support for opening, modifying, and saving many image formats.  For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___imagery_module.html">Imagery module documentation.</a> </p>
+	</div>
+	<a href="#four" class="goto-next scrolly">Next</a>
+</section>
 
-			<!-- Three -->
-				<section id="three" class="spotlight style2 left">
-					<span class="image fit main bottom"><img src="{{ site.baseurl }}/images/pic10.jpg" alt="" /></span>
-					<div class="content">
-						
-							<h2>Imagery</h2>
-							<p>The Imagery module provides support for opening and processing images.  Using <a href="https://opencv.org">OpenCV</a> and <a href="http://www.gdal.org">GDAL</a>, we support both georeferenced and non-georeferenced imagery.  In the Imagery module, we have support for opening, modifying, and saving many image formats.  For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___imagery_module.html">Imagery module documentation.</a> </p>
-					</div>
-					<a href="#four" class="goto-next scrolly">Next</a>
-				</section>
+<!-- Four -->
+<section id="four" class="spotlight style1 right">
+	<span class="image fit main"><img src="{{ site.baseurl }}/images/pic09.jpg" alt="" /></span>
+	<div class="content">
+		<h2>Network</h2>
+		<p>The Network module allows us to communicate outside of our local machine.  With support from <a href="https://curl.haxx.se">libcurl</a>, we can communicate over HTTP and HTTPS to get imagery from web sources.  Using <a href="https://github.com/eidheim/Simple-Web-Server">Simple Web Server</a>, we can stand up web servers for users to host their own content.  For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___network_module.html">Network module documentation.</a> </p>
+	</div>
+	<a href="#five" class="goto-next scrolly">Next</a>
+</section>
 
-			<!-- Four -->
-				<section id="four" class="spotlight style1 right">
-					<span class="image fit main"><img src="{{ site.baseurl }}/images/pic09.jpg" alt="" /></span>
-					<div class="content">
-						<h2>Network</h2>
-						<p>The Network module allows us to communicate outside of our local machine.  With support from <a href="https://curl.haxx.se">libcurl</a>, we can communicate over HTTP and HTTPS to get imagery from web sources.  Using <a href="https://github.com/eidheim/Simple-Web-Server">Simple Web Server</a>, we can stand up web servers for users to host their own content.  For more information, see the <a href="https://s3.amazonaws.com/deepcore/Documentation/group___network_module.html">Network module documentation.</a> </p>
-                </div>
-				<a href="#five" class="goto-next scrolly">Next</a>
-				</section>
+<!-- five -->
+<section id="five" class="spotlight style2 left">
+	<span class="image fit main"><img src="{{ site.baseurl }}/images/pic04.jpg" alt="" /></span>
+	<div class="content">
+		<h2>Processing</h2>
+		<p>The Processing module is the pipeline of the DeepCore workflow.  While not yet complete, it will allow a user to create workflows of asynchronous nodes that each have their own work to do.  Using these nodes, a user can create completely custom workflows, where images can be modified, processed, sliced, diced, and pushed to a detector where machine learning processing can begin.  Each node implementation is completely hidden from the outside, only exposing the appropriate interface to the public.  This consistent interface allows for connection of different node types, without worrying about what each node does.  For more information, please see the  <a href="https://s3.amazonaws.com/deepcore/Documentation/group___process.html">Processing module documentation.</a></p>
+	</div>
+	<a href="#six" class="goto-next scrolly">Next</a>
+</section>
 
-			<!-- five -->
-			<section id="five" class="spotlight style2 left">
-				<span class="image fit main"><img src="{{ site.baseurl }}/images/pic04.jpg" alt="" /></span>
-				<div class="content">
-					<h2>Processing</h2>
-					<p>The Processing module is the pipeline of the DeepCore workflow.  While not yet complete, it will allow a user to create workflows of asynchronous nodes that each have their own work to do.  Using these nodes, a user can create completely custom workflows, where images can be modified, processed, sliced, diced, and pushed to a detector where machine learning processing can begin.  Each node implementation is completely hidden from the outside, only exposing the appropriate interface to the public.  This consistent interface allows for connection of different node types, without worrying about what each node does.  For more information, please see the  <a href="https://s3.amazonaws.com/deepcore/Documentation/group___process.html">Processing module documentation.</a></p>
-				</div>
-				<a href="#six" class="goto-next scrolly">Next</a>
-			</section>
+<!-- six -->
+<section id="six" class="spotlight style1 right">
+	<span class="image fit main"><img src="{{ site.baseurl }}/images/pic02.jpg" alt="" /></span>
+	<div class="content">
+		<h2>Utility</h2>
+		<p>The Utility module contains classes and functions that either don't really fit into other modules, or general toolkit functionality that multiple other modules will use.  It has support for logging using <a href="https://boost.org">Boost logging</a>, as well as platform specific error handling and outputs.  It also contains math functions and other handy classes that are used throughout DeepCore.  For more information, see <a href="https://s3.amazonaws.com/deepcore/Documentation/group___utility_module.html"> Utility module documentation.</a> </p>
+	</div>
+	<a href="#seven" class="goto-next scrolly">Next</a>
+</section>
 
-			<!-- six -->
-			<section id="six" class="spotlight style1 right">
-				<span class="image fit main"><img src="{{ site.baseurl }}/images/pic02.jpg" alt="" /></span>
-				<div class="content">
-					<h2>Utility</h2>
-					<p>The Utility module contains classes and functions that either don't really fit into other modules, or general toolkit functionality that multiple other modules will use.  It has support for logging using <a href="https://boost.org">Boost logging</a>, as well as platform specific error handling and outputs.  It also contains math functions and other handy classes that are used throughout DeepCore.  For more information, see <a href="https://s3.amazonaws.com/deepcore/Documentation/group___utility_module.html"> Utility module documentation.</a> </p>
-				</div>
-				<a href="#seven" class="goto-next scrolly">Next</a>
-			</section>
-
-			<!-- seven -->
-			<section id="seven" class="spotlight style2 left">
-				<span class="image fit main"><img src="{{ site.baseurl }}/images/pic05.jpg" alt="" /></span>
-				<div class="content">
-					<h2>Vector</h2>
-					<p>The Vector module allows a user to be able to write geometries to disk in multiple supported formats. Supported formats are:
-					<ul>
-						<li><a href="https://en.wikipedia.org/wiki/Shapefile">Shapefile</a></li>
-						<li><a href="https://developers.google.com/kml/">KML</a></li>
-						<li><a href="http://www.postgis.net/">PostGRES/PostGIS</a></li>
-						<li><a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a></li>
-						<li><a href="http://geojson.org/">GeoJSON</a></li>
-					</ul>
-					<br>
-					Support for more formats is coming, such as support for SQLite.  For more information, see <a href="https://s3.amazonaws.com/deepcore/Documentation/group___vector_module.html">Vector module documentation.</a>
-					</p>
-				</div>
-				<a href="#footer" class="goto-next scrolly">Next</a>
-			</section>
-			<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://twitter.com/DigitalGlobe" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="https://www.facebook.com/DigitalGlobeInc/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="https://www.linkedin.com/company-beta/7511/" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/digitalglobe/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/DigitalGlobe/DeepCore" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="mailto:deepcore-support@digitalglobe.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-					<li><a href="https://github.com/DigitalGlobe/DeepCore/issues" class="icon alt fa-question"><span class="label">Issues</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; DigitalGlobe. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/jquery.scrolly.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/jquery.dropotron.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/jquery.scrollex.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{{ site.baseurl }}/assets/js/main.js"></script>
-
-
-	</body>
-	<script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-85773269-1', 'auto');
-        ga('send', 'pageview');
-
-	</script>
-</html>
+<!-- seven -->
+<section id="seven" class="spotlight style2 left">
+	<span class="image fit main"><img src="{{ site.baseurl }}/images/pic05.jpg" alt="" /></span>
+	<div class="content">
+		<h2>Vector</h2>
+		<p>The Vector module allows a user to be able to write geometries to disk in multiple supported formats. Supported formats are:
+		<ul>
+			<li><a href="https://en.wikipedia.org/wiki/Shapefile">Shapefile</a></li>
+			<li><a href="https://developers.google.com/kml/">KML</a></li>
+			<li><a href="http://www.postgis.net/">PostGRES/PostGIS</a></li>
+			<li><a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a></li>
+			<li><a href="http://geojson.org/">GeoJSON</a></li>
+		</ul>
+		<br>
+		Support for more formats is coming, such as support for SQLite.  For more information, see <a href="https://s3.amazonaws.com/deepcore/Documentation/group___vector_module.html">Vector module documentation.</a>
+		</p>
+	</div>
+	<a href="#footer" class="goto-next scrolly">Next</a>
+</section>

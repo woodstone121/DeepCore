@@ -3,181 +3,178 @@ layout: default
 title: DeepCoreSDK
 ---
 
-    <!-- Banner -->
-    <section id="banner">
-        <div class="content">
-            <header>
-                <h2>The DeepCore SDK by</h2>
-                <!--<p><a href="#five">Get Started!</a><br/>-->
-                </p>
-            </header>
-            <span class="image"><img src="{{ site.baseurl }}/images/banner.png" alt=""/></span>
-        </div>
-        <a href="#one" class="goto-next scrolly">Next</a>
-    </section>
+<!-- Banner -->
+<section id="banner">
+    <div class="content">
+        <header>
+            <h2>The DeepCore SDK by</h2>
+            <!--<p><a href="#five">Get Started!</a><br/></p>-->
+        </header>
+        <span class="image"><img src="{{ site.baseurl }}/images/banner.png" alt=""/></span>
+    </div>
+    <a href="#one" class="goto-next scrolly">Next</a>
+</section>
 
-    <!-- One -->
-    <section id="one" class="spotlight style1 bottom">
-        <span class="image fit main"><img src="{{ site.baseurl }}/images/pic10.jpg" alt=""/></span>
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="4u 12u$(medium)">
-                        <header>
-                            <h2>DeepCore Machine Learning Abstraction Framework</h2>
-                            <p>DeepCore is a utility toolkit, written in modern C++ (C++11) by
-                                <a href="http://www.digitalglobe.com">DigitalGlobe</a></p>
-                        </header>
-                    </div>
-                    <div class="4u 12u$(medium)">
-                        <p>It allows a user to download, perform either image classification or object detection, and
-                            manipulate geospatial vector files. DeepCore is intended to be a machine learning
-                            framework agnostic toolkit, allowing for a simple, clean, consistent programmatic interface.
-                            It also
-                            provides easy access to the DigitalGlobe imagery archive. As new
-                            machine learning techniques and frameworks emerge, they can easily be integrated into
-                            DeepCore. This
-                            allows developers using DeepCore to easily extend their applications with the latest
-                            technology, without
-                            having to worry about the complexities of each framework or technique</p>
-                    </div>
-                    <div class="4u$ 12u$(medium)">
-                        <p>DeepCore's machine learning features can also be accelerated by the use of Nvidia Graphics
-                            Processing
-                            Units (GPUs) using <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> technology.
-                            By enabling
-                            GPU mode, the process of object detection becomes very quick, allowing for faster and more
-                            efficient
-                            processing of large geographic areas. The use of GPUs to accelerate machine learning and
-                            object
-                            detection processes is highly recommended.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="#two" class="goto-next scrolly">Next</a>
-    </section>
-
-    <!-- Two -->
-    <section id="two" class="spotlight style1 left">
-        <span class="image fit main"><img src="{{ site.baseurl }}/images/pic03.jpg" alt=""/></span>
-        <div class="content">
-            <h2>DeepCore Design and API</h2>
-            <p>DeepCore is split into libraries that are grouped by function. This decoupled approach allows the
-                application developer to use the pieces necessary for their needs, and no more. For more information on
-                DeepCore, it's architecture and uses, please visit the <a href="deepcore.html">DeepCore Architecture
-                    page.</a>  DeepCore uses the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License V2.0.</a>
-
-            </p>
-        </div>
-        <a href="#three" class="goto-next scrolly">Next</a>
-    </section>
-
-    <!-- Three -->
-    <section id="three" class="spotlight style2 right">
-        <span class="image fit main bottom"><img src="{{ site.baseurl }}/images/pic02.jpg" alt=""/></span>
-        <div class="content">
-
-            <h2>Sample Application - gbdxm</h2>
-            <p>The <a href="https://github.com/DigitalGlobe/gbdxm">GBDXM packaging tool</a> is a DeepCore based
-                executable that enables the user to package a machine learning model for use with other DeepCore based
-                tools. It takes in a supported model format as an input, packages the model files into a single
-                easy-to-use, easy-to-share container. The DeepCore framework can then use that model package to perform
-                machine learning and object detection tasks. Currently, only Caffe models are supported, but other model
-                formats are forthcoming as additional machine learning frameworks are incorporated into DeepCore. The
-                GBDXM application can be downloaded via <a
-                        href="https://s3.amazonaws.com/deepcore/current/gbdxm">link</a></p>
-            <p>A sample model can be downloaded from the Sample Download links at the top of the page or in the footer
-                of the page.</p>
-        </div>
-        <a href="#four" class="goto-next scrolly">Next</a>
-    </section>
-
-    <!-- Four -->
-    <section id="four" class="spotlight style3 left">
-        <span class="image fit main"><img src="{{ site.baseurl }}/images/pic12.jpg" alt=""/></span>
-        <div class="content">
-            <h2>Sample Application - OpenSpaceNet</h2>
-            <p><a href="https://github.com/DigitalGlobe/OpenSpaceNet">OpenSpaceNet</a> is a DeepCore-based sample
-                application that uses DigitalGlobe satellite imagery as an input source for the object detection. Using
-                DigitalGlobe image services, such as the <a href="https://developer.digitalglobe.com/maps-api/">DigitalGlobe
-                    Maps API</a> or the <a href="https://services.digitalglobe.com">My DigitalGlobe</a> imagery service,
-                the user can access current satellite imagery for use in machine learning. OpenSpaceNet allows the user
-                to select an area for detection, specify a model to use during detection, and get the results back in a
-                geospatial format suitable for use in a GIS application or service. The OpenSpaceNet application can be
-                downloaded below.
-            <ul>
-                <li><a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/OpenSpaceNet"> Linux, using CUDA 7.5</a>
-                </li>
-                <li><a href="https://s3.amazonaws.com/deepcore/current/CUDA8/OpenSpaceNet">Linux, using CUDA 8</a></li>
-            </ul>
-
-            <p>To use the OpenSpaceNet application, please download the sample image and model provided on this page.
-                They can be downloaded via the Sample Data links at the top and bottom of the page.</p>
-        </div>
-        <a href="#five" class="goto-next scrolly">Next</a>
-    </section>
-
-    <!-- five -->
-    <section id="five" class="wrapper style1 special fade-up">
+<!-- One -->
+<section id="one" class="spotlight style1 bottom">
+    <span class="image fit main"><img src="{{ site.baseurl }}/images/pic10.jpg" alt=""/></span>
+    <div class="content">
         <div class="container">
-            <header class="major">
-                <h2>Download Software</h2>
-                <p>Download DeepCore and associated Software</p>
-            </header>
-            <div class="box alt">
-                <div class="row uniform">
-                    <section class="4u 6u(medium) 12u$(xsmall)">
-                        <span class="icon alt major fa-map-marker"></span>
-                        <h3>DeepCore</h3>
-                        <p>Download the DeepCore framework v1.0.0</p>
-                        <p>
-                            <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/libdeepcore-dev-1.0.0-Linux.tar.gz">Linux
-                                tarball</a><br>
-                            <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/libdeepcore-dev-1.0.0-Linux.deb">Linux
-                                .deb file</a><br>
-                            <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/libdeepcore-dev-1.0.0-Linux.rpm">Linux
-                                .rpm file</a>
-                        </p>
-                    </section>
-                    <section class="4u 6u$(medium) 12u$(xsmall)">
-                        <span class="icon alt major fa-globe"></span>
-                        <h3>OpenSpaceNet</h3>
-                        <p>Download OpenSpaceNet v1.0.0</p>
-                        <p>
-                            <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/OpenSpaceNet"> Linux, using CUDA
-                                7.5</a><br>
-                            <a href="https://s3.amazonaws.com/deepcore/current/CUDA8/OpenSpaceNet">Linux, using CUDA
-                                8.0</a>
-                            </ul>
-
-                        </p>
-                    </section>
-                    <section class="4u$ 6u(medium) 12u$(xsmall)">
-                        <span class="icon alt major fa-file-zip-o"></span>
-                        <h3>GBDXM packaging tool</h3>
-                        <p>Download GBDXM v1.0.0</p>
-                        <p>
-                            <a href="https://s3.amazonaws.com/deepcore/current/gbdxm">Linux</a>
-                        </p>
-                    </section>
-                    <section class="4u$ 6u(medium) 12u$(xsmall)">
-                        <span class="icon alt major fa-plane"></span>
-                        <h3>Sample Data</h3>
-                        <p>Download Sample Data</p>
-                        <p>
-                            <a href="https://s3.amazonaws.com/deepcore/model/airplane.gbdxm">Sample Model</a><br>
-                            <a href="https://s3.amazonaws.com/deepcore/images/atlanta_airport_R1C1.tif">Sample Image</a>
-
-                        </p>
-                    </section>
+            <div class="row">
+                <div class="4u 12u$(medium)">
+                    <header>
+                        <h2>DeepCore Machine Learning Abstraction Framework</h2>
+                        <p>DeepCore is a utility toolkit, written in modern C++ (C++11) by
+                            <a href="http://www.digitalglobe.com">DigitalGlobe</a></p>
+                    </header>
+                </div>
+                <div class="4u 12u$(medium)">
+                    <p>It allows a user to download, perform either image classification or object detection, and
+                        manipulate geospatial vector files. DeepCore is intended to be a machine learning
+                        framework agnostic toolkit, allowing for a simple, clean, consistent programmatic interface.
+                        It also
+                        provides easy access to the DigitalGlobe imagery archive. As new
+                        machine learning techniques and frameworks emerge, they can easily be integrated into
+                        DeepCore. This
+                        allows developers using DeepCore to easily extend their applications with the latest
+                        technology, without
+                        having to worry about the complexities of each framework or technique</p>
+                </div>
+                <div class="4u$ 12u$(medium)">
+                    <p>DeepCore's machine learning features can also be accelerated by the use of Nvidia Graphics
+                        Processing
+                        Units (GPUs) using <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> technology.
+                        By enabling
+                        GPU mode, the process of object detection becomes very quick, allowing for faster and more
+                        efficient
+                        processing of large geographic areas. The use of GPUs to accelerate machine learning and
+                        object
+                        detection processes is highly recommended.</p>
                 </div>
             </div>
-            <footer class="major">
-                <ul class="actions">
-                    <li><a href="#six" class="button">Contact</a></li>
-                </ul>
-            </footer>
         </div>
-    </section>
+    </div>
+    <a href="#two" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Two -->
+<section id="two" class="spotlight style1 left">
+    <span class="image fit main"><img src="{{ site.baseurl }}/images/pic03.jpg" alt=""/></span>
+    <div class="content">
+        <h2>DeepCore Design and API</h2>
+        <p>DeepCore is split into libraries that are grouped by function. This decoupled approach allows the
+            application developer to use the pieces necessary for their needs, and no more. For more information on
+            DeepCore, it's architecture and uses, please visit the <a href="deepcore.html">DeepCore Architecture
+                page.</a>  DeepCore uses the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License V2.0.</a>
+
+        </p>
+    </div>
+    <a href="#three" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Three -->
+<section id="three" class="spotlight style2 right">
+    <span class="image fit main bottom"><img src="{{ site.baseurl }}/images/pic02.jpg" alt=""/></span>
+    <div class="content">
+
+        <h2>Sample Application - gbdxm</h2>
+        <p>The <a href="https://github.com/DigitalGlobe/gbdxm">GBDXM packaging tool</a> is a DeepCore based
+            executable that enables the user to package a machine learning model for use with other DeepCore based
+            tools. It takes in a supported model format as an input, packages the model files into a single
+            easy-to-use, easy-to-share container. The DeepCore framework can then use that model package to perform
+            machine learning and object detection tasks. Currently, only Caffe models are supported, but other model
+            formats are forthcoming as additional machine learning frameworks are incorporated into DeepCore. The
+            GBDXM application can be downloaded via <a
+                    href="https://s3.amazonaws.com/deepcore/current/gbdxm">link</a></p>
+        <p>A sample model can be downloaded from the Sample Download links at the top of the page or in the footer
+            of the page.</p>
+    </div>
+    <a href="#four" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- Four -->
+<section id="four" class="spotlight style3 left">
+    <span class="image fit main"><img src="{{ site.baseurl }}/images/pic12.jpg" alt=""/></span>
+    <div class="content">
+        <h2>Sample Application - OpenSpaceNet</h2>
+        <p><a href="https://github.com/DigitalGlobe/OpenSpaceNet">OpenSpaceNet</a> is a DeepCore-based sample
+            application that uses DigitalGlobe satellite imagery as an input source for the object detection. Using
+            DigitalGlobe image services, such as the <a href="https://developer.digitalglobe.com/maps-api/">DigitalGlobe
+                Maps API</a> or the <a href="https://services.digitalglobe.com">My DigitalGlobe</a> imagery service,
+            the user can access current satellite imagery for use in machine learning. OpenSpaceNet allows the user
+            to select an area for detection, specify a model to use during detection, and get the results back in a
+            geospatial format suitable for use in a GIS application or service. The OpenSpaceNet application can be
+            downloaded below.
+        <ul>
+            <li><a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/OpenSpaceNet"> Linux, using CUDA 7.5</a>
+            </li>
+            <li><a href="https://s3.amazonaws.com/deepcore/current/CUDA8/OpenSpaceNet">Linux, using CUDA 8</a></li>
+        </ul>
+
+        <p>To use the OpenSpaceNet application, please download the sample image and model provided on this page.
+            They can be downloaded via the Sample Data links at the top and bottom of the page.</p>
+    </div>
+    <a href="#five" class="goto-next scrolly">Next</a>
+</section>
+
+<!-- five -->
+<section id="five" class="wrapper style1 special fade-up">
+    <div class="container">
+        <header class="major">
+            <h2>Download Software</h2>
+            <p>Download DeepCore and associated Software</p>
+        </header>
+        <div class="box alt">
+            <div class="row uniform">
+                <section class="4u 6u(medium) 12u$(xsmall)">
+                    <span class="icon alt major fa-map-marker"></span>
+                    <h3>DeepCore</h3>
+                    <p>Download the DeepCore framework v1.0.0</p>
+                    <p>
+                        <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/libdeepcore-dev-1.0.0-Linux.tar.gz">Linux
+                            tarball</a><br>
+                        <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/libdeepcore-dev-1.0.0-Linux.deb">Linux
+                            .deb file</a><br>
+                        <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/libdeepcore-dev-1.0.0-Linux.rpm">Linux
+                            .rpm file</a>
+                    </p>
+                </section>
+                <section class="4u 6u$(medium) 12u$(xsmall)">
+                    <span class="icon alt major fa-globe"></span>
+                    <h3>OpenSpaceNet</h3>
+                    <p>Download OpenSpaceNet v1.0.0</p>
+                    <p>
+                        <a href="https://s3.amazonaws.com/deepcore/current/CUDA7.5/OpenSpaceNet"> Linux, using CUDA
+                            7.5</a><br>
+                        <a href="https://s3.amazonaws.com/deepcore/current/CUDA8/OpenSpaceNet">Linux, using CUDA
+                            8.0</a>
+                    </p>
+                </section>
+                <section class="4u$ 6u(medium) 12u$(xsmall)">
+                    <span class="icon alt major fa-file-zip-o"></span>
+                    <h3>GBDXM packaging tool</h3>
+                    <p>Download GBDXM v1.0.0</p>
+                    <p>
+                        <a href="https://s3.amazonaws.com/deepcore/current/gbdxm">Linux</a>
+                    </p>
+                </section>
+                <section class="4u$ 6u(medium) 12u$(xsmall)">
+                    <span class="icon alt major fa-plane"></span>
+                    <h3>Sample Data</h3>
+                    <p>Download Sample Data</p>
+                    <p>
+                        <a href="https://s3.amazonaws.com/deepcore/model/airplane.gbdxm">Sample Model</a><br>
+                        <a href="https://s3.amazonaws.com/deepcore/images/atlanta_airport_R1C1.tif">Sample Image</a>
+
+                    </p>
+                </section>
+            </div>
+        </div>
+        <footer class="major">
+            <ul class="actions">
+                <li><a href="#six" class="button">Contact</a></li>
+            </ul>
+        </footer>
+    </div>
+</section>
 
