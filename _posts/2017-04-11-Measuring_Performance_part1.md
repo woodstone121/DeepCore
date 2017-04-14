@@ -6,21 +6,21 @@ author: Alan J. Schoen
 
 # Measuring Performance for Object Detectors
 
-This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming more important to have a standard way to score our models so we can decide which one is the best for a particular application.  We can score a model by making a ground truth image, where a person (or people) mark all of the aircraft, and then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
+This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming important to have a standard score that tells us how well each model performed on a problem, so we can choose the best one for each application.  Do do this, we need to have ground truth images for reference.  These are created by having real live humans mark the images with the targets.  Then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
 
 This post will cover the different decisions that went into the error calculation, and my next post will apply this to several different neural nets that me and my colleagues at DigitalGlobe have developed.
 
 ## Part 1: Defining a Metric
 
-Consider this example.  I've got a small image showing part of the famous airplane graveyard in Nevada.
+Consider this example: I've got a small image showing part of the famous airplane graveyard in Nevada.
 
 ![alt text][graveyard_plain]
 
-I have an image of the airplane graveyard in Nevada, and I want to detect all of the airplanes.  We already know where the airplanes are because one of our interns helpfully marked up this image.
+My goal is to train a neural net that detects all of the airplanes.  We already know where the airplanes are because one of our interns helpfully marked up this image (that's the ground truth image).
 
 ![alt text][graveyard_marked]
 
-So now we can use the image and the ground truth markings to score models, but we'll need to define a good metric to measure model quality.  We can't score a model by just counting the number of airplanes that it found, because its too easy to cheat.  A model could cover the whole image with a giant prediction, and that would find all the airplanes. 
+So now we can use the image and the ground truth markings to score models, but we'll need to define a good metric to measure model quality.  We can't score a model by just counting the number of airplanes that it found, because it's too easy to cheat.  A model could cover the whole image with a giant prediction, and that would find all the airplanes. 
 
 ![alt text][bad_prediction]
 
@@ -30,13 +30,13 @@ We found all the planes! Great, right?  Not really, because we just predicted th
 * **False positive rate**: The number of times the model predicted an airplane, but there wasn't really a plane there
 * **False negative rate**: When there's a plane, but the model doesn't find it
 
-A good model will have a high **true positive rate**, and low **false positive** and **false negative** rates.  There are a few metrics used widely in machine learning which combine these numbers together into a single score.  Two common examples are **ROC curves** and **F1** scores.  We'd like to apply these scores to our models, but there's a problem.  These metrics are usually applied to data that's structured differently from our data, so there's some ambiguity in applying them to satellite imagery.  There's more than one way to define the **true positive rate** and the **false positive rate**.  We'll need to compare several different ways to do it and decide how to proceed.
+A good model will have a high **true positive rate**, and low **false positive** and **false negative** rates.  There are a few metrics used widely in machine learning which combine these numbers together into a single score.  Two common examples are [**ROC curves**](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) and [**F1 scores**](https://en.wikipedia.org/wiki/F1_score).  We'd like to apply these scores to our models, but there's a problem.  These metrics are usually applied to data that's structured differently from our data, so there's some ambiguity in applying them to satellite imagery.  There's more than one way to define the **true positive rate** and the **false positive rate**.  We'll need to compare several different ways to do it and decide how to proceed.
 
 Starting with the **true positive rate**, here are two ways to measure it.
 1. Count each image pixel as a data point, and score the model based on how many pixels it classifies correctly.
-2. Use an object-based approach, where we could an object as detected only if it is sufficiently covered by the prediction.  Predictions that did not find objects are false positives.
+2. Use an object-based approach, where an object is detected only if the prediction covers it sufficiently.  And we count false positives by finding predictions that missed the target and do not cover any objects sufficiently.
 
-The first approach is really turning the problem into a segmentation problem, which is a different thing from detection.  That's not ideal for this case, because it makes large objects more important than small objects.  If we're detecting aircraft, we want to weigh large aircraft like airliners equally with small aircraft like fighter jets.  So pixel-counting won't do.
+The first approach is really turning the problem into a [segmentation](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/image_segmentation.html) problem, which is a different thing from [object detection](https://www.mathworks.com/discovery/object-detection.html).  That's not ideal for this case, because it makes large objects more important than small objects.  If we're detecting aircraft, we want to weigh large aircraft like airliners equally with small aircraft like fighter jets.  So pixel-counting won't do.
 
 The second approach makes more sense for us, but there are a few details to work out.  First, how do we decide whether or not an object is detected.
 
@@ -48,12 +48,12 @@ The second approach makes more sense for us, but there are a few details to work
 #### Hitting the target
 ![alt text][offset_predictions]
 
-Which of these images is a good detection?  We don't want to be too picky about the exact location of objects, since its not really important in most applications, but we have to draw the line somewhere.  A simple way to deal with this is to set a threshold on the proportion of the object area covered by the prediction.  We can set a minimum of 0.4 to make sure we got most of the object in the image.
+Which of these images is a good detection?  We don't want to be too picky about the exact location of objects, since it's not really important in most applications, but we have to draw the line somewhere.  A simple way to deal with this is to set a threshold on the proportion of the object area covered by the prediction.  We can set a minimum of 0.4 to make sure we got a good chunk the object in the box.
 
 #### Box Size
 ![alt text][sized_predictions]
 
-What about boxes that contain an entire object, but are much larger than the actual object?  Is it even a valid detection if we have a ridiculously oversized box like the one we looked at before? We want the boxes to represent the size of the object, and we'd like to avoid a scenario where a model gets rewarded for using big, imprecise boxes to increase it's hit rate.  So let's introduce the **Jaccard Index**, also known as **intersection over union** (**IoU**).
+What about boxes that contain an entire object, but are much larger than the actual object?  Is it even a valid detection if we have a ridiculously oversized box like the one we looked at at the beginning of the post? We want the boxes to represent the size of the object, and we'd like to avoid a scenario where a model gets rewarded for using big, imprecise boxes to increase its hit rate.  So let's introduce the [**Jaccard Index**](https://en.wikipedia.org/wiki/Jaccard_index), also known as [**intersection over union**](http://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/) (**IoU**).
 
 Before computing the **Jaccard index**, we'll switch from using the precise object markings to using a box circumscribing the object because this gives better results.  
 
@@ -74,7 +74,7 @@ Should we let a single box detect multiple airplanes?  If you just want to find 
 ![alt text][total_miss]
 ![alt text][double_down] 
 
-The picture on the left is clearly a miss.  The box just missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
+The picture on the left is clearly a miss because the box just plain missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
 
 ## Conclusions
 
