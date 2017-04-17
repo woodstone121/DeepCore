@@ -7,9 +7,6 @@ functionality and [non-maximum suppression algorithm](http://www.pyimagesearch.c
 
 The notion of “bag of words” for [document classification](https://en.wikipedia.org/wiki/Bag-of-words_model) relates directly to the notion that documents can be searched for in a database by modeling the frequency of occurrence versus word “ordering”. Therefore, if all of the words in a document could somehow be poured into a bag, the ***bag of words*** model would be able to classify a document by its corresponding histogram of word counts, with no concern about word ordering (see Figure 1 below).
 
-[//]: # (![image1](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image1.png)
-[//]: # ({width="5.619403980752406in" height="3.5306977252843397in"})
-
 <img src="https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image1.png" height="5.619403980752406in" width="3.5306977252843397in">
 
 Figure 1. Bag of words is from the field of text analysis and text-based search engines.
