@@ -12,15 +12,15 @@ This post will cover the different decisions that went into the error calculatio
 
 Consider this example: I've got a small image showing part of the famous airplane graveyard in Nevada.
 
-![alt text][graveyard_plain]
+![A section of the airplane graveyard][graveyard_plain]
 
 My goal is to train a neural net that detects all of the airplanes.  We already know where the airplanes are because one of our interns helpfully marked up this image (that's the ground truth image).
 
-![alt text][graveyard_marked]
+![A section of the airplane graveyard, marked with polygons][graveyard_marked]
 
 So now we can use the image and the ground truth markings to score models, but we'll need to define a good metric to measure model quality.  We can't score a model by just counting the number of airplanes that it found, because it's too easy to cheat.  A model could cover the whole image with a giant prediction, and that would find all the airplanes. 
 
-![alt text][bad_prediction]
+![A bad prediction that catches all of the airplanes.][bad_prediction]
 
 We found all the planes! Great, right?  Not really, because we just predicted that there were planes everywhere.  So if we want to score models well, we need to penalize models for making too many predictions.  To do this, we'll define a few quantities
 
@@ -44,33 +44,33 @@ The second approach makes more sense for us, but there are a few details to work
 * How should we count false positives?
 
 #### Hitting the target
-![alt text][offset_predictions]
+![Predictions at different offsets][offset_predictions]
 
 Which of these images is a good detection?  We don't want to be too picky about the exact location of objects, since it's not really important in most applications, but we have to draw the line somewhere.  A simple way to deal with this is to set a threshold on the proportion of the object area covered by the prediction.  We can set a minimum of 0.4 to make sure we got a good chunk the object in the box.
 
 #### Box Size
-![alt text][sized_predictions]
+![Predictions at different sizes][sized_predictions]
 
 What about boxes that contain an entire object, but are much larger than the actual object?  Is it even a valid detection if we have a ridiculously oversized box like the one we looked at at the beginning of the post? We want the boxes to represent the size of the object, and we'd like to avoid a scenario where a model gets rewarded for using big, imprecise boxes to increase its hit rate.  So let's introduce the [**Jaccard Index**](https://en.wikipedia.org/wiki/Jaccard_index), also known as [**intersection over union**](http://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/) (**IoU**).
 
 Before computing the **Jaccard index**, we'll switch from using the precise object markings to using a box circumscribing the object because this gives better results.  
 
-![alt text][sized_predictions_jacc]  
+![Predictions at different sizes][sized_predictions_jacc]  
 From looking at these images, it looks like a **Jaccard index** over 0.45 is a good detection.  A number below that is a sign that the box is too big or too small.  We can use a Jaccard cutoff instead of a proportion cutoff.
 
 
 #### Multiple Detections
 
 
-![alt text][2pred2] &nbsp;&nbsp; <font size="+3"> <b> or </b> </font> &nbsp;&nbsp;
-![alt text][2pred3] 
+![Two targets, one match][2pred2] &nbsp;&nbsp; <font size="+3"> <b> or </b> </font> &nbsp;&nbsp;
+![Two targets, two matches][2pred3] 
 
 
 Should we let a single box detect multiple airplanes?  If you just want to find airplanes, you might not care whether a box touches one plane or more than one.  But if your goal is to count planes, then you really want to enforce strict correspondence between boxes and planes.  If you want to restrict boxes to planes, then you can enforce that rule in the error calculation. My error calculator supports both.
 
 #### False Positives
-![alt text][total_miss]
-![alt text][double_down] 
+![This prediction missed the target completely.][total_miss]
+![Here we have two predictions that hit the target.][double_down] 
 
 The picture on the left is clearly a miss because the box just plain missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
 
@@ -84,24 +84,31 @@ In my next post, I will compare models against each other using my accuracy calc
 
 [graveyard_plain]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_plain.png "A section of the airplane graveyard"
 {: width="400px"}
+
 [graveyard_marked]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_marked.png "A section of the airplane graveyard, marked with polygons"
 {: width="400px"}
+
 [bad_prediction]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/bad_prediction.png "A bad prediction that catches all of the airplanes."
 {: width="400px"}
+
 [offset_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/offset_predictions_prop.png "Predictions at different offsets"
 {: width="1000px"}
+
 [sized_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/sized_predictions.png "Predictions at different sizes"
 {: width="1000px"}
+
 [sized_predictions_jacc]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/sized_predictions_jacc.png "Predictions at different sizes"
 {: width="1000px"}
 
 
 [2pred2]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/2pred2.png "Two targets, one match"
 {: width="200px"}
+
 [2pred3]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/2pred3.png "Two targets, two matches"
 {: width="200px"}
 
 [total_miss]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/total_miss.png "This prediction missed the target completely."
 {: width="400px"}
+
 [double_down]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/double_down.png "Here we have two predictions that hit the target."
 {: width="400px"}
