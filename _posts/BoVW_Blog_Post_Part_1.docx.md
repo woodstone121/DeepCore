@@ -7,22 +7,20 @@ functionality and [non-maximum suppression algorithm](http://www.pyimagesearch.c
 
 The notion of “bag of words” for [document classification](https://en.wikipedia.org/wiki/Bag-of-words_model) relates directly to the notion that documents can be searched for in a database by modeling the frequency of occurrence versus word “ordering”. Therefore, if all of the words in a document could somehow be poured into a bag, the ***bag of words*** model would be able to classify a document by its corresponding histogram of word counts, with no concern about word ordering (see Figure 1 below).
 
-<img src="https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image1.png" height="5.619403980752406in" width="3.5306977252843397in">
+![image1](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image1.png)
 
 Figure 1. Bag of words is from the field of text analysis and text-based search engines.
 
 Similarly, in computer vision, the goal is to represent each image with a bag of ***visual*** words, whereby instead of working with keywords, our “words” are key image patches and associated feature vectors as shown in Figure 2 below.
 
-![image2](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image2.png){width="4.7452220034995625in"
-height="3.6335564304461943in"}
+![image2](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image2.png)
 
 Figure 2. In Computer Vision, the bag of “words” model is analogous to a bag of "visual" words or key image patches.
 
 Then, the next step in the bag of visual words modeling process is to create a histogram of the frequency of key image
 patches that represent the image (see Figure 3 below).
 
-![image3](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image3.png){width="8.970138888888888in"
-height="3.277083333333333in"}
+![image3](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image3.png)
 
 Figure 3. A bag of "visual" words for each of the images shown above of a woman, bicyle, and a violin, can be represented by a histogram of the "visual words" or key image patch occurrences using a given dictionary.
 
@@ -32,8 +30,8 @@ created from many training samples. So for a given image category (violin), we f
 [SIFT](http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html) to obtain the most pertinent image features. We then cluster the entire set of feature extractors using the clustering algorithm [K-means](http://docs.opencv.org/trunk/d1/d5c/tutorial_py_kmeans_opencv.html). The center or mean of each cluster represents a visual word, the “**K**” in K-means represents the number of words in your dictionary, and the collection of visual words in turn represents our dictionary. Now that we have created our dictionary, also commonly referred to as your vocabulary or codebook, we can then classify an image. So given say an input image of a violin, we use our dictionary of visual words to encode
 all of the features extracted from the input image into a histogram of visual word occurrences (see Figure 4 below).
 
-![image4](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image4.png){width="8.970138888888888in"
-height="3.277083333333333in"}
+![image4](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image4.png)
+
 Figure 4. The input image of a violin has a bag of visual words histogram that closely resembles the category of class "Violin", and is assigned the label "Violin" with a probability of 0.92.
 
 In Figure 4, the bag of visual words (**BoVW**) modeling process
@@ -60,8 +58,7 @@ using the combination of the Fast Hessian (i.e., [SURF](http://docs.opencv.org/t
 keypoint detector and the feature descriptor [SIFT](http://docs.opencv.org/trunk/da/df5/tutorial_py_sift_intro.html).
 Both the detector and the descriptor selected are robust to scale, rotation, and illuminations changes, which is why I chose to use them for detecting and describing key shape features in an image (see Figure 5 below).
 
-![image5](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image5.png){width="8.399444444444445in"
-height="2.734027777777778in"}
+![image5](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image5.png)
 
 Figure 5. In constructing a bag of "visual" words model, the first step is to extract many feature vectors for each input image.
 
@@ -74,15 +71,13 @@ All of the training and testing objects that I used in constructing my BoVW mode
 (see Figure 7). I trained on an [augmented](http://machinelearningmastery.com/improve-deep-learning-performance/)
 dataset consisting of 1,877 fighter objects and 1,877 clutter objects, and then tested the performance of the BoVW classifier on 892 fighter and 892 clutter objects that were not used in the training phase. The training chips varied in pixel dimensions, and I did not perform any resizing, normalizing, or demeaning of the original training images. I found the best success from my preliminary experiments using the keypoint detector/descriptor combinations of SURF/SIFT and BRISK/SIFT.
 
-![image6](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image6.png){width="7.694444444444445in"
-height="2.855670384951881in"}
+![image6](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image6.png)
 
 Figure 6. Some Fighter Aircraft examples that we want to detect represents the positive training image samples.
 
 Below in Figure 7 are the negative training image samples consisting of both natural and man-made objects (e.g., cars and buildings).
 
-![image7](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image7.png){width="7.747334864391951in"
-height="3.1751388888888887in"}
+![image7](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image7.png)
 
 Figure 7. The background clutter consisting of both natural and man-made objects represent the negative training image samples.
 
@@ -95,15 +90,13 @@ Classify the Test Imagery
 Below are the [Precision and Recall](https://en.wikipedia.org/wiki/Precision_and_recall) Results for
 my binary classifier consisting of the only the two classes of fighter – clutter objects shown below in Figure 8.
 
-![table1](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/table1.png){width="7.747334864391951in"
-height="3.1751388888888887in"}
+![table1](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/table1.png)
 
 Table 1. The Precision-Recall results for the keypoint detector/descriptor combinations of SURF/SIFT and BRISK/SIFT.
 
 The winning keypoint detection/descriptor was using the BRISK keypoint detector, and the SIFT keypoint descriptor, since they had the highest precision-recall values. Below in Figure 8 is a visualization of three words in our “Fighter” dictionary.
 
-![image8](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image8.png){width="8.665748031496063in"
-height="2.665748031496063in"}
+![image8](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image8.png)
 
 Summary
 =======
