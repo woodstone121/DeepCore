@@ -6,18 +6,21 @@ published: True
 ---
 
 ## Clouds in Satellite Imagery
-When we're training models to work on satellite imagery, it's important to build models that are resilient.  That means making models that can deal with the variations we see in real sattelite imagery, like clouds, off-nadir angle, time of day, and atmospheric conditions.  I'm going to focus on clouds in this post.
+When we're training models to work on satellite imagery, it's important to build models that are resilient.  That means making models that can deal with the variations we see in real satellite imagery, like clouds, off-nadir angle, time of day, and atmospheric conditions.  I'm going to focus on clouds in this post.
 
-I tried searching the internet for other examples of adding clouds to images.  I found a few examples where people [use graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this fully automatically.  In addition, most people are used to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from sattelite images and then decide how to proceed
+I tried searching the internet for other examples of adding clouds to images.  I found a few examples where people [use graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this fully automatically.  In addition, most people are used to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
 
-SHOW EXAMPLES
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/31.jpg){: width="256px"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/12.jpg){: width="256px"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/45.png){: width="256px"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/desert_clouds1.jpg){: width="256px"}
 
 As you can see, clouds actually look pretty much the same from space.  File that under "Today I Learned", and let's go make some clouds...
 
 ## Generating Clouds Programmatically
-I found a great [example](http://lodev.org/cgtutor/randomnoise.html) creating clouds in *gasp* C.  From looking at the source code, I can see that the author created some white noise, and then progressivly upsampled smaller and smaller parts of the image and then stacked the results on top of each other.
+I found a great [example](http://lodev.org/cgtutor/randomnoise.html) creating clouds in *gasp* C.  From looking at the source code, I can see that the author created some white noise, and then progressively upsampled smaller and smaller parts of the image and then stacked the results on top of each other.
 
-In psuedocode:
+Here's the algorithm, in plain English:
 
 > 1. generate an NxN white noise image and store it
 2. cut out the upper-left quarter of the image
@@ -25,11 +28,11 @@ In psuedocode:
 4. repeat steps 2 and 3 until the corner image is 1x1
 5. stack the original image, and all the stored upsampled images on top of each by adding the pixel values
 
-I changed the order of the algorithm a little bit, but the result should be the same.  By varying the original image size, you can change the general appearance of the clouds.  Starting with a 64x64 image, the result looks like a coudy day.  Starting with 256x256, it looks like heavy rain.
+I changed the order of the algorithm a little bit, but the result should be the same.
 
-We can reproduce this in Python.  I'm going to upgrade to bicubic interpolation because its 2017 and its a great time to be alive.
+I'm going to reproduce this algorithm in Python.  I'm going to upgrade to bicubic interpolation because its 2017 and its a great time to be alive.
 
-NOTE: This code was exported from a Jupyter Notebook (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
+NOTE: This code was exported from a [Jupyter Notebook](https://gist.github.com/alanjschoen/a37bfe7cf7e266beacd69c172f266bb3) (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
 
 
 {% highlight python %}
@@ -155,7 +158,7 @@ def add_clouds(image_np, alpha):
     turbulence_pattern = make_turbulence(image_np.shape[0])
     return (image_np*(1-alpha) + turbulence_pattern[:,:,None]*alpha).astype(np.uint8)
 
-image_np = np.array(Image.open('/home/alan/Desktop/Synthetic Clouds/Peirce_quincuncial_projection_SW_20W.JPG'))
+image_np = np.array(Image.open('Peirce_quincuncial_projection_SW_20W.JPG'))
 alpha = np.random.uniform(0.2, 0.65)
 cloudy_image_np = add_clouds(image_np, alpha)
 
@@ -166,5 +169,7 @@ ax.axis('off');
 
 
 ![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_8_0.png){: width="768px"}
+
+You can download my jupyter notebook [here](https://gist.github.com/alanjschoen/a37bfe7cf7e266beacd69c172f266bb3)
 
 
