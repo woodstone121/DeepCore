@@ -32,7 +32,7 @@ We can reproduce this in Python.  I'm going to upgrade to bicubic interpolation 
 NOTE: This code was exported from a Jupyter Notebook (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
 
 
-```python
+{% highlight python %}
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -69,7 +69,7 @@ norm = matplotlib.colors.Normalize(vmin=0, vmax=255, clip=True)
 ax.imshow(turbulence_pattern, cmap=plt.cm.gray, norm=norm)
 ax.axis('off');
 
-```
+{% endhighlight %}
 
 ![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Clouds_0_0.png)
 
