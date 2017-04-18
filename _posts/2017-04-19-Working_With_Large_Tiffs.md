@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Working With Large Tiff Files
 author: Alan J. Schoen
 published: False

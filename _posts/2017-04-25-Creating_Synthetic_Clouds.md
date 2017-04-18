@@ -17,8 +17,9 @@ As you can see, clouds actually look pretty much the same from space.  File that
 ## Generating Clouds Programmatically
 I found a great [example](http://lodev.org/cgtutor/randomnoise.html) creating clouds in *gasp* C.  From looking at the source code, I can see that the author created some white noise, and then progressivly upsampled smaller and smaller parts of the image and then stacked the results on top of each other.
 
-In psuedocode
-1. generate an NxN white noise image and store it
+In psuedocode:
+
+> 1. generate an NxN white noise image and store it
 2. cut out the upper-left quarter of the image
 3. upsample the upper-left corner to the original image size, and store the result
 4. repeat steps 2 and 3 until the corner image is 1x1
@@ -28,10 +29,11 @@ I changed the order of the algorithm a little bit, but the result should be the 
 
 We can reproduce this in Python.  I'm going to upgrade to bicubic interpolation because its 2017 and its a great time to be alive.
 
-NOTE: This code was exported from a Jupyter Notebook [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html) using python 3.4.3.  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
+NOTE: This code was exported from a Jupyter Notebook (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
 
 
 ```python
+
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -88,8 +90,6 @@ img = Image.open('61.png')
 
 img
 ```
-
-
 
 
 ![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Clouds_2_0.png)
