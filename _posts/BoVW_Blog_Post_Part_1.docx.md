@@ -1,6 +1,6 @@
 Last year in June of 2016, I was hired at
 [DigitalGlobe](http://www.digitalglobe.com) to provide data science support to a team located in Herndon, Virginia. The majority of my previous academic and work experience has been in the fields of image processing, computer vision, and remote sensing. I was excited and eager to make a career-transition as a full-time [data scientist](http://blog.edx.org/the-importance-of-data-science-in-the-21st-century), particularly in the area of machine learning applied to Satellite
-imagery. So to ease my transition, I wanted to spend my first few months implementing a machine learning classifier that would classify DigitalGlobe Satellite imagery of Airplanes, and also make use of our company’s latest open-source machine library product called [DeepCore](https://digitalglobe.github.io/DeepCore). I had previously overheard a colleague talk about a computer vision algorithm called bag of words that could be used to classify images in conjunction with using a machine learning classifier.
+imagery. So to ease my transition, I wanted to spend my first few months implementing a machine learning classifier that would classify DigitalGlobe Satellite imagery of Airplanes, and also make use of our company’s latest machine library software product called [DeepCore](https://digitalglobe.github.io/DeepCore). DeepCore is written in modern C++ (C++ 11), and  it allows the user to perform either image classification or object detection, manipulate geospatial vector files, and download Download DigitalGlobe's vast amounts of Satellite imagery, or even import and process your own imagery. I had previously overheard a colleague talk about a computer vision algorithm called bag of words that could be used to classify images in conjunction with using a machine learning classifier.
 
 So in part 1 of a two-part series of blog posts, I wanted to first lay out the fundamental concepts and theory behind one of the most important computer vision classification algorithms, and in my second blog post (i.e., Part 2), I will cover how to implement the algorithm in [OpenCV](http://docs.opencv.org/3.2.0/) and C++. Furthermore, I will also highlight how to use the [sliding window](http://www.pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/)
 functionality and [non-maximum suppression algorithm](http://www.pyimagesearch.com/2015/02/16/faster-non-maximum-suppression-python/) available in the [DeepCore](https://digitalglobe.github.io/DeepCore) library to classify an input image with great success.
@@ -87,8 +87,8 @@ functionality to determine the best hyperplane that separated my two classes of 
 Classify the Test Imagery
 -------------------------
 
-Below are the [Precision and Recall](https://en.wikipedia.org/wiki/Precision_and_recall) Results for
-my binary classifier consisting of the only the two classes of fighter – clutter objects shown below in Figure 8.
+Below are the [Precision and Recall](https://en.wikipedia.org/wiki/Precision_and_recall) results for
+my binary classifier consisting of the only the two classes of fighter – clutter objects shown below in Table 1.
 
 ![table1](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/table1.png)
 
@@ -97,6 +97,8 @@ Table 1. The Precision-Recall results for the keypoint detector/descriptor combi
 The winning keypoint detection/descriptor was using the BRISK keypoint detector, and the SIFT keypoint descriptor, since they had the highest precision-recall values. Below in Figure 8 is a visualization of three words in our “Fighter” dictionary.
 
 ![image8](https://github.com/DigitalGlobe/DeepCore/blob/kevin_blog/assets/images/2017-04-17-Bag_of_Visual_Words/image8.png)
+
+Figure 8. This is a visualization of 16 image patches of 3 different visual words in our “Fighter” dictionary that contains over 300 visual words. Note that each of these selected words represent diverse fighters in various orientations.
 
 Summary
 =======
