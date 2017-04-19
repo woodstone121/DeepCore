@@ -6,9 +6,11 @@ published: True
 ---
 
 ## Clouds in Satellite Imagery
-When we're training models to work on satellite imagery, it's important to build models that are resilient.  That means making models that can deal with the variations we see in real satellite imagery, like clouds, off-nadir angle, time of day, and atmospheric conditions.  I'm going to focus on clouds in this post.
+When we're training models to work on satellite imagery, it's important to build models that are resilient.  That means making models that can deal with the variations we see in real satellite imagery, like clouds, off-nadir angle, time of day, and atmospheric conditions.  We can handle this by including data from diverse conditions in our training set, but when that's not available, we can also use augmentation to simulate it.  We use a variety of augmentations like rotation, scaling, contrast adjustment but we're interested in expanding this to include augmentations that are specifically designed to simulate variations that are specific to satellite imagery.  This includes simulating changes in the time of day, atmospheric conditions, off-nadir angle, and weather conditions.
 
-I tried searching the internet for other examples of adding clouds to images.  I found a few examples where people [use graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this fully automatically.  In addition, most people are used to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
+We recently found that some of our models were not able to deal with light cloud cover.  The model either misses planes that are covered by clouds, or it detects them but the confidence values are lower than they should be.  So I decided to try augmenting our training data with synthetic clouds.  In order to do that, I'd have to figure out how to generate clouds.
+
+First, I tried searching the internet for other examples of adding clouds to images.  I found a few examples where people [use graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this with code.  One additional thing to consider before choosing a method is that most people are used to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
 
 ![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/31.jpg){: width="256px"}
 ![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/12.jpg){: width="256px"}
@@ -18,21 +20,21 @@ I tried searching the internet for other examples of adding clouds to images.  I
 As you can see, clouds actually look pretty much the same from space.  File that under "Today I Learned", and let's go make some clouds...
 
 ## Generating Clouds Programmatically
-I found a great [example](http://lodev.org/cgtutor/randomnoise.html) creating clouds in *gasp* C.  From looking at the source code, I can see that the author created some white noise, and then progressively upsampled smaller and smaller parts of the image and then stacked the results on top of each other.
+I found a great [example](http://lodev.org/cgtutor/randomnoise.html) creating clouds in C.  From looking at the source code, I can see that the author created some white noise, and then progressively upsampled smaller and smaller parts of the image to the original image size and stacked the results on top of each other.
 
-Here's the algorithm, in plain English:
+Before I present my program in Python, here's the algorithm in plain English:
 
 > 1. generate an NxN white noise image and store it
-2. cut out the upper-left quarter of the image
-3. upsample the upper-left corner to the original image size, and store the result
+2. cut out the upper-left quadrant of the image
+3. upsample the upper-left quadrant to the original image size, and store the result
 4. repeat steps 2 and 3 until the corner image is 1x1
-5. stack the original image, and all the stored upsampled images on top of each by adding the pixel values
+5. Sum the original noise pattern and all the upsampled quadrants pixel by pixel, scaling the values of each pattern by the inverse of the root of quandrant's edge dimension
 
 I changed the order of the algorithm a little bit, but the result should be the same.
 
 I'm going to reproduce this algorithm in Python.  I'm going to upgrade to bicubic interpolation because its 2017 and its a great time to be alive.
 
-NOTE: This code was exported from a [Jupyter Notebook](https://gist.github.com/alanjschoen/a37bfe7cf7e266beacd69c172f266bb3) (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
+NOTE: This code was exported from a [Jupyter Notebook](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic Clouds.ipynb) (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
 
 
 {% highlight python %}
@@ -148,7 +150,7 @@ for ax, alpha in zip(axes.flat, np.linspace(0,1,n_levels)):
 
 Now we can see a range of images with different alpha levels.  For augmentation, we'll want to avoid images that are so cloudy we can't make out the objects.  For this reason, we'll set an upper bound of 0.65 on the alpha parameter.  On the other hand, we don't want to waste our time creating augmented images that don't even look cloudy, so let's set a minimum alpha value of 0.2.
 
-Now let's create an add_clouds function that we can use to augment images in the future.  To speed things up a little, we're dropping PIL and just using pure numpy.  This function assumes we're dealing with square images.  If you want it to work with non-square images, you'll have to modify the script to resize the clouds to match the image size.
+Now let's create an add_clouds function that we can use to augment images in the future.  To speed things up a little, we're dropping PIL from the augmentation process and just using pure numpy to add clouds to the image (I'm still using PIL to load the image).  This function assumes we're dealing with square images.  If you want it to work with non-square images, you'll have to modify the script to resize the clouds to match the image size.
 
 Then let's add some clouds to [my favorite map projection](https://xkcd.com/977/).
 
@@ -170,6 +172,6 @@ ax.axis('off');
 
 ![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_8_0.png){: width="768px"}
 
-You can download my jupyter notebook [here](https://gist.github.com/alanjschoen/a37bfe7cf7e266beacd69c172f266bb3)
+You can download my jupyter notebook [here]({{ site.baseurl }}/assets/notebooks/clouds/Synthetic Clouds.ipynb).  If you'd like to view it rendered, try [this link](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic Clouds.ipynb).
 
 
