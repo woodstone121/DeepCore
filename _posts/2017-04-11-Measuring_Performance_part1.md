@@ -83,13 +83,13 @@ In my next post, I will compare models against each other using my accuracy calc
 ![alt-text]({{ site.baseurl }}/images/banner2.png)
 
 [graveyard_plain]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_plain.png "A section of the airplane graveyard"
-{: width="650px"}
+{: width="950px"}
 
 [graveyard_marked]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_marked.png "A section of the airplane graveyard, marked with polygons"
-{: width="650px"}
+{: width="950px"}
 
 [bad_prediction]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/bad_prediction.png "A bad prediction that catches all of the airplanes."
-{: width="650px"}
+{: width="950px"}
 
 [offset_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/offset_predictions_prop.png "Predictions at different offsets"
 {: width="1000px"}
@@ -108,7 +108,7 @@ In my next post, I will compare models against each other using my accuracy calc
 {: width="250px"}
 
 [total_miss]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/total_miss.png "This prediction missed the target completely."
-{: width="650px"}
+{: width="950px"}
 
 [double_down]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/double_down.png "Here we have two predictions that hit the target."
-{: width="650px"}
+{: width="950px"}
