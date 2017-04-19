@@ -4,7 +4,7 @@ title: Measuring Performance for Object Detectors - Part 1
 author: Alan J. Schoen
 ---
 
-This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming important to have a standard score that tells us how well each model performed on a problem so we can choose the best one for each application.  Do do this, we need to have ground truth images for reference.  These are created by having real live humans mark the images with the targets.  Then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
+This is the first part of a 2-part series of posts about measuring the accuracy of detector models.  As we develop more models, it's becoming important to have a standard score that tells us how well each model performed on a problem so we can choose the best one for each application.  In order to do this, we need to have ground truth images for reference.  These are created by having real live humans mark the images with the targets.  Then we compare the model output to the ground truth.  But there are important things we need to consider in order to define a scoring system that really shows us the best model for the job.
 
 This post will cover the different decisions that went into the error calculation, and my next post will apply this to several different neural nets that me and my colleagues at DigitalGlobe have developed.
 
@@ -83,13 +83,13 @@ In my next post, I will compare models against each other using my accuracy calc
 ![alt-text]({{ site.baseurl }}/images/banner2.png)
 
 [graveyard_plain]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_plain.png "A section of the airplane graveyard"
-{: width="400px"}
+{: width="650px"}
 
 [graveyard_marked]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/graveyard_marked.png "A section of the airplane graveyard, marked with polygons"
-{: width="400px"}
+{: width="650px"}
 
 [bad_prediction]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/bad_prediction.png "A bad prediction that catches all of the airplanes."
-{: width="400px"}
+{: width="650px"}
 
 [offset_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/offset_predictions_prop.png "Predictions at different offsets"
 {: width="1000px"}
@@ -102,13 +102,13 @@ In my next post, I will compare models against each other using my accuracy calc
 
 
 [2pred2]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/2pred2.png "Two targets, one match"
-{: width="200px"}
+{: width="250px"}
 
 [2pred3]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/2pred3.png "Two targets, two matches"
-{: width="200px"}
+{: width="250px"}
 
 [total_miss]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/total_miss.png "This prediction missed the target completely."
-{: width="400px"}
+{: width="650px"}
 
 [double_down]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/double_down.png "Here we have two predictions that hit the target."
-{: width="400px"}
+{: width="650px"}
