@@ -13,7 +13,7 @@ We had our own experience with this recently.  I trained a multi-class [DetectNe
 ![A cloudy image]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_nodetections.png){: width="519px"}
 ![Detection problems]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_detections.png){: width="523px"}
 
-To the human eye, it's very easy to pick out these airplanes because two of the three are only lightly obscured by clouds, and the third is only partially obscured.  But the DetectNet model is not used to dealing with clouds because the training imagery did not contain a lot of clouds.  As a result, it missed on plane altogether, it gave one plane a confidence value of 0.23, which is very low, and another plane a confidence value of 0.90, which is still too low.  If you look closely at the plane that got the 0.23 score, you will see that it is lightly obscured by a cloud.  The other 0.90 plane is partially covered by a thin cloud, but you really have to zoom in to see it.  We can deal with this in the future by seeking out cloudy images to train our model with, but we can also work with the data we already have by adding synthetic clouds to clear images.
+To the human eye, it's very easy to pick out these airplanes because two of the three are only lightly obscured by clouds, and the third is only partially obscured.  But the DetectNet model is not used to dealing with clouds because the training imagery did not contain a lot of clouds.  As a result, it missed one plane altogether, it gave another plane a confidence value of 0.23, which is very low, and the third plane a confidence value of 0.90, which is still too low.  If you look closely at the plane that got the 0.23 score, you will see that it is lightly obscured by a cloud.  The other 0.90 plane is partially covered by a thin cloud, but you really have to zoom in to see it.  We can deal with this in the future by seeking out cloudy images to train our model with, but we can also work with the data we already have by adding synthetic clouds to clear images.
 
 There are other kinds of variation in satellite imagery, like off-nadir angle, time of day, and atmospheric conditions.  We will need to address all of these in the future, so I'm expecting to do a lot more work on making models robust to image variations.
 
@@ -162,7 +162,7 @@ Now we can see a range of images with different alpha levels.  For augmentation,
 
 Now let's create an add_clouds function that we can use to augment images in the future.  To speed things up a little, we're dropping PIL from the augmentation process and just using pure numpy to add clouds to the image (I'm still using PIL to load the image).  This function assumes we're dealing with square images.  If you want it to work with non-square images, you'll have to modify the script to resize the clouds to match the image size.
 
-Then let's add some clouds to [my favorite map projection](https://xkcd.com/977/).
+Finally, let's add some clouds to [my favorite map projection](https://xkcd.com/977/).
 
 
 {% highlight python %}
