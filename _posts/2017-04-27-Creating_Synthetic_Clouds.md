@@ -5,12 +5,22 @@ author: Alan J. Schoen
 published: True
 ---
 
+## Tiny Changes Can Fool AI
+There has been a lot of [talk](https://motherboard.vice.com/en_us/article/fooling-image-classification-networks-is-really-easy) [recently](http://www.bbc.com/future/story/20170410-how-to-fool-artificial-intelligence) (and some [not so recently](https://motherboard.vice.com/en_us/article/machine-vision-google-adversarial-images)) about how tiny changes to pictures can fool that smartest neural nets.  One [paper](https://www.cs.cmu.edu/~sbhagava/papers/face-rec-ccs16.pdf) showed how to make a neural net confuse Reese Witherspoon with Russell Crowe by adding a funky pair of technicolor zebra-striped wayfarer frames.  If that's all it takes, maybe Clark Kent was onto something after all.
+
+We had our own experience with this recently.  I trained a multi-class [DetectNet](https://github.com/NVIDIA/caffe/tree/caffe-0.15/examples/kitti) model to detect airplanes.  The model worked great, and it improved speed and accuracy over my previous models.  But when we ran tests on real images, we found that it didn't work very well when clouds were present.  The model usually produces confidence scores over 0.95 for clear images of big planes like airliners, but it was fooled by this image:
+
+![A cloudy image]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_nodetections.png){: width="520px"}
+![Detection problems]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_detections.png){: width="520px"}
+
+To the human eye, it's very easy to pick out these airplanes because two of the three are only lightly obscured by clouds.  But the DetectNet model is not used to dealing with clouds because the training imagery did not contain a lot of clouds.  As a result, it gives one plane a confidence value of 0.23, which is really very low, and the other one a confidence value of 0.90, which is still low.  If you look closely at the plane that got the 0.23 score, you wil see that it is lightly obscured by a cloud.  We can deal with this in the future by seeking out cloudy images to train our model with, but we can also work with the data we already have by adding synthetic clouds to clear images.
+
+There are other kinds of variation in satellite imagery, like off-nadir angle, time of day, and atmospheric conditions.  We will need to address all of these in the future, so I'm expecting to do a lot more work on making models robust to image variations.
+
 ## Clouds in Satellite Imagery
-When we're training models to work on satellite imagery, it's important to build models that are resilient.  That means making models that can deal with the variations we see in real satellite imagery, like clouds, off-nadir angle, time of day, and atmospheric conditions.  We can handle this by including data from diverse conditions in our training set, but when that's not available, we can also use augmentation to simulate it.  We use a variety of augmentations like rotation, scaling, contrast adjustment but we're interested in expanding this to include augmentations that are specifically designed to simulate variations that are specific to satellite imagery.  This includes simulating changes in the time of day, atmospheric conditions, off-nadir angle, and weather conditions.
+For now, let's just deal with clouds.  I searched the internet for examples where people added clouds to images, and I mainly found instructions on [using graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this with code.  
 
-We recently found that some of our models were not able to deal with light cloud cover.  The model either misses planes that are covered by clouds, or it detects them but the confidence values are lower than they should be.  So I decided to try augmenting our training data with synthetic clouds.  In order to do that, I'd have to figure out how to generate clouds.
-
-First, I tried searching the internet for other examples of adding clouds to images.  I found a few examples where people [use graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this with code.  One additional thing to consider before choosing a method is that most people are used to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
+One additional thing to consider before choosing a method is that most people are used to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
 
 ![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/31.jpg){: width="256px"}
 ![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/12.jpg){: width="256px"}
