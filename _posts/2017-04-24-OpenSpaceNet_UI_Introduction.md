@@ -11,6 +11,7 @@ using the latest in machine learning technology. If you have any questions pleas
 [GitHub Repo](https://github.com/DigitalGlobe/DeepCore/issues). A complete transcript of the video is available
 [here](https://docs.google.com/document/d/1NyEzD2AUICCOhva9OPU6sTNn1FLn9craZ9kUVlvIryY/edit?usp=sharing).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w15Vcqe9lc0" frameborder="0" allowfullscreen></iframe>
 
 
 Thanks for checking out OpenSpaceNet,
