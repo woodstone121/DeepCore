@@ -72,11 +72,11 @@ Should we let a single box detect multiple airplanes?  If you just want to find 
 ![This prediction missed the target completely.][total_miss]
 ![Here we have two predictions that hit the target.][double_down] 
 
-The picture on the left is clearly a miss because the box just plain missed the target.  But what about the picture on the right?  Should we count both of those as hits, or count just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
+The first image is clearly a miss because the box just plain missed the target.  But what about the second image?  Should we count both of those as hits, or just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
 
 ## Conclusions
 
-Deciding how to score true positives, false positives, and false negatives will determine which models look better than others, so it's important to make decisions that make sense for your particular application.  I made my own decisions on these questions, based on what I thought our model would be used for.  Then I wrote an accuracy calculator to score models against test imagery based on my criteria.  In some cases, I supported multiple options because I thought we might need to use a different measurement for different problems.
+Deciding how to score true positives, false positives, and false negatives will determine which models are judged to be better than others, so it's important to make decisions that fit your application.  I made my own decisions on these questions, based on what I thought our model would be used for.  Then I wrote an accuracy calculator to score models against test imagery based on my criteria.  In some cases, I supported multiple options because I thought we might need to use a different measurement for different problems.
 
 In my next post, I will compare models against each other using my accuracy calculator.
 
