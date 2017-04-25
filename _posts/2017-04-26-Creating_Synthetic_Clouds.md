@@ -42,9 +42,9 @@ Before I present my program in Python, here's the algorithm in plain English:
 
 I changed the order of the algorithm a little bit, but the result should be the same.
 
-I'm going to reproduce this algorithm in Python.  I'm going to upgrade to bicubic interpolation because its 2017 and its a great time to be alive.
+I'm going to reproduce this algorithm in Python.  I'm also going to upgrade the interpolation to bicubic because its 2017 and its a great time to be alive.
 
-NOTE: This code was exported from a [Jupyter Notebook](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic Clouds.ipynb) (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There area a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
+NOTE: This code was exported from a [Jupyter Notebook](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic Clouds.ipynb) (python 3.4.3) [using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html).  There are a couple of things that are specific to Jupyter/iPython, like `%matplotlib inline` and the semicolon at the end.  If you want to run this code outside of a Jupyter Notebook, you will need to remove those.  Otherwise, it should work normally.
 
 
 {% highlight python %}
@@ -88,7 +88,7 @@ ax.axis('off');
 
 ![Synthetic Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_0_0.png){: width="768px"}
 
-We can make the clouds more granular by increasing the number 2 in `power_range = range(2, ...`.  I added the normalization step to make the code robust to that change.  It might be possible to save a few cycles by using the formula for the sum of a geometric series, but I'll leave that for another day.
+We can make the clouds more granular by increasing the number 2 in `power_range = range(2, ...`, but this will also change the number of images that are summed together.  I added the normalization step to make the code robust to that change.  It might be possible to save a few cycles by using the formula for the sum of a geometric series, but I'll leave that for another day.
 
 
 ## Adding Clouds to Images
@@ -111,7 +111,7 @@ img
 
 
 
-Then, we'll convert the cloud pattern into a PIL format, so it's ready to be merged with another image.  Finally, we can merge the images together.
+Then, we'll convert the cloud pattern into a PIL format so it's ready to be merged with another image.  Last, we can merge the images together.
 
 
 {% highlight python %}
@@ -160,7 +160,7 @@ for ax, alpha in zip(axes.flat, np.linspace(0,1,n_levels)):
 
 Now we can see a range of images with different alpha levels.  For augmentation, we'll want to avoid images that are so cloudy we can't make out the objects.  For this reason, we'll set an upper bound of 0.65 on the alpha parameter.  On the other hand, we don't want to waste our time creating augmented images that don't even look cloudy, so let's set a minimum alpha value of 0.2.
 
-Now let's create an add_clouds function that we can use to augment images in the future.  To speed things up a little, we're dropping PIL from the augmentation process and just using pure numpy to add clouds to the image (I'm still using PIL to load the image).  This function assumes we're dealing with square images.  If you want it to work with non-square images, you'll have to modify the script to resize the clouds to match the image size.
+Now let's create an add_clouds function that we can use to augment images in the future.  To speed things up a little, we're dropping PIL from the augmentation process and just using pure numpy to add clouds to the image (I'm still using PIL to load the image).  This function assumes we're dealing with square images.  If you want it to work with non-square images, you'll have to modify the script to resize the clouds to match the image size (hint: you can use [`scipy.misc.imresize`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.imresize.html) again to do this).
 
 Finally, let's add some clouds to [my favorite map projection](https://xkcd.com/977/).
 
