@@ -2,7 +2,7 @@
 layout: post
 title: Creating Synthetic Clouds in Python
 author: Alan J. Schoen
-published: false
+published: true
 ---
 
 ## Tiny Changes Can Fool AI
