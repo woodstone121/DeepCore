@@ -34,12 +34,12 @@ I found a great [example](http://lodev.org/cgtutor/randomnoise.html) of creating
 
 Before I present my program in Python, here's the algorithm in plain English:
 
-1. generate an NxN white noise image `r1`
+1. generate an NxN white noise image `r1` (where N is half the image width)
 2. cut out the upper-left quadrant of `r1` and store as `r2`
-3. upsample `r2` to `r1`'s image size, and store the result
+3. upsample `r2` to the original image size, and store the result
 4. Multiply the pixel values of `r2` by 2
 5. repeat steps 2, 3 and 4 on (`r2`, `r4`, `r8`, ...) to produce (`r4`, `r8`, `r16`, ...) until `rN` is 1x1
-6. Sum all of `r2`, `r4`, etc. to produce your cloud pattern.
+6. Sum all of `r1`, `r2`, `r4`, etc. to produce your cloud pattern.
 
 The algorithm order varies from the code, but the result should be the same.
 
@@ -47,7 +47,7 @@ I've reproduced this algorithm in Python upgraded the interpolation to bicubic b
 
 NOTE: The following code was exported from a 
 [Jupyter Notebook](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic%20Clouds.ipynb) (python 3.4.3) 
-[using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), so be careful of `Jupyter Notebook` specifices such as `%matplotlib inline` and semicolons to supress output, which may cause issues outside of Jupyter Notebook.
+[using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), so be careful of Jupyter/IPython specifics such as `%matplotlib inline` and semicolons to supress output.  These details improve the appearance of the notebook, but they might cause issues outside of Jupyter Notebook.
 
 
 {% highlight python %}
@@ -61,7 +61,7 @@ import scipy.ndimage
 
 def make_turbulence(im_size):
     # Initialize
-    base_pattern = np.random.uniform(0,255, (im_size, im_size))
+    base_pattern = np.random.uniform(0,255, (im_size//2, im_size//2))
     turbulence_pattern = np.zeros((im_size, im_size))
 
     # Create cloud pattern
@@ -77,7 +77,6 @@ def make_turbulence(im_size):
     turbulence_pattern /= sum([1 / 2**i for i in power_range])
     
     return turbulence_pattern
-    
 
 turbulence_pattern = make_turbulence(768)
 
