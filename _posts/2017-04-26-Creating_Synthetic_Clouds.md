@@ -8,17 +8,17 @@ published: true
 ## Tiny Changes Can Fool AI
 There has been much [discussion](https://motherboard.vice.com/en_us/article/fooling-image-classification-networks-is-really-easy) more [recently](http://www.bbc.com/future/story/20170410-how-to-fool-artificial-intelligence) (and some [not so recently](https://motherboard.vice.com/en_us/article/machine-vision-google-adversarial-images)) on how minute changes to images can fool the smartest neural nets. [Sharif et al. showed](https://www.cs.cmu.edu/~sbhagava/papers/face-rec-ccs16.pdf)  how to fool a neural net into classifying a Reese Witherspoon photo as Russell Crowe by adding a groovy pair of technicolor zebra-striped wayfarer frames.  If that's all it takes, then maybe Clark Kent was onto something after all.
 
-We had our own experience with this recently, with our multi-class [DetectNet](https://github.com/NVIDIA/caffe/tree/caffe-0.15/examples/kitti) exceptional airplane-detection model. The model produces confidence scores over 0.95 for clear images of big planes like airliners, but is fooled by this image:
+We had our own experience with this recently, with our multi-class [DetectNet](https://github.com/NVIDIA/caffe/tree/caffe-0.15/examples/kitti) airplane-detection model. The model usually produces confidence scores over 0.95 for clear images of big planes like airliners, but it's fooled by this image:
 
 ![A cloudy image]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_nodetections.png){: width="519px"}
 ![Detection problems]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_detections.png){: width="523px"}
 
-To the human eye, it's very easy to pick out these airplanes because two of the three are only lightly obscured by clouds, and the third is only partially obscured.  But the DetectNet model cannot perform on clouded imagery because the training data did not contain a lot of clouds.  As a result, the model missed one plane altogether and gave low condfidence scores of `.23` (for light obscurity) and `.90` (for very partial cloud cover). An obvious solution to this issue is seek out cloudy images to train our model with, but that's not very tractible. Instead, we can also work with existing data and add synthetic clouds to clear images.
+To the human eye, it's very easy to pick out these airplanes because two of the three are only lightly covered by clouds, and the third is only partially obscured.  But the DetectNet model cannot perform on cloudy imagery because the training data did not contain a lot of clouds.  So the model missed one plane altogether and gave low confidence scores of `.23` (for light obscurity) and `.90` (for very partial cloud cover). An obvious solution to this issue is seek out cloudy images to train our model with, but that's going to cost extra time and money. Instead, we can work with existing data by adding synthetic clouds to clear images.
 
 There are other kinds of variation in satellite imagery, like [off-nadir](https://en.wikipedia.org/wiki/Nadir) angle, time of day, and atmospheric conditions that also need to be addressed in the future, but we'll focus on cloud cover for now.
 
 ## Clouds in Satellite Imagery
-I researched for examples of adding clouds to images, and I mainly found instructions on [using graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this with code for automation.  
+I researched for examples of adding clouds to images, and I mainly found instructions on [using graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this with code so we can repeat the process thousands or millions of times during training.  
 
 One additional thing to consider before choosing a method is that most people are accustomed to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
 
@@ -30,16 +30,16 @@ One additional thing to consider before choosing a method is that most people ar
 As you can see, clouds actually look pretty much the same from space.  File that under "Today I Learned", and let's go make some clouds...
 
 ## Generating Clouds Programmatically
-I found a great [example](http://lodev.org/cgtutor/randomnoise.html) of creating clouds in `C`.  From looking at the source code, I can see that the author created some white noise, and then progressively upsampled smaller and smaller parts of the image to the original image size and stacked the results on top of each other.
+I found a great [example](http://lodev.org/cgtutor/randomnoise.html) of creating clouds in `C`.  From looking at the source code, I can see that the author created some white noise, and then progressively upsampled smaller and smaller parts of the image to the original image size and stacked the results on top of each other.  The result is a fractal noise pattern that looks an awful lot like clouds.
 
 Before I present my program in Python, here's the algorithm in plain English:
 
-1. generate an NxN white noise image `r1`
+1. generate an NxN white noise image `r1` (where N is half the image width)
 2. cut out the upper-left quadrant of `r1` and store as `r2`
-3. upsample `r2` to `r1`'s image size, and store the result
+3. upsample `r2` to the original image size, and store the result
 4. Multiply the pixel values of `r2` by 2
 5. repeat steps 2, 3 and 4 on (`r2`, `r4`, `r8`, ...) to produce (`r4`, `r8`, `r16`, ...) until `rN` is 1x1
-6. Sum all of `r2`, `r4`, etc. to produce your cloud pattern.
+6. Sum all of `r1`, `r2`, `r4`, etc. to produce your cloud pattern.
 
 The algorithm order varies from the code, but the result should be the same.
 
@@ -47,7 +47,7 @@ I've reproduced this algorithm in Python upgraded the interpolation to bicubic b
 
 NOTE: The following code was exported from a 
 [Jupyter Notebook](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic%20Clouds.ipynb) (python 3.4.3) 
-[using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), so be careful of `Jupyter Notebook` specifices such as `%matplotlib inline` and semicolons to supress output, which may cause issues outside of Jupyter Notebook.
+[using nbconvert](http://briancaffey.github.io/2016/03/14/ipynb-with-jekyll.html), so be careful of Jupyter/IPython specifics such as `%matplotlib inline` and semicolons to suppress output.  These details improve the appearance of the notebook, but they might cause issues outside of Jupyter Notebook.
 
 
 {% highlight python %}
@@ -61,7 +61,7 @@ import scipy.ndimage
 
 def make_turbulence(im_size):
     # Initialize
-    base_pattern = np.random.uniform(0,255, (im_size, im_size))
+    base_pattern = np.random.uniform(0,255, (im_size//2, im_size//2))
     turbulence_pattern = np.zeros((im_size, im_size))
 
     # Create cloud pattern
@@ -77,7 +77,6 @@ def make_turbulence(im_size):
     turbulence_pattern /= sum([1 / 2**i for i in power_range])
     
     return turbulence_pattern
-    
 
 turbulence_pattern = make_turbulence(768)
 
