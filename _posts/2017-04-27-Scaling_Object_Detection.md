@@ -10,6 +10,25 @@ Object detection in geospatial context presents some unique scalability challeng
 
 In most applications, CNNs are used to classify a single image using a CNN such as LeNet, AlexNet, or GoogLeNet. The classifier can then be used to localize objects within an image using the sliding window technique. Localizing object detection architectures such as R-CNN, DetectNet, and YOLO are able to localize objects without using a sliding window.
 
+<table>
+    <tr style="border: none; background-color: transparent;">
+        <td markdown="span" align="center" style="padding: 0 .5em;">
+            ![alt text][sliding_window]
+        </td>
+        <td markdown="span" align="center" style="padding: 0 0.5em;">
+            ![alt text][detectnet]
+        </td>
+    </tr>
+    <tr style="border: none;">
+        <td markdown="span" align="center" style="padding: 0;">
+            Sliding window object detection
+        </td>
+        <td markdown="span" align="center"  style="padding: 0;">
+            DetectNet object detection
+        </td>
+    </tr>
+</table>
+
 The problem is that most object detection workflows are geared towards detecting objects in photos or in video frames. Those images tend to be limited to a few megapixels. For those applications, a whole image can be processed at once. In fact, for video applications a localizing detector can be used with the input layer dimensions set to the video resolution, further maximizing detection performance.
 
 Looking at the geospatial imagery applications, we see that imagery sometimes gets into gigapixel range. For example, the current theoretical limitation of OpenSpaceNet is about 2 gigapixels. However, that's only if the computer has enough memory to handle it. Image size doesn't fully describe memory requirements, since there are usually multiple image bands and resampling can greatly increase memory requirements.
@@ -19,6 +38,25 @@ In practice, even if the machine has enough memory, we still have a lot of use c
 # Divide and Conquer
 
 One of the ways GIS and Remote Sensing applications is by dividing imagery into tiles. This allows to break the problem down into managable pieces. Most web maping services use 256 x 256 pixel image tiles, though tile sizes may vary. For example, Google Maps uses imagery of resolutions from 50m to 15cm, which cover the whole Earth. They store and serve this imagery in tiles varying in sizes from 256x256 to 4096x4096. This lets them cover majority of the Earth surface because all the tiles don't have to be loaded at the same time, they don't even have to be stored on the same computer.
+
+<table>
+    <tr style="border: none; background-color: transparent;">
+        <td markdown="span" align="center" style="padding: 0 .5em;">
+            ![alt text][stitched]
+        </td>
+        <td markdown="span" align="center" style="padding: 0 0.5em;">
+            ![alt text][tiled]
+        </td>
+    </tr>
+    <tr style="border: none;">
+        <td markdown="span" align="center" style="padding: 0;">
+            A satellite image of Atlanta Airport
+        </td>
+        <td markdown="span" align="center"  style="padding: 0;">
+            Same image, but with tile borders shown
+        </td>
+    </tr>
+</table>
 
 This approach has other benefits as well. These include the ability to download and process multiple images at the same time. In fact, we can start processing tiles as soon as the first one loads without having to wait on the others to complete. Another benefit is that we can cache the tiles locally so that we don't have to download them again if we need to look at the same area.
 
@@ -35,3 +73,15 @@ Furthemore, it's beneficial to process the loaded subsets concurrently with load
 # The DeepCore Processing Framework
 
 The DeepCore Processing Framework aims to solve these problems. This is the first in a series of articles in which we'll examine the design of the Processing Framework, which aims to make asynchronous components simple to implement and compose.
+
+[sliding_window]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/sliding_window.gif "Sliding Window"
+{: width="384px"}
+
+[detectnet]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/detectnet.gif "DetectNet"
+{: width="384px"}
+
+[stitched]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/stitched_reduced.jpg "Satellite Image"
+{: width="512px"}
+
+[tiled]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/tiled_reduced.jpg "Tiled Satellite Image"
+{: width="512px"}
