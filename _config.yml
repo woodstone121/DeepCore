@@ -1,2 +1,5 @@
+markdown: kramdown
+highlighter: rouge
+
 gems:
   - jekyll-feed
