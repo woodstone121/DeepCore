@@ -95,7 +95,7 @@ The way to avoid loading the whole image at once is to load the tiles on-demand 
     </tr>
 </table>
 
-Furthermore, it's beneficial to process the loaded subsets concurrently with loading more subsets. This normally leads to very complicated and error-prone code. Asynchronous code is notoriously difficult to debug and extend. Anybody experienced with JavaScript is familiar with "callback hell" that sometimes results from chaining asynchronous calls.
+Furthermore, it's beneficial to process the loaded subsets concurrently with loading more subsets. This normally leads to very complicated and error-prone code. Asynchronous code is notoriously difficult to debug and extend. Anybody experienced with [JavaScript][javascript] is familiar with "callback hell" that sometimes results from chaining asynchronous calls.
 
 # The DeepCore Processing Framework
 
@@ -117,7 +117,9 @@ The DeepCore Processing Framework aims to solve these problems. This is the firs
 
 [gis]: https://en.wikipedia.org/wiki/Geographic_information_system
 
-[remote_sensing] https://en.wikipedia.org/wiki/Remote_sensing
+[remote_sensing]: https://en.wikipedia.org/wiki/Remote_sensing
+
+[javascript]: https://en.wikipedia.org/wiki/JavaScript
 
 [sliding_window]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/sliding_window.gif "Sliding Window"
 {: width="384px"}
