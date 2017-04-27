@@ -33,7 +33,7 @@ The problem is that most object detection workflows are geared towards detecting
 
 Looking at the geospatial imagery applications, we see that imagery sometimes gets into gigapixel range. For example, the current theoretical limitation of OpenSpaceNet is about 2 gigapixels. However, that's only if the computer has enough memory to handle it. Image size doesn't fully describe memory requirements, since there are usually multiple image bands and resampling can greatly increase memory requirements.
 
-In practice, even if the machine has enough memory, we still have a lot of use cases where 2 gigapixels is not enough. 2 gigapixels at a 30 cm resolution about 2,000 km<sup>2</sup>. As an example, metro Atlanta area is about 20,000 km<sup>2</sup>. We need to be able to scale much more than we currently can.
+In practice, even if the machine has enough memory, we still have a lot of use cases where 2 gigapixels is not enough. 2 gigapixels at a 30 cm resolution is about 2,000 km<sup>2</sup>. As an example, metro Atlanta area is about 20,000 km<sup>2</sup>. We need to be able to scale much more than we currently can.
 
 # Divide and Conquer
 
