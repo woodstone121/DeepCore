@@ -17,11 +17,11 @@ A model's goal is to find all of the airplanes in this image.  Which would look 
 
 SHOW PICTURE
 
-Any red stripey areas left over are bad, beacuse they mean the model missed something.  Let's start with airplanes.gbdxm, the model we distrubute on the [DeepCore website](who you callin a dead link?).  This is an AlexNet model that was trained on (again) pain-stakingly hand-collected screenshots.
+Any red stripey areas left over are bad, beacuse they mean the model missed something.  Let's start with airplanes.gbdxm, the model we distrubute on the [DeepCore website](https://digitalglobe.github.io/DeepCore/index.html#five).  This is an AlexNet model that was trained on (again) pain-stakingly hand-collected screenshots.
 
 SHOW PICTURE
 
-Now let's score this prediction.  I wrote a simple script to count the number of true positives, false positives, and false negatives.
+Now let's score this prediction.  I wrote a simple script to count the number of true positives, false positives, and false negatives.  Geopandas makes this pretty easy.
 
 ```
 import geopandas as gpd
@@ -45,6 +45,7 @@ REPORT ACCURACY
 
 This is a huge improvement.
 
+TABLE COMPARING ALL 3 MODELS
 
 EXTRA (NOT NECESSARY)
 The DetectNet model and AlNet have an extra feature in addition to detection.  They're both pretty good at classifying aircraft too.  Let's do one additional test where the models dont just have to find airplanes, they have to tell us what type they are too.  In this training data, we divided airplanes into 4 classes:
