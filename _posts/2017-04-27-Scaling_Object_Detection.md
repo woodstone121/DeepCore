@@ -37,7 +37,7 @@ In practice, even if the machine has enough memory, we still have a lot of use c
 
 # Divide and Conquer
 
-One of the ways [GIS][gis] and [Remote Sensing][remote_sensing] applications tackle the enourmous amounts of data they have to process is by dividing imagery into tiles. This allows to break the problem down into manageable pieces. Most web mapping services use 256&times;256 pixel image tiles, though tile sizes may vary. For example, Google Maps uses imagery of resolutions from 50 m to 15 cm, which cover the whole Earth. They store and serve this imagery in tiles sizes varying from 256&times;256 to 4096&times;4096. This lets them cover majority of the Earth surface because all the tiles don't have to be loaded at the same time, they don't even have to be stored on the same computer.
+One of the ways [GIS][gis] and [Remote Sensing][remote_sensing] applications tackle the enourmous amounts of data they have to process is by dividing imagery into tiles. This allows to break the problem down into manageable pieces. Most web mapping services use 256&times;256 pixel image tiles, though tile sizes may vary. For example, Google Maps uses imagery of resolutions from 50 m to 15 cm, which cover the whole Earth. They store and serve this imagery in tiles sizes varying from 256&times;256 to 4096&times;4096. This lets them cover the majority of the Earth surface because all the tiles don't have to be loaded at the same time. They don't even have to be stored on the same computer.
 
 <table>
     <tr style="border: none; background-color: transparent;">
