@@ -37,7 +37,7 @@ In practice, even if the machine has enough memory, we still have a lot of use c
 
 # Divide and Conquer
 
-One of the ways [GIS][gis] and [Remote Sensing][remote_sensing] applications tackle the enourmous amounts of data they have to process is by dividing imagery into tiles. This allows to break the problem down into manageable pieces. Most web mapping services use 256&times;256 pixel image tiles, though tile sizes may vary. For example, Google Maps uses imagery of resolutions from 50 m to 15 cm, which cover the whole Earth. They store and serve this imagery in tiles sizes varying from 256&times;256 to 4096&times;4096. This lets them cover the majority of the Earth surface because all the tiles don't have to be loaded at the same time. They don't even have to be stored on the same computer.
+One of the ways [GIS][gis] and [Remote Sensing][remote_sensing] applications tackle the enourmous amounts of data they have to process is by dividing imagery into tiles. This allows them to break the problem down into manageable pieces. Most web mapping services use 256&times;256 pixel image tiles, though tile sizes may vary. For example, Google Maps uses imagery of resolutions from 50 m to 15 cm, which cover the whole Earth. They store and serve this imagery in tiles sizes varying from 256&times;256 to 4096&times;4096. This lets them cover the majority of the Earth surface because all the tiles don't have to be loaded at the same time. They don't even have to be stored on the same computer.
 
 <table>
     <tr style="border: none; background-color: transparent;">
@@ -62,7 +62,7 @@ This approach has other benefits as well. These include the ability to download 
 
 # The Edge Problem
 
-The tiling strategy seems like the way to go for scaling [Remote Sensing][remote_sensing] applications, but it doesn't work for object detection. The problem is that if an object spans multiple tiles, the detector will never get a chance to look at a whole object, so the object will not be detected. This issue can be somewhat mitigated by dividing images into large subset, but the problem still remains. The sliding window has to run over the whole image in order to guarantee not to miss anything.
+The tiling strategy seems like the way to go for scaling [Remote Sensing][remote_sensing] applications, but it doesn't work for object detection. The problem is that if an object spans multiple tiles, the detector will never get a chance to look at a whole object, so the object will not be detected. This issue can be somewhat mitigated by dividing images into large subset, but the problem still remains. The sliding window must run over the entire image, or risk missing objects.
 
 <table>
     <tr style="border: none; background-color: transparent;">
