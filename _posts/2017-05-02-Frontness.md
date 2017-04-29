@@ -14,7 +14,7 @@ When Alan blogged about [measuring performance]({{ site.baseurl }}{% post_url 20
 
 One fundamental problem that can be solved in an automated way with machine learning is **object counting**. While many people have been approaching this problem, but with the DeepCore in combination with [GBDX](http://platform.digitalglobe.com/gbdx/), it can be approached at global scale. This type of problem is to answer questions about *"how many?"*.
 
-In it's simplest form, the detector emits the center of objects. This is useful for derived intelligence such as a heatmap of activity (e.g. *where are most the swimming pools?*) or a graph showing change over time (e.g. *how is the popularity of an airport changing?*). With an automated system, it's easy to expand those queries over space and time (e.g. *how is the popularity of each airport in the United States changing?*).
+In it's simplest form, the detector emits the center of objects. This is useful for derived intelligence such as a heatmap of activity (e.g. [*where are most the swimming pools?*](https://platform.digitalglobe.com/gbdx-poolnet-identifying-pools-satellite-imagery/)) or a graph showing change over time (e.g. [*where are people driving cars?*](https://medium.com/the-downlinq/car-localization-and-counting-with-overhead-imagery-an-interactive-exploration-9d5a029a596b)). With an automated system, it's easy to expand those queries over space and time (e.g. *how is the popularity of each airport in the United States changing?*).
 
 ![Car counting][car_counting]
 
@@ -27,12 +27,12 @@ Expanding beyond simple points, a detector can output other characteristics of t
  
 ![Object Location Results][object_location_results]
 
-While the current release of DeepCore only contains support for a center point or a geographic bounding box, research is ongoing to build models and add support for other output paradigms. In a geographical application that involves relocatable objects, however, orientation can have more meaning than just finding a tighter fit.
+While the current release of DeepCore only contains support for a center point or a geographic [bounding box](http://wiki.openstreetmap.org/wiki/Bounding_Box), research is ongoing to build models and add support for [other output paradigms](https://crowdsourcing.topcoder.com/spacenet). In a geographical application that involves relocatable objects, however, orientation can have more meaning than just finding a tighter fit.
  
 
 ### #Frontness
 
-At this point, I've been resisting using a hashtag, I really have. But after a long discussion on important characteristics of the object to resolve, **#frontness** was born. While the only reference to "frontness" I can find online is as jargon in phonetics, I take to it here to refer to the state or quality of an object's front. And while "front" is an intuitive concept, I'll further elaborate on that as the "natural heading of an object".
+At this point, I've been resisting using a hashtag, I really have. But after a long discussion on important characteristics of the object to resolve, **#frontness** was born. While the only reference to "frontness" I can find online is as [jargon in phonetics](https://www.uni-due.de/ELE/Phonetics.htm), I take to it here to refer to the state or quality of an object's front. And while "front" is an intuitive concept, I'll further elaborate on that as the "natural heading of an object".
 
 A natural heading, however, isn't directly measurable. Ideally, a detection model would have an attribute that expresses orientation along with position. While a deep learning abstracts the details of obtaining this orientation, we have put some thought into other metrics that could be used to obtain it (perhaps as a metric to accompany the deep learning framework or in the development of a training set). Some of these metrics are:
 
@@ -50,9 +50,9 @@ One of the hard problems posed to users of geospatial intelligence is the **need
 A big challenge in this problem is developing a suitable model to perform this task. Since you are looking for something that is hard to find, it's necessarily hard to develop the breadth of comparable examples with which to train a model. With deep learning and convolutional neural networks, this problem is particularly accute. Some approaches that are useful here are:
 
  - Data Augmentation
- - Transfer Learning
+ - [Transfer Learning](http://cs231n.github.io/transfer-learning/)
  - Synthesized Training Data
- - Training Methods (e.g. dropout)
+ - Training Methods (e.g. [dropout](http://jmlr.org/papers/v15/srivastava14a.html))
 
 Those ideas are not unique to the search and discovery problem. For example, the well known network *AlexNet* has many millions parameters that need to be learned, and avoiding overfitting is always a challenge. As such, the discussion of building a model in the absence of sufficient data (which in some sense, you always are) will be featured in future posts.
 
