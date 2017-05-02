@@ -55,7 +55,7 @@ A big challenge in this problem is developing a suitable model to perform this t
  - Synthesized Training Data
  - Training Methods (e.g. [dropout](http://jmlr.org/papers/v15/srivastava14a.html))
 
-Those ideas are not unique to the search and discovery problem. For example, the well known network *AlexNet* has many millions parameters that need to be learned, and avoiding overfitting is always a challenge. As such, the discussion of building a model in the absence of sufficient data (which in some sense, you always are) will be featured in future posts.
+Those ideas are not unique to the search and discovery problem. For example, the well known network *AlexNet* has many millions of parameters that need to be learned and avoiding overfitting is always a challenge. As such, the discussion of building a model in the absence of sufficient data (which in some sense, you always are) will be featured in future posts.
 
 
 
