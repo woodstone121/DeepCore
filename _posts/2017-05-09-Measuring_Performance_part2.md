@@ -2,7 +2,7 @@
 layout: post
 title: Measuring Performance for Object Detectors - Part 2
 author: Alan J. Schoen
-published: False
+published: True
 ---
 
 This post is the second and final installment in my series about measuring the accuracy of models.
