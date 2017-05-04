@@ -39,7 +39,7 @@ A natural heading, however, isn't directly measurable. Ideally, a detection mode
 
 ![Frontness Surrogate Attributes][frontness_surrogate_attributes]
 
-Unfortunately, these methods neither differentiate between front and back nor are they universally applicable. As modeling advances, an direct output would be the frontness. In the counting problem, models with #frontness can be used to infer the likely heading of each object. Why might this be useful?  An example could be measuring traffic. From overhead you can determine the density of the automobiles, but the measurement would have a great deal more value if we were to determine the direction of the traffic. Is it a beach day?  Are people evacuating?
+Unfortunately, these methods neither differentiate between front and back nor are they universally applicable. As modeling advances, a direct output would be the frontness. In the counting problem, models with #frontness can be used to infer the likely heading of each object. Why might this be useful?  An example could be measuring traffic. From overhead you can determine the density of the automobiles, but the measurement would have a great deal more value if we were to determine the direction of the traffic. Is it a beach day?  Are people evacuating?
 
 
 ## Search and Discovery
