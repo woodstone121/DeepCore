@@ -5,13 +5,11 @@ author: Alan J. Schoen
 published: True
 ---
 
-This post is the second and final installment in my series about measuring the accuracy of models.
+This post is the second and final installment in my series about measuring the accuracy of models.  In my last post, I talked about how to choose a method to score models.  Now it's time to use that method to score models against each other.  Let's start with a brief summary of the goal.
 
-In my last post, I talked about how to choose a method to score models.  Now it's time to use that method to score models against each other.  Let's start with a brief summary of the goal.
+We have a ground truth image, in which each airplane has been painstakingly marked by an intern in the DigitalGlobe offices:
 
-We have a ground truth image, in which each airplane has been painstakingly marked by an intern in the DigitalGlobe offices.
-
-![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/graveyard_plain.png){: width="80%"}
+![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/graveyard_marked.png){: width="80%"}
 
 A model's goal is to find all of the airplanes in this image.  Which would look like this:
 
