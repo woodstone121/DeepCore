@@ -3,8 +3,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% if page.keywords %}
+    <meta name="Keywords" content="computer vision, deep learning, machine learning, c++, caffe, tensorflow, cntk, opencv, gdal, geospatial, digital globe, digitalglobe, {{page.keywords}}" />
+    {% else %}
     <meta name="Keywords" content="computer vision, deep learning, machine learning, c++, caffe, tensorflow, cntk, opencv, gdal, geospatial, digital globe" />
+    {% endif %}
+    {% if page.desc %}
+    <meta name="Description" content="{{ page.desc }}" />
+    {% else %}
     <meta name="Description" content="DeepCore is a utility toolkit, written in modern C++ (C++11) by DigitalGlobe. It allows a user to download, perform either image classification or object detection, and manipulate geospatial vector files." />
+    {% endif %}
     {% feed_meta %}
     <title>{{page.title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
