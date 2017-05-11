@@ -9,9 +9,9 @@ This post is the second and final installment in my series about measuring the a
 
 We have a ground truth image, in which each airplane has been painstakingly marked by an intern in the DigitalGlobe offices:
 
-![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/graveyard_marked.png){: width="80%"}
+![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/graveyard_marked.png){: width="70%"}
 
-A model's goal is to find all of the airplanes in this image.  Which would look like this:
+A detection model's goal is to find all of the airplanes in an image by drawing a box around each instance.  A perfect prediction would look like this:
 
 ![A perfect prediction]({{ site.baseurl }}/assets/images/Measuring_Performance_2/perfect_prediction.png){: width="65%"}
 
@@ -45,7 +45,7 @@ I'm going to show one more variation that shows what happens when the threshold 
 &nbsp;&nbsp;&nbsp;
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/hist3.png){: width="22%"}
 
-At this threshold leve, we don't have any false positives, but now we're missing half of the planes.  We have only 16 true positives, out of a maximum of 33.  As a result, the model has an `F1` score of 0.65, which is lower than the last threshold.
+At this threshold level, there are no false positives, but the model missed half of the planes.  We have only 16 true positives, out of a maximum of 33.  As a result, the model has an `F1` score of 0.65, which is lower than the last threshold.
 
 I repeated the precision/recall/F1 analysis at 10 different threshold levels, and you can see the results in the table below:
 
