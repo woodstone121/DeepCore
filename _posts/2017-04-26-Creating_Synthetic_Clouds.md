@@ -10,8 +10,8 @@ There has been much [discussion](https://motherboard.vice.com/en_us/article/fool
 
 We had our own experience with this recently, with our multi-class [DetectNet](https://github.com/NVIDIA/caffe/tree/caffe-0.15/examples/kitti) airplane-detection model. The model usually produces confidence scores over 0.95 for clear images of big planes like airliners, but it's fooled by this image:
 
-![A cloudy image]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_nodetections.png){: width="519px"}
-![Detection problems]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_detections.png){: width="523px"}
+![A cloudy image]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_nodetections.png){: width="42%"}
+![Detection problems]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/clouds_detections.png){: width="42.3%"}
 
 To the human eye, it's very easy to pick out these airplanes because two of the three are only lightly covered by clouds, and the third is only partially obscured.  But the DetectNet model cannot perform on cloudy imagery because the training data did not contain a lot of clouds.  So the model missed one plane altogether and gave low confidence scores of `.23` (for light obscurity) and `.90` (for very partial cloud cover). An obvious solution to this issue is seek out cloudy images to train our model with, but that's going to cost extra time and money. Instead, we can work with existing data by adding synthetic clouds to clear images.
 
@@ -22,10 +22,10 @@ I researched for examples of adding clouds to images, and I mainly found instruc
 
 One additional thing to consider before choosing a method is that most people are accustomed to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
 
-![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/31.jpg){: width="256px"}
-![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/12.jpg){: width="256px"}
-![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/45.png){: width="256px"}
-![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/desert_clouds1.jpg){: width="256px"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/31.jpg){: width="22%"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/12.jpg){: width="22%"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/45.png){: width="22%"}
+![Satellite Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/desert_clouds1.jpg){: width="22%"}
 
 As you can see, clouds actually look pretty much the same from space.  File that under "Today I Learned", and let's go make some clouds...
 
@@ -88,7 +88,7 @@ ax.axis('off');
 
 {% endhighlight %}
 
-![Synthetic Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_0_0.png){: width="768px"}
+![Synthetic Clouds]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_0_0.png){: width="68%"}
 
 We can make the clouds more granular by increasing the number 2 in `power_range = range(2, ...`, but this will also change the number of images that are summed together.  I added the normalization step to make the code robust to that change.  It might be possible to save a few cycles by using the formula for the sum of a geometric series, but I'll leave that exercise for the reader.
 
@@ -109,7 +109,7 @@ img
 {% endhighlight %}
 
 
-![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_2_0.png){: width="768px"}
+![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_2_0.png){: width="68%"}
 
 
 
@@ -135,7 +135,7 @@ Image.blend(img, turb_img, 0.5)
 
 
 
-![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_4_1.png){: width="768px"}
+![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_4_1.png){: width="68%"}
 
 
 
@@ -157,7 +157,7 @@ for ax, alpha in zip(axes.flat, np.linspace(0,1,n_levels)):
 {% endhighlight %}
 
 
-![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_6_0.png){: width="1000px"}
+![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_6_0.png){: width="81%"}
 
 
 Now we can see a range of images with different alpha levels.  For augmentation, we'll want to avoid images that are so cloudy we can't make out the objects.  For this reason, we'll set an upper bound of 0.65 on the alpha parameter.  On the other hand, we don't want to waste our time creating augmented images that don't even look cloudy, so let's set a minimum alpha value of 0.2.
@@ -182,7 +182,7 @@ ax.axis('off');
 {% endhighlight %}
 
 
-![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_8_0.png){: width="768px"}
+![png]({{ site.baseurl }}/assets/images/Creating_Synthetic_Clouds/Synthetic Clouds_8_0.png){: width="68%"}
 
 You can download my Jupyter notebook [here]({{ site.baseurl }}/assets/notebooks/clouds/Synthetic%20Clouds.ipynb).  
 If you'd like to view it rendered in GitHub, try [this link](https://github.com/DigitalGlobe/DeepCore/blob/master/assets/notebooks/clouds/Synthetic%20Clouds.ipynb).
