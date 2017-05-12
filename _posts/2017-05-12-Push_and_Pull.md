@@ -4,11 +4,11 @@ layout: post
 author: Aleksey Vitebskiy
 ---
 
-In the previous post we've discussed the challenges of scaling object detection. We talked about how the traditional model of tiling images doesn't quite fit because we need to be able to detect objects that span multiple tiles. In this post we'll examine the challenge of implementing a system that will do that efficiently. We will then introduce a different data processing method which aims to address the scalability issue while still being easy to extend.
+In the previous post, we've discussed the challenges of scaling object detection. We talked about how the traditional model of tiling images doesn't quite fit because we need to be able to detect objects that span multiple tiles. In this post, we'll examine the challenge of implementing a system that will do that efficiently. We will then introduce a different data processing method which aims to address the scalability issue while still being easy to extend.
 
 # Traditional Batch Processing
 
-In the traditional batch processing model, each step of an operation produces an intermediate result. That result is then fed to the next operation. The intermediate result is stored either on disk, or in memory.
+In the traditional batch processing model, each step of an operation produces an intermediate result. That result is then fed to the next operation. The intermediate result is stored either on disk or in memory.
 
 <table>
     <tr style="border: none; background-color: transparent;">
@@ -25,17 +25,17 @@ In the traditional batch processing model, each step of an operation produces an
 
 This is the oldest and the simplest way of composing different operations, this method dates back to mainframe days. Since each intermediate result is independent, we can add or change the operations in the chain easily. It's also simple to understand and debug. In fact, we don't even have to do it in the same program or script: we can run each step separately, passing the output data of each step into the next step.
 
-There are some major disadvantages to this approach. Whether we store each intermediate result in memory or on disk, we're potentially creating full copies of the data in each step. In our example, we have to store three copies of each data. The process is also inherently serial, so we have to wait to download all the tiles before we can stitch them. Same issue with stitching the tiles, then slicing them into sliding windows. Maybe we can improve on this.
+There are some major disadvantages to this approach. Whether we store each intermediate result in memory or on disk, we're potentially creating full copies of the data in each step. In our example, we have to store three copies of each data. The process is also inherently serial, so we have to wait to download all the tiles before we can stitch them. Same issue with stitching the tiles then slicing them into sliding windows. Maybe we can improve on this.
 
 # Combining Operations
 
-Looking at the traditional batch processing chart, it's easy to see that there are simple ways to optimize that workflow. Lets examine how we would actually implement it using pseudocode with Python syntax, pseudo-Python if you will.
+Looking at the traditional batch processing chart, it's easy to see that there are simple ways to optimize that workflow. Let's examine how we would actually implement it using pseudocode with Python syntax, pseudo-Python if you will.
 
 ## Download and Stitch Tiles
 
-The first part is tile stitching: there's no reason to store all the tiles before stitching them. Let's write a function that will download the tiles and stitch them together at the same time. For simplicity we will assume that our image will always consist of full tiles. Our classifier will only return a single confidence value.
+The first part is tile stitching: there's no reason to store all the tiles before stitching them. Let's write a function that will download the tiles and stitch them together at the same time. For simplicity, we will assume that our image will always consist of full tiles. Our classifier will only return a single confidence value.
 
-Here we'll pretend that we have the following functions available:
+Here, we'll pretend that we have the following functions available:
 * **create_blank_image(image_dimensions)** will create a blank image with the given dimensions in memory.
 * **tiles_to_download(image_origin, image_dimensions)** will create a list of tiles that are needed to cover the requested area, which can just be a list of **(x, y)** tuples.
 * **download_tile(tile_index)** will download a tile given a tile index.
@@ -106,13 +106,13 @@ def sliceAndClassify(image, window_size, window_step, classifier, confidence_thr
 
 # Better, but we Still didn't Solve our Problems
 
-So far we've been able to eliminate having to save intermediate results of two steps. We no longer store all the tiles before combining them, and we no longer keep each subset before classifying it. This means that we've eliminated two out of three copies of data, great! Well, it's better, but there are still some old issues remaining, and we actually added problems as well.
+So far we've been able to eliminate having to save intermediate results of two steps. We no longer store all the tiles before combining them, and we no longer keep each subset before classifying it. This means that we've eliminated two out of three copies of data -- great! Well, it's better, but there are still some old issues remaining, and we actually added problems as well.
 
 ## Still Serial
 
 Even though we've gained efficiency, we're still waiting on all tiles to download before starting the detection process. In fact, our download speed probably dropped, since we lost the ability to make multiple download requests at once. Well, at least let's fix our downloads: let's rewrite our **downloadAndStitch** function.
 
-Here we'll pretend that we have the following function available in addition to what we defined in our original **downloadAndStitch** implementation:
+Here, we'll pretend that we have the following function available in addition to what we defined in our original **downloadAndStitch** implementation:
 * **download_tiles(tiles_to_download, on_tile)** downloads the requested tiles as quickly as possible, calls the given **on_tile(tile_coord, tile)** function as soon as a tile is downloaded
 
 {% highlight python %}
@@ -144,9 +144,9 @@ OK, this is getting complicated. We now have closures in play. It is actually on
 
 ## Close Coupling Means Hard to Extend
 
-So we have our application working in production now, and it's working great. However, processing time on GPU compute instances is expensive. We want to make it more efficient. Somebody has an idea: how about we ignore areas in which we know our object cannot appear? For example, if we're looking for ships, we shouldn't look on land; if we're looking for cars, we shouldn't look on water or around cliffs.
+So we have our application working in production now, and it's working great. However, processing time on GPU compute instances is expensive. We want to make it more efficient. Somebody had an idea: how about we ignore areas in which we know our object cannot appear? For example, if we're looking for ships, we shouldn't look on land; if we're looking for cars, we shouldn't look on water or around cliffs.
 
-This means that we won't have to download as much, we also won't have to classify as much. Classification is by far the most expensive part of our processing workflow, with tile download being the second slowest. We're going to go with the straightforward approach, so we'll ignore the asynchronous downloader and stitcher for now and go back to our original **downloadAndStitch** implementation.
+This means that we won't have to download as much, and we also won't have to classify as much. Classification is by far the most expensive part of our processing workflow, with tile download being the second slowest. We're going to go with the straightforward approach, so we'll ignore the asynchronous downloader and stitcher for now and go back to our original **downloadAndStitch** implementation.
 
 Here we'll pretend that we have the following class available in addition to what we defined in our **downloadAndStitch** implementation:
 
@@ -263,7 +263,7 @@ At this point, the direction reverses.
 * The SlidingWindow node simply forwards the subset to the "Detector" node.
 * The "Detector" and "Prediction Sink" nodes operate in a normal sequential fashion.
 
-It's important to note that multiple requests and responses are in flight at once, the system is completely asynchronous. The illustration shows a sequence to satisfy a single request for clarity. The "Sliding Window" node doesn't just make one request, it actually makes ALL of the requests, all at once. Other nodes then process the data as it becomes available. Nodes operate independently, each in its own thread. Data is passed back and forth between nodes until all processing is done, that is until there are no more requests or responses to process.
+It's important to note that multiple requests and responses are in flight at once, the system is completely asynchronous. The illustration shows a sequence to satisfy a single request for clarity. The "Sliding Window" node doesn't just make one request, it actually makes ALL of the requests, all at once. Other nodes then process the data as it becomes available. Nodes operate independently, each in its own thread. Data is passed back and forth between nodes until all processing is done, that is, until there are no more requests or responses to process.
 
 This system is very flexible, since we can mix and match the nodes in any way we want, as long as inputs and outputs match. Each node runs independently of others, which means maximum performance can be achieved at each step.
 
