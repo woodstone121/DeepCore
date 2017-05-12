@@ -3,3 +3,6 @@ highlighter: rouge
 
 gems:
   - jekyll-feed
+
+kramdown:
+  header_offset: 2

@@ -8,7 +8,7 @@ This is the first part of a 2-part series of posts about measuring the accuracy 
 
 This post will cover the different decisions that went into the error calculation, and my next post will apply this to several different neural nets that me and my colleagues at DigitalGlobe have developed.
 
-## Part 1: Defining a Metric
+# Part 1: Defining a Metric
 
 Consider this example: I've got a small image showing part of the famous airplane graveyard in Nevada.
 
@@ -43,12 +43,12 @@ The second approach makes more sense for us, but there are a few details to work
 * Can one box detect more than one object?
 * How should we count false positives?
 
-#### Hitting the target
+## Hitting the target
 ![Predictions at different offsets][offset_predictions]
 
 Which of these images is a good detection?  We don't want to be too picky about the exact location of objects, since it's not really important in most applications, but we have to draw the line somewhere.  A simple way to deal with this is to set a threshold on the proportion of the object area covered by the prediction.  We can set a minimum of 0.4 to make sure we got a good chunk the object in the box.
 
-#### Box Size
+## Box Size
 ![Predictions at different sizes][sized_predictions]
 
 What about boxes that contain an entire object, but are much larger than the actual object?  Is it even a valid detection if we have a ridiculously oversized box like the one we looked at at the beginning of the post? We want the boxes to represent the size of the object, and we'd like to avoid a scenario where a model gets rewarded for using big, imprecise boxes to increase its hit rate.  So let's introduce the [**Jaccard Index**](https://en.wikipedia.org/wiki/Jaccard_index), also known as [**intersection over union**](http://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/) (**IoU**).
@@ -59,22 +59,20 @@ Before computing the **Jaccard index**, we'll switch from using the precise obje
 From looking at these images, it looks like a **Jaccard index** over 0.45 is a good detection.  A number below that is a sign that the box is too big or too small.  We can use a Jaccard cutoff instead of a proportion cutoff.
 
 
-#### Multiple Detections
-
-
+## Multiple Detections
 ![Two targets, one match][2pred2] &nbsp;&nbsp; <font size="+3"> <b> or </b> </font> &nbsp;&nbsp;
 ![Two targets, two matches][2pred3] 
 
 
 Should we let a single box detect multiple airplanes?  If you just want to find airplanes, you might not care whether a box touches one plane or more than one.  But if your goal is to count planes, then you really want to enforce strict correspondence between boxes and planes.  If you want to restrict boxes to planes, then you can enforce that rule in the error calculation. My error calculator supports both.
 
-#### False Positives
+## False Positives
 ![This prediction missed the target completely.][total_miss]
 ![Here we have two predictions that hit the target.][double_down] 
 
 The first image is clearly a miss because the box just plain missed the target.  But what about the second image?  Should we count both of those as hits, or just one?  Or should we discount the overlapping portion in some way?  This depends on what we're using the model for.  If your ultimate goal is to count planes, then you should penalize the model for putting more than one detection box over the same plane.  If you just want to find planes at any cost, then you could allow multiple detections of the same plane, or merge all the overlapping boxes into one and allow multiple detections.  It really depends on what you're planning to use the model for.
 
-## Conclusions
+# Conclusions
 
 Deciding how to score true positives, false positives, and false negatives will determine which models are judged to be better than others, so it's important to make decisions that fit your application.  I made my own decisions on these questions, based on what I thought our model would be used for.  Then I wrote an accuracy calculator to score models against test imagery based on my criteria.  In some cases, I supported multiple options because I thought we might need to use a different measurement for different problems.
 
