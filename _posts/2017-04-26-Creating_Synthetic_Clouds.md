@@ -5,7 +5,7 @@ author: Alan J. Schoen
 published: true
 ---
 
-## Tiny Changes Can Fool AI
+# Tiny Changes Can Fool AI
 There has been much [discussion](https://motherboard.vice.com/en_us/article/fooling-image-classification-networks-is-really-easy) more [recently](http://www.bbc.com/future/story/20170410-how-to-fool-artificial-intelligence) (and some [not so recently](https://motherboard.vice.com/en_us/article/machine-vision-google-adversarial-images)) on how minute changes to images can fool the smartest neural nets. [Sharif et al. showed](https://www.cs.cmu.edu/~sbhagava/papers/face-rec-ccs16.pdf)  how to fool a neural net into classifying a Reese Witherspoon photo as Russell Crowe by adding a groovy pair of technicolor zebra-striped wayfarer frames.  If that's all it takes, then maybe Clark Kent was onto something after all.
 
 We had our own experience with this recently, with our multi-class [DetectNet](https://github.com/NVIDIA/caffe/tree/caffe-0.15/examples/kitti) airplane-detection model. The model usually produces confidence scores over 0.95 for clear images of big planes like airliners, but it's fooled by this image:
@@ -17,7 +17,7 @@ To the human eye, it's very easy to pick out these airplanes because two of the 
 
 There are other kinds of variation in satellite imagery, like [off-nadir](https://en.wikipedia.org/wiki/Nadir) angle, time of day, and atmospheric conditions that also need to be addressed in the future, but we'll focus on cloud cover for now.
 
-## Clouds in Satellite Imagery
+# Clouds in Satellite Imagery
 I researched for examples of adding clouds to images, and I mainly found instructions on [using graphics software](https://docs.gimp.org/en/python-fu-foggify.html) to [create clouds](http://smallbusiness.chron.com/create-perfect-clouds-gimp-37351.html), but I need a way to do this with code so we can repeat the process thousands or millions of times during training.  
 
 One additional thing to consider before choosing a method is that most people are accustomed to looking at clouds from ground level on planet earth, not from satellites in space.  So we should have a look at some clouds from satellite images and then decide how to proceed
@@ -29,7 +29,7 @@ One additional thing to consider before choosing a method is that most people ar
 
 As you can see, clouds actually look pretty much the same from space.  File that under "Today I Learned", and let's go make some clouds...
 
-## Generating Clouds Programmatically
+# Generating Clouds Programmatically
 I found a great [example](http://lodev.org/cgtutor/randomnoise.html) of creating clouds in `C`.  From looking at the source code, I can see that the author created some white noise, and then progressively upsampled smaller and smaller parts of the image to the original image size and stacked the results on top of each other.  The result is a fractal noise pattern that looks an awful lot like clouds.
 
 Before I present my program in Python, here's the algorithm in plain English:
