@@ -17,7 +17,7 @@ A detection model's goal is to find all of the airplanes in an image by drawing 
 
 Any red stripy areas left over would be bad, because they mean the model missed something.  This prediction is perfect, so it didn't miss anything.  No real model is going to perform that well, but the DetectNet model can at least come close.  I ran the DetectNet model on this image, and now I'll go over the results.  You may recall that I bragged about this model in a [previous post](https://digitalglobe.github.io/DeepCore/2017/04/26/Creating_Synthetic_Clouds.html).
 
-### Using all of the model predictions: threshold 0.0
+## Using all of the model predictions: threshold 0.0
 
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/prediction9.png){: width="65%"}
 &nbsp;&nbsp;&nbsp;
@@ -31,14 +31,14 @@ The harmonic mean is useful here because the `F1` score can only be large if bot
 
 We can try to fix this by setting a higher threshold.
 
-### Filter out low-confidence predictions: threshold 0.007
+## Filter out low-confidence predictions: threshold 0.007
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/prediction4.png){: width="65%"}
 &nbsp;&nbsp;&nbsp;
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/hist4.png){: width="22%"}
 
 Now we have eliminated the very low-confidence predictions.  Now the model found 31 planes, but unfortunately it missed 2.  The model is not used to dealing with airplanes packed this close together.  It is quite rare, so I can't blame the model for struggling.  There are 10 false positives, most of which are duplicate detections.  There are also a few bonafide false positives in the upper left part of the picture.  At this threshold level, the model has an `F1` score of 0.84, which is pretty good.
 
-### Narrowing it down more: threshold 0.593
+## Narrowing it down more: threshold 0.593
 I'm going to show one more variation that shows what happens when the threshold is too high.
 
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/prediction3.png){: width="65%"}
@@ -69,7 +69,7 @@ As we decrease the threshold, the number of true positives increases, but so doe
 
 Now you can see the trade-off that occurs at different thresholds.  As we lower the threshold the recall rate increases, but the precision also decreases.  Still, you can see parts of the curve where both precision and recall are high.  These are the areas where the `F1` score will also be high.
 
-## Comparing to airplanes.gbdxm
+# Comparing to airplanes.gbdxm
 For comparison, let's test out airplanes.gbdxm, which is available on the [DeepCore website](https://digitalglobe.github.io/DeepCore/index.html#five).  This is an AlexNet model that was trained on painstakingly hand-collected data.  As with the DetectNet model, I tested it at 10 different thresholds and picked the one with the highest `F1` score.
 
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/prediction_test.png){: width="65%"}
