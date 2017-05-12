@@ -36,7 +36,7 @@ We can try to fix this by setting a higher threshold.
 &nbsp;&nbsp;&nbsp;
 ![Airplane Graveyard]({{ site.baseurl }}/assets/images/Measuring_Performance_2/hist4.png){: width="22%"}
 
-Now we have eliminated the very low-confidence predictions.  I also removed some of the low-confidence predictions from the histogram so that you could see the other scores better.  This prediction found 31 planes, but unfortunately it missed 2.  The model is not used to dealing with airplanes packed this close together.  It is quite rare, so I can't blame the model for struggling.  There are 10 false positives, most of which are duplicate detections.  There are also a few bonafide false positives in the upper left part of the picture.  At this threshold level, the model has an `F1` score of 0.84, which is pretty good.
+Now we have eliminated the very low-confidence predictions.  Now the model found 31 planes, but unfortunately it missed 2.  The model is not used to dealing with airplanes packed this close together.  It is quite rare, so I can't blame the model for struggling.  There are 10 false positives, most of which are duplicate detections.  There are also a few bonafide false positives in the upper left part of the picture.  At this threshold level, the model has an `F1` score of 0.84, which is pretty good.
 
 ### Narrowing it down more: threshold 0.593
 I'm going to show one more variation that shows what happens when the threshold is too high.
