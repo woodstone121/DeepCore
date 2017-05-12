@@ -122,17 +122,19 @@ The DeepCore Processing Framework aims to solve these problems. This is the firs
 [javascript]: https://en.wikipedia.org/wiki/JavaScript
 
 [sliding_window]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/sliding_window.gif "Sliding Window"
-{: width="384px"}
+{: width="100%"}
 
 [detectnet_gif]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/detectnet.gif "DetectNet"
-{: width="384px"}
+{: width="100%"}
 
 [stitched]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/stitched_reduced.jpg "Satellite Image"
-{: width="512px"}
+{: width="100%"}
 
 [tiled]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/tiled_reduced.jpg "Tiled Satellite Image"
-{: width="512px"}
+{: width="100%"}
 
 [split_object]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/split_object.jpg "Tiled Satellite Image"
+{: width="100%"}
 
 [combined_object]: {{ site.baseurl }}/assets/images/2017-04-27-Scaling_Object_Detection/combined_object.jpg "Tiled Satellite Image"
+{: width="100%"}
