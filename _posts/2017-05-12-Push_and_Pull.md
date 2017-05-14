@@ -35,7 +35,7 @@ Looking at the traditional batch processing chart, it's easy to see that there a
 
 The first part is tile stitching: there's no reason to store all the tiles before stitching them. Let's write a function that will download the tiles and stitch them together at the same time. For simplicity, we will assume that our image will always consist of full tiles. Our classifier will only return a single confidence value.
 
-Here, we'll pretend that we have the following functions available:
+We assume that the following functions are available:
 * **create_blank_image(image_dimensions)** will create a blank image with the given dimensions in memory.
 * **tiles_to_download(image_origin, image_dimensions)** will create a list of tiles that are needed to cover the requested area, which can just be a list of **(x, y)** tuples.
 * **download_tile(tile_index)** will download a tile given a tile index.
@@ -72,7 +72,7 @@ def downloadAndStitch(image_origin, image_dimensions):
 
 The next thing we can optimize is the sliding window slicer and the classifier. We don't have to generate every slice before we classify, we can just generate and classify one slice at a time.
 
-Here we'll pretend that we have the following functions and properties available:
+We assume that the following functions and properties are available:
 * **image.dimensions** there's a method in our **Image** class that returns image dimensions.
 * **sliding_windows(image_dimensions, window_size, window_step)** generates rectangles using the sliding window algorithm.
 * **classifier.classify(image)** classifies the given image and returns the confidence level.
@@ -112,7 +112,7 @@ So far we've been able to eliminate having to save intermediate results of two s
 
 Even though we've gained efficiency, we're still waiting on all tiles to download before starting the detection process. In fact, our download speed probably dropped, since we lost the ability to make multiple download requests at once. Let's rewrite the **downloadAndStitch** function to maximize the download speed.
 
-Here, we'll pretend that we have the following function available in addition to what we defined in our original **downloadAndStitch** implementation:
+We assume that the following function is available in addition to what we defined in our original **downloadAndStitch** implementation:
 * **download_tiles(tiles_to_download, on_tile)** downloads the requested tiles as quickly as possible, calls the given **on_tile(tile_coord, tile)** function as soon as a tile is downloaded
 
 {% highlight python %}
@@ -148,7 +148,7 @@ Processing time on GPU compute instances is expensive, so we want to make it as 
 
 This means that we don't have to download as much, and we also don't have to classify as much. Classification is by far the most expensive part of our processing workflow, with tile download being the second slowest. We're going to go with the straightforward approach, so we'll ignore the asynchronous downloader and stitcher for now and go back to our original **downloadAndStitch** implementation.
 
-Here we'll pretend that we have the following class available in addition to what we defined in our **downloadAndStitch** implementation:
+We assume that the following class is available in addition to what we defined in our **downloadAndStitch** implementation:
 
 * **class RegionFilter** that has a method **contains(rect)**. The method returns **True** if we should include the rectangle in question, and **False** if we shouldn't.
 
