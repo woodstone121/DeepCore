@@ -106,11 +106,11 @@ def sliceAndClassify(image, window_size, window_step, classifier, confidence_thr
 
 # Better, but we Still didn't Solve our Problems
 
-So far we've been able to eliminate having to save intermediate results of two steps. We no longer store all the tiles before combining them, and we no longer keep each subset before classifying it. This means that we've eliminated two out of three copies of data -- great! Well, it's better, but there are still some old issues remaining, and we actually added problems as well.
+So far we've been able to eliminate having to save intermediate results of two steps. We no longer store all the tiles before combining them, and we no longer keep each subset before classifying it. This means that we've eliminated two out of three copies of data -- great! However, there are still some old issues remaining, and we actually added problems as well.
 
 ## Still Serial
 
-Even though we've gained efficiency, we're still waiting on all tiles to download before starting the detection process. In fact, our download speed probably dropped, since we lost the ability to make multiple download requests at once. Well, at least let's fix our downloads: let's rewrite our **downloadAndStitch** function.
+Even though we've gained efficiency, we're still waiting on all tiles to download before starting the detection process. In fact, our download speed probably dropped, since we lost the ability to make multiple download requests at once. Let's rewrite the **downloadAndStitch** function to maximize the download speed.
 
 Here, we'll pretend that we have the following function available in addition to what we defined in our original **downloadAndStitch** implementation:
 * **download_tiles(tiles_to_download, on_tile)** downloads the requested tiles as quickly as possible, calls the given **on_tile(tile_coord, tile)** function as soon as a tile is downloaded
@@ -126,7 +126,7 @@ def downloadAndStitchAsync(image_origin, image_dimensions):
     # Calculate which tiles we need to download
     tiles_to_download = get_tile_indexes(image_origin, image_dimensions)
 
-    # define a closure that will be called on each downloaded tile
+    # Define a closure that will be called on each downloaded tile
     def on_tile(tile_coord, tile):
         # Figure out where the tile belongs
         image_rect = calculate_image_rect(tile_coord)
@@ -134,19 +134,19 @@ def downloadAndStitchAsync(image_origin, image_dimensions):
         # Copy the tile into the final image
         image.subset(image_rect) = tile
 
-    # now pass the closure function as an argument to the tile downloader
+    # Now pass the closure function as an argument to the tile downloader
     download_tiles(tiles_to_download, on_tile)
 
     return image
 {% endhighlight %}
 
-OK, this is getting complicated. We now have closures in play. It is actually one less line of code, but we're not showing the extra complexity of **download_tiles**. We can download and stitch at the same time now, so that's good. At least we can theoretically be as fast as the naive batch processing approach. Let's see what else can go wrong.
+This is getting complicated: we now have closures in play. It is actually one less line of code, but we're not showing the extra complexity of **download_tiles**. We can download and stitch at the same time now, so at least we can theoretically be as fast as the naive batch processing approach. Let's see what else can go wrong.
 
 ## Close Coupling Means Hard to Extend
 
-So we have our application working in production now, and it's working great. However, processing time on GPU compute instances is expensive. We want to make it more efficient. Somebody had an idea: how about we ignore areas in which we know our object cannot appear? For example, if we're looking for ships, we shouldn't look on land; if we're looking for cars, we shouldn't look on water or around cliffs.
+Processing time on GPU compute instances is expensive, so we want to make it as efficient as possible. One idea is to ignore areas in which we know our object cannot appear. For example, if we're looking for ships, we shouldn't look on land; if we're looking for cars, we shouldn't look on water or around cliffs.
 
-This means that we won't have to download as much, and we also won't have to classify as much. Classification is by far the most expensive part of our processing workflow, with tile download being the second slowest. We're going to go with the straightforward approach, so we'll ignore the asynchronous downloader and stitcher for now and go back to our original **downloadAndStitch** implementation.
+This means that we don't have to download as much, and we also don't have to classify as much. Classification is by far the most expensive part of our processing workflow, with tile download being the second slowest. We're going to go with the straightforward approach, so we'll ignore the asynchronous downloader and stitcher for now and go back to our original **downloadAndStitch** implementation.
 
 Here we'll pretend that we have the following class available in addition to what we defined in our **downloadAndStitch** implementation:
 
@@ -180,7 +180,7 @@ def downloadAndStitchWithRegionFilter(image_origin, image_dimensions, region_fil
     return image
 {% endhighlight %}
 
-Well, this wasn't so bad. We added one more argument to our function, rearranged some things, and added a couple of extra lines of code. Wait, we aren't finished yet. We still need to do the same for our **sliceAndClassify** function:
+This doesn't seem bad. We added one more argument to our function, rearranged some things, and added a couple of extra lines of code. However, we aren't finished yet. We still need to do the same for our **sliceAndClassify** function:
 
 {% highlight python %}
 #
@@ -227,8 +227,7 @@ There has to be a better way.
 
 ## Push Processing
 
-The approaches we examined so far have one thing in common: they finish a step of processing, then pass the result to the next step. All of operations are done sequentially, with the first operation in the chain following the second and so on. The code performs the operations in their logical order. We'll call this a "push" processing model. Wait, doesn't code always follow the logical order of things?
-
+The approaches we examined so far have one thing in common: they finish a step of processing, then pass the result to the next step. All of operations are done sequentially, with the first operation in the chain following the second and so on. The code performs the operations in their logical order. We'll call this a "push" processing model. Doesn't code always follow the logical order of things?
 
 ## Pull Processing
 
@@ -267,7 +266,7 @@ It's important to note that multiple requests and responses are in flight at onc
 
 This system is very flexible, since we can mix and match the nodes in any way we want, as long as inputs and outputs match. Each node runs independently of others, which means maximum performance can be achieved at each step.
 
-Because there's a structured framework driving this, the node implementers don't have to worry about threading or communication between nodes: they just write the normal sequential code to accomplish their task. The easiest way to do multi-threading is to not do it. Having a framework like this achieves this goal.
+Following this abstraction model we can create a structured framework that will do all the housekeeping. The node implementers don't have to worry about threading or communication between nodes: they just write the normal sequential code to accomplish their task. By makind sure that only the framework code has to deal with threading issues, we make our software more reliable and maintanable.
 
 ## Pull Processing Programming Model
 
@@ -294,7 +293,7 @@ sink.wait()
 
 {% endhighlight %}
 
-For simplicity we didn't specify any initial parameters for the nodes. The parameters would normally be set before processing is initiated.
+For simplicity, we didn't specify any initial parameters for the nodes. The parameters would normally be set before processing is initiated.
 
 # DeepCore Processing Framework
 
