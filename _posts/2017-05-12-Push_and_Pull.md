@@ -262,7 +262,7 @@ At this point, the direction reverses.
 * The SlidingWindow node simply forwards the subset to the "Detector" node.
 * The "Detector" and "Prediction Sink" nodes operate in a normal sequential fashion.
 
-It's important to note that multiple requests and responses are in flight at once, the system is completely asynchronous. The illustration shows a sequence to satisfy a single request for clarity. The "Sliding Window" node doesn't just make one request, it actually makes ALL of the requests, all at once. Other nodes then process the data as it becomes available. Nodes operate independently, each in its own thread. Data is passed back and forth between nodes until all processing is done, that is, until there are no more requests or responses to process.
+It's important to note that multiple requests and responses are in flight at once, the system is completely asynchronous. The illustration shows a sequence to satisfy a single request for clarity. The "Sliding Window" node doesn't just make one request, it actually makes ALL of the requests, all at once. Other nodes then process the data as it becomes available. Nodes operate independently, each in its own thread. Data is passed back and forth between nodes until all processing is done. Processing terminates when there are no more requests or responses for nodes to service.
 
 This system is very flexible, since we can mix and match the nodes in any way we want, as long as inputs and outputs match. Each node runs independently of others, which means maximum performance can be achieved at each step.
 
