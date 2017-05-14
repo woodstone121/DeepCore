@@ -231,7 +231,7 @@ The approaches we examined so far have one thing in common: they finish a step o
 
 ## Pull Processing
 
-It turns out that another approach is possible. Instead of sequencing operations, we instead organize them as a graph, with each node representing a single operation. The nodes are then connected in sequence, from source to sink. This doesn't sound too different, it's just a normal sequence of operations, right? The twist comes in how the processing is initiated.
+It turns out that another approach is possible. Instead of sequencing operations, we instead organize them as a graph, with each node representing a single operation. The nodes are then connected in sequence, from source to sink. This doesn't sound too different: isn't this just a normal sequence of operations? The twist comes in how the processing is initiated.
 
 Instead of the source node producing a result and passing it to the sink node, the sink node requests (or pulls) data from the source. The chain then propagates backwards, with each node requesting more data from its inputs to satisfy the request. Once the request chain propagated all the way back, the response comes back in the "forward" direction, with each successive node receiving the correct inputs to do its processing and pass the result down the chain. This is the "pull" processing model.
 
