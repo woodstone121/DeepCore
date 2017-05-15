@@ -2,6 +2,7 @@
 title: Push and Pull
 layout: post
 author: Aleksey Vitebskiy
+desc: In the previous post, we’ve discussed the challenges of scaling object detection. We talked about how the traditional model of tiling images doesn’t quite fit because we need to be able to detect objects that span multiple tiles. In this post, we’ll examine the challenge of implementing a system that will do that efficiently. We will then introduce a different data processing method which aims to address the scalability issue while still being easy to extend.
 ---
 
 In the previous post, we've discussed the challenges of scaling object detection. We talked about how the traditional model of tiling images doesn't quite fit because we need to be able to detect objects that span multiple tiles. In this post, we'll examine the challenge of implementing a system that will do that efficiently. We will then introduce a different data processing method which aims to address the scalability issue while still being easy to extend.
