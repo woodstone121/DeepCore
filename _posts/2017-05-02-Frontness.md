@@ -10,7 +10,7 @@ In my work on DeepCore, I have pleasure of being exposed to many of the applicat
 When Alan blogged about [measuring performance]({{ site.baseurl }}{% post_url 2017-04-11-Measuring_Performance_part1 %}) earlier in the month, he spoke about what makes a good model. He spoke at length about metrics and calculating them and about how the target application affects the design of the model and the metrics. Today, let's talk about a few simple applications and how deep learning impacts each one.
 
 
-## Counting and Aggregation
+# Counting and Aggregation
 
 One fundamental problem that can be solved in an automated way with machine learning is **object counting**. While many people have been approaching this problem in small scale, using the DeepCore framework in combination with [GBDX](http://platform.digitalglobe.com/gbdx/), allows it to be approached at global scale. This type of problem is to answer questions about *"how many"* 
 
@@ -22,7 +22,7 @@ In it's simplest form, the detector emits the center of objects. This is useful 
 That's a lot of utility from a scattering of points!  
 
 
-### Improved Location Description
+## Improved Location Description
 
 Expanding beyond simple points, a detector can output other characteristics of the object. From a remote sensing object detection perspective the next level of detection specificity improves on the description of the object's spatial location.
  
@@ -31,7 +31,7 @@ Expanding beyond simple points, a detector can output other characteristics of t
 While the current release of DeepCore only contains support for a center point or a geographic [bounding box](http://wiki.openstreetmap.org/wiki/Bounding_Box), research is ongoing to build models and add support for [other output paradigms](https://crowdsourcing.topcoder.com/spacenet). In a geographical application that involves relocatable objects, however, orientation can have more meaning than just finding a tighter fit.
  
 
-### #Frontness
+## #Frontness
 
 At this point, I've been resisting using a hashtag, I really have. But after a long discussion on important characteristics of the object to resolve, **#frontness** was born. While the only reference to "frontness" I can find online is as [jargon in phonetics](https://www.uni-due.de/ELE/Phonetics.htm), I take to it here to refer to the state or quality of an object's front. While "front" is an intuitive concept, I'll further elaborate on that as the "natural heading of an object".
 
@@ -42,7 +42,7 @@ A natural heading, however, isn't directly measurable. Ideally, a detection mode
 Unfortunately, these methods neither differentiate between front and back nor are they universally applicable. As modeling advances, a direct output would be the frontness. In the counting problem, models with #frontness can be used to infer the likely heading of each object. Why might this be useful?  An example could be measuring traffic. From overhead you can determine the density of the automobiles, but the measurement would have a great deal more value if we were to determine the direction of the traffic. Is it a beach day?  Are people evacuating?
 
 
-## Search and Discovery
+# Search and Discovery
 
 One of the hard problems posed to users of geospatial intelligence is the **needle in the haystack** problem. In this problem, you have to search for an object over a vast area. Let's work through an example: a plane has to make an emergency landing over the Australian outback. In such a remote area, it wasn't on anyone's radar when it landed, so it is up to the search and rescue team to find them. How can DeepCore help?  Once imagery is available over the region in which that the plane was lost, a detector is run over the area to quickly determine locations to search.
 
