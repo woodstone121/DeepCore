@@ -2,6 +2,8 @@
 layout: post
 title: Measuring Performance for Object Detectors - Part 2
 author: Alan J. Schoen
+desc: This post is about measuring accuracy of object detection neural network models on geospatial imagery.
+keywords: model accuracy, model validation, machine learning metrics
 published: True
 ---
 
