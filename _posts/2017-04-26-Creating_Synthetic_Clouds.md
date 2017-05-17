@@ -3,6 +3,8 @@ layout: post
 title: Creating Synthetic Clouds in Python
 author: Alan J. Schoen
 published: true
+desc: Make your neural nets more resilient by adding synthetic clouds to your training data.
+keywords: machine learning, remote sensing, satellite imagery
 ---
 
 # Tiny Changes Can Fool AI
@@ -59,18 +61,29 @@ import scipy
 import scipy.ndimage
 %matplotlib inline
 
+# Define the make_turbulence function, which will create noise patterns
 def make_turbulence(im_size):
-    # Initialize
+    # Initialize the white noise pattern
     base_pattern = np.random.uniform(0,255, (im_size//2, im_size//2))
+
+    # Initialize the output pattern
     turbulence_pattern = np.zeros((im_size, im_size))
 
     # Create cloud pattern
     power_range = range(2, int(np.log2(im_size)))
     for i in power_range:
+
+        # Set the size of the quadrant to work on
         subimg_size = 2**i
+
+        # Extract the pixels in the upper left quadrant
         quadrant = base_pattern[:subimg_size, :subimg_size]
-        upsampled_pattern = scipy.misc.imresize(quadrant, (im_size, im_size), interp='bicubic')
+
+        # Up-sample the quadrant to the original image size
         # intperp can be 'nearest', 'lanczos', 'bilinear', 'bicubic' or 'cubic'
+        upsampled_pattern = scipy.misc.imresize(quadrant, (im_size, im_size), interp='bicubic')
+        
+        # Add the new noise pattern to the result
         turbulence_pattern += upsampled_pattern / subimg_size
 
     # Normalize values
@@ -78,6 +91,7 @@ def make_turbulence(im_size):
     
     return turbulence_pattern
 
+# Generate a cloud pattern
 turbulence_pattern = make_turbulence(768)
 
 # Plot the results
@@ -143,8 +157,11 @@ We used the [`Image.blend`](http://pillow.readthedocs.io/en/3.4.x/reference/Imag
 
 
 {% highlight python %}
+# Initialize a grid of subplots 
 n_levels = 12
 fig, axes = plt.subplots(3, n_levels//3, figsize=(20,16))
+
+# Iterate through each alpha value, plottig the results
 flag = True
 for ax, alpha in zip(axes.flat, np.linspace(0,1,n_levels)):
     ax.imshow(Image.blend(img, turb_img, alpha))
