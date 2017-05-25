@@ -15,7 +15,7 @@ Crowdsourcing is a relatively new term for getting people to help in a task.  Ra
 
 One of the most prominent use cases for Tomnod was during the disappearance of the Malaysian Aircraft flight 229. [DigitalGlobe’s Tomnod site](http://www.tomnod.com) had over six million views of its Tomnod imagery, as the crowd was leveraged to tag anything relevant to an airliner crash. Try to imagine it, people all over the world, combing through photographs of the ocean, trying to locate the missing plane.  That's what harnessing the crowd can do for you.
 
-Campaigns take two forms: discovery campaigns, where users identify features in a given image, and and labeling campaigns, where users can label or classify features in imagery.  Labeling campaigns can also be used to validate or further refine objects found in a previous discovery campaign.  
+Campaigns take two forms: discovery campaigns, where users identify features in a given image, and labeling campaigns, where users can label or classify features in imagery.  Labeling campaigns can also be used to validate or further refine objects found in a previous discovery campaign.  
 
 In discovery campaigns, a user is given a random satellite image from a given area and asked to identify specific features. Currently, there’s an active discovery campaign looking for Weddell seals in Antarctica, as well as one looking for settlements in South Sudan. Check out [tomnod.com](http://www.tomnod.com) to participate. ![Tomnod Discovery]({{ site.baseurl }}/assets/images/what_is_tomnod/discovery.png){: width="100%"}
 
