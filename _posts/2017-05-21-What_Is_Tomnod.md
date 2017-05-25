@@ -1,13 +1,26 @@
+---
+layout: post
+title: What is Tomnod?
+author: Joe White & Ryan Davies
+published: true
+desc: Tomnod is a team of volunteers (like you!) who work together to identify important objects and interesting places in satellite images.
+keywords: crowdsourcing, tomnod
+---
 # What is Tomnod?
-[Tomnod Campaign Image]({{ site.baseurl }}/assets/images/what_is_tomnod/what_is_tomnod.png)
+![Tomnod Homepage Image]({{ site.baseurl }}/assets/images/what_is_tomnod/tomnod-home.png){: width="100%"} 
+Out in the real world, one of the best ways to find things or people that are lost, whether lost keys or lost kids, is to recruit help to find them.  In a nutshell, that's what Tomnod is. In fact, it has been called a “virtual search party”. Tomnod is a crowdsourcing application that lets regular people all over the world look at satellite imagery and answer simple questions about it.
 
-Tomnod, taking its name from the Mongolian word for “big eye”, is a crowdsourcing application, where users look at imagery, and either tag features, or validate the presence of features, in a given image. It has been called a “virtual search party”.
+Crowdsourcing is a relatively new term for getting people to help in a task.  Rather than hiring or recruiting people to help in a task, the task is put out there for the public to help with. This allows for a lot more eyes on a given task, allowing for faster results and greater accuracy. In Tomnod, these tasks are called campaigns.
 
-One of the most prominent use cases for Tomnod was during the disappearance of the Malaysian Aircraft flight 229, where DigitalGlobe’s Tomnod site had over six million views on its Tomnod imagery, as users were busy tagging anything relevant to signs of life from a crash.
+One of the most prominent use cases for Tomnod was during the disappearance of the Malaysian Aircraft flight 229. [DigitalGlobe’s Tomnod site](http://www.tomnod.com) had over six million views of its Tomnod imagery, as the crowd was leveraged to tag anything relevant to an airliner crash.
 
-Currently, there’s a campaign up looking for Weddell seals in Antarctica. Check out [tomnod.com](http://www.tomnod.com) and get on it!
+Campaigns take two forms: discovery campaigns, where users identify features in a given image, and classification campaigns, where users may validate or further refine objects found in a previous discovery campaign.  
 
-Next up, we’ll be talking about how Tomnod can be used with DigitalGlobe’s machine learning software to create an even more powerful workflow.
+In discovery campaigns, a user is given a random satellite image from a given area, and asked to identify specific features. Currently, there’s an active discovery campaign looking for Weddell seals in Antarctica, as well as looking for settlements in South Sudan. Check out [tomnod.com](http://www.tomnod.com) to participate. ![Tomnod Discovery]({{ site.baseurl }}/assets/images/what_is_tomnod/discovery.png){: width="100%"}
+
+During classification campaigns, the user is given a satellite image with an area outlined and are asked to choose from a short list what the marked area is best classified as. ![Tomnod Classification]({{ site.baseurl }}/assets/images/what_is_tomnod/validation.png){: width="100%"}
+
+The ability of the crowd can be harnessed in many ways.  While finding and classifying objects using the crowd is an awesome capability, that's not always the end of the story.  In the next post, we'll discuss how Tomnod can be used with DigitalGlobe’s machine learning software to create even more powerful workflows.
 
 
 
