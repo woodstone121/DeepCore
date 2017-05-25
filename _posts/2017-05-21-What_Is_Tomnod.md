@@ -13,9 +13,9 @@ Out in the real world, one of the best ways to find things or people that are lo
 
 Crowdsourcing is a relatively new term for getting people to help in a task.  Rather than hiring or recruiting people to work on a task, the task is put out there for the public to assist. This allows for a lot more eyes on a given task, allowing for faster results and greater accuracy. In Tomnod, these tasks are called campaigns.
 
-One of the most prominent use cases for Tomnod was during the disappearance of the Malaysian Aircraft flight 229. [DigitalGlobe’s Tomnod site](http://www.tomnod.com) had over six million views of its Tomnod imagery, as the crowd was leveraged to tag anything relevant to an airliner crash.
+One of the most prominent use cases for Tomnod was during the disappearance of the Malaysian Aircraft flight 229. [DigitalGlobe’s Tomnod site](http://www.tomnod.com) had over six million views of its Tomnod imagery, as the crowd was leveraged to tag anything relevant to an airliner crash. Try and imagine it, people all over the world, combing through photographs of the ocean, trying to locate the missing plane.  That's what harnessing the crowd can do for you.
 
-Campaigns take two forms: discovery campaigns, where users identify features in a given image, and classification campaigns, where users may validate or further refine objects found in a previous discovery campaign.  
+Campaigns take two forms: discovery campaigns, where users identify features in a given image, and and labeling campaigns, where users can label or classify features in imagery.  Labeling campaigns can also be used to validate or further refine objects found in a previous discovery campaign.  
 
 In discovery campaigns, a user is given a random satellite image from a given area and asked to identify specific features. Currently, there’s an active discovery campaign looking for Weddell seals in Antarctica, as well as looking for settlements in South Sudan. Check out [tomnod.com](http://www.tomnod.com) to participate. ![Tomnod Discovery]({{ site.baseurl }}/assets/images/what_is_tomnod/discovery.png){: width="100%"}
 
