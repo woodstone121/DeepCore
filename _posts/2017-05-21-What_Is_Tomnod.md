@@ -17,7 +17,7 @@ One of the most prominent use cases for Tomnod was during the disappearance of t
 
 Campaigns take two forms: discovery campaigns, where users identify features in a given image, and and labeling campaigns, where users can label or classify features in imagery.  Labeling campaigns can also be used to validate or further refine objects found in a previous discovery campaign.  
 
-In discovery campaigns, a user is given a random satellite image from a given area and asked to identify specific features. Currently, there’s an active discovery campaign looking for Weddell seals in Antarctica, as well as looking for settlements in South Sudan. Check out [tomnod.com](http://www.tomnod.com) to participate. ![Tomnod Discovery]({{ site.baseurl }}/assets/images/what_is_tomnod/discovery.png){: width="100%"}
+In discovery campaigns, a user is given a random satellite image from a given area and asked to identify specific features. Currently, there’s an active discovery campaign looking for Weddell seals in Antarctica, as well as one looking for settlements in South Sudan. Check out [tomnod.com](http://www.tomnod.com) to participate. ![Tomnod Discovery]({{ site.baseurl }}/assets/images/what_is_tomnod/discovery.png){: width="100%"}
 
 During classification campaigns, the user is given a satellite image with an area outlined and are asked to choose from a short list what the marked area is best classified as. ![Tomnod Classification]({{ site.baseurl }}/assets/images/what_is_tomnod/validation.png){: width="100%"}
 
