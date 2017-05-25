@@ -19,7 +19,7 @@ Campaigns take two forms: discovery campaigns, where users identify features in 
 
 In discovery campaigns, a user is given a random satellite image from a given area and asked to identify specific features. Currently, there’s an active discovery campaign looking for Weddell seals in Antarctica, as well as one looking for settlements in South Sudan. Check out [tomnod.com](http://www.tomnod.com) to participate. ![Tomnod Discovery]({{ site.baseurl }}/assets/images/what_is_tomnod/discovery.png){: width="100%"}
 
-During labelling campaigns, the user is given a satellite image with an area outlined and is asked to choose from a short list what the marked area is best labelled as. ![Tomnod Classification]({{ site.baseurl }}/assets/images/what_is_tomnod/validation.png){: width="100%"}
+Labelling campaigns ask the public to classify a marked area in an image from a short list of options. This harnesses the crowd to really refine what's in each image.  ![Tomnod Classification]({{ site.baseurl }}/assets/images/what_is_tomnod/validation.png){: width="100%"}
 
 The ability of the crowd can be harnessed in many ways.  While finding and classifying objects using the crowd is an awesome capability, that's not always the end of the story.  In the next post, we'll discuss how Tomnod can be used with DigitalGlobe’s machine learning software to create even more powerful workflows.
 
