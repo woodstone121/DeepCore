@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Intruducing the DigitalGlobe/Metis Data Challenge
+title: Introducing the DigitalGlobe/Metis Data Challenge
 author: Alan J. Schoen
 desc: DigitalGlobe is teaming up with Metis to create a geospatial data science challenge.
 keywords: data science, geospatial, machine learning, coding bootcamps, education
 published: True
 ---
 
-Last year, I completed the Metis Data Science Bootcamp.  I had finished hiking the entire Appalachian Trail at the end of 2015, and then spent 6 greuling months looking for a job.  Once I had accumulated a few hundred rejection letters, and it seemed like I wasn't any closer to a job, I realized that my skills were outdated and I had to do something about it.  I looked into my options: coding bootcamps, graduate school, online graduate programs, and decided that a coding bootcamp was the fastest and most economical way to polish my skills.
+Last year, I completed the Metis Data Science Bootcamp.  I had finished hiking the entire Appalachian Trail at the end of 2015, and then spent 6 grueling months looking for a job.  Once I had accumulated a few hundred rejection letters, and it seemed like I wasn't any closer to a job, I realized that my skills were outdated and I had to do something about it.  I looked into my options: coding bootcamps, graduate school, online graduate programs, and decided that a coding bootcamp was the fastest and most economical way to polish my skills.
 
 I had already worked in data science and computational modeling, but I had used Matlab as my main programming language for my entire professional career. At Metis, I learned about Python tools for data science, and I learned about how to present my work better.  About two weeks after graduating, I was fortunate to find my current job at DigitalGlobe.  Now, about 6 months later, I'm working with Metis to introduce more students to geospatial data and satellite imagery.
 
-Metis students finish the program by completing a 3-week passion project.  The entire curriculum up until that point prepares students to take it on by developing skills like data acquisition, data wranging, statistics, and model-building.  We partnered with Metis to provide data and tools for students who want to work with satellite images for their passion project.
+Metis students finish the program by completing a 3-week passion project.  The entire curriculum up until that point prepares students to take it on by developing skills like data acquisition, data wrangling, statistics, and model-building.  We partnered with Metis to provide data and tools for students who want to work with satellite images for their passion project.
 
 # Project Description
 We're exploring how to segment land types pixel-by-pixel in this project.  This will let us use machine learning for tasks like land-cover classification and land-use classification.  When we're getting value out of satellite images, this is one of the main ways to do it.  
@@ -22,13 +22,13 @@ When people need more accurate data, they often have to produce it themselves.  
 ![Population Estimate from the Gates Foundation (source: Nature Magazine)]({{ site.baseurl }}/assets/images/Metis_Project/nature-population-map-11-may-17-online.jpg){: width="40%"}
 
 
-In order to complete this project, we're using a machine learning modality called segmentation, which is related to the more commonly known task of classification, but differs in important ways.  Most people are familiar with image classification as an application of deep learning.  Classification is the challenge of assigning categories to pictures.  For example, a classifer could look at 1,000 pictures and tell you whether or not each one contains an airplane.  Segmentation goes a step further and outlines the plane in the image.
+In order to complete this project, we're using a machine learning modality called segmentation, which is related to the more commonly known task of classification, but differs in important ways.  Most people are familiar with image classification as an application of deep learning.  Classification is the challenge of assigning categories to pictures.  For example, a classifier could look at 1,000 pictures and tell you whether or not each one contains an airplane.  Segmentation goes a step further and outlines the plane in the image.
 
 ![Population Estimate from the Gates Foundation (source: Nature Magazine)]({{ site.baseurl }}/assets/images/Metis_Project/segmentation.png){: width="40%"}
 
 Everyone knows about the ImageNet classification challenge, but there are also challenges for segmentation.  [PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/) is the most well known, and the PASCAL VOC dataset is still the go-to for training segmentation networks.  In recent years, ImageNet itself has included a segmentation challenge.  There are also a [variety](http://biomedicalimaging.org/2017/challenges/) of [segmentation challenges](http://www.isles-challenge.org/) in the [medical domain](http://brainiac2.mit.edu/isbi_challenge/).
 
-The idea for this project is to create detailed maps by using segmentation on satellite images.  If we use segmentation to find water, for example, we can turn satellite images into maps of water.  This has all kinds of applications.  For instance, if you applied a water segmentation algorithm to the same images of coastline over and over again, you could track sea level changes.  Or you could find floded areas after a natural distaster.  If you consider other terrain types, like forest, farmland, and urban areas, there are a lot of possibilities.
+The idea for this project is to create detailed maps by using segmentation on satellite images.  If we use segmentation to find water, for example, we can turn satellite images into maps of water.  This has all kinds of applications.  For instance, if you applied a water segmentation algorithm to the same images of coastline over and over again, you could track sea level changes.  Or you could find flooded areas after a natural disaster.  If you consider other terrain types, like forest, farmland, and urban areas, there are a lot of possibilities.
 
 This is somewhat similar to a couple of [Kaggle](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space) [competitions](https://www.kaggle.com/c/dstl-satellite-imagery-feature-detection).  The difference is that our goal is to have the student work out the *entire* project pipeline from data acquisition to results.  So we aren't just handing over a dataset with images and ground-truth; we're handing over a set of tools to help students acquire their own ground-truth.  Each student will choose their own project, and we're hoping that they will come up with lots of interesting ideas.
 
@@ -58,9 +58,9 @@ Here's a summary of the SpaceNet dataset across the 5 cities.
 |Shanghai|4582|30 cm|543|
 |Khartoum|1012|30 cm|40|
 
-The area covered in Rio (2,907 km2) is larger than the actual city of Rio (1,260 km2).  Also, the number of images in Rio is much lower than the other images.  This is because Rio has a different structure.  Rio is a giant mosiac that was broken up into 29 pieces.  The other cities have 400m x 400m (650px x 650px) tiles.
+The area covered in Rio (2,907 km2) is larger than the actual city of Rio (1,260 km2).  Also, the number of images in Rio is much lower than the other images.  This is because Rio has a different structure.  Rio is a giant mosaic that was broken up into 29 pieces.  The other cities have 400m x 400m (650px x 650px) tiles.
 
-This is waht the coverage in Paris looks like:
+This is what the coverage in Paris looks like:
 
 ![SpaceNet coverage in Paris]({{ site.baseurl }}/assets/images/Metis_Project/paris_coverage.png){: width="90%"}
 
@@ -72,7 +72,7 @@ And here's an example of one of the tiles in Paris:
 ## 2. Ground-truth
 [Notebook #2](https://github.com/DigitalGlobe/poirot/blob/master/2.%20Download%20Ground-Truth%20Data%20from%20OSM.ipynb) in the poirot repository shows how to download and process OSM data.
 
-We train models by showing them a series examples of images that we already marked up.  We could mark those images by hand, but that would be a lot of work.  It's much easier if we can find a source of data to use.  We call this ground truth.  We suggest that students use OpenStreetMap to get ground truth data.  OpenStreetMaps is a giant open database of map data including streets, buildings, and natural features.  At DigitalGlobe, we value OpenStreetMaps a lot, because its the most extensive public database of spatial data.  The [OpenStreetMaps Wiki](http://wiki.openstreetmap.org/wiki/Map_Features) shows you the sheer range of object categories that are in OpenStreetMaps.  Unfortunately, the data can be innacurate and incomplete, especially for the rare categories that people don't use often, so you do need to make sure the data you want is good enough before you use it.
+We train models by showing them a series examples of images that we already marked up.  We could mark those images by hand, but that would be a lot of work.  It's much easier if we can find a source of data to use.  We call this ground truth.  We suggest that students use OpenStreetMap to get ground truth data.  OpenStreetMaps is a giant open database of map data including streets, buildings, and natural features.  At DigitalGlobe, we value OpenStreetMaps a lot, because its the most extensive public database of spatial data.  The [OpenStreetMaps Wiki](http://wiki.openstreetmap.org/wiki/Map_Features) shows you the sheer range of object categories that are in OpenStreetMaps.  Unfortunately, the data can be inaccurate and incomplete, especially for the rare categories that people don't use often, so you do need to make sure the data you want is good enough before you use it.
 
 You can get OSM data by downloading it from OSM, or you can get the same information packaged in files from [GEOFABRIK](http://www.geofabrik.de/).
 
