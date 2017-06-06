@@ -23,7 +23,7 @@ When people need more accurate data, they often have to produce it themselves.  
 ![Population Estimate from the Gates Foundation (source: Nature Magazine)]({{ site.baseurl }}/assets/images/Metis_Project/nature-population-map-11-may-17-online.jpg){: width="40%"}
 
 
-In order to complete this project, we're using a machine learning modality called segmentation.  Segmentation is is related to the more commonly known task of classification, but differs in important ways.  Most people are familiar with image classification as an application of deep learning.  Classification is the challenge of assigning categories to pictures.  For example, a classifier looks at images and can tell you whether each image contains an object of interest, like an airplane. Segmentation goes a step further and indicates where the airplane is in the image.
+In order to complete this project, we're using a machine learning modality called segmentation.  Segmentation is related to the more commonly known task of classification, but differs in important ways.  Most people are familiar with image classification as an application of deep learning.  Classification is the challenge of assigning categories to pictures.  For example, a classifier looks at images and can tell you whether each image contains an object of interest, like an airplane. Segmentation goes a step further and indicates where the airplane is in the image.
 
 ![Population Estimate from the Gates Foundation (source: Nature Magazine)]({{ site.baseurl }}/assets/images/Metis_Project/segmentation.png){: width="40%"}
 
