@@ -48,11 +48,11 @@ My tutorials will show how to train a neural net to classify residential areas, 
 
 
 ## 0. Geospatial tools in python
-Working with geospatial data is a little different from working with other kinds of data. Spatial is special, as they say. You need a special set of tools to work with geospatial data in Python, like GDAL, rasterio and GeoPandas. These packages can be hard to set up and hard to use. I provided a couple of notebooks to help with the system setup. [Ubuntu](https://github.com/DigitalGlobe/poirot/blob/master/Setup%20(Ubuntu).ipynb) [Mac](https://github.com/DigitalGlobe/poirot/blob/master/Setup%20(Mac).ipynb)
+Working with geospatial data is a little different from working with other kinds of data. Spatial is special, as they say. You need a special set of tools to work with geospatial data in Python, like GDAL, rasterio and GeoPandas. These packages can be hard to set up and hard to use. I provided a couple of notebooks to help with the system setup. [Ubuntu](https://github.com/DigitalGlobe/ggd-poirot/blob/master/Setup%20(Ubuntu).ipynb) [Mac](https://github.com/DigitalGlobe/ggd-poirot/blob/master/Setup%20(Mac).ipynb)
 
 
 ## 1. SpaceNet Images
-[Notebook #1](https://github.com/DigitalGlobe/poirot/blob/master/1.%20Get%20Started%20With%20SpaceNet%20Images.ipynb) in the poirot repository shows how to download and start working with the SpaceNet data.
+[Notebook #1](https://github.com/DigitalGlobe/ggd-poirot/blob/master/1.%20Get%20Started%20With%20SpaceNet%20Images.ipynb) in the poirot repository shows how to download and start working with the SpaceNet data.
 
 
 In order to train models, we will need a collection of satellite images to use.  For that, we are using the SpaceNet dataset, a public dataset collaboratively published by CosmiQ Works, DigitalGlobe, and NVIDIA. This is a collection of high-resolution imagery from five cities: Rio de Janeiro, Paris, Vegas, Khartoum, and Shanghai. DigitalGlobe released the Rio de Janeiro data for research purposes, and subsequently used it to launch our first open data challenge on TopCoder in 2016. We expanded the dataset to four more cities for the [second challenge](https://crowdsourcing.topcoder.com/spacenet).  
@@ -89,7 +89,7 @@ And here's an example of one of the tiles in Paris:
 
 
 ## 2. Ground truth
-[Notebook #2](https://github.com/DigitalGlobe/poirot/blob/master/2.%20Download%20Ground-Truth%20Data%20from%20OSM.ipynb) in the poirot repository shows how to download and process OSM data.
+[Notebook #2](https://github.com/DigitalGlobe/ggd-poirot/blob/master/2.%20Download%20Ground-Truth%20Data%20from%20OSM.ipynb) in the poirot repository shows how to download and process OSM data.
 
 
 We train models by showing them a series examples of images that we already marked up. We could mark those images by hand, but that would be a lot of work. It is much easier if we can find a source of data to use; we call this ground truth. We suggest students use OpenStreetMap to get ground truth data.  OpenStreetMap is a giant, open, editable map of the world and it includes data like streets, buildings, and natural features. At DigitalGlobe, we value OpenStreetMap because it is the most extensive public database of spatial data. The [OpenStreetMap Wiki](http://wiki.openstreetmap.org/wiki/Map_Features) shows you the sheer range of object categories that are in OpenStreetMap. Unfortunately, the data can be inaccurate and incomplete, especially for the rare categories that people do not use often, so you need to make sure the data you want is good enough before you use it.
@@ -97,12 +97,12 @@ We train models by showing them a series examples of images that we already mark
 You can get OSM data by downloading it from OSM (as shown in notebook #2), or you can get the same information packaged in files from [GEOFABRIK](http://www.geofabrik.de/).  In addition, AWS [recently announced](https://aws.amazon.com/about-aws/whats-new/2017/06/openstreetmap-public-data-set-now-available-on-aws/) that they will be serving OSM data as part of their public datasets program.
 
 ## 3. Image Masks
-[Notebook #3](https://github.com/DigitalGlobe/poirot/blob/master/3.%20Make%20training%20masks%20from%20OSM%20data.ipynb) in the poirot repository shows how to turn OSM data into training masks.
+[Notebook #3](https://github.com/DigitalGlobe/ggd-poirot/blob/master/3.%20Make%20training%20masks%20from%20OSM%20data.ipynb) in the poirot repository shows how to turn OSM data into training masks.
 
 There is one more thing we need to do to the images before we can train a neural net: they need to be converted into masks. This is where all the complicated reprojection stuff comes into play. Fortunately, the python tools for geospatial data make this pretty easy. Follow the notebook to understand how.
 
 ## 4. Training a neural net
-[Notebook #4](https://github.com/DigitalGlobe/poirot/blob/master/4.%20Train%20a%20Model.ipynb) in the poirot repository shows how to train a U-Net segmentation neural network.
+[Notebook #4](https://github.com/DigitalGlobe/ggd-poirot/blob/master/4.%20Train%20a%20Model.ipynb) in the poirot repository shows how to train a U-Net segmentation neural network.
 
 
 Finally, after you have followed the first three notebooks, you are ready to train a neural net. I used Keras and Tensorflow to train a U-Net network. You will need a powerful GPU to train neural networks, and even then it is slow going.
@@ -111,6 +111,4 @@ There are a lot of great segmentation networks out there, like [FCN](https://git
 
 # Update 6/2/17
 The first group of Metis students is just about to finish their projects with the Metis/DigitalGlobe challenge.  Three students in the New York Spring 2017 cohort took on the challenge.  I have seen some preliminary results, and they look great.  The students will give their final presentations on Thursday, June 20th.
-
-
 
