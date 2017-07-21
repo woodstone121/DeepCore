@@ -23,7 +23,7 @@ Here’s what you’ll need: a GIS software program (we used [QGIS](http://www.q
 In the next few posts, I’ll describe the entire work-flow from drawing polygons in QGIS and storing them in PostgresDB in real-time to collecting, manipulating, and ingesting the data into Elasticsearch via Logstash, and then displaying the visualizations on a web page with Kibana. This is Part 1 of that series.
 
 # Part 1: Store Digitized Polygons in PostgresDB Table
-First, install [Postgres](https://www.postgresql.org/download/) on your machine. Create a database and a table. In this example, we've created database `postgres_db` and table `digitized_polygons`. For the `digitized_polygons` table, we'll want the following columns: `feature_id` as `integer` as the auto incremented primary key, `employee_name` as `text`, `type_id` as `integer`, `ingest_time` as `timestamp with time zone`, and `geom` as `geometry`)
+First, install [Postgres](https://www.postgresql.org/download/) on your machine. Create a database and a table. In this example, we've created database `postgres_db` and table `digitized_polygons`. For the `digitized_polygons` table, we'll want the following columns: `feature_id` as `integer` (this is auto incremented and will be the private key), `employee_name` as `text`, `type_id` as `integer`, `ingest_time` as `timestamp with time zone`, and `geom` as `geometry`)
 
 (insert visual here)
 
