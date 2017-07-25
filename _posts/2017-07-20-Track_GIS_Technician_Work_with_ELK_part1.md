@@ -47,10 +47,8 @@ WITH (
 );
 ```
 
-Since we'll want near real-time updates, the Postgres database table will be added as a layer in QGIS and digitizers will add features to the table directly in an edit session (as opposed to creating shapefiles, then dumping it all into the PostgresDB at the end of the day). Make sure digitizers save edits often so that the database is always as current as possible.
 
-
-Create users and passwords for all of your digitizers and grant them access to the table (can grant `ALL` or just specific actions like `SELECT` for read-only users). Now, each one of the users should be able to go into QGIS and connect to the Postgres database with their credentials. We're not done yet though - each time the digitizers draw a polygon, we'll need to propagate the `ingest_time`, `geom`, and `employee_name` fields. To do this, add triggers to the database columns. You'll need to default the `ingest_time field` to the current time on an INSERT or SELECT and the `edited_by` field to the digitizer's username. QGIS will automatically populate the `geom` column when you insert a feature.
+Create users and passwords for all of your digitizers and grant them access to the table (can grant `ALL` or just specific actions like `SELECT` for read-only users).
 
 ```
 CREATE USER tom WITH PASSWORD 'password';
@@ -59,13 +57,17 @@ CREATE USER jane WITH PASSWORD 'password';
 CREATE USER sarah WITH PASSWORD 'password';
 ```
 
+Create a sequence to allow auto-incrementing of the `feature_id` field.
+
 Then, grant permissions to your users for the table and the sequence
 ```
 GRANT ALL ON TABLE public.objects_table TO tom, john, jane, sarah;
 GRANT ALL ON SEQUENCE public.objects_table_feature_id_seq TO tom, john, jane, sarah;
 ```
 
-One last Postgres configuration: we'll want to create a trigger. This trigger will fire after each object is digitized, find the centroid of the polygon, and populate the centroid_geom column with this value. The centroid is needed in Part 3, when we want to visualize our objects as points.
+Now, each one of the users should be able to go into QGIS and connect to the Postgres database with their credentials. We're not done yet though - each time the digitizers draw a polygon, we'll need to propagate the `ingest_time`, `geom`, and `employee_name` fields. To do this, add triggers to the database columns. You'll need to default the `ingest_time field` to the current time and the `edited_by` field to the digitizer's username. QGIS will automatically populate the `geom` column when you insert a feature.
+
+This trigger will fire after each object is digitized, find the centroid of the polygon, and populate the centroid_geom column with this value. The centroid is needed in Part 3, when we want to visualize our objects as points.
 
 Create the trigger:
 
@@ -105,6 +107,9 @@ CREATE TRIGGER objects_table_enhance_data_trigger
 ```
 
 Okay, now let's see all our hard work in action. Let's get to digitizing! Open up QGIS and connect to your PostgresDB and table
+
+Since we'll want near real-time updates, the Postgres database table will be added as a layer in QGIS and digitizers will add features to the table directly in an edit session (as opposed to creating shapefiles, then dumping it all into the PostgresDB at the end of the day). Make sure digitizers save edits often so that the database is always as current as possible.
+
 
 ![Postgres button in QGIS]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/QGIS_postgres_connect.png){: width="45%"} ![Connect Postgres]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Connect_Postgres.png){: width="45%"}
 
