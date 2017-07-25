@@ -22,7 +22,7 @@ Here’s what you’ll need to get started: a GIS software program (we use [QGIS
 In the next few posts, I’ll describe the entire work-flow from 1) drawing polygons in QGIS and storing them in PostgresDB in real-time to 2) collecting, manipulating, and ingesting the data into Elasticsearch via Logstash, and then 3) displaying the visualizations on a web page with Kibana. This is Part 1 of that series.
 
 # Part 1: Store Digitized Polygons from QGIS into PostgresDB Table
-First, install [Postgres](https://www.postgresql.org/download/) on your server machine. We'll use localhost for this example but you'll need a live server for production purposes (I also recommend installing [pgAdmin3](https://www.pgadmin.org/download/) so that you can easily query and view your database with a GUI). You'll need to install the [PostGIS extension](http://postgis.net/install/) so that you can work with geospatial data types and functions in Postgres. Next, we'll create database `postgres_db` and enable the PostGIS extension. In psql or pgadmin3 execute:
+First, install [Postgres](https://www.postgresql.org/download/) on your server machine (we'll use localhost for this example but you'll need a live server for production purposes). I also recommend installing [pgAdmin3](https://www.pgadmin.org/download/) so that you can easily query and view your database with a GUI. You'll need to install the [PostGIS extension](http://postgis.net/install/) so that you can work with geospatial data types and functions in Postgres. Next, we'll create database `postgres_db` and enable the PostGIS extension. In psql or pgadmin3 execute:
 
 ```
 CREATEDB postgres_db;
@@ -30,7 +30,7 @@ CREATE EXTENSION postgis;
 ```
 
 
- Within our database `postgres_db` we'll create table `objects_table`. We'll need the following columns: `feature_id` for a unique identifier, `edited_by` to show who digitized it, `type_id` to reflect what kind of object, `ingest_time` to show when it was last edited, and `axis_bbox` to store the digitized polygon (in this example we will use bounding boxes), and `point_geom` to store the bounding box centroid. In psql or pgadmin3, execute:
+ Within our database `postgres_db` we'll create table `objects_table`. We'll need the following columns: `feature_id` for a unique identifier, `edited_by` to show who digitized it, `type_id` to reflect what kind of object it represents, `ingest_time` to show when it was last edited, and `axis_bbox` to store the digitized polygon (in this example we will use bounding boxes), and `point_geom` to store the bounding box centroid. In psql or pgadmin3, execute:
 
 ```
 CREATE TABLE public.objects_table (
@@ -50,21 +50,74 @@ WITH (
 Since we'll want near real-time updates, the Postgres database table will be added as a layer in QGIS and digitizers will add features to the table directly in an edit session (as opposed to creating shapefiles, then dumping it all into the PostgresDB at the end of the day). Make sure digitizers save edits often so that the database is always as current as possible.
 
 
-
 Create users and passwords for all of your digitizers and grant them access to the table (select, insert, delete are good starters). Now, each one of the users should be able to go into QGIS and connect to the Postgres database with their credentials. We're not done yet though - each time the digitizers draw a polygon, we'll need to propagate the `ingest_time`, `geom`, and `employee_name` fields. To do this, add triggers to the database columns. You'll need to default the `ingest_time field` to the current time on an INSERT or SELECT and the `edited_by` field to the digitizer's username. QGIS will automatically populate the `geom` column when you insert a feature.
 
+```
+CREATE USER tom WITH PASSWORD 'password';
+CREATE USER john WITH PASSWORD 'password';
+CREATE USER jane WITH PASSWORD 'password';
+CREATE USER sarah WITH PASSWORD 'password';
+```
 
+Then, grant permissions to your users for the table and the sequence
+```
+GRANT ALL ON TABLE public.objects_table TO tom, john, jane, sarah;
+GRANT ALL ON SEQUENCE public.objects_table_feature_id_seq TO tom, john, jane, sarah;
+```
+
+One last Postgres configuration: we'll want to create a trigger. This trigger will fire after each object is digitized, find the centroid of the polygon, and populate the centroid_geom column with this value. The centroid is needed in Part 3, when we want to visualize our objects as points.
+
+Create the trigger:
+
+```
+CREATE OR REPLACE FUNCTION public.objects_table_enhance_data_trigger() ON public.objects_table
+  RETURNS trigger AS
+$BODY$
+	DECLARE
+		point_geom geometry;
+        BEGIN
+		SELECT INTO point_geom ST_CENTROID(NEW.axis_bbox);
+		NEW.point_geom = point_geom;
+
+                RETURN NEW;
+        END;
+
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+```
+
+Grant permissions to the trigger:
+```
+ALTER FUNCTION public.objects_table_enhance_data_trigger()
+  OWNER TO postgres;
+GRANT EXECUTE ON FUNCTION public.objects_table_enhance_data_trigger() TO public;
+```
+
+Apply the triggger to the table:
+```
+CREATE TRIGGER objects_table_enhance_data_trigger
+  BEFORE INSERT
+  ON public.objects_table
+  FOR EACH ROW
+  EXECUTE PROCEDURE public.objects_table_enhance_data_trigger();
+
+```
+
+Okay, now let's see all our hard work in action. Let's get to digitizing! Open up QGIS and connect to your PostgresDB and table
+
+![Postgres button in QGIS]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/QGIS_postgres_connect.png){: width="45%"} ![Connect Postgres]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Connect_Postgres.png){: width="45%"}
+
+Edit the postgres table layer by creating a polygon and keying in the `type_id` field. Save your edits. Querying the database immediately afterwards shows that your new digitization is present.
+
+![Connect Postgres]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/query_result.png){: width="85%"}
+
+We see our digitization is `edited_by` by user `tom`, our keyed in `type_id` of value `1`, the digitization itself stored in `axis_bbox`, and the centroid calculated by the Postgres trigger in `point_geom`. The `feature_id` here shows `7` because I tested a few rows before this example, but as your first entry, you should get a `feature_id` of `1`.
 
 Summary
 =======
-Congratulations!You've successfully set up your server, created a database and table, added users, granted permissions, created trigger functions, and enabled the capability to monitor your data as your digitizers work in real time! Feel free to add more sophisticated fields, triggers, and user groups per your requirements.
+Congratulations! You've successfully set up a Postgres database and table on your server, added users, granted permissions, created trigger functions, and enabled the capability to monitor your data as your digitizers work in real time! Feel free to add more sophisticated fields, triggers, and user groups per your requirements.
 
 Next in Part 2, we'll examine how to transfer the data from our PostgresDB into the Elasticsearch framework.
 
 ![alt-text]({{ site.baseurl }}/images/banner2.png)
-
-[QGIS_postgres_connect]: {{site.baseurl}}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/QGIS_postgres_connect.png “Connect to postgres through QGIS” {:width=“80%”}
-
-[Kibana_dashboard_example]: {{ site.baseurl }}/assets/images/2017-07-02-Track_GIS_Technician_Work_with_ELK/Kibana_dashboard_example.png "Our dashboard!" {: width="85%"}
-
-[sized_predictions]: {{ site.baseurl }}/assets/images/2017-04-11-Measuring_Performance/sized_predictions.png "Predictions at different sizes" {: width="85%"}
