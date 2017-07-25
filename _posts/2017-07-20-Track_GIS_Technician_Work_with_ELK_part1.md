@@ -66,9 +66,9 @@ Then, grant permissions to your users for the table and the sequence
 GRANT ALL ON SEQUENCE public.objects_table_feature_id_seq TO tom, john, jane, sarah;
 ```
 
-Now, each one of the users should be able to go into QGIS and connect to the Postgres database with their credentials. We're not done yet though - each time the digitizers draw a polygon, we'll need to propagate the `ingest_time`, `geom`, and `employee_name` fields. To do this, add triggers to the database columns. You'll need to default the `ingest_time field` to the current time and the `edited_by` field to the digitizer's username. QGIS will automatically populate the `geom` column when you insert a feature.
+Now, each one of the users should be able to go into QGIS and connect to the Postgres database with their credentials, draw a polygon, and have a row of data added that automatically populated the `ingest_time` to the current time, the `edited_by` to his/her username, and the `axis_bbox` to be the geometry of the digitized polygon. The user will be able to key in the `type_id` attribute him or herself too. We're not done yet though - each time the digitizers draw a polygon, we'll need to automatically populate `point_geom` with the `axis_bbox` centroid. 
 
-This trigger will fire after each object is digitized, find the centroid of the polygon, and populate the centroid_geom column with this value. The centroid is needed in Part 3, when we want to visualize our objects as points.
+To do this we add a trigger that will fire after each object is digitized, find the centroid of the polygon, and populate the centroid_geom column with this value. The centroid is needed in Part 3, when we want to visualize our objects as points.
 
 Create the trigger:
 
