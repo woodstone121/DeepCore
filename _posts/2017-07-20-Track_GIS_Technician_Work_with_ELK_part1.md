@@ -55,13 +55,14 @@ CREATE USER tom WITH PASSWORD 'password';
 CREATE USER john WITH PASSWORD 'password';
 CREATE USER jane WITH PASSWORD 'password';
 CREATE USER sarah WITH PASSWORD 'password';
+
+GRANT ALL ON TABLE public.objects_table TO tom, john, jane, sarah;
 ```
 
-Create a sequence to allow auto-incrementing of the `feature_id` field.
+Create a sequence called `objects_table_feature_id_seq` to allow auto-incrementing of the `feature_id` field.
 
 Then, grant permissions to your users for the table and the sequence
 ```
-GRANT ALL ON TABLE public.objects_table TO tom, john, jane, sarah;
 GRANT ALL ON SEQUENCE public.objects_table_feature_id_seq TO tom, john, jane, sarah;
 ```
 
