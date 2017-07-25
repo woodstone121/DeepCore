@@ -110,14 +110,19 @@ Okay, now let's see all our hard work in action. Let's get to digitizing! Open u
 
 Since we'll want near real-time updates, the Postgres database table will be added as a layer in QGIS and digitizers will add features to the table directly in an edit session (as opposed to creating shapefiles, then dumping it all into the PostgresDB at the end of the day). Make sure digitizers save edits often so that the database is always as current as possible.
 
-
 ![Postgres button in QGIS]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/QGIS_postgres_connect.png){: width="45%"} ![Connect Postgres]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Connect_Postgres.png){: width="45%"}
 
 Edit the postgres table layer by creating a polygon and keying in the `type_id` field. Save your edits. Querying the database immediately afterwards shows that your new digitization is present.
 
-![Connect Postgres]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/query_result.png){: width="85%"}
+![Select Object]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Select_Object.png){: width="85%"}
+
+![Finish Polygon]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Finish_Polygon.png){: width="85%"}
+
+![Key in Object Type]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Key_In_Object_Type.png){: width="85%"}
 
 We see our digitization is `edited_by` by user `tom`, our keyed in `type_id` of value `1`, the digitization itself stored in `axis_bbox`, and the centroid calculated by the Postgres trigger in `point_geom`. The `feature_id` here shows `7` because I tested a few rows before this example, but as your first entry, you should get a `feature_id` of `1`.
+
+![Query Result]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/query_result.png){: width="85%"}
 
 Summary
 =======
