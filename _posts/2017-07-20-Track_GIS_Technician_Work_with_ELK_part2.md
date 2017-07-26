@@ -6,14 +6,14 @@ desc: How we tracked and visualized employee digitizing metrics using elasticsea
 keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, dashboard, digitizing, metrics, track
 ---
 
-In my last post, I introduced the idea of monitoring a GIS digitizing project using the ELK stack. We talked about the importance of monitoring the breakdown of work amongst digitizers, and got set up with a Postgres database that propagates our data in near real-time. This is Part 2, where we'll sync the data from Postgres to Elasticsearch so we can actually begin utilizing the Elastic stack.
+In my last post, I introduced the idea of monitoring a GIS digitizing project using the ELK stack. We talked about the importance of monitoring the breakdown of work amongst digitizers, and got set up with a Postgres database that propagates our data in near real-time. This is Part 2, where I'll describe how we sync the data from Postgres to Elasticsearch so we can actually utilize the Elastic stack.
 
 Part 2: Use Logstash to Sync Data from PostgresDB to Elasticsearch
 =======
 
 First, we'll want to install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) and [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html) if you haven't already. Also install the [Postgres JDBC driver](https://jdbc.postgresql.org/download.html) which allows you to read input from Postgres and output results to Elasticsearch.
 
-Logstash is essentially just the I/O layer, so in our case, we input our Postgres data (the digitizations and their associated metadata), munge it to our needs, and output the data to the Elasticsearch index.
+Logstash is the I/O layer of the Elk stack. Our input is the Postgres database and table and the output is the Elasticsearch index and type. A filter can also be used, which munges the input Postgres data before it is output to Elasticsearch.
 
 To run properly, the logstash directory (usually located in `/usr/share/logstash`, but see [the official guide](https://www.elastic.co/guide/en/logstash/5.4/dir-layout.html)) will need a `.conf` file. The file would look something like this for our applications:
 
@@ -69,6 +69,6 @@ When running logstash with the your `.conf` file, data will be ingested into the
 
 Summary
 =======
-In this section, you successfully synced the data from your Postgres database into your Elasticsearch index. New data is being reingested into Elasticsearch every minute, on the minute via Logstash, and reflects a near real-time account of the work that your digitizers are collecting.
+In this section, you successfully synced the data from your Postgres database into your Elasticsearch index. New data is being re-ingested into Elasticsearch every minute (or however long you specified) via Logstash, and the ES index reflects a near real-time account of the work that your digitizers are collecting.
 
 By now, you have successfully set up work-flows for your digitizers to enter their data into Postgres via QGIS and synced the data from Postgres to Elasticsearch. Next, we'll look into how Kibana can take the data in Elasticsearch and visualize the data.
