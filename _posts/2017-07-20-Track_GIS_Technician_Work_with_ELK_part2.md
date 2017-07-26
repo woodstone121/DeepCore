@@ -71,4 +71,4 @@ Summary
 =======
 In this section, you successfully synced the data from your Postgres database into your Elasticsearch index. New data is being re-ingested into Elasticsearch every minute (or however long you specified) via Logstash, and the ES index reflects a near real-time account of the work that your digitizers are collecting.
 
-By now, you have successfully set up work-flows for your digitizers to enter their data into Postgres via QGIS and synced the data from Postgres to Elasticsearch. Next, we'll look into how Kibana can take the data in Elasticsearch and visualize the data.
+Next, we'll look into how Kibana can take the data in Elasticsearch and visualize the data.
