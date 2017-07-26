@@ -70,7 +70,7 @@ By the end of the afternoon, we had built a pipeline to run MantisShrimp, conver
 
 It turns out working with Docker is more complicated when GPU capabilities are involved, especially when huge libraries like GDAL are also required. Docker was a nightmare for Andrew, but he fought through it valiantly and got the dependencies in order by the end of the day.
 
-We were confident in our ability to put the remaining pieces together the next morning, so we took the rest of the evening to explore the beautiful foothills of the Rockies, guided by **guide**. We drove up to Flagstaff Mountain just outside of Boulder, and took a few mile trek around the crest. Despite some cloudy looking weather and the threat of rain, none came, and the trip was lovely. The view of the mountains in the distance was great! The hike and dinner in Boulder afterwards was a refreshing change of pace from all the hacking! 
+We were confident in our ability to put the remaining pieces together the next morning, so we took the rest of the evening to explore the beautiful foothills of the Rockies. We drove up to Flagstaff Mountain just outside of Boulder, and took a few mile trek around the crest. Despite some cloudy looking weather and the threat of rain, none came, and the trip was lovely. The view of the mountains in the distance was great! The hike and dinner in Boulder afterwards was a refreshing change of pace from all the hacking! 
 
 ![Mahmoud]({{ site.baseurl }}/assets/images/hackathon/mahmoud.jpg){:height="404px" width="320px"}
 ![team]({{ site.baseurl }}/assets/images/hackathon/team.jpg){:width="50%"}
