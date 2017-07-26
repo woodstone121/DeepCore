@@ -6,7 +6,7 @@ desc: How we tracked and visualized employee digitizing metrics using elasticsea
 keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, dashboard, digitizing, metrics, track
 ---
 
-In my last post, I introduced the idea of monitoring a GIS digitizing project using the ELK stack. We talked about the importance of monitoring the breakdown of work amongst digitizers, and got set up with a Postgres database that propagates our data in near real-time. This is Part 2, where I'll describe how we sync the data from Postgres to Elasticsearch so we can actually utilize the Elastic stack.
+In my last post, I introduced the concept of monitoring a digitizing project using the ELK stack. I showed you some of our current dashboard visualizations, talked about the level of detail that ELK can provide for GIS technicians and their managers, and explained how the Postgres database propagates our digitized data in near real-time. This is Part 2, where I'll describe how we sync the data from Postgres to Elasticsearch so we can actually utilize the Elastic stack.
 
 Part 2: Use Logstash to Sync Data from PostgresDB to Elasticsearch
 =======
@@ -63,7 +63,7 @@ As you can see, the input section contains [different parameters](https://www.el
 
 The `schedule => "* * * * * *"` means that logstash will run the query and perform the I/O every minute, on the minute. See the [documentation](https://www.elastic.co/guide/en/logstash/5.4/plugins-inputs-jdbc.html) for other schedule syntax.
 
-The filter section is the part where you can change up your data retrieved from the SQL statement before it is output to Elasticsearch. In the above example, we are adding fields for `lat` and `lon` to match Elasticsearch syntax for mapping a [`geopoint`](https://www.elastic.co/guide/en/elasticsearch/guide/current/geopoints.html).
+The filter section allows you to change up the data retrieved from the SQL statement before it's output to Elasticsearch. In the above example, we are adding fields for `lat` and `lon` to match Elasticsearch syntax for mapping a [`geopoint`](https://www.elastic.co/guide/en/elasticsearch/guide/current/geopoints.html).
 
 When running logstash with the your `.conf` file, data will be ingested into the Elasticsearch index based on your scheduler time interval.
 
@@ -72,3 +72,5 @@ Summary
 In this section, you successfully synced the data from your Postgres database into your Elasticsearch index. New data is being re-ingested into Elasticsearch every minute (or however long you specified) via Logstash, and the ES index reflects a near real-time account of the work that your digitizers are collecting.
 
 In the final section, we'll look at how Kibana can take the data in Elasticsearch and visualize the data in really neat ways.
+
+![alt-text]({{ site.baseurl }}/images/banner2.png)
