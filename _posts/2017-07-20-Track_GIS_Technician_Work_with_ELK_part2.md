@@ -6,7 +6,7 @@ desc: How we tracked and visualized employee digitizing metrics using elasticsea
 keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, dashboard, digitizing, metrics, track
 ---
 
-In my last post, I introduced the concept of monitoring a digitizing project using the ELK stack. We began by storing our digitized polygons drawin in QGIS into a database. This is Part 2, where I'll describe how we sync the data from our database to Elasticsearch so we can actually utilize the Elastic stack.
+In my last post, I introduced the concept of monitoring a digitizing project using the ELK stack. We began by storing our digitized polygons drawin in QGIS into a database. This is Part 2, we discuss syncing the data from our database to Elasticsearch so we can actually utilize the Elastic stack.
 
 Part 2: Use Logstash to Sync Data from Database to Elasticsearch
 =======
@@ -35,9 +35,9 @@ output {
 
 ```
 
-As you can see, the input section contains [different parameters](https://www.elastic.co/guide/en/logstash/5.3/plugins-inputs-jdbc.html) such as credentials for logging into the database, SQL statement, and you can even add a scheduler for how often the SQL statement should be run.
+The input and output section contains [different parameters](https://www.elastic.co/guide/en/logstash/5.3/plugins-inputs-jdbc.html) such as credentials for logging into the database, SQL statement, and you can even add a scheduler for how often the SQL statement should be run.
 
-If you want to be extra fancy, you can add a filter between the input and output which allows you to change up the data retrieved from the SQL statement before it's output to Elasticsearch.
+Additionally, you can add a filter between the input and output which allows you to change up the data retrieved from the SQL statement before it's output to Elasticsearch.
 
 
 Summary
