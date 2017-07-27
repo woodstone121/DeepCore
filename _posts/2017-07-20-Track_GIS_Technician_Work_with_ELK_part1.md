@@ -24,30 +24,29 @@ We've stood up a really nice looking website dashboard to display metrics about 
 *Our dashboard, which updates in near real-time. Visualizations include total number of objects digitized today (row 1, column 1), total count since start of project with goal (row 2, column 2), cumulative counts per day per employee (row 2, column 2), and heat map showing location of digitized polygon densities (row 5, column 1).*
 
 Here’s what you’ll need to get started:
-1.  GIS software program (we use [QGIS](http://www.qgis.org/en/site/forusers/download.html)) for digitizing
-2. [Postgres](https://www.postgresql.org/download/) installation on a server such as an [Amazon EC2 instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html)
-3. ELK stack installed on the server
+1. GIS software program (we use [QGIS](http://www.qgis.org/en/site/forusers/download.html)) for digitizing
+2. A database with geospatial capabilities such as [Postgres](https://www.postgresql.org/download/) with the [PostGIS extension](http://postgis.net/install/)
+3. A server instance such as an [Amazon EC2 instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html)
+4. ELK stack installed on the server
 
 [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html), [Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html), and [Kibana]() (ELK) are three separate open-source components that can work together in this stack to serve as a powerful analytics platform. Elasticsearch(ES) provides a NoSQL database and the ability to do full text searches through an HTTP interface, Logstash provides the gathering, filtering, and storing of data into ES (essentially the I/O component), and Kibana provides the visualization layer.
 
 In the next few posts, I’ll describe the project pipeline from digitizing in QGIS to displaying the endlessly cool visualizations that Kibana is capable of projecting with your data. This is Part 1 of that series.
 
 # Part 1: Digitize Polygons in QGIS and Store them in Database
-First, install a database that is able to store geospatial data types on your machine.[Postgres](https://www.postgresql.org/download/) with the [PostGIS extension](http://postgis.net/install/) work well.
+In a database table, add fields to record data you'd like to display in your dashboard, like time of entry, who did the entry, and the geometry.
 
-Add fields to record data you'd like to display in your dashboard, like time of entry, who did the entry, and the geometry.
+Within the GIS software, we can connect to our database table and begin adding features.
 
-In QGIS, we can connect to our database table and add it as a layer.
-
-In our application, we've given users the ability to digitize features and give them a `type_id`. Additionally, we set up our database so that `edited_by`, `feature_id`, `ingest_time`, and `centroid` are automatically propagated. Depending on how you set up your table in Postgres, you'll be able to enter in whatever attributes you need after each digitization. Saving edits and querying the database afterwards shows that your new digitization and all its metadata has been stored in the database.
+Depending on how you set up your table in Postgres, you'll be able to enter whatever attributes you need after each digitization. In our application, we've included an object type id, who edited it, time of entry, and the centroid.
 
 ![Select Object]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Select_Object.png){: width="85%"}
 
-![Finish Polygon]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Finish_Polygon.png){: width="85%"}
-
 ![Key in Object Type]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Key_In_Object_Type.png){: width="85%"}
 
-We see our digitization is `edited_by` by user `tom`, our keyed in `type_id` of value `1`, the digitization itself stored in `axis_bbox`, and the centroid calculated by the Postgres trigger in `point_geom`.
+![Finish Polygon]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Finish_Polygon.png){: width="85%"}
+
+Saving edits and querying the database afterwards shows that your new digitization and all its metadata has been stored in the database.
 
 ![Query Result]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/query_result.png){: width="85%"}
 
