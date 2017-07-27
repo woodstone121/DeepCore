@@ -13,9 +13,9 @@ Once a quarter, the DigitalGlobe Platform Team hosts a 3-day hackathon for devel
 
 # The Team
 
-The was comprised of some heavy-hitting data scientists, eager to start swinging at the platform:
+The Herndon team was comprised of some heavy-hitting data scientists, eager to start swinging at the platform:
 
-  **Andrew Jenkins** the team lead, is a geospatial big data expert
+  **Andrew Jenkins** the team lead, geospatial big data expert
 
   **Mahmoud Lababidi** expert at traversing neural networks better than a traveling salesman
 
@@ -27,7 +27,7 @@ The was comprised of some heavy-hitting data scientists, eager to start swinging
 
 # The Goal
 
-Our team had a specific goal in mind with our hackathon project. We wanted to integrate our deep-learning algorithms in to the GBDX platform. For those not in the know, GBDX, which stands for Geospatial Big Data, is DigitalGlobe's cloud-based platform that provides clients access to the vast expanses of DigitalGlobe imagery, and analytic solutions to compliment the huge store of data. We wanted to deploy our algorithms into GBDX in order to leverage the value of such a huge store of amazing data.
+Our team had a specific goal in mind with our hackathon project. We wanted to integrate our deep-learning algorithms in to the GBDX platform. For those not in the know, GBDX, which stands for Geospatial Big Data, is DigitalGlobe's cloud-based platform that provides clients access to the vast expanses of DigitalGlobe imagery, and analytic solutions to complement the huge store of data. We wanted to deploy our algorithms into GBDX in order to leverage the value of such a huge store of amazing data.
 
 
 ![Cloud]({{ site.baseurl }}/assets/images/hackathon/cloudslide.jpg){: .width="40%"}
@@ -46,15 +46,13 @@ We chose Postgres/PostGIS to ingest our model's geospatial output polygons and L
 
 Fresh from a day of travel, our team set out early Wednesday morning ready to hack. We arrived at DigitalGlobe Headquarters early so we had a chance to explore the beautiful Westminster campus. Situated a few miles from the Rocky Mountains, the building's open design offers a wonderful view of Colorado's natural wonder. After wandering and exploring the campus, we were ready to get to work.
 
-The Hackathon kicked off with a room full of excited platform developers. The organizers announced they had bounties, in the form of cash prizes, for teams willing to complete hard tasks through their project ideas, such as integrating new forms of imagery _insert specific_, or __insert specific_. The rules were simple: A team needed a name, and an awesome idea. Everything else was left to the creativity of the developers!
+The Hackathon kicked off with a room full of excited platform developers. The organizers announced they had bounties, in the form of cash prizes, for teams willing to complete hard tasks through their project ideas, such as working with imagery datasets or integrating newly developed software features. The rules were simple: A team needed a name, and an awesome idea. Everything else was left to the creativity of the developers! Also announced was the **tortilla challenge**, a tradition at DigitalGlobe hackathons. The coveted chili pepper trophy is awarded to the hacker who consumes the most tortillas throughout the course of the hackathon. Provided, of course, were breakfast burritos and plenty of lunchtime opportunities to score tortillas as well. _What could go wrong?_
 
 I came up with **geoHACKINGdomination** for our name and the team liked it. With a name and a great idea, we were all set for hacking!
 
-Also announced was the **tortilla challenge**, a tradition at DigitalGlobe hackathons. The coveted chili pepper trophy is awarded to the hacker who consumes the most tortillas throughout the course of the hackathon. Provided, of course, were breakfast burritos and plenty of lunchtime opportunities to score tortillas as well. _What could go wrong?_
-
 After chatting with some of the Westminster folks, bouncing ideas around, and getting to meet awesome developers like **Jeff Naus** and **Nate McIntyre**, we headed off to the _Geospatial Cave_ (one of many cleverly named nooks in the Westminster Building) to start hacking!
 
-Day One work involved getting or models set up, prepping data sets, and laying the foundation for a successful push into GBDX. Our deep learning algorithms had several dependencies that needed to be built, including access to Nvidia's CUDA GPU library, TensorFlow for running the models, and GDAL for wrangling geospatial data. In order to contain all of these dependencies smoothly, GBDX asks for a Docker image to run the task inside. With some guidance from Jeff Naus, I started work on building the Docker image. This proved to be a bigger task than it looked like initially, as the libraries we needed were heavy-duty.
+Day One work involved getting our models set up, prepping data sets, and laying the foundation for a successful push into GBDX. Our deep learning algorithms had several dependencies that needed to be built, including access to Nvidia's CUDA GPU library, TensorFlow for running the models, and GDAL for wrangling geospatial data. In order to contain all of these dependencies smoothly, GBDX asks for a Docker image to run the task inside. With some guidance from Jeff Naus, I started work on building the Docker image. This proved to be a bigger task than it looked like initially, as the libraries we needed were heavy-duty.
 
 By the end of a long day, Mahmoud had his MantisShrimp segmentation model training on a dataset Alan had prepared, and I had YOLO training on the same set for object detection. Andrew and I had looked into the complications of setting up the Docker image, and we decided to give it a fresh look in the morning. With the models humming away and a set of goals whiteboarded on the cave walls, we retired for the night.
 
@@ -66,7 +64,7 @@ When we arrived at Westminster the next morning, I was surprised to see just how
 
 With coffee under our belts, we were ready continue hacking down our Docker problems, and began setting up for our demo. With help from Jeff Naus again , Mahmoud wrote a GBDX task for deployment, and started building our demo front-end. Alan and I worked on getting the output and database pipeline running smoothly. Andrew hammered away at Docker foo most of the day.
 
-By the end of the afternoon, we had built a pipeline to run MantisShrimp, convert it's output polygons back to geospatially referenced polygons, store the output in our database instance, and feed those polygons to a lightweight Flask/Leaflet front end web app. With the infastructure in place, all we needed to do was delpoy to GBDX, which required our Docker image to be working.
+By the end of the afternoon, we had built a pipeline to run MantisShrimp, convert its output polygons back to geospatially referenced polygons, store the output in our database instance, and feed those polygons to a lightweight Flask/Leaflet front end web app. With the infastructure in place, all we needed to do was deploy to GBDX, which required our Docker image to be working.
 
 It turns out working with Docker is more complicated when GPU capabilities are involved, especially when huge libraries like GDAL are also required. Docker was a nightmare for Andrew, but he fought through it valiantly and got the dependencies in order by the end of the day.
 
