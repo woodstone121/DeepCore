@@ -8,7 +8,7 @@ keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, das
 
 With great training data come great results.
 
-Object marking, otherwise known as digitizing, is when someone uses GIS software to outline and save ground features on a map for later analysis or use. These manually drawn polygons serve as georeferenced (stored with lat/lon location metadata) objects that can later be used as cookie cutters to isolate special features for analysis. For example, drawing squares (otherwise known as bounding boxes) around vehicles allows us to effectively "punch out" the satellite imagery at certain spots and perform machine learning on those patches of imagery. Digitize thousands of vehicles, and you have a solid dataset that when fed into a machine learning model, can automatically detect vehicles in satellite imagery.
+Object marking, otherwise known as digitizing, is when someone uses GIS software to outline and save ground features on a map. These manually drawn polygons serve as georeferenced (stored with lat/lon location metadata) objects that can be used as cookie cutters to isolate special features for analysis. For example, drawing squares (otherwise known as bounding boxes) around vehicles allows us to effectively "punch out" the satellite imagery at certain spots and perform machine learning on those pixels of imagery. Digitize thousands of vehicles, and you have a solid dataset that when fed into a neural network, can automatically detect vehicles in satellite imagery.
 
 ![Digitizing example]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Digitizing_Example.png){: width="45%"} ![Detection image]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Detection_Image.png){: width="45%"}
 
@@ -21,7 +21,7 @@ As part of the work-flow, it's important that digitizers are keeping a consisten
 We've stood up a really nice looking website dashboard to display metrics about the data our digitizers are gathering and the quality of their individual and collective work. In this series, I'll give you an overview of how it's done.
 
 ![Kibana dashboard example]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Kibana_dashboard_example.png){: width="100%"}
-Our dashboard, which updates in near real-time. Visualizations include total number of objects digitized today (row 1, column 1), total count since start of project with goal (row 2, column 2), cumulative counts per day per employee (row 2, column 2), and heat map showing location of digitized polygon densities (row 5, column 1).
+*Our dashboard, which updates in near real-time. Visualizations include total number of objects digitized today (row 1, column 1), total count since start of project with goal (row 2, column 2), cumulative counts per day per employee (row 2, column 2), and heat map showing location of digitized polygon densities (row 5, column 1).*
 
 Here’s what you’ll need to get started:
 1.  GIS software program (we use [QGIS](http://www.qgis.org/en/site/forusers/download.html)) for digitizing
@@ -32,20 +32,14 @@ Here’s what you’ll need to get started:
 
 In the next few posts, I’ll describe the project pipeline from digitizing in QGIS to displaying the endlessly cool visualizations that Kibana is capable of projecting with your data. This is Part 1 of that series.
 
-# Part 1: Digitize Polygons in QGIS and Store them in PostgresDB
-First, install [Postgres](https://www.postgresql.org/download/) on your server machine. I also recommend installing [pgAdmin3](https://www.pgadmin.org/download/) so that you can easily query and view your database with a GUI. You'll need to install the [PostGIS extension](http://postgis.net/install/) so that you can work with geospatial data types and functions in Postgres.
+# Part 1: Digitize Polygons in QGIS and Store them in Database
+First, install a database that is able to store geospatial data types on your machine.[Postgres](https://www.postgresql.org/download/) with the [PostGIS extension](http://postgis.net/install/) work well.
 
-Within your database, you'll need to create a table where you'll store the digitized objects. You must add a field for the digitization, it would be of type `geometry`, which is a special built-in [geospatial datatype](https://postgis.net/docs/using_postgis_dbmanagement.html) within Postgres that can be used with the PostGIS extension enabled. Add other fields that you think would be valuable metadata, such as a `feature_id`, `type_id`, `author`, etc.
+Add fields to record data you'd like to display in your dashboard, like time of entry, who did the entry, and the geometry.
 
-Create user accounts for all your digitizers on your Postgres database and grant them access to the table.
+In QGIS, we can connect to our database table and add it as a layer.
 
-Now, each one of the users should be able to go into QGIS (or other GIS software of your choice) and connect to the Postgres database with their credentials, draw a polygon, and have a row of data added. In our database, we set it up so that each digitization populates the `ingest_time` to the current time, the `edited_by` to the current user's, and the `axis_bbox` to be the geometry of the digitized polygon. The user will (obviously) need to key in the `type_id` value. Additionally, through the use of Postgres [triggers](https://www.postgresql.org/docs/9.1/static/sql-createtrigger.html), each time a user draws a polygon, the `point_geom` column is populated with the `axis_bbox` centroid.
-
-Now for the actual digitizing. In QGIS, we can to our Postgres table and add it as a layer. Since we'll want near real time updates, make sure your digitizers are saving their edits as frequently as possible.
-
-![Postgres button in QGIS]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/QGIS_postgres_connect.png){: width="45%"} ![Connect Postgres]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Connect_Postgres.png){: width="45%"}
-
-In our example digitization here, we are giving the attribute `type_id` a value of `1`. As stated earlier, we also set up our database so that `edited_by`, `feature_id`, `ingest_time`, and `point_geom` are automatically propagated. Depending on how you set up your table in Postgres, you'll be able to enter in whatever attributes you need after each digitization. Saving edits and querying the database afterwards shows that your new digitization and all its metadata has been stored in the database.
+In our application, we've given users the ability to digitize features and give them a `type_id`. Additionally, we set up our database so that `edited_by`, `feature_id`, `ingest_time`, and `centroid` are automatically propagated. Depending on how you set up your table in Postgres, you'll be able to enter in whatever attributes you need after each digitization. Saving edits and querying the database afterwards shows that your new digitization and all its metadata has been stored in the database.
 
 ![Select Object]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Select_Object.png){: width="85%"}
 
@@ -59,7 +53,7 @@ We see our digitization is `edited_by` by user `tom`, our keyed in `type_id` of 
 
 Summary
 =======
-We talked about the value of setting up a dashboard to monitor digitizing projects, creating a Postgres database and table on a server, and enabling the capability to digitize in QGIS while saving edits to the Postgres database.
+We talked about the value of setting up a dashboard to monitor digitizing projects, creating a database and table on a server, and enabling the capability to digitize in GIS software while saving edits in near real time to the database.
 
 Next in Part 2, we'll examine how to transfer the data from our PostgresDB into the Elasticsearch framework.
 
