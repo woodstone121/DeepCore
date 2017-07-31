@@ -41,17 +41,13 @@ In a database table, add fields to record data you'd like to display in your das
 
 Within the GIS software, we can connect to our database table and begin adding features.
 
-Depending on how you set up your table in Postgres, you'll be able to enter whatever attributes you need after each digitization. In our application, we've included an object type id, who edited it, time of entry, and the centroid.
+Depending on how you set up your table in Postgres, you'll be able to enter whatever attributes you need after each digitization.
 
-![Select Object]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Select_Object.png){: width="85%"}
-
-![Key in Object Type]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Key_In_Object_Type.png){: width="85%"}
-
-![Finish Polygon]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Finish_Polygon.png){: width="85%"}
+![Digitizing]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/digitizing1.png){: width="85%"}
 
 Saving edits and querying the database afterwards shows that your new digitization and all its metadata has been stored in the database.
 
-![Query Result]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/query_result.png){: width="85%"}
+![Result Query]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/result_query.png){: width="85%"}
 
 Summary
 =======
