@@ -8,11 +8,10 @@ keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, das
 
 With great training data come great results.
 
-Object marking, otherwise known as digitizing, is when someone uses GIS software to outline and save ground features on a map. These manually drawn polygons serve as georeferenced (stored with lat/lon location metadata) objects that can be used as cookie cutters to isolate special features for analysis. For example, drawing squares (otherwise known as bounding boxes) around vehicles allows us to effectively "punch out" the satellite imagery at certain spots and perform machine learning on those pixels of imagery. Digitize thousands of vehicles, and you have a solid dataset that when fed into a neural network, can automatically detect vehicles in satellite imagery.
+Object marking, otherwise known as digitizing, is when someone uses GIS software to outline and save ground features on a map for analysis. These manually drawn polygons serve as georeferenced (stored with lat/lon location metadata) objects that can be used as cookie cutters to isolate special features. For example, drawing squares (aka bounding boxes) around vehicles allows us to effectively "punch out" the satellite imagery at certain spots and perform machine learning on those pixels of imagery. Digitize thousands of vehicles, and you have a solid dataset that when fed into a neural network, can automatically detect vehicles in satellite imagery.
 
-![Digitizing example]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Digitizing_Example.png){: width="45%"} ![Detection image]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Detection_Image.png){: width="45%"}
-
-A digitizer creates bounding boxes for vehicles in GIS software (left), and vehicle detection results after training data is fed into neural network (right)
+![Digitizing example]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Digitizing_Example.png){: width="49%"} ![Detection image]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Detection_Image.png){: width="50%"}
+*A digitizer creates bounding boxes for vehicles in GIS software (left), and vehicle detection results after training data is fed into neural network (right)*
 
 When we are trying to do multi-object detection, quality training data is especially necessary due to the nuances in object types.
 
