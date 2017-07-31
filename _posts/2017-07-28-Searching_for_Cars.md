@@ -19,7 +19,7 @@ Following along the tailored tutorial for beginners to create the handwriting re
 
 With the end goal of being able to successfuly count the amount of cars in a given image, I was given two different approaches to compare. One model would be created using object detection, and the other, semantic segmentation.
 
-The output images of the models are very different, with the object detection network placing bounding boxes around the objects, and the segmentation model proudcing an image with white blobs. This can be problematic when trying to compare the two. Normal methods like Intersection over Union (IoU) don't work the same way when used with detection and segmentation, so I had to come up with different ways to measure the model accuracy so we could compare different model types. The object detection model will give an exact number of bounding boxes that it found in an image, but my big question is how can I accurately quanitify the results from a segmentation inference image? 
+The output images of the models are very different, with the object detection network placing bounding boxes around the objects, and the segmentation model producing an image with white blobs. This can be problematic when trying to compare the two. Normal methods like Intersection over Union (IoU) don't work the same way when used with detection and segmentation, so I had to come up with different ways to measure the model accuracy so we could compare different model types. The object detection model will give an exact number of bounding boxes that it found in an image, but my big question is how can I accurately quanitify the results from a segmentation inference image? 
 
 
 ## DetectNet
@@ -30,7 +30,7 @@ In the first approach, I utilized an object detection network named [DetectNet](
 ![DetectNet file structure]({{ site.baseurl }}/assets/images/2017-07-28-Searching_for_Cars/detectnet_label.png){: width="70%"}
 
 
-I had the opportunity to label my own dataset using a bounding box creator tool. It gave me perspective on how much time goes into creating a large enough dataset to train an accurate model. I marked close to 3,000 cars in 183 images and it took two full days to complete. That dataset was too small to train a successful model on, and I was given access to over 1600 images already labled by GIS technicians. 
+I had the opportunity to label my own dataset using a bounding box creator tool. It gave me perspective on how much time goes into creating a large enough dataset to train an accurate model. I marked 183 images that held close to 3,000 cars in them while I waited for access to prelabeled data. That dataset was too small to train a successful model on, but I was shortly given access to over 1600 images already labled by GIS technicians that I could use to create new datasets that were much larger to improve the model's learning. 
 
 
 The DetectNet network is not yet optimized to place bounding boxes around such small objects, such as the cars we are searching for. There is no clear answer I can give in my limited experience with the network and machine learning in general, but it is most likely due to the mixture of small training sets, tiny objects, and the confidence the model has in detecting said objects. Those with much more experience than I will be working in the near future to modify the network structure to see if DetectNet can be a viable option for car detection.
@@ -49,11 +49,13 @@ Image on the left is without any alterations, and the image on the right is afte
 The output of the model trained with the new label images made minor improvements upon it predecessor, but any improvement can mean the difference of an accurate or inaccurate estimation of cars.
 
 
+The image in the middle is the unchanged label model, while the image on the right is the one trained with the altered labels. The differences are difficult to see without zooming in on the images, but the elimination of excess bleeding will be essential for counting. 
+
 ![Original image]({{ site.baseurl }}/assets/images/2017-07-28-Searching_for_Cars/f712db010809.png){: width="33%"}
 ![Old model]({{ site.baseurl }}/assets/images/2017-07-28-Searching_for_Cars/oldmodel.png){: width="33%"}
 ![New model]({{ site.baseurl }}/assets/images/2017-07-28-Searching_for_Cars/newmodel.png){: width="33%"}
 
-The image in the middle is the unchanged label model, while the image on the right is the one trained with the altered labels. The differences are difficult to see without zooming in on the images, but the elimination of excess bleeding will be essential for counting. 
+
 
 
 One of the methods to count the number of cars based off of an inference image from a segmentation model that I used is to take the number of white pixels in the image and divide it by the average pixel area that a car occupies. I wrote a quick Python script to read over 1600 labels from the training data and determined that the average area of a car is 181 pixels. Taking the inference images and applying a small thresholding script using [OpenCV](http://docs.opencv.org/trunk/index.html) to make sure that all white pixels that are counted are a part of a car.
@@ -88,5 +90,5 @@ There are - 83 - labeled cars in the image: masks/ffc423d9d709.png
 ```
 
 
-This is just one of the many methods that can be utilized to try to count the number of objects based on a segmentation inference image. It will never be exact because it is based on averages and estimations, but it has potential to be a reliable approach to count the cars.
+This is just one of the many methods that can be utilized to try to count the number of objects based on a segmentation inference image. It will never be exact because it is based on averages and estimations, but any improvement in accuracy will improve the model's results while counting cars.
 
