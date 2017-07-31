@@ -12,7 +12,7 @@ My first encounter with machine learning began with training an image classifica
 
 ![DIGITS Photo]({{ site.baseurl }}/assets/images/2017-07-28-Searching_for_Cars/digits.png){: width="100%"}
 
-Following along the tailored tutorial for beginners to create the handwriting recognition model gave me a smooth introduction to the world of data science, and a tase of the capabilities of machine learning.
+Following along the tailored tutorial for beginners to create the handwriting recognition model gave me a smooth introduction to the world of data science, and a taste of the capabilities of machine learning.
 
 
 # Count the cars!
