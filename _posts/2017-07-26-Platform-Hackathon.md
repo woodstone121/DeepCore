@@ -39,7 +39,7 @@ Heading into the challenge, we had done our research on the GBDX platform and kn
 
 ![Workflow]({{ site.baseurl }}/assets/images/hackathon/workflowslide.jpg){: .width="40%"}
 
-We chose Postgres/PostGIS to ingest our model's geospatial output polygons and Leaflet/Flask to display our map and results against DigitialGlobe imagery.
+We chose Postgres/PostGIS to ingest our model's geospatial output polygons and Leaflet/Flask to display our map and results against DigitalGlobe imagery.
 
 
 ## Day 1
@@ -64,7 +64,7 @@ When we arrived at Westminster the next morning, I was surprised to see just how
 
 With coffee under our belts, we were ready continue hacking down our Docker problems, and began setting up for our demo. With help from Jeff Naus again , Mahmoud wrote a GBDX task for deployment, and started building our demo front-end. Alan and I worked on getting the output and database pipeline running smoothly. Andrew hammered away at Docker foo most of the day.
 
-By the end of the afternoon, we had built a pipeline to run MantisShrimp, convert its output polygons back to geospatially referenced polygons, store the output in our database instance, and feed those polygons to a lightweight Flask/Leaflet front end web app. With the infastructure in place, all we needed to do was deploy to GBDX, which required our Docker image to be working.
+By the end of the afternoon, we had built a pipeline to run MantisShrimp, convert its output polygons back to geospatially referenced polygons, store the output in our database instance, and feed those polygons to a lightweight Flask/Leaflet front end web app. With the infrastructure in place, all we needed to do was deploy to GBDX, which required our Docker image to be working.
 
 It turns out working with Docker is more complicated when GPU capabilities are involved, especially when huge libraries like GDAL are also required. Docker was a nightmare for Andrew, but he fought through it valiantly and got the dependencies in order by the end of the day.
 
@@ -78,7 +78,7 @@ Mad props to Andrew for solving the Docker problem late Thursday night, allowing
 
 ![mantis_naked]({{ site.baseurl }}/assets/images/hackathon/mantis1.png){:width="80%"}
 
-If you look closely, each polygon here (they're small) is the MantisShrimp model's predicition of where a car is in the image. 
+If you look closely, each polygon here (they're small) is the MantisShrimp model's prediction of where a car is in the image. 
 
 Laying the car polygon images on top of OpenStreetMaps reveals some insight into the prediction:
 
@@ -89,7 +89,7 @@ Notice how most of the cars line up nicely with the roads in OpenStreetMap. Beau
 Unfortunately we didn't have enough time for our task to be deployed in GBDX, since the process takes a while, and we ran into several more roadblocks that couldn't be resolved in a single morning. With another day's time we would have been up and running smoothly in GBDX, but alas, time was a crunch for us down the stretch. 
 
 
-We got these results compiled into a slideshow and presented our work to the rest of the hackers. There were a lot of other impressive undertakings presented, in particular I was impressed with the **Dem Drapers** team, who created a draper for satelitte imagery to lay on top of a dem file. Their demo was really cool to see!
+We got these results compiled into a slideshow and presented our work to the rest of the hackers. There were a lot of other impressive undertakings presented, in particular I was impressed with the **Dem Drapers** team, who created a draper for satellite imagery to lay on top of a dem file. Their demo was really cool to see!
 
 After presentations, each participant got to vote on their favorite projects to determine the winners. Our team got 3rd place overall out of 11 teams, which is awesome! Also, I'll give a shoutout to Dave Grason for winning the tortilla challenge. Herndon represented well!
 
@@ -97,9 +97,9 @@ After presentations, each participant got to vote on their favorite projects to 
 # Wrap-Up
 We learned a lot as a team participating in the Platform Hackathon. Here are our main takeaways:
 
-1. **Deep Learning Requirements Can Be Cumbersome**: We spent a large chunk of our time hacking away at a Docker configuration, trying to get GPU capabilities, CUDA installations, and GDAL to all work in tandem. Our Docker files were large and cumbersome, leading to several re-dos over the course of the week. Nvidia-Docker provided the nessesary GPU configurations, but required a new Docker build as well. It was smooth sailing once the Docker was built, but it was a large complicated beast to a team that was relatively inexperience working with the technology.
+1. **Deep Learning Requirements Can Be Cumbersome**: We spent a large chunk of our time hacking away at a Docker configuration, trying to get GPU capabilities, CUDA installations, and GDAL to all work in tandem. Our Docker files were large and cumbersome, leading to several re-dos over the course of the week. Nvidia-Docker provided the necessary GPU configurations, but required a new Docker build as well. It was smooth sailing once the Docker was built, but it was a large complicated beast to a team that was relatively inexperience working with the technology.
 
-2. **GBDX is NOT Beginner Friendly**: The platform team was an indispensible resource to us that made our trip to Westminster worthwhile alone. Being able to consult the knowledge of Jeff Naus and other GBDX developers proved nessesary several times over. We were a group of seasoned developers (save myself) and couldn't navigate the tasking by ourselves. GBDX is a powerful tool that should be accessible to groups wanting to leverage DigitalGlobe's wealth of pixels, so I think there's a lot of work to be done making the platform more accessible to developers and non-developers alike.
+2. **GBDX is NOT Beginner Friendly**: The platform team was an indispensable resource to us that made our trip to Westminster worthwhile alone. Being able to consult the knowledge of Jeff Naus and other GBDX developers proved necessary several times over. We were a group of seasoned developers (save myself) and couldn't navigate the tasking by ourselves. GBDX is a powerful tool that should be accessible to groups wanting to leverage DigitalGlobe's wealth of pixels, so I think there's a lot of work to be done making the platform more accessible to developers and non-developers alike.
 
 3. **Deep Learning and GBDX Have Just Met**: And I hope they become the best of friends. We are among the first groups try to deploy a complete Deep Learning framework to GBDX, which has different needs than other algorithms that see action on the platform. Once a good pipeline gets established, I think Deep Learning applications can and will thrive on the rich resources that Geospatial Big Data provide, and GBDX can be the environment in which to do just that. We're the early pioneers exlporing a rich landscape with exciting potential to grow and prosper. 
 
