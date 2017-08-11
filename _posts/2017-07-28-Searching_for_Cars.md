@@ -14,13 +14,11 @@ My first encounter with machine learning began with training an image classifica
 
 Following the tailored beginners tutorial to create a handwriting recognition model gave me a smooth introduction to the world of data science, and a taste of the capabilities of machine learning.
 
-
 # Count the cars!
 
 I was challenged to create a model that would successfuly count the amount of cars in a given image. I used two different approaches to compare the results: object detection, and semantic segmentation.
 
 The output images of the models are very different, with the object detection network placing bounding boxes around the objects, and the segmentation model producing an image with white blobs. This can be problematic when trying to compare the two. Normal methods like Intersection over Union (IoU) don't work the same way when used with detection and segmentation, so I had to come up with different ways to measure the model accuracy for comparison. The object detection model gives an exact number of bounding boxes found in an image. My big question is how can I accurately quanitify the results from a segmentation inference image? 
-
 
 ## DetectNet
 
@@ -31,7 +29,6 @@ In my first approach for counting cars, I used an object detection network named
 
 
 I labeled my own dataset using a bounding box creator tool. It gave me perspective on how much time goes into creating a large enough dataset to train an accurate model. I marked 183 images containing close to 3,000 cars while I waited for access to prelabeled data. My manually-created dataset was too small to train a successful model on, but thankfully, soon afterward, I was given access to over 1600 images already labled by GIS technicians. This let me create new datasets that were much larger to improve the model's learning. 
-
 
 The DetectNet network is not yet optimized for placing bounding boxes around small objects, like cars. In my limited machine learning experience, I would guess this is due to small training sets, tiny objects, and the confidence the model has in detecting said objects. Those with much more experience than I will be working in the future to modify the network structure to see if DetectNet can be a viable option for car detection.
 
