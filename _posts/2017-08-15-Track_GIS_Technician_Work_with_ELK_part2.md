@@ -6,12 +6,12 @@ desc: How we tracked and visualized employee digitizing metrics using elasticsea
 keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, dashboard, digitizing, metrics, track
 ---
 
-In my last post, I introduced the concept of monitoring a GIS digitizing project in near real time with a website dashboard using the ELK (Elasticsearch, Logstash, Kibana) stack. A dashboard can tell you up-to-the-minute details about how many objects have been digitized, how many of each type have been digitized, where they've been digitized, and productivity metrics of the digitizers themselves like hourly rate and cumulative counts per employee.
+In ![Part 1]({{ site.baseurl}}/2017/08/11/Track_GIS_Technician_Work_with_ELK_part1.html), I introduced the concept of monitoring a GIS digitizing project in near real time with a website dashboard using the ELK ([Elasticsearch](https://www.elastic.co/products/elasticsearch), [Logstash](https://www.elastic.co/products/logstash), and [Kibana](https://www.elastic.co/products/kibana)) stack. A dashboard can tell you up-to-the-minute details about how many objects have been digitized, how many of each type have been digitized, where they've been digitized, and productivity metrics of the digitizers themselves like hourly rate and cumulative counts per employee.
 
 ![dashboard_example]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/dashboard_example.png){: width="100%"}
-*Dashboard showing project metrics with visualizations created using Kibana. Names redacted/removed to preserve anonymity.*
+*The above dashboard shows project metrics with visualizations created using Kibana. Names redacted/removed to preserve anonymity.*
 
-We began with the first step, which was storing the data created by our digitizers into a remote database for easy access. By connecting each user's QGIS workspace to the server database, you have the ability as a manager to watch the database grow as data is added.
+We began with the first step,  storing the data created by our digitizers in a remote database for easy access. By connecting each user's QGIS workspace to the server database, you have the ability as a manager to watch the database grow as data is added.
 
 ![Digitizer_Pipeline]({{ site.baseurl }}/assets/images/2017-07-20-Track_GIS_Technician_Work_with_ELK/Digitizer_Pipeline.png){: width="100%"}
 
@@ -20,7 +20,7 @@ Querying the database for results is fine and dandy if you're a DB pro, but we w
 Part 2: Use Logstash to Sync Data from Database to Elasticsearch
 =======
 
-So why do we need to get our data into Elasticsearch if we already have it stored in our Postgres database? The short answer is because Kibana will only draw data from Elasticsearch (hence why it's called the ELK stack). These components must work TOGETHER - Kibana is the user interface that allows you to build pretty much any visualization you'd like with the data in Elasticsearch with zero coding so you'll need to use Elasticsearch as your data source, if you want the benefit of using Kibana. In other words, you can't just use any database and plug directly into Kibana, since it's built to connect and work efficiently with Elasticsearch. Luckily, there's also Logstash, which provides the input stream to Elasticsearch. Logstash can connect to our database and munge the data to fit the syntax and data structure that Elasticsearch can store and query for Kibana visualizations. Thus, each component of the ELK stack is equally important for full implementation.
+Why do we need to get our data into Elasticsearch if we already have it stored in our Postgres database? The short answer is because Kibana will only draw data from Elasticsearch (hence why it's called the ELK stack). These components must work TOGETHER - Kibana is the user interface that allows you to build pretty much any visualization you'd like with the data from Elasticsearch with zero coding. Luckily, there's also Logstash, which provides the input stream to Elasticsearch. Logstash can connect to our database and munge the data to fit the syntax and data structure that Elasticsearch can store and query for Kibana visualizations. Thus, each component of the ELK stack is equally important for full implementation.
 
 You'll need to be familiar with Elasticsearch syntax. Additionally, queries are made through an HTTP web interface, or on the CLI with `curl`. See the [documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/_introducing_the_query_language.html) for more information on querying Elasticsearch.
 
@@ -73,9 +73,9 @@ Here's a snippet of how documents are stored in Elasticsearch. This is the outpu
 ```
 *Notice the JSON object format, where each object specifies which `index` and `type` the document is a part of. In Elastic stack terms, think index, mapping, type, and document synonymously to database, schema, table, and row (respectively) from an RDMS standpoint.*
 
-Elasticsearch stores schema-free JSON documents, and all documents are indexed, which makes searching incredibly fast, even with huge amounts of data. A common application for Elasticsearch is scraping and storing data from internet search results such as Wikipedia articles or Twitter tweets for keywords (i.e. how often do the words "machine learning" get mentioned?). Needless to say, ES is built and written to handle quick searches on large volumes of data.
+Elasticsearch stores schema-free JSON documents. All documents are indexed, which makes searching incredibly fast, even with huge amounts of data. A common application for Elasticsearch is scraping and storing data from internet search results such as Wikipedia articles or Twitter tweets for keywords (i.e. how often do the words "machine learning" get mentioned?). Needless to say, Elasticseach is built and written to handle quick searches on large volumes of data.
 
-So now let's set up Logstash to build our index. Since our input is from a database, make sure you have the correct JDBC driver installed for Logstash to work. A JDBC driver enables a Java-based application (Logstash) to interact with a database. For a [Postgres](https://www.postgresql.org/download/) database, use the associated [Postgres JDBC driver](https://jdbc.postgresql.org/download.html). Make sure you place the JDBC driver in your Java classpath (to do this, `echo $JAVA_HOME`, navigate to the output location, then drop the .jar file in the `lib` subdirectory).
+Let's set up Logstash to build our index. Since our input is from a database, make sure you have the correct JDBC driver installed for Logstash to work. A JDBC driver enables a Java-based application (Logstash) to interact with a database. For a [Postgres](https://www.postgresql.org/download/) database, use the associated [Postgres JDBC driver](https://jdbc.postgresql.org/download.html). Make sure you place the JDBC driver in your Java classpath (to do this, `echo $JAVA_HOME`, navigate to the output location, then drop the .jar file in the `lib` subdirectory).
 
 A minimal logstash config file for our purposes will look something like this:
 
@@ -108,11 +108,11 @@ output {
         hosts => "localhost:9200"
 ```
 
-The input and output section contains [different parameters](https://www.elastic.co/guide/en/logstash/5.3/plugins-inputs-jdbc.html) such as credentials for logging into the database, SQL statement, and you can even add a scheduler for how often the SQL statement should be run.
+The input and output sections contain [different parameters](https://www.elastic.co/guide/en/logstash/5.3/plugins-inputs-jdbc.html) such as credentials for logging into the database and SQL statement. You can even add a scheduler for how often the SQL statement should be run.
 
-Basically what happens behind-the-scenes is that Logstash will connect to the database, perform the SQL query, and create a document per row. Each document contains attributes that correspond to the columns. Logstash also makes its best guess at the data type of each attribute.
+Basically what happens behind the scenes is that Logstash will connect to the database, perform the SQL query and create a document per row. Each document contains attributes that correspond to the columns. Logstash also makes its best guess at the data type of each attribute.
 
-Additionally, you can add a filter between the input and output which allows you to change up the data retrieved from the SQL statement before it's output to Elasticsearch. Since we care to visualize locations containing lat/long, here's an example of a filter that could be added to create a location mapping to the Elasticsearch index.
+Additionally, you can add a filter between the input and output which allows you to change up the data retrieved from the SQL statement before it's output to Elasticsearch. Since we care to visualize locations containing latitude and longitude, here's an example of a filter that could be added to create a location mapping to the Elasticsearch index:
 
 ```
 filter {
