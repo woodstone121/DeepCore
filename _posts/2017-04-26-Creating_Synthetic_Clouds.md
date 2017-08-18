@@ -2,6 +2,7 @@
 layout: post
 title: Creating Synthetic Clouds in Python
 author: Alan J. Schoen
+author_title: Data Scientist
 published: true
 desc: Make your neural nets more resilient by adding synthetic clouds to your training data.
 keywords: machine learning, remote sensing, satellite imagery

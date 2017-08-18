@@ -2,6 +2,7 @@
 layout: post
 title: Frontness&#58; Applications of Geospatial Object Detection
 author: Ryan Desmond
+author_title: Senior Software Engineer
 tags: [frontness, applications, counting]
 ---
 

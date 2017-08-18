@@ -2,6 +2,7 @@
 title: Scaling Object Detection
 layout: post
 author: Aleksey Vitebskiy
+author_title: Senior Software Engineer
 ---
 
 Object detection in geospatial context presents some unique scalability challenges that are not normally tackled in the machine learning field. DeepCore attempts to address these challenges, though there's still work to be done. In this post we will discuss these issues and show how DeepCore will address them in the future.
