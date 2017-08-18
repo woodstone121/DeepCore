@@ -2,6 +2,7 @@
 layout: post
 title: Introduction to the OpenSpaceNet User Interface
 author: Kevin McGee
+author_title: Software Engineer
 ---
 
 In this video tutorial we'll give a brief overview of [OpenSpaceNet](https://digitalglobe.github.io/DeepCore/index.html#four),

@@ -2,6 +2,7 @@
 layout: post
 title: Platform Hackathon!
 author: Ben Vencill
+author_title: Data Scientist Intern
 desc: A team of Data Scientists apply Deep Learning to GBDX.
 keywords: data science, geospatial, machine learning, education, travel, hackathon, deep learning, yolo
 published: True

@@ -2,6 +2,7 @@
 layout: post
 title: Introducing DeepCore
 author: Joe White
+author_title: Software Development Manager, DeepCore
 ---
 
 If you've come this far, you're probably wondering what DeepCore is and what it does, maybe even what it can do for **you**.

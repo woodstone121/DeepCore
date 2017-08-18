@@ -2,6 +2,7 @@
 layout: post
 title: Track GIS Technician Work with the ELK Stack - Part 3
 author: Gina Li
+author_title: Data Scientist Intern
 desc: How we tracked and visualized employee digitizing metrics using elasticsearch, logstash, and kibana
 keywords: elasticsearch, logstash, kibana, postgres, postgis, visualization, dashboard, digitizing, metrics, track
 

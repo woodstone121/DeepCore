@@ -2,6 +2,7 @@
 layout: post
 title: Measuring Performance for Object Detectors - Part 2
 author: Alan J. Schoen
+author_title: Data Scientist
 desc: Measuring accuracy of a few neural networks for object detection on satellite imagery.
 keywords: machine learning, model accuracy, model validation, machine learning metrics
 published: True

@@ -2,6 +2,7 @@
 layout: post
 title: Measuring Performance for Object Detectors - Part 1
 author: Alan J. Schoen
+author_title: Data Scientist
 desc: Some thoughts on how to measure performance for object detection neural networks.
 keywords: machine learning, model accuracy, model validation, machine learning metrics
 ---

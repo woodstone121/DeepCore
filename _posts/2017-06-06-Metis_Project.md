@@ -2,6 +2,7 @@
 layout: post
 title: Introducing the Metis/DigitalGlobe Data Challenge
 author: Alan J. Schoen
+author_title: Data Scientist
 desc: DigitalGlobe is teaming up with Metis to create a geospatial data science challenge.
 keywords: data science, geospatial, machine learning, coding bootcamps, education
 published: True

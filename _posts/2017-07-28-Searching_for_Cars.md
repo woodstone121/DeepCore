@@ -2,6 +2,8 @@
 layout: post
 title: Searching for Cars
 author: Spencer Charney
+author_title: Data Scientist Intern
+
 ---
 
 This summer, I started at DigitalGlobe as an intern focused on UI/UX Development. After a month, my team completed our assignment. So I joined the data science team to gain experience with machine learning.
