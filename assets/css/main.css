@@ -3738,11 +3738,7 @@ body.landing #header {
 
 #banner {
     background-attachment: fixed;
-    background-color: #272833;
     background-image: url("../../images/banner.jpg");
-    background-position: center center;
-    background-size: cover;
-    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
     min-height: 100vh;
     position: relative;
     text-align: center;
@@ -3798,17 +3794,15 @@ body.landing #header {
 }
 
 #banner .content .image {
-    border-radius: 100%;
     display: inline-block;
-    height: 18em;
     margin-left: 3em;
     vertical-align: middle;
     width: 18em;
 }
 
 #banner .content .image img {
-    border-radius: 100%;
     display: block;
+    vertical-align: middle;
     width: 100%;
 }
 
