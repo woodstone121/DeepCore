@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS re:Invent - Gathering Machine Learning Training Data with Mechanical Turk
+title: AWS re:Invent - Gathering Machine Learning Training Data with Amazon Mechanical Turk
 author: Kevin McGee
 author_title: Production Lead
 ---
