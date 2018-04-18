@@ -29,7 +29,7 @@ Another huge advantage is that the model can learn from its mistakes. Not only a
 
 One final piece to the puzzle is building a “generalizable” model. Machine learning on satellite imagery is hard because the earth is hugely diverse. On images taken on different days, a car in the same spot can look very different depending on things like the angle of the sun, or the resolution of the image. Also, cars in Europe are almost guaranteed to look different than cars in the U.S. just based off the differences in infrastructure in the world. So when we’re selecting new AOIs to run our models on we need to take this diversity into account. Essentially it boils down to three sets of diversities: geographic, seasonal, and imagery. For geographic diversity we want to ensure that our training data is evenly spread throughout the entire globe. For seasonal, we want to make sure that we have training data that accounts for all seasons, for instance snow covered cars as well as cars in the spring. Finally we want to make sure our training data accounts for all of the complexities of satellite imagery like resolution, sun and nadir angles, cloud coverage, etc.
 
-All of these considerations come together in our end-to-end pipeline, where we start with only the task of “find cars in satellite imagery” to a highly accurate, generalizable machine learning model that can produce results like this:
+All of these considerations come together in our end-to-end pipeline, where we start with only the task of “find vehicles in satellite imagery” to a highly accurate, generalizable machine learning model that can produce results like this:
 
 ![Detections]( {{ site.baseurl }}/assets/images/Validation_and_Verification/detects.png){: width="100%"}
 
