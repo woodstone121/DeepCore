@@ -9,7 +9,7 @@ In our blog post entitled [Discovering Pattern of Life Activity using Machine Le
 
 In order to do all of this, we need machine learning models that perform well in all geographic areas.  Additionally,  we need a generous amount of training data to cover all the challenges we encounter when performing machine learning on satellite imagery. One option to accomplish this would be to have an army of imagery analysts marking our imagery all the time for our areas and objects of interests. Obviously this does not scale well in terms of cost or time. At Radiant Solutions we asked the question, “what if we could get our machine learning model to train itself?” So that’s exactly what we did. With our crowdsourcing platform [Tomnod](https://www.tomnod.com), we’ve developed an end-to-end pipeline to produce highly accurate models, as efficiently as possible.
 
-![Workflow]( {{ site.baseurl }}/assets/images/Validation_and_Verification/workflow.png){: width="100%"}
+![Workflow]( {{ site.baseurl }}/assets/images/Validation_and_Verification/V&V.png){: width="100%" background-color="white"}
 
 Let’s start from the beginning. Let’s say we want to detect cars in satellite imagery. First we need to generate training data for cars. We can easily run a Tomnod “Discovery” campaign to create our initial training data corpus.  Discovery campaigns harness the crowd to find objects in imagery.  For example, a discovery campaign would allow users of Tomnod to locate cars in satellite images, which would rapidly provide many locations for training chips that could then be used to train a model.
 
